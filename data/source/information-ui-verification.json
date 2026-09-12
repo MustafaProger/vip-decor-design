@@ -1,0 +1,58 @@
+{
+  "viewport": 390,
+  "rows": [
+    {
+      "route": "/dostavka",
+      "title": "Доставка и оплата",
+      "homeDeliveryBlocks": [
+        true,
+        true
+      ],
+      "payerStatement": true,
+      "countryStatement": true,
+      "detailPhotos": 0,
+      "cover": true,
+      "overflow": false
+    },
+    {
+      "route": "/page13486315.html",
+      "title": "Доставка и оплата",
+      "homeDeliveryBlocks": [
+        true,
+        true
+      ],
+      "payerStatement": true,
+      "countryStatement": true,
+      "detailPhotos": 0,
+      "cover": true,
+      "overflow": false
+    },
+    {
+      "route": "/studio",
+      "title": "Красота —вниманиек деталям.",
+      "homeDeliveryBlocks": [
+        false,
+        false
+      ],
+      "payerStatement": false,
+      "countryStatement": false,
+      "detailPhotos": 25,
+      "cover": false,
+      "overflow": false
+    },
+    {
+      "route": "/popd",
+      "title": "Политика обработки персональных данных",
+      "homeDeliveryBlocks": [
+        false,
+        false
+      ],
+      "payerStatement": false,
+      "countryStatement": false,
+      "detailPhotos": 0,
+      "cover": true,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

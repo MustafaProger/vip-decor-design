@@ -1,0 +1,900 @@
+{
+  "partuid": 993651652361,
+  "filter": "y",
+  "filters": {
+    "sort": true,
+    "search": true,
+    "filters": [
+      {
+        "id": "333794",
+        "label": "Цвет",
+        "control": "checkbox",
+        "type": "option",
+        "values": [
+          {
+            "value": "бежевый",
+            "count": 2
+          },
+          {
+            "value": "белый",
+            "count": 1
+          },
+          {
+            "value": "бронза",
+            "count": 1
+          },
+          {
+            "value": "золото",
+            "count": 3
+          },
+          {
+            "value": "коричневый",
+            "count": 2
+          }
+        ],
+        "name": "option:273743"
+      },
+      {
+        "id": "333797",
+        "label": "Цена",
+        "control": "range",
+        "type": "product",
+        "name": "price",
+        "min": "1698",
+        "max": "20000"
+      }
+    ]
+  },
+  "total": 20,
+  "isElastic": true,
+  "products": [
+    {
+      "uid": 567711078371,
+      "title": "Ваниль/Золото",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2400.0000",
+      "priceold": "",
+      "descr": "Карниз ОСТ(наконечник Вяз)",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6136-3930-4637-a133-326364656565\\/20200817-IMG_7468.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"params\":[],\"values\":[\"золото\"]}]",
+      "sort": 1006600,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-567711078371-vanilzoloto",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,258254823171]",
+      "externalid": "MviXzA07pz8lyy7CTOHZ",
+      "editions": [
+        {
+          "uid": 805912120371,
+          "externalid": "oD5hLR7v5dNNVxR0NX7z",
+          "sku": "D20-1",
+          "price": "2 400.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "золото"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 212664705581,
+      "title": "Латунь",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2600.0000",
+      "priceold": "",
+      "descr": "Карниз ОСТ(наконечник Розы)",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6261-6563-4164-b966-373266363331\\/20200817-IMG_7469.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"золото\"]}]",
+      "sort": 1006700,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-212664705581-latun",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,258254823171]",
+      "externalid": "Bgs7yLlXj0biighLBkXJ",
+      "editions": [
+        {
+          "uid": 901725435231,
+          "externalid": "yZkXR0bTXx17o2kJ94Ur",
+          "sku": "D17",
+          "price": "2 600.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "золото"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 997447433211,
+      "title": "Белый/Золото",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2800.0000",
+      "priceold": "",
+      "descr": "Карниз ОСТ(наконечник Шар ажурный)",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6564-3762-4432-b862-393266613433\\/20200817-IMG_7471.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"белый\"]}]",
+      "sort": 1006800,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-997447433211-beliizoloto",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,258254823171]",
+      "externalid": "SsnmvFIf3VLFMUsKMR03",
+      "editions": [
+        {
+          "uid": 679141614871,
+          "externalid": "iPGTZeFmUS2fHSCM8dCr",
+          "sku": "D20-1",
+          "price": "2 800.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "белый"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 631671896231,
+      "title": "Шоколад",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2600.0000",
+      "priceold": "",
+      "descr": "Карниз ОСТ(наконечник Крокус)",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6639-3732-4937-b461-623539353535\\/20200817-IMG_7473.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"бронза\"]}]",
+      "sort": 1006900,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-631671896231-shokolad",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,258254823171]",
+      "externalid": "42XxRs7n2Z3JmvlTZH1u",
+      "editions": [
+        {
+          "uid": 647715777541,
+          "externalid": "D6NDTbadbmzbmVVY08B6",
+          "sku": "D20-1",
+          "price": "2 600.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "бронза"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 872271113021,
+      "title": "Груша",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2235.0000",
+      "priceold": "",
+      "descr": "Карниз деревянный D28",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3462-3439-4330-b939-396631656634\\/20200817-IMG_7474.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"бежевый\"]}]",
+      "sort": 1007000,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-872271113021-grusha",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,669903074751]",
+      "externalid": "4iNcHzHyC1ngooz5jXz2",
+      "editions": [
+        {
+          "uid": 962261289501,
+          "externalid": "gp6Lx9yZz40zFBNO17Mi",
+          "sku": "417",
+          "price": "2 235.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "бежевый"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 834312366131,
+      "title": "Темный орех",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2278.0000",
+      "priceold": "",
+      "descr": "Карниз деревянный D35",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3334-3164-4464-a338-333334646633\\/20200817-IMG_7476.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"коричневый\"]}]",
+      "sort": 1007100,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-834312366131-temnii-oreh",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,669903074751]",
+      "externalid": "mmsHK3k2udf4iI41kpsk",
+      "editions": [
+        {
+          "uid": 804002183381,
+          "externalid": "Vs5loAvH4J9OBJZrRALX",
+          "sku": "715",
+          "price": "2 278.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "коричневый"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 258050977731,
+      "title": "Легато (Светлый дуб)",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2652.0000",
+      "priceold": "",
+      "descr": "карниз потолочный из вспененного полистирола с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3933-3863-4166-b064-623865346366\\/20200817-IMG_7464.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"бежевый\"]}]",
+      "sort": 1007300,
+      "url": "https://vip2d.ru/potolochniekarnizi/tproduct/242621874-258050977731-legato-svetlii-dub",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[795094943101,993651652361,669903074751]",
+      "externalid": "zPKZofjTICLFmMRy7bxy",
+      "editions": [
+        {
+          "uid": 847096878601,
+          "externalid": "dGXnza3intJ5siLrlEuz",
+          "sku": "2064",
+          "price": "2 652.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "бежевый"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 413038478741,
+      "title": "Палермо (могано с золотом)",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "6950.0000",
+      "priceold": "",
+      "descr": "карниз с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6535-3263-4464-a633-363866616333\\/20200817-IMG_7465.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"коричневый\"]}]",
+      "sort": 1007400,
+      "url": "https://vip2d.ru/potolochniekarnizi/tproduct/242621874-413038478741-palermo-mogano-s-zolotom",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[795094943101,993651652361,669903074751]",
+      "externalid": "9YB2ITazVKAXuBRgXtGe",
+      "editions": [
+        {
+          "uid": 543389445581,
+          "externalid": "85cLdsAupzL9oImJGXNP",
+          "sku": "346",
+          "price": "6 950.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "коричневый"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 611429647641,
+      "title": "Колизей (коричневый золото)",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "6093.0000",
+      "priceold": "",
+      "descr": "карниз с эксклюзивной багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6432-3761-4531-b232-656332626532\\/20200817-IMG_7467.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"золото\"]}]",
+      "sort": 1007600,
+      "url": "https://vip2d.ru/potolochniekarnizi/tproduct/242621874-611429647641-kolizei-korichnevii-zoloto",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[795094943101,993651652361,669903074751]",
+      "externalid": "ymBJECi9skFz4vdhDg4L",
+      "editions": [
+        {
+          "uid": 761659982461,
+          "externalid": "ZZshJrSoR6tyN91RNIza",
+          "sku": "248Л-1",
+          "price": "6 093.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "золото"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 658772542091,
+      "title": "Чечини",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "6945.0000",
+      "priceold": "",
+      "descr": "Карниз с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3335-6462-4162-a164-653831663530\\/_____371_.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3336-3334-4362-b764-636239303233\\/371___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6461-3264-4661-a531-626530663132\\/374____.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1022400,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-658772542091-chechini",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361,669903074751]",
+      "externalid": "ra1caxRTlZlaPELXO22g",
+      "editions": [
+        {
+          "uid": 658772542091,
+          "price": "6945.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild3335-6462-4162-a164-653831663530/_____371_.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 831286667491,
+      "title": "Форте",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2042.0000",
+      "priceold": "",
+      "descr": "Карниз из вспененного полистирола с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3766-3838-4664-a161-336532636632\\/2036__.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1022700,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-831286667491-forte",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361]",
+      "externalid": "BjY5Tm6vSXCeSGBLHVI1",
+      "editions": [
+        {
+          "uid": 831286667491,
+          "price": "2042.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild3766-3838-4664-a161-336532636632/2036__.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 173721182841,
+      "title": "Унисон",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "1778.0000",
+      "priceold": "",
+      "descr": "Карниз из вспененного полистирола с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3531-6638-4632-a633-646463643931\\/2019__.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3462-6263-4832-a462-666265613863\\/2010___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6465-3037-4133-b231-616237646138\\/2016__.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3539-6636-4633-b266-623766333864\\/2014__.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1022800,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-173721182841-unison",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361]",
+      "externalid": "sdLkibp709JUaOA39YdF",
+      "editions": [
+        {
+          "uid": 173721182841,
+          "price": "1778.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild3531-6638-4632-a633-646463643931/2019__.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 353903915021,
+      "title": "Пиано",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "1698.0000",
+      "priceold": "",
+      "descr": "Карниз из вспененного полистирола с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6263-6161-4633-a336-373161343166\\/2020___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3337-3364-4331-b337-353438393564\\/2021___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6233-3763-4463-a531-323333313139\\/2028___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6366-6364-4237-a565-393563393063\\/2026__.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6261-3239-4935-b131-653637343362\\/2026____.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1022900,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-353903915021-piano",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361]",
+      "externalid": "YfYG7joF0GX9Plcxo9oo",
+      "editions": [
+        {
+          "uid": 353903915021,
+          "price": "1698.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild6263-6161-4633-a336-373161343166/2020___.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 823897438131,
+      "title": "Элба",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "5599.0000",
+      "priceold": "",
+      "descr": "Карниз с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3064-6337-4139-b233-353332313930\\/337___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3639-3465-4331-b732-613932663064\\/335___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6130-3934-4333-a539-643238303535\\/336___.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1023100,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-823897438131-elba",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361,669903074751]",
+      "externalid": "gtm9s5fbgvpJZesPkzdr",
+      "editions": [
+        {
+          "uid": 823897438131,
+          "price": "5599.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild3064-6337-4139-b233-353332313930/337___.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 120329950751,
+      "title": "Болонья",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2881.0000",
+      "priceold": "",
+      "descr": "Карниз с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6366-3261-4139-b863-623733376462\\/307__.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3235-6661-4062-b833-643461366230\\/308___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3637-3764-4639-a665-643735393562\\/302___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6332-3734-4464-b761-346632663961\\/305__.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3039-3330-4139-b838-326235656535\\/304__.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3261-6232-4065-a338-313730383334\\/301___.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6532-3535-4532-b932-323265356235\\/305.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6235-6162-4631-b666-376661636435\\/309___.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1023000,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-120329950751-bolonya",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361]",
+      "externalid": "F1F5bAJTGV8A9DnPbdzU",
+      "editions": [
+        {
+          "uid": 120329950751,
+          "price": "2881.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild6366-3261-4139-b863-623733376462/307__.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 589008374861,
+      "title": "Рома",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "3257.0000",
+      "priceold": "",
+      "descr": "Карниз с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6637-6563-4530-b638-383064643538\\/315__.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3838-6333-4762-b733-653930656538\\/314__.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6663-3834-4331-a339-383961663433\\/312___.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1023200,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-589008374861-roma",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361]",
+      "externalid": "xXvsyNz3ZRlgXfDeAfSk",
+      "editions": [
+        {
+          "uid": 589008374861,
+          "price": "3257.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild6637-6563-4530-b638-383064643538/315__.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 885605611221,
+      "title": "Оланда",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "5198.0000",
+      "priceold": "",
+      "descr": "Карниз с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3266-3264-4530-b366-313239363266\\/325____.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3839-3938-4864-b163-646665646566\\/329____.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1023300,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-885605611221-olanda",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361]",
+      "externalid": "jKTrikUvS2Nt2BPnPHka",
+      "editions": [
+        {
+          "uid": 885605611221,
+          "price": "5198.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild3266-3264-4530-b366-313239363266/325____.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 404026477561,
+      "title": "Пескара",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "100",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "3884.0000",
+      "priceold": "",
+      "descr": "Карниз с багетной планкой",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6461-3235-4432-b834-303134383437\\/326____.jpeg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild3032-6432-4965-b863-653031396534\\/327____.jpeg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1023400,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-404026477561-peskara",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361]",
+      "externalid": "FMPLTSHGiOP6BG27HKst",
+      "editions": [
+        {
+          "uid": 404026477561,
+          "price": "3884.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "100",
+          "img": "https://static.tildacdn.com/tild6461-3235-4432-b834-303134383437/326____.jpeg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 174770470002,
+      "title": "Карниз",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "20000.0000",
+      "priceold": "",
+      "descr": "Карнизы с электрическим приводом",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/stor3062-6136-4661-a564-303538623835\\/51398247.jpg\"},{\"img\":\"https:\\/\\/static.tildacdn.com\\/stor6336-3730-4832-b164-306233663931\\/19594775.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1046900,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-174770470002-karniz",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,795094943101,993651652361]",
+      "externalid": "3a0kGZnrT6s6MpyJkRFt",
+      "editions": [
+        {
+          "uid": 174770470002,
+          "price": "20000.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "",
+          "img": "https://static.tildacdn.com/stor3062-6136-4661-a564-303538623835/51398247.jpg"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 201849395312,
+      "title": "Римский карниз двойной",
+      "sku": "",
+      "text": "Карниз для римской шторы, для двух видов ткани ( тюль и портьера)",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "8500.0000",
+      "priceold": "",
+      "descr": "",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/stor3934-3837-4130-a562-386537643035\\/92241298.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "",
+      "sort": 1050600,
+      "url": "https://vip2d.ru/karnizi/tproduct/242611107-201849395312-rimskii-karniz-dvoinoi",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[993651652361]",
+      "externalid": "pdbv1VC8EedjnPFDP6tm",
+      "editions": [
+        {
+          "uid": 201849395312,
+          "price": "8500.0000",
+          "priceold": "",
+          "sku": "",
+          "quantity": "",
+          "img": "https://static.tildacdn.com/stor3934-3837-4130-a562-386537643035/92241298.jpg"
+        }
+      ],
+      "characteristics": []
+    }
+  ],
+  "slice": 1,
+  "partlinks": [],
+  "options": [
+    {
+      "title": "Цвет",
+      "params": [],
+      "values": [
+        {
+          "id": 2645381,
+          "value": "бежевый"
+        },
+        {
+          "id": 2671715,
+          "value": "белый"
+        },
+        {
+          "id": 2506397,
+          "value": "Бордовый"
+        },
+        {
+          "id": 2644898,
+          "value": "бронза"
+        },
+        {
+          "id": 2555393,
+          "value": "голубой"
+        },
+        {
+          "id": 2665592,
+          "value": "желтый"
+        },
+        {
+          "id": 2503835,
+          "value": "зеленый"
+        },
+        {
+          "id": 2492942,
+          "value": "золото"
+        },
+        {
+          "id": 2986684,
+          "value": "коричневый"
+        },
+        {
+          "id": 2555489,
+          "value": "красный"
+        },
+        {
+          "id": 2564795,
+          "value": "оранжевый"
+        },
+        {
+          "id": 2503832,
+          "value": "розовый"
+        },
+        {
+          "id": 2985253,
+          "value": "сиреневый"
+        },
+        {
+          "id": 3241249,
+          "value": "черничный"
+        },
+        {
+          "id": 2671394,
+          "value": "черный"
+        }
+      ]
+    }
+  ]
+}

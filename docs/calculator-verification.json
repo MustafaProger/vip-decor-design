@@ -1,0 +1,66 @@
+{
+  "source": "https://vip2d.ru/#rec221002251",
+  "date": "2026-09-12T10:47:29.181Z",
+  "results": [
+    {
+      "fabric": 570,
+      "sewing": 150,
+      "mount": 270,
+      "width": 1,
+      "actual": 990,
+      "expected": 990,
+      "displayed": "990",
+      "match": true
+    },
+    {
+      "fabric": 570,
+      "sewing": 150,
+      "mount": 270,
+      "width": 4,
+      "actual": 3960,
+      "expected": 3960,
+      "displayed": "3960",
+      "match": true
+    },
+    {
+      "fabric": 1950,
+      "sewing": 120,
+      "mount": 390,
+      "width": 3,
+      "actual": 7380,
+      "expected": 7380,
+      "displayed": "7380",
+      "match": true
+    },
+    {
+      "fabric": 3750,
+      "sewing": 150,
+      "mount": 1080,
+      "width": 6,
+      "actual": 29880,
+      "expected": 29880,
+      "displayed": "29880",
+      "match": true
+    },
+    {
+      "fabric": 570,
+      "sewing": 120,
+      "mount": 415,
+      "width": 5,
+      "actual": 5525,
+      "expected": 5525,
+      "displayed": "5525",
+      "match": true
+    },
+    {
+      "fabric": 1950,
+      "sewing": 150,
+      "mount": 600,
+      "width": 2,
+      "actual": 5400,
+      "expected": 5400,
+      "displayed": "5400",
+      "match": true
+    }
+  ]
+}

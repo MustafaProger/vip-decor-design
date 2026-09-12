@@ -1,0 +1,274 @@
+{
+  "partuid": 258254823171,
+  "filter": "y",
+  "filters": {
+    "sort": true,
+    "search": true,
+    "filters": [
+      {
+        "id": "333794",
+        "label": "Цвет",
+        "control": "checkbox",
+        "type": "option",
+        "values": [
+          {
+            "value": "белый",
+            "count": 1
+          },
+          {
+            "value": "бронза",
+            "count": 1
+          },
+          {
+            "value": "золото",
+            "count": 2
+          }
+        ],
+        "name": "option:273743"
+      },
+      {
+        "id": "333797",
+        "label": "Цена",
+        "control": "range",
+        "type": "product",
+        "name": "price",
+        "min": "2400",
+        "max": "2800"
+      }
+    ]
+  },
+  "total": 4,
+  "isElastic": true,
+  "products": [
+    {
+      "uid": 567711078371,
+      "title": "Ваниль/Золото",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2400.0000",
+      "priceold": "",
+      "descr": "Карниз ОСТ(наконечник Вяз)",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6136-3930-4637-a133-326364656565\\/20200817-IMG_7468.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"params\":[],\"values\":[\"золото\"]}]",
+      "sort": 1006600,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-567711078371-vanilzoloto",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,258254823171]",
+      "externalid": "MviXzA07pz8lyy7CTOHZ",
+      "editions": [
+        {
+          "uid": 805912120371,
+          "externalid": "oD5hLR7v5dNNVxR0NX7z",
+          "sku": "D20-1",
+          "price": "2 400.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "золото"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 212664705581,
+      "title": "Латунь",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2600.0000",
+      "priceold": "",
+      "descr": "Карниз ОСТ(наконечник Розы)",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6261-6563-4164-b966-373266363331\\/20200817-IMG_7469.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"золото\"]}]",
+      "sort": 1006700,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-212664705581-latun",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,258254823171]",
+      "externalid": "Bgs7yLlXj0biighLBkXJ",
+      "editions": [
+        {
+          "uid": 901725435231,
+          "externalid": "yZkXR0bTXx17o2kJ94Ur",
+          "sku": "D17",
+          "price": "2 600.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "золото"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 997447433211,
+      "title": "Белый/Золото",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2800.0000",
+      "priceold": "",
+      "descr": "Карниз ОСТ(наконечник Шар ажурный)",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6564-3762-4432-b862-393266613433\\/20200817-IMG_7471.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"белый\"]}]",
+      "sort": 1006800,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-997447433211-beliizoloto",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,258254823171]",
+      "externalid": "SsnmvFIf3VLFMUsKMR03",
+      "editions": [
+        {
+          "uid": 679141614871,
+          "externalid": "iPGTZeFmUS2fHSCM8dCr",
+          "sku": "D20-1",
+          "price": "2 800.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "белый"
+        }
+      ],
+      "characteristics": []
+    },
+    {
+      "uid": 631671896231,
+      "title": "Шоколад",
+      "sku": "",
+      "text": "Карниз должен соответствовать стилю интерьера, форме окна и типу штор, но в первую очередь это функциональный аксессуар. Основное его предназначение - поддерживать шторы и обеспечивать их свободную подвижность.",
+      "mark": "",
+      "quantity": "",
+      "portion": 0,
+      "unit": "",
+      "single": "",
+      "price": "2600.0000",
+      "priceold": "",
+      "descr": "Карниз ОСТ(наконечник Крокус)",
+      "gallery": "[{\"img\":\"https:\\/\\/static.tildacdn.com\\/tild6639-3732-4937-b461-623539353535\\/20200817-IMG_7473.jpg\"}]",
+      "buttonlink": "",
+      "buttontarget": "",
+      "json_options": "[{\"title\":\"Цвет\",\"values\":[\"бронза\"]}]",
+      "sort": 1006900,
+      "url": "https://vip2d.ru/nastenniekarnizi/tproduct/242614082-631671896231-shokolad",
+      "pack_label": "lwh",
+      "pack_x": 0,
+      "pack_y": 0,
+      "pack_z": 0,
+      "pack_m": 0,
+      "partuids": "[132970727481,993651652361,258254823171]",
+      "externalid": "42XxRs7n2Z3JmvlTZH1u",
+      "editions": [
+        {
+          "uid": 647715777541,
+          "externalid": "D6NDTbadbmzbmVVY08B6",
+          "sku": "D20-1",
+          "price": "2 600.00",
+          "priceold": "",
+          "quantity": "100",
+          "img": "",
+          "Цвет": "бронза"
+        }
+      ],
+      "characteristics": []
+    }
+  ],
+  "slice": 1,
+  "partlinks": [],
+  "options": [
+    {
+      "title": "Цвет",
+      "params": [],
+      "values": [
+        {
+          "id": 2645381,
+          "value": "бежевый"
+        },
+        {
+          "id": 2671715,
+          "value": "белый"
+        },
+        {
+          "id": 2506397,
+          "value": "Бордовый"
+        },
+        {
+          "id": 2644898,
+          "value": "бронза"
+        },
+        {
+          "id": 2555393,
+          "value": "голубой"
+        },
+        {
+          "id": 2665592,
+          "value": "желтый"
+        },
+        {
+          "id": 2503835,
+          "value": "зеленый"
+        },
+        {
+          "id": 2492942,
+          "value": "золото"
+        },
+        {
+          "id": 2986684,
+          "value": "коричневый"
+        },
+        {
+          "id": 2555489,
+          "value": "красный"
+        },
+        {
+          "id": 2564795,
+          "value": "оранжевый"
+        },
+        {
+          "id": 2503832,
+          "value": "розовый"
+        },
+        {
+          "id": 2985253,
+          "value": "сиреневый"
+        },
+        {
+          "id": 3241249,
+          "value": "черничный"
+        },
+        {
+          "id": 2671394,
+          "value": "черный"
+        }
+      ]
+    }
+  ]
+}

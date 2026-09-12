@@ -1,0 +1,446 @@
+.calc-page {
+  padding: 72px 0 100px;
+  color: #173c32;
+  background: #f6f3ed;
+}
+.calc-shell {
+  width: min(1328px, calc(100% - 96px));
+  margin: 0 auto;
+}
+.calc-eyebrow {
+  margin: 0 0 20px;
+  font:
+    500 11px/1.5 "Manrope",
+    sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.calc-intro {
+  max-width: 830px;
+  margin-bottom: 54px;
+}
+.calc-intro h1 {
+  font:
+    400 clamp(46px, 5.6vw, 82px)/0.98 "Cormorant Garamond",
+    Georgia,
+    serif;
+  margin: 0 0 26px;
+  letter-spacing: -0.025em;
+}
+.calc-intro > p:last-child {
+  max-width: 610px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #586052;
+}
+.calc-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+.calc-options {
+  min-width: 0;
+}
+.calc-fieldset {
+  padding: 0 0 30px;
+  margin: 0 0 30px;
+  border: 0;
+  border-bottom: 1px solid #d9d4ca;
+  min-width: 0;
+}
+.calc-fieldset legend {
+  padding: 0;
+  font-size: 17px;
+  font-weight: 500;
+}
+.calc-step {
+  display: inline-block;
+  font:
+    400 12px "Manrope",
+    sans-serif;
+  color: #586052;
+  margin-right: 14px;
+}
+.calc-hint {
+  margin: 8px 0 20px 30px;
+  font-size: 12px;
+  color: #586052;
+  line-height: 1.8;
+}
+.calc-hint a {
+  text-underline-offset: 3px;
+}
+.calc-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+.calc-choices-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.calc-choices-mount {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.calc-choice {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 17px 14px;
+  border: 1px solid #bcbfb2;
+  min-height: 95px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 3px;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease;
+}
+.calc-choice-selected {
+  background: #e6e0d5;
+  border-color: #173c32;
+}
+.calc-choice input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.calc-choice:has(input:focus-visible) {
+  outline: 2px solid #173c32;
+  outline-offset: 3px;
+}
+.calc-choice-mark {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #586052;
+  border-radius: 50%;
+  position: absolute;
+  right: 12px;
+  top: 14px;
+}
+.calc-choice-selected .calc-choice-mark {
+  border-color: #173c32;
+  background: #173c32;
+  box-shadow: inset 0 0 0 3px #e6e0d5;
+}
+.calc-choice-name {
+  font-size: 12px;
+  font-weight: 600;
+  padding-right: 12px;
+  line-height: 1.5;
+}
+.calc-choice-price {
+  font-size: 13px;
+  color: #586052;
+  margin-top: 9px;
+}
+.calc-width-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 10px 0 12px;
+}
+.calc-width-caption {
+  font-size: 13px;
+  color: #586052;
+}
+.calc-width-value {
+  font:
+    400 38px "Cormorant Garamond",
+    Georgia,
+    serif;
+  white-space: nowrap;
+}
+.calc-range {
+  width: 100%;
+  accent-color: #173c32;
+  height: 44px;
+  cursor: pointer;
+}
+.calc-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #586052;
+  padding: 0 3px;
+}
+.calc-summary {
+  background: #e6e0d5;
+  padding: 34px;
+  border: 1px solid #d9d4ca;
+}
+.calc-summary h2 {
+  font:
+    400 36px/1.1 "Cormorant Garamond",
+    Georgia,
+    serif;
+  margin: 0 0 28px;
+}
+.calc-summary dl {
+  margin: 0;
+}
+.calc-summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 14px 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.calc-summary-row dt {
+  color: #586052;
+}
+.calc-summary-row dd {
+  margin: 0;
+  text-align: right;
+}
+.calc-total {
+  border-top: 1px solid #c7c7b9;
+  margin-top: 26px;
+  padding-top: 22px;
+}
+.calc-total-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.calc-total output {
+  display: block;
+  font:
+    400 clamp(44px, 5vw, 64px)/1.25 "Cormorant Garamond",
+    Georgia,
+    serif;
+  padding-top: 6px;
+}
+.calc-disclaimer {
+  font-size: 11px;
+  line-height: 1.85;
+  color: #586052;
+  margin: 12px 0 23px;
+}
+.calc-button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 52px;
+  padding: 14px 18px;
+  border: 1px solid #173c32;
+  border-radius: 3px;
+  background: #173c32;
+  color: #f6f3ed;
+  font:
+    500 12px/1.5 "Manrope",
+    sans-serif;
+  cursor: pointer;
+}
+.calc-button:hover {
+  background: #245140;
+}
+.calc-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+.calc-button-outline {
+  background: transparent;
+  color: #173c32;
+}
+.calc-button-outline:hover {
+  background: #f6f3ed;
+}
+.calc-contact {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid #c7c7b9;
+}
+.calc-contact h3 {
+  font:
+    400 28px/1.1 "Cormorant Garamond",
+    Georgia,
+    serif;
+  margin: 0 0 12px;
+}
+.calc-contact-description {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #586052;
+}
+.calc-field {
+  display: block;
+  font-size: 11px;
+  margin: 17px 0;
+}
+.calc-field > span {
+  display: block;
+  margin-bottom: 7px;
+}
+.calc-input {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 12px;
+  box-sizing: border-box;
+  border: 1px solid #b1b6a7;
+  border-radius: 2px;
+  color: #173c32;
+  background: #f6f3ed;
+  font:
+    400 14px "Manrope",
+    sans-serif;
+}
+.calc-input[aria-invalid="true"] {
+  border-color: #913e2a;
+}
+.calc-error {
+  display: block;
+  color: #913e2a;
+  margin-top: 7px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.calc-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 10px;
+  line-height: 1.8;
+  margin: 20px 0;
+  cursor: pointer;
+}
+.calc-consent input {
+  margin: 3px 0 0;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  accent-color: #173c32;
+}
+.calc-consent a {
+  text-underline-offset: 3px;
+}
+.calc-status {
+  padding: 12px;
+  border: 1px solid #173c32;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.calc-explanation {
+  margin-top: 28px;
+  font-size: 12px;
+  line-height: 1.9;
+  color: #586052;
+}
+.calc-explanation summary {
+  cursor: pointer;
+  color: #173c32;
+  padding: 12px 0;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+.calc-explanation p {
+  margin: 0 0 10px;
+}
+.calc-page :focus-visible {
+  outline: 2px solid #173c32;
+  outline-offset: 4px;
+}
+@media (min-width: 1600px) {
+  .calc-shell {
+    width: min(1472px, calc(100% - 128px));
+  }
+}
+@media (max-width: 1024px) {
+  .calc-shell {
+    width: calc(100% - 64px);
+  }
+  .calc-layout {
+    gap: 32px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(290px, 1fr);
+  }
+  .calc-summary {
+    padding: 24px;
+  }
+  .calc-choices,
+  .calc-choices-mount {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .calc-page {
+    padding: 40px 0 60px;
+  }
+  .calc-shell {
+    width: calc(100% - 40px);
+  }
+  .calc-intro {
+    margin-bottom: 36px;
+  }
+  .calc-intro h1 {
+    font-size: 50px;
+  }
+  .calc-intro > p:last-child {
+    font-size: 13px;
+  }
+  .calc-layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .calc-summary {
+    padding: 25px;
+  }
+  .calc-choices {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .calc-choices-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .calc-choices-mount {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .calc-choice {
+    padding: 18px 10px 14px;
+  }
+  .calc-choice-mark {
+    right: 8px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+  }
+  .calc-choice-name {
+    font-size: 11px;
+  }
+  .calc-hint {
+    margin-left: 0;
+  }
+}
+@media (max-width: 359px) {
+  .calc-shell {
+    width: calc(100% - 32px);
+  }
+  .calc-intro h1 {
+    font-size: 43px;
+  }
+  .calc-choices {
+    grid-template-columns: 1fr;
+  }
+  .calc-choices-two,
+  .calc-choices-mount {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .calc-choice {
+    min-height: 76px;
+  }
+  .calc-summary {
+    padding: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .calc-choice {
+    transition: none;
+  }
+}

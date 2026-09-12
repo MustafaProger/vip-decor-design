@@ -1,0 +1,41 @@
+{
+  "finishedAt": "2026-09-12T10:52:02.621126+00:00",
+  "pages": 41,
+  "products": 477,
+  "categories": 36,
+  "gallery": 28,
+  "media": 1279,
+  "mediaBytes": 396456761,
+  "errors": [
+    {
+      "url": "https://vip2d.ru/londonskieshtori",
+      "error": "404 Client Error: Not Found for url: https://vip2d.ru/londonskieshtori",
+      "kind": "page"
+    },
+    {
+      "url": "https://vip2d.ru/ ",
+      "error": "404 Client Error: Not Found for url: https://vip2d.ru/%20",
+      "kind": "page"
+    },
+    {
+      "kind": "source-image-truncated",
+      "url": "https://static.tildacdn.com/stor3632-3838-4234-b363-363237346665/94894997.jpg",
+      "productId": "306608456632",
+      "localPath": "/source-media/72c93b610eaf23da93.jpg",
+      "error": "Source JPEG is truncated; decoder reports premature end, no JPEG EOI marker. A second GET returned identical bytes. Original retained without replacement.",
+      "sha256": "4cb4de9cd4217ac4453f9db92096f16fa638e043848c69234f0d6397ebd37b01"
+    }
+  ],
+  "uniquePublicSourceImages": 1151,
+  "optimization": {
+    "images": 1274,
+    "originalBytes": 396451993,
+    "optimizedBytes": 296320178,
+    "errors": [
+      {
+        "src": "/source-media/72c93b610eaf23da93.jpg",
+        "error": "Error: VipsJpeg: premature end of JPEG image\njpegload: load error\njpegload: load error"
+      }
+    ]
+  }
+}
