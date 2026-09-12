@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-09-12T11:13:15.413Z",
+  "checkedAt": "2026-09-12T11:44:35.314Z",
   "baseURL": "http://127.0.0.1:5180",
   "browser": "152.0.7977.83",
   "scope": {
     "sourcePageCount": 41,
     "categoryCount": 36,
-    "customRouteCount": 15,
-    "uniqueRoutes": 56,
+    "customRouteCount": 16,
+    "uniqueRoutes": 57,
     "sourcePages": [
       "/",
       "/atlas",
@@ -93,6 +93,7 @@
       "/projects",
       "/projects/quiet-living-room",
       "/studio",
+      "/company",
       "/curtains",
       "/price",
       "/contacts",
@@ -111,7 +112,7 @@
     {
       "path": "/",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:02.624Z",
+      "checkedAt": "2026-09-12T11:44:35.738Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -122,7 +123,7 @@
       "headings": [
         "Текстиль,\nкоторый\nсоздаёт дом."
       ],
-      "mainTextLength": 1073,
+      "mainTextLength": 1071,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -134,7 +135,7 @@
     {
       "path": "/",
       "width": 390,
-      "checkedAt": "2026-09-12T11:11:13.874Z",
+      "checkedAt": "2026-09-12T11:44:46.481Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -145,7 +146,7 @@
       "headings": [
         "Текстиль,\nкоторый\nсоздаёт дом."
       ],
-      "mainTextLength": 1093,
+      "mainTextLength": 1091,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -157,7 +158,7 @@
     {
       "path": "/",
       "width": 768,
-      "checkedAt": "2026-09-12T11:11:15.303Z",
+      "checkedAt": "2026-09-12T11:44:47.981Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -168,7 +169,7 @@
       "headings": [
         "Текстиль,\nкоторый\nсоздаёт дом."
       ],
-      "mainTextLength": 1100,
+      "mainTextLength": 1098,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -180,7 +181,7 @@
     {
       "path": "/",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:11:16.720Z",
+      "checkedAt": "2026-09-12T11:44:49.481Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -191,7 +192,7 @@
       "headings": [
         "Текстиль,\nкоторый\nсоздаёт дом."
       ],
-      "mainTextLength": 1129,
+      "mainTextLength": 1127,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -203,7 +204,7 @@
     {
       "path": "/",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:02.628Z",
+      "checkedAt": "2026-09-12T11:44:35.741Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -214,7 +215,7 @@
       "headings": [
         "Текстиль,\nкоторый\nсоздаёт дом."
       ],
-      "mainTextLength": 1129,
+      "mainTextLength": 1127,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -226,7 +227,7 @@
     {
       "path": "/",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:11:18.073Z",
+      "checkedAt": "2026-09-12T11:44:50.979Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -237,7 +238,7 @@
       "headings": [
         "Текстиль,\nкоторый\nсоздаёт дом."
       ],
-      "mainTextLength": 1129,
+      "mainTextLength": 1127,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -249,7 +250,7 @@
     {
       "path": "/atlas",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:02.924Z",
+      "checkedAt": "2026-09-12T11:44:36.036Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/atlas",
@@ -260,7 +261,7 @@
       "headings": [
         "Атлас"
       ],
-      "mainTextLength": 1422,
+      "mainTextLength": 1418,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -272,7 +273,7 @@
     {
       "path": "/atlas",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:02.937Z",
+      "checkedAt": "2026-09-12T11:44:36.020Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/atlas",
@@ -283,7 +284,7 @@
       "headings": [
         "Атлас"
       ],
-      "mainTextLength": 1492,
+      "mainTextLength": 1488,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -295,7 +296,7 @@
     {
       "path": "/avstriskieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:03.140Z",
+      "checkedAt": "2026-09-12T11:44:36.268Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/avstriskieshtori",
@@ -306,7 +307,7 @@
       "headings": [
         "Австрийские шторы"
       ],
-      "mainTextLength": 302,
+      "mainTextLength": 303,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -318,7 +319,7 @@
     {
       "path": "/avstriskieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:03.153Z",
+      "checkedAt": "2026-09-12T11:44:36.269Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/avstriskieshtori",
@@ -329,7 +330,7 @@
       "headings": [
         "Австрийские шторы"
       ],
-      "mainTextLength": 302,
+      "mainTextLength": 303,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -341,7 +342,7 @@
     {
       "path": "/barxat",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:03.323Z",
+      "checkedAt": "2026-09-12T11:44:36.433Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/barxat",
@@ -352,7 +353,7 @@
       "headings": [
         "Бархат"
       ],
-      "mainTextLength": 2068,
+      "mainTextLength": 2062,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -364,7 +365,7 @@
     {
       "path": "/barxat",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:03.339Z",
+      "checkedAt": "2026-09-12T11:44:36.452Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/barxat",
@@ -375,7 +376,7 @@
       "headings": [
         "Бархат"
       ],
-      "mainTextLength": 2146,
+      "mainTextLength": 2140,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -387,7 +388,7 @@
     {
       "path": "/blekayt",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:03.524Z",
+      "checkedAt": "2026-09-12T11:44:36.618Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/blekayt",
@@ -398,7 +399,7 @@
       "headings": [
         "Блэкаут"
       ],
-      "mainTextLength": 1489,
+      "mainTextLength": 1482,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -410,7 +411,7 @@
     {
       "path": "/blekayt",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:03.537Z",
+      "checkedAt": "2026-09-12T11:44:36.651Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/blekayt",
@@ -421,7 +422,7 @@
       "headings": [
         "Блэкаут"
       ],
-      "mainTextLength": 1568,
+      "mainTextLength": 1561,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -433,7 +434,7 @@
     {
       "path": "/blekaytrulonnieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:03.693Z",
+      "checkedAt": "2026-09-12T11:44:36.805Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/blekaytrulonnieshtori",
@@ -444,7 +445,7 @@
       "headings": [
         "Рулонные шторы Блэкаут"
       ],
-      "mainTextLength": 255,
+      "mainTextLength": 256,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -456,7 +457,7 @@
     {
       "path": "/blekaytrulonnieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:03.738Z",
+      "checkedAt": "2026-09-12T11:44:36.851Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/blekaytrulonnieshtori",
@@ -467,7 +468,7 @@
       "headings": [
         "Рулонные шторы Блэкаут"
       ],
-      "mainTextLength": 255,
+      "mainTextLength": 256,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -479,7 +480,7 @@
     {
       "path": "/calculator",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:12.579Z",
+      "checkedAt": "2026-09-12T11:44:45.384Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/calculator",
@@ -502,7 +503,7 @@
     {
       "path": "/calculator",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:12.772Z",
+      "checkedAt": "2026-09-12T11:44:45.348Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/calculator",
@@ -525,7 +526,7 @@
     {
       "path": "/cart",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:13.058Z",
+      "checkedAt": "2026-09-12T11:44:45.850Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/cart",
@@ -548,7 +549,7 @@
     {
       "path": "/cart",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:13.207Z",
+      "checkedAt": "2026-09-12T11:44:45.799Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/cart",
@@ -571,7 +572,7 @@
     {
       "path": "/catalog",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:11.994Z",
+      "checkedAt": "2026-09-12T11:44:44.854Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/catalog",
@@ -594,7 +595,7 @@
     {
       "path": "/catalog",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:12.172Z",
+      "checkedAt": "2026-09-12T11:44:44.817Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/catalog",
@@ -615,9 +616,147 @@
       "passed": true
     },
     {
+      "path": "/company",
+      "width": 320,
+      "checkedAt": "2026-09-12T11:44:44.032Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/company",
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Красота —\nвнимание\nк деталям."
+      ],
+      "mainTextLength": 1723,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/company",
+      "width": 390,
+      "checkedAt": "2026-09-12T11:44:47.512Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/company",
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Красота —\nвнимание\nк деталям."
+      ],
+      "mainTextLength": 1723,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/company",
+      "width": 768,
+      "checkedAt": "2026-09-12T11:44:49.017Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/company",
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Красота —\nвнимание\nк деталям."
+      ],
+      "mainTextLength": 1723,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/company",
+      "width": 1024,
+      "checkedAt": "2026-09-12T11:44:50.512Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/company",
+      "viewportWidth": 1024,
+      "documentWidth": 1024,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Красота —\nвнимание\nк деталям."
+      ],
+      "mainTextLength": 1723,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/company",
+      "width": 1440,
+      "checkedAt": "2026-09-12T11:44:44.032Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/company",
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Красота —\nвнимание\nк деталям."
+      ],
+      "mainTextLength": 1723,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/company",
+      "width": 1920,
+      "checkedAt": "2026-09-12T11:44:52.011Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/company",
+      "viewportWidth": 1920,
+      "documentWidth": 1920,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Красота —\nвнимание\nк деталям."
+      ],
+      "mainTextLength": 1723,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
       "path": "/contacts",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:11.659Z",
+      "checkedAt": "2026-09-12T11:44:44.533Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/contacts",
@@ -640,7 +779,7 @@
     {
       "path": "/contacts",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:11.822Z",
+      "checkedAt": "2026-09-12T11:44:44.515Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/contacts",
@@ -663,7 +802,7 @@
     {
       "path": "/curtains",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:11.298Z",
+      "checkedAt": "2026-09-12T11:44:44.200Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/curtains",
@@ -674,7 +813,7 @@
       "headings": [
         "Шторы, которые\nподходят\nименно вам."
       ],
-      "mainTextLength": 1377,
+      "mainTextLength": 1557,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -686,7 +825,7 @@
     {
       "path": "/curtains",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:11.455Z",
+      "checkedAt": "2026-09-12T11:44:44.181Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/curtains",
@@ -697,7 +836,7 @@
       "headings": [
         "Шторы, которые\nподходят\nименно вам."
       ],
-      "mainTextLength": 1377,
+      "mainTextLength": 1557,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -709,7 +848,7 @@
     {
       "path": "/decor",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:03.889Z",
+      "checkedAt": "2026-09-12T11:44:36.985Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/decor",
@@ -720,7 +859,7 @@
       "headings": [
         "Декор"
       ],
-      "mainTextLength": 2183,
+      "mainTextLength": 2178,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -732,7 +871,7 @@
     {
       "path": "/decor",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:03.921Z",
+      "checkedAt": "2026-09-12T11:44:37.021Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/decor",
@@ -743,7 +882,7 @@
       "headings": [
         "Декор"
       ],
-      "mainTextLength": 2242,
+      "mainTextLength": 2237,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -755,7 +894,7 @@
     {
       "path": "/derevanniekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:04.097Z",
+      "checkedAt": "2026-09-12T11:44:37.149Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/derevanniekarnizi",
@@ -778,7 +917,7 @@
     {
       "path": "/derevanniekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:04.139Z",
+      "checkedAt": "2026-09-12T11:44:37.203Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/derevanniekarnizi",
@@ -801,7 +940,7 @@
     {
       "path": "/dostavka",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:04.292Z",
+      "checkedAt": "2026-09-12T11:44:37.350Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/dostavka",
@@ -812,7 +951,7 @@
       "headings": [
         "Доставка и оплата"
       ],
-      "mainTextLength": 2415,
+      "mainTextLength": 2424,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -824,7 +963,7 @@
     {
       "path": "/dostavka",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:04.358Z",
+      "checkedAt": "2026-09-12T11:44:37.368Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/dostavka",
@@ -835,7 +974,7 @@
       "headings": [
         "Доставка и оплата"
       ],
-      "mainTextLength": 2415,
+      "mainTextLength": 2424,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -847,7 +986,7 @@
     {
       "path": "/fabrics",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:13.192Z",
+      "checkedAt": "2026-09-12T11:44:46.016Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -858,7 +997,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1601,
+      "mainTextLength": 1596,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -870,7 +1009,7 @@
     {
       "path": "/fabrics",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:13.372Z",
+      "checkedAt": "2026-09-12T11:44:45.947Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -881,7 +1020,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1868,
+      "mainTextLength": 1806,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -893,7 +1032,7 @@
     {
       "path": "/favorites",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:12.396Z",
+      "checkedAt": "2026-09-12T11:44:45.220Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/favorites",
@@ -916,7 +1055,7 @@
     {
       "path": "/favorites",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:12.572Z",
+      "checkedAt": "2026-09-12T11:44:45.198Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/favorites",
@@ -939,7 +1078,7 @@
     {
       "path": "/franzusckieshtoru",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:04.459Z",
+      "checkedAt": "2026-09-12T11:44:37.501Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/franzusckieshtoru",
@@ -950,7 +1089,7 @@
       "headings": [
         "Французские шторы"
       ],
-      "mainTextLength": 226,
+      "mainTextLength": 227,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -962,7 +1101,7 @@
     {
       "path": "/franzusckieshtoru",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:04.537Z",
+      "checkedAt": "2026-09-12T11:44:37.518Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/franzusckieshtoru",
@@ -973,7 +1112,7 @@
       "headings": [
         "Французские шторы"
       ],
-      "mainTextLength": 226,
+      "mainTextLength": 227,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -985,7 +1124,7 @@
     {
       "path": "/fyrnityra",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:04.627Z",
+      "checkedAt": "2026-09-12T11:44:37.652Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/fyrnityra",
@@ -996,7 +1135,7 @@
       "headings": [
         "Фурнитура"
       ],
-      "mainTextLength": 197,
+      "mainTextLength": 188,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1008,7 +1147,7 @@
     {
       "path": "/fyrnityra",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:04.721Z",
+      "checkedAt": "2026-09-12T11:44:37.686Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/fyrnityra",
@@ -1019,7 +1158,7 @@
       "headings": [
         "Фурнитура"
       ],
-      "mainTextLength": 197,
+      "mainTextLength": 188,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1031,7 +1170,7 @@
     {
       "path": "/gorizontalniezhaluzi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:04.790Z",
+      "checkedAt": "2026-09-12T11:44:37.818Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/gorizontalniezhaluzi",
@@ -1042,7 +1181,7 @@
       "headings": [
         "Горизонтальные жалюзи"
       ],
-      "mainTextLength": 1014,
+      "mainTextLength": 993,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1054,7 +1193,7 @@
     {
       "path": "/gorizontalniezhaluzi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:04.887Z",
+      "checkedAt": "2026-09-12T11:44:37.869Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/gorizontalniezhaluzi",
@@ -1065,7 +1204,7 @@
       "headings": [
         "Горизонтальные жалюзи"
       ],
-      "mainTextLength": 1094,
+      "mainTextLength": 1073,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1077,7 +1216,7 @@
     {
       "path": "/gotovieizdelia",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:04.976Z",
+      "checkedAt": "2026-09-12T11:44:38.002Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/gotovieizdelia",
@@ -1088,7 +1227,7 @@
       "headings": [
         "Готовые изделия"
       ],
-      "mainTextLength": 303,
+      "mainTextLength": 288,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1100,7 +1239,7 @@
     {
       "path": "/gotovieizdelia",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:05.071Z",
+      "checkedAt": "2026-09-12T11:44:38.040Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/gotovieizdelia",
@@ -1111,7 +1250,7 @@
       "headings": [
         "Готовые изделия"
       ],
-      "mainTextLength": 303,
+      "mainTextLength": 288,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1123,7 +1262,7 @@
     {
       "path": "/kakpodobrat",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:05.141Z",
+      "checkedAt": "2026-09-12T11:44:38.151Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1134,7 +1273,7 @@
       "headings": [
         "Как подобрать шторы"
       ],
-      "mainTextLength": 25947,
+      "mainTextLength": 25985,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1146,7 +1285,7 @@
     {
       "path": "/kakpodobrat",
       "width": 390,
-      "checkedAt": "2026-09-12T11:11:15.073Z",
+      "checkedAt": "2026-09-12T11:44:47.745Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1157,7 +1296,7 @@
       "headings": [
         "Как подобрать шторы"
       ],
-      "mainTextLength": 25947,
+      "mainTextLength": 25985,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1169,7 +1308,7 @@
     {
       "path": "/kakpodobrat",
       "width": 768,
-      "checkedAt": "2026-09-12T11:11:16.486Z",
+      "checkedAt": "2026-09-12T11:44:49.250Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1180,7 +1319,7 @@
       "headings": [
         "Как подобрать шторы"
       ],
-      "mainTextLength": 25947,
+      "mainTextLength": 25985,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1192,7 +1331,7 @@
     {
       "path": "/kakpodobrat",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:11:17.867Z",
+      "checkedAt": "2026-09-12T11:44:50.747Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1203,7 +1342,7 @@
       "headings": [
         "Как подобрать шторы"
       ],
-      "mainTextLength": 25947,
+      "mainTextLength": 25985,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1215,7 +1354,7 @@
     {
       "path": "/kakpodobrat",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:05.270Z",
+      "checkedAt": "2026-09-12T11:44:38.202Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1226,7 +1365,7 @@
       "headings": [
         "Как подобрать шторы"
       ],
-      "mainTextLength": 25947,
+      "mainTextLength": 25985,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1238,7 +1377,7 @@
     {
       "path": "/kakpodobrat",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:11:19.171Z",
+      "checkedAt": "2026-09-12T11:44:52.247Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1249,7 +1388,7 @@
       "headings": [
         "Как подобрать шторы"
       ],
-      "mainTextLength": 25947,
+      "mainTextLength": 25985,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1261,7 +1400,7 @@
     {
       "path": "/karnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:05.325Z",
+      "checkedAt": "2026-09-12T11:44:38.317Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/karnizi",
@@ -1272,7 +1411,7 @@
       "headings": [
         "Карнизы"
       ],
-      "mainTextLength": 1643,
+      "mainTextLength": 1636,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1284,7 +1423,7 @@
     {
       "path": "/karnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:05.438Z",
+      "checkedAt": "2026-09-12T11:44:38.368Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/karnizi",
@@ -1295,7 +1434,7 @@
       "headings": [
         "Карнизы"
       ],
-      "mainTextLength": 1775,
+      "mainTextLength": 1768,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1307,7 +1446,7 @@
     {
       "path": "/kartini",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:05.523Z",
+      "checkedAt": "2026-09-12T11:44:38.483Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kartini",
@@ -1318,7 +1457,7 @@
       "headings": [
         "Картины"
       ],
-      "mainTextLength": 2419,
+      "mainTextLength": 2411,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1330,7 +1469,7 @@
     {
       "path": "/kartini",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:05.621Z",
+      "checkedAt": "2026-09-12T11:44:38.552Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kartini",
@@ -1341,7 +1480,7 @@
       "headings": [
         "Картины"
       ],
-      "mainTextLength": 2476,
+      "mainTextLength": 2468,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1353,7 +1492,7 @@
     {
       "path": "/kisti",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:05.713Z",
+      "checkedAt": "2026-09-12T11:44:38.688Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kisti",
@@ -1364,7 +1503,7 @@
       "headings": [
         "Кисти"
       ],
-      "mainTextLength": 733,
+      "mainTextLength": 728,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1376,7 +1515,7 @@
     {
       "path": "/kisti",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:05.822Z",
+      "checkedAt": "2026-09-12T11:44:38.716Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kisti",
@@ -1387,7 +1526,7 @@
       "headings": [
         "Кисти"
       ],
-      "mainTextLength": 790,
+      "mainTextLength": 785,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1399,7 +1538,7 @@
     {
       "path": "/klasiheskieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:05.911Z",
+      "checkedAt": "2026-09-12T11:44:38.899Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/klasiheskieshtori",
@@ -1410,7 +1549,7 @@
       "headings": [
         "Классические шторы"
       ],
-      "mainTextLength": 215,
+      "mainTextLength": 197,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1422,7 +1561,7 @@
     {
       "path": "/klasiheskieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:06.005Z",
+      "checkedAt": "2026-09-12T11:44:38.921Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/klasiheskieshtori",
@@ -1433,7 +1572,7 @@
       "headings": [
         "Классические шторы"
       ],
-      "mainTextLength": 215,
+      "mainTextLength": 197,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1445,7 +1584,7 @@
     {
       "path": "/klassicheskierulonnieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:06.075Z",
+      "checkedAt": "2026-09-12T11:44:39.066Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/klassicheskierulonnieshtori",
@@ -1456,7 +1595,7 @@
       "headings": [
         "Классические рулонные шторы"
       ],
-      "mainTextLength": 342,
+      "mainTextLength": 315,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1468,7 +1607,7 @@
     {
       "path": "/klassicheskierulonnieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:06.205Z",
+      "checkedAt": "2026-09-12T11:44:39.083Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/klassicheskierulonnieshtori",
@@ -1479,7 +1618,7 @@
       "headings": [
         "Классические рулонные шторы"
       ],
-      "mainTextLength": 342,
+      "mainTextLength": 315,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1491,7 +1630,7 @@
     {
       "path": "/lnanaiatkan",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:06.259Z",
+      "checkedAt": "2026-09-12T11:44:39.217Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/lnanaiatkan",
@@ -1502,7 +1641,7 @@
       "headings": [
         "Льняная Ткань"
       ],
-      "mainTextLength": 1972,
+      "mainTextLength": 1959,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1514,7 +1653,7 @@
     {
       "path": "/lnanaiatkan",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:06.370Z",
+      "checkedAt": "2026-09-12T11:44:39.252Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/lnanaiatkan",
@@ -1525,7 +1664,7 @@
       "headings": [
         "Льняная Ткань"
       ],
-      "mainTextLength": 2074,
+      "mainTextLength": 2052,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1537,7 +1676,7 @@
     {
       "path": "/metallicheskiekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:06.459Z",
+      "checkedAt": "2026-09-12T11:44:39.404Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/metallicheskiekarnizi",
@@ -1560,7 +1699,7 @@
     {
       "path": "/metallicheskiekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:06.563Z",
+      "checkedAt": "2026-09-12T11:44:39.454Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/metallicheskiekarnizi",
@@ -1583,7 +1722,7 @@
     {
       "path": "/mikrovual",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:06.662Z",
+      "checkedAt": "2026-09-12T11:44:39.599Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/mikrovual",
@@ -1594,7 +1733,7 @@
       "headings": [
         "Микровуаль"
       ],
-      "mainTextLength": 314,
+      "mainTextLength": 315,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1606,7 +1745,7 @@
     {
       "path": "/mikrovual",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:06.738Z",
+      "checkedAt": "2026-09-12T11:44:39.633Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/mikrovual",
@@ -1617,7 +1756,7 @@
       "headings": [
         "Микровуаль"
       ],
-      "mainTextLength": 314,
+      "mainTextLength": 315,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1629,7 +1768,7 @@
     {
       "path": "/nastenniekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:06.858Z",
+      "checkedAt": "2026-09-12T11:44:39.802Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/nastenniekarnizi",
@@ -1640,7 +1779,7 @@
       "headings": [
         "Настенные карнизы"
       ],
-      "mainTextLength": 1518,
+      "mainTextLength": 1500,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1652,7 +1791,7 @@
     {
       "path": "/nastenniekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:06.939Z",
+      "checkedAt": "2026-09-12T11:44:39.798Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/nastenniekarnizi",
@@ -1663,7 +1802,7 @@
       "headings": [
         "Настенные карнизы"
       ],
-      "mainTextLength": 1613,
+      "mainTextLength": 1595,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1675,7 +1814,7 @@
     {
       "path": "/organza",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:07.094Z",
+      "checkedAt": "2026-09-12T11:44:39.985Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/organza",
@@ -1686,7 +1825,7 @@
       "headings": [
         "Органза"
       ],
-      "mainTextLength": 648,
+      "mainTextLength": 641,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1698,7 +1837,7 @@
     {
       "path": "/organza",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:07.124Z",
+      "checkedAt": "2026-09-12T11:44:39.982Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/organza",
@@ -1709,7 +1848,7 @@
       "headings": [
         "Органза"
       ],
-      "mainTextLength": 742,
+      "mainTextLength": 733,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1721,7 +1860,7 @@
     {
       "path": "/page13486315.html",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:07.257Z",
+      "checkedAt": "2026-09-12T11:44:40.168Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/page13486315.html",
@@ -1732,7 +1871,7 @@
       "headings": [
         "Доставка и оплата"
       ],
-      "mainTextLength": 2415,
+      "mainTextLength": 2424,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1744,7 +1883,7 @@
     {
       "path": "/page13486315.html",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:07.305Z",
+      "checkedAt": "2026-09-12T11:44:40.148Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/page13486315.html",
@@ -1755,7 +1894,7 @@
       "headings": [
         "Доставка и оплата"
       ],
-      "mainTextLength": 2415,
+      "mainTextLength": 2424,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1767,7 +1906,7 @@
     {
       "path": "/plastikoviekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:07.428Z",
+      "checkedAt": "2026-09-12T11:44:40.335Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/plastikoviekarnizi",
@@ -1778,7 +1917,7 @@
       "headings": [
         "Пластиковые карнизы"
       ],
-      "mainTextLength": 714,
+      "mainTextLength": 722,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1790,7 +1929,7 @@
     {
       "path": "/plastikoviekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:07.472Z",
+      "checkedAt": "2026-09-12T11:44:40.300Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/plastikoviekarnizi",
@@ -1801,7 +1940,7 @@
       "headings": [
         "Пластиковые карнизы"
       ],
-      "mainTextLength": 765,
+      "mainTextLength": 773,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1813,7 +1952,7 @@
     {
       "path": "/podyshki",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:07.624Z",
+      "checkedAt": "2026-09-12T11:44:40.502Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/podyshki",
@@ -1824,7 +1963,7 @@
       "headings": [
         "Подушки"
       ],
-      "mainTextLength": 153,
+      "mainTextLength": 147,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1836,7 +1975,7 @@
     {
       "path": "/podyshki",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:07.639Z",
+      "checkedAt": "2026-09-12T11:44:40.482Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/podyshki",
@@ -1847,7 +1986,7 @@
       "headings": [
         "Подушки"
       ],
-      "mainTextLength": 153,
+      "mainTextLength": 147,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1859,7 +1998,7 @@
     {
       "path": "/pokrivala",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:07.791Z",
+      "checkedAt": "2026-09-12T11:44:40.670Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/pokrivala",
@@ -1870,7 +2009,7 @@
       "headings": [
         "Покрывала"
       ],
-      "mainTextLength": 157,
+      "mainTextLength": 149,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1882,7 +2021,7 @@
     {
       "path": "/pokrivala",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:07.811Z",
+      "checkedAt": "2026-09-12T11:44:40.632Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/pokrivala",
@@ -1893,7 +2032,7 @@
       "headings": [
         "Покрывала"
       ],
-      "mainTextLength": 157,
+      "mainTextLength": 149,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1905,7 +2044,7 @@
     {
       "path": "/popd",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:07.957Z",
+      "checkedAt": "2026-09-12T11:44:40.835Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -1916,7 +2055,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8413,
+      "mainTextLength": 8374,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1928,7 +2067,7 @@
     {
       "path": "/popd",
       "width": 390,
-      "checkedAt": "2026-09-12T11:11:14.939Z",
+      "checkedAt": "2026-09-12T11:44:47.628Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -1939,7 +2078,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8413,
+      "mainTextLength": 8374,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1951,7 +2090,7 @@
     {
       "path": "/popd",
       "width": 768,
-      "checkedAt": "2026-09-12T11:11:16.370Z",
+      "checkedAt": "2026-09-12T11:44:49.131Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -1962,7 +2101,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8413,
+      "mainTextLength": 8374,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1974,7 +2113,7 @@
     {
       "path": "/popd",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:11:17.750Z",
+      "checkedAt": "2026-09-12T11:44:50.628Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -1985,7 +2124,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8413,
+      "mainTextLength": 8374,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1997,7 +2136,7 @@
     {
       "path": "/popd",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:07.973Z",
+      "checkedAt": "2026-09-12T11:44:40.782Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2008,7 +2147,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8413,
+      "mainTextLength": 8374,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2020,7 +2159,7 @@
     {
       "path": "/popd",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:11:19.054Z",
+      "checkedAt": "2026-09-12T11:44:52.129Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2031,7 +2170,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8413,
+      "mainTextLength": 8374,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2043,7 +2182,7 @@
     {
       "path": "/potolochniekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:08.124Z",
+      "checkedAt": "2026-09-12T11:44:40.984Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/potolochniekarnizi",
@@ -2054,7 +2193,7 @@
       "headings": [
         "Потолочные карнизы"
       ],
-      "mainTextLength": 1664,
+      "mainTextLength": 1645,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2066,7 +2205,7 @@
     {
       "path": "/potolochniekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:08.139Z",
+      "checkedAt": "2026-09-12T11:44:40.931Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/potolochniekarnizi",
@@ -2077,7 +2216,7 @@
       "headings": [
         "Потолочные карнизы"
       ],
-      "mainTextLength": 1764,
+      "mainTextLength": 1745,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2089,7 +2228,7 @@
     {
       "path": "/price",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:11.481Z",
+      "checkedAt": "2026-09-12T11:44:44.369Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/price",
@@ -2100,7 +2239,7 @@
       "headings": [
         "Цена каждой детали."
       ],
-      "mainTextLength": 424,
+      "mainTextLength": 427,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2112,7 +2251,7 @@
     {
       "path": "/price",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:11.623Z",
+      "checkedAt": "2026-09-12T11:44:44.365Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/price",
@@ -2123,7 +2262,7 @@
       "headings": [
         "Цена каждой детали."
       ],
-      "mainTextLength": 424,
+      "mainTextLength": 427,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2135,7 +2274,7 @@
     {
       "path": "/privacy",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:13.376Z",
+      "checkedAt": "2026-09-12T11:44:46.200Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2146,7 +2285,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8413,
+      "mainTextLength": 8374,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2158,7 +2297,7 @@
     {
       "path": "/privacy",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:13.579Z",
+      "checkedAt": "2026-09-12T11:44:46.132Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2169,7 +2308,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8413,
+      "mainTextLength": 8374,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2181,7 +2320,7 @@
     {
       "path": "/projects",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:10.808Z",
+      "checkedAt": "2026-09-12T11:44:43.519Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2192,7 +2331,7 @@
       "headings": [
         "У каждого дома\nсвой характер."
       ],
-      "mainTextLength": 616,
+      "mainTextLength": 827,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2204,7 +2343,7 @@
     {
       "path": "/projects",
       "width": 390,
-      "checkedAt": "2026-09-12T11:11:14.673Z",
+      "checkedAt": "2026-09-12T11:44:47.245Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2215,7 +2354,7 @@
       "headings": [
         "У каждого дома\nсвой характер."
       ],
-      "mainTextLength": 616,
+      "mainTextLength": 827,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2227,7 +2366,7 @@
     {
       "path": "/projects",
       "width": 768,
-      "checkedAt": "2026-09-12T11:11:16.103Z",
+      "checkedAt": "2026-09-12T11:44:48.749Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2238,7 +2377,7 @@
       "headings": [
         "У каждого дома\nсвой характер."
       ],
-      "mainTextLength": 616,
+      "mainTextLength": 827,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2250,7 +2389,7 @@
     {
       "path": "/projects",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:11:17.499Z",
+      "checkedAt": "2026-09-12T11:44:50.247Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2261,7 +2400,7 @@
       "headings": [
         "У каждого дома\nсвой характер."
       ],
-      "mainTextLength": 616,
+      "mainTextLength": 827,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2273,7 +2412,7 @@
     {
       "path": "/projects",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:10.938Z",
+      "checkedAt": "2026-09-12T11:44:43.498Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2284,7 +2423,7 @@
       "headings": [
         "У каждого дома\nсвой характер."
       ],
-      "mainTextLength": 616,
+      "mainTextLength": 827,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2296,7 +2435,7 @@
     {
       "path": "/projects",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:11:18.804Z",
+      "checkedAt": "2026-09-12T11:44:51.730Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2307,7 +2446,7 @@
       "headings": [
         "У каждого дома\nсвой характер."
       ],
-      "mainTextLength": 616,
+      "mainTextLength": 827,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2319,7 +2458,7 @@
     {
       "path": "/projects/quiet-living-room",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:10.961Z",
+      "checkedAt": "2026-09-12T11:44:43.685Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects/quiet-living-room",
@@ -2342,7 +2481,7 @@
     {
       "path": "/projects/quiet-living-room",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:11.122Z",
+      "checkedAt": "2026-09-12T11:44:43.682Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects/quiet-living-room",
@@ -2365,7 +2504,7 @@
     {
       "path": "/rimskieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:08.294Z",
+      "checkedAt": "2026-09-12T11:44:41.152Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/rimskieshtori",
@@ -2376,7 +2515,7 @@
       "headings": [
         "Римские шторы"
       ],
-      "mainTextLength": 257,
+      "mainTextLength": 244,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2388,7 +2527,7 @@
     {
       "path": "/rimskieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:08.338Z",
+      "checkedAt": "2026-09-12T11:44:41.098Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/rimskieshtori",
@@ -2399,7 +2538,7 @@
       "headings": [
         "Римские шторы"
       ],
-      "mainTextLength": 257,
+      "mainTextLength": 244,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2411,7 +2550,7 @@
     {
       "path": "/rulonnieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:08.476Z",
+      "checkedAt": "2026-09-12T11:44:41.301Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/rulonnieshtori",
@@ -2422,7 +2561,7 @@
       "headings": [
         "Рулонные шторы"
       ],
-      "mainTextLength": 1778,
+      "mainTextLength": 1764,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2434,7 +2573,7 @@
     {
       "path": "/rulonnieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:08.525Z",
+      "checkedAt": "2026-09-12T11:44:41.249Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/rulonnieshtori",
@@ -2445,7 +2584,7 @@
       "headings": [
         "Рулонные шторы"
       ],
-      "mainTextLength": 1845,
+      "mainTextLength": 1831,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2457,7 +2596,7 @@
     {
       "path": "/selection",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:10.330Z",
+      "checkedAt": "2026-09-12T11:44:43.066Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2480,7 +2619,7 @@
     {
       "path": "/selection",
       "width": 390,
-      "checkedAt": "2026-09-12T11:11:14.240Z",
+      "checkedAt": "2026-09-12T11:44:46.811Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2503,7 +2642,7 @@
     {
       "path": "/selection",
       "width": 768,
-      "checkedAt": "2026-09-12T11:11:15.669Z",
+      "checkedAt": "2026-09-12T11:44:48.316Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2526,7 +2665,7 @@
     {
       "path": "/selection",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:11:17.067Z",
+      "checkedAt": "2026-09-12T11:44:49.813Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2549,7 +2688,7 @@
     {
       "path": "/selection",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:10.506Z",
+      "checkedAt": "2026-09-12T11:44:43.015Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2572,7 +2711,7 @@
     {
       "path": "/selection",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:11:18.388Z",
+      "checkedAt": "2026-09-12T11:44:51.314Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2595,7 +2734,7 @@
     {
       "path": "/shnypki",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:08.642Z",
+      "checkedAt": "2026-09-12T11:44:41.484Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/shnypki",
@@ -2606,7 +2745,7 @@
       "headings": [
         "Шнуры"
       ],
-      "mainTextLength": 217,
+      "mainTextLength": 218,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2618,7 +2757,7 @@
     {
       "path": "/shnypki",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:08.728Z",
+      "checkedAt": "2026-09-12T11:44:41.432Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/shnypki",
@@ -2629,7 +2768,7 @@
       "headings": [
         "Шнуры"
       ],
-      "mainTextLength": 217,
+      "mainTextLength": 218,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2641,7 +2780,7 @@
     {
       "path": "/shop",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:12.199Z",
+      "checkedAt": "2026-09-12T11:44:45.037Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/shop",
@@ -2664,7 +2803,7 @@
     {
       "path": "/shop",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:12.356Z",
+      "checkedAt": "2026-09-12T11:44:45.015Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/shop",
@@ -2675,7 +2814,7 @@
       "headings": [
         "Детали вашего интерьера."
       ],
-      "mainTextLength": 1815,
+      "mainTextLength": 1758,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2687,7 +2826,7 @@
     {
       "path": "/sitemap",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:11.827Z",
+      "checkedAt": "2026-09-12T11:44:44.683Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/sitemap",
@@ -2698,7 +2837,7 @@
       "headings": [
         "Всё, что вам нужно."
       ],
-      "mainTextLength": 676,
+      "mainTextLength": 678,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2710,7 +2849,7 @@
     {
       "path": "/sitemap",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:11.988Z",
+      "checkedAt": "2026-09-12T11:44:44.665Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/sitemap",
@@ -2721,7 +2860,7 @@
       "headings": [
         "Всё, что вам нужно."
       ],
-      "mainTextLength": 676,
+      "mainTextLength": 678,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2733,10 +2872,10 @@
     {
       "path": "/studio",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:11.128Z",
+      "checkedAt": "2026-09-12T11:44:43.849Z",
       "errors": [],
       "httpStatus": 200,
-      "resolvedPath": "/studio",
+      "resolvedPath": "/company",
       "viewportWidth": 320,
       "documentWidth": 320,
       "overflow": false,
@@ -2744,7 +2883,7 @@
       "headings": [
         "Красота —\nвнимание\nк деталям."
       ],
-      "mainTextLength": 2021,
+      "mainTextLength": 1723,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2756,10 +2895,10 @@
     {
       "path": "/studio",
       "width": 390,
-      "checkedAt": "2026-09-12T11:11:14.807Z",
+      "checkedAt": "2026-09-12T11:44:47.378Z",
       "errors": [],
       "httpStatus": 200,
-      "resolvedPath": "/studio",
+      "resolvedPath": "/company",
       "viewportWidth": 390,
       "documentWidth": 390,
       "overflow": false,
@@ -2767,7 +2906,7 @@
       "headings": [
         "Красота —\nвнимание\nк деталям."
       ],
-      "mainTextLength": 2021,
+      "mainTextLength": 1723,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2779,10 +2918,10 @@
     {
       "path": "/studio",
       "width": 768,
-      "checkedAt": "2026-09-12T11:11:16.237Z",
+      "checkedAt": "2026-09-12T11:44:48.883Z",
       "errors": [],
       "httpStatus": 200,
-      "resolvedPath": "/studio",
+      "resolvedPath": "/company",
       "viewportWidth": 768,
       "documentWidth": 768,
       "overflow": false,
@@ -2790,7 +2929,7 @@
       "headings": [
         "Красота —\nвнимание\nк деталям."
       ],
-      "mainTextLength": 2021,
+      "mainTextLength": 1723,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2802,10 +2941,10 @@
     {
       "path": "/studio",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:11:17.634Z",
+      "checkedAt": "2026-09-12T11:44:50.379Z",
       "errors": [],
       "httpStatus": 200,
-      "resolvedPath": "/studio",
+      "resolvedPath": "/company",
       "viewportWidth": 1024,
       "documentWidth": 1024,
       "overflow": false,
@@ -2813,7 +2952,7 @@
       "headings": [
         "Красота —\nвнимание\nк деталям."
       ],
-      "mainTextLength": 2021,
+      "mainTextLength": 1723,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2825,10 +2964,10 @@
     {
       "path": "/studio",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:11.289Z",
+      "checkedAt": "2026-09-12T11:44:43.849Z",
       "errors": [],
       "httpStatus": 200,
-      "resolvedPath": "/studio",
+      "resolvedPath": "/company",
       "viewportWidth": 1440,
       "documentWidth": 1440,
       "overflow": false,
@@ -2836,7 +2975,7 @@
       "headings": [
         "Красота —\nвнимание\nк деталям."
       ],
-      "mainTextLength": 2021,
+      "mainTextLength": 1723,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2848,10 +2987,10 @@
     {
       "path": "/studio",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:11:18.938Z",
+      "checkedAt": "2026-09-12T11:44:51.879Z",
       "errors": [],
       "httpStatus": 200,
-      "resolvedPath": "/studio",
+      "resolvedPath": "/company",
       "viewportWidth": 1920,
       "documentWidth": 1920,
       "overflow": false,
@@ -2859,7 +2998,7 @@
       "headings": [
         "Красота —\nвнимание\nк деталям."
       ],
-      "mainTextLength": 2021,
+      "mainTextLength": 1723,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2871,7 +3010,7 @@
     {
       "path": "/tkani",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:08.808Z",
+      "checkedAt": "2026-09-12T11:44:41.670Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -2882,7 +3021,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1601,
+      "mainTextLength": 1596,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2894,7 +3033,7 @@
     {
       "path": "/tkani",
       "width": 390,
-      "checkedAt": "2026-09-12T11:11:14.077Z",
+      "checkedAt": "2026-09-12T11:44:46.661Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -2905,7 +3044,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1601,
+      "mainTextLength": 1596,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2917,7 +3056,7 @@
     {
       "path": "/tkani",
       "width": 768,
-      "checkedAt": "2026-09-12T11:11:15.503Z",
+      "checkedAt": "2026-09-12T11:44:48.167Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -2928,7 +3067,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1601,
+      "mainTextLength": 1596,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2940,7 +3079,7 @@
     {
       "path": "/tkani",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:11:16.900Z",
+      "checkedAt": "2026-09-12T11:44:49.662Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -2951,7 +3090,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1868,
+      "mainTextLength": 1806,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2963,7 +3102,7 @@
     {
       "path": "/tkani",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:08.905Z",
+      "checkedAt": "2026-09-12T11:44:41.599Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -2974,7 +3113,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1868,
+      "mainTextLength": 1806,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2986,7 +3125,7 @@
     {
       "path": "/tkani",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:11:18.255Z",
+      "checkedAt": "2026-09-12T11:44:51.162Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -2997,7 +3136,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1868,
+      "mainTextLength": 1806,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3009,7 +3148,7 @@
     {
       "path": "/tulizlna",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:08.992Z",
+      "checkedAt": "2026-09-12T11:44:41.852Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tulizlna",
@@ -3020,7 +3159,7 @@
       "headings": [
         "Тюль из льна"
       ],
-      "mainTextLength": 455,
+      "mainTextLength": 443,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3032,7 +3171,7 @@
     {
       "path": "/tulizlna",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:09.095Z",
+      "checkedAt": "2026-09-12T11:44:41.765Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tulizlna",
@@ -3043,7 +3182,7 @@
       "headings": [
         "Тюль из льна"
       ],
-      "mainTextLength": 455,
+      "mainTextLength": 443,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3055,7 +3194,7 @@
     {
       "path": "/tulsetka",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:09.165Z",
+      "checkedAt": "2026-09-12T11:44:42.026Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tulsetka",
@@ -3066,7 +3205,7 @@
       "headings": [
         "Тюль сетка"
       ],
-      "mainTextLength": 1628,
+      "mainTextLength": 1618,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3078,7 +3217,7 @@
     {
       "path": "/tulsetka",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:09.288Z",
+      "checkedAt": "2026-09-12T11:44:41.935Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tulsetka",
@@ -3089,7 +3228,7 @@
       "headings": [
         "Тюль сетка"
       ],
-      "mainTextLength": 1708,
+      "mainTextLength": 1698,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3101,7 +3240,7 @@
     {
       "path": "/tyl",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:09.381Z",
+      "checkedAt": "2026-09-12T11:44:42.199Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tyl",
@@ -3112,7 +3251,7 @@
       "headings": [
         "Тюль"
       ],
-      "mainTextLength": 1740,
+      "mainTextLength": 1736,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3124,7 +3263,7 @@
     {
       "path": "/tyl",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:09.493Z",
+      "checkedAt": "2026-09-12T11:44:42.131Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tyl",
@@ -3135,7 +3274,7 @@
       "headings": [
         "Тюль"
       ],
-      "mainTextLength": 1901,
+      "mainTextLength": 1887,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3147,7 +3286,7 @@
     {
       "path": "/vertikalniezhaluzi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:11:09.579Z",
+      "checkedAt": "2026-09-12T11:44:42.370Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/vertikalniezhaluzi",
@@ -3158,7 +3297,7 @@
       "headings": [
         "Вертикальные жалюзи"
       ],
-      "mainTextLength": 1001,
+      "mainTextLength": 1009,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3170,7 +3309,7 @@
     {
       "path": "/vertikalniezhaluzi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:11:09.689Z",
+      "checkedAt": "2026-09-12T11:44:42.316Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/vertikalniezhaluzi",
@@ -3180,146 +3319,146 @@
       "h1Count": 1,
       "headings": [
         "Вертикальные жалюзи"
+      ],
+      "mainTextLength": 1060,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/vual",
+      "width": 320,
+      "checkedAt": "2026-09-12T11:44:42.518Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/vual",
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Вуаль"
+      ],
+      "mainTextLength": 599,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/vual",
+      "width": 1440,
+      "checkedAt": "2026-09-12T11:44:42.514Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/vual",
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Вуаль"
+      ],
+      "mainTextLength": 679,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/zhakkard",
+      "width": 320,
+      "checkedAt": "2026-09-12T11:44:42.701Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/zhakkard",
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Жаккард"
+      ],
+      "mainTextLength": 1842,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/zhakkard",
+      "width": 1440,
+      "checkedAt": "2026-09-12T11:44:42.681Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/zhakkard",
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Жаккард"
+      ],
+      "mainTextLength": 1934,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/zhaluzi",
+      "width": 320,
+      "checkedAt": "2026-09-12T11:44:42.901Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/zhaluzi",
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Жалюзи"
+      ],
+      "mainTextLength": 979,
+      "notFound": false,
+      "imageFallbackCount": 0,
+      "overflowElements": [],
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "failedResources": [],
+      "passed": true
+    },
+    {
+      "path": "/zhaluzi",
+      "width": 1440,
+      "checkedAt": "2026-09-12T11:44:42.852Z",
+      "errors": [],
+      "httpStatus": 200,
+      "resolvedPath": "/zhaluzi",
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "overflow": false,
+      "h1Count": 1,
+      "headings": [
+        "Жалюзи"
       ],
       "mainTextLength": 1052,
-      "notFound": false,
-      "imageFallbackCount": 0,
-      "overflowElements": [],
-      "runtimeErrors": [],
-      "consoleErrors": [],
-      "failedResources": [],
-      "passed": true
-    },
-    {
-      "path": "/vual",
-      "width": 320,
-      "checkedAt": "2026-09-12T11:11:09.758Z",
-      "errors": [],
-      "httpStatus": 200,
-      "resolvedPath": "/vual",
-      "viewportWidth": 320,
-      "documentWidth": 320,
-      "overflow": false,
-      "h1Count": 1,
-      "headings": [
-        "Вуаль"
-      ],
-      "mainTextLength": 605,
-      "notFound": false,
-      "imageFallbackCount": 0,
-      "overflowElements": [],
-      "runtimeErrors": [],
-      "consoleErrors": [],
-      "failedResources": [],
-      "passed": true
-    },
-    {
-      "path": "/vual",
-      "width": 1440,
-      "checkedAt": "2026-09-12T11:11:09.894Z",
-      "errors": [],
-      "httpStatus": 200,
-      "resolvedPath": "/vual",
-      "viewportWidth": 1440,
-      "documentWidth": 1440,
-      "overflow": false,
-      "h1Count": 1,
-      "headings": [
-        "Вуаль"
-      ],
-      "mainTextLength": 685,
-      "notFound": false,
-      "imageFallbackCount": 0,
-      "overflowElements": [],
-      "runtimeErrors": [],
-      "consoleErrors": [],
-      "failedResources": [],
-      "passed": true
-    },
-    {
-      "path": "/zhakkard",
-      "width": 320,
-      "checkedAt": "2026-09-12T11:11:09.925Z",
-      "errors": [],
-      "httpStatus": 200,
-      "resolvedPath": "/zhakkard",
-      "viewportWidth": 320,
-      "documentWidth": 320,
-      "overflow": false,
-      "h1Count": 1,
-      "headings": [
-        "Жаккард"
-      ],
-      "mainTextLength": 1848,
-      "notFound": false,
-      "imageFallbackCount": 0,
-      "overflowElements": [],
-      "runtimeErrors": [],
-      "consoleErrors": [],
-      "failedResources": [],
-      "passed": true
-    },
-    {
-      "path": "/zhakkard",
-      "width": 1440,
-      "checkedAt": "2026-09-12T11:11:10.074Z",
-      "errors": [],
-      "httpStatus": 200,
-      "resolvedPath": "/zhakkard",
-      "viewportWidth": 1440,
-      "documentWidth": 1440,
-      "overflow": false,
-      "h1Count": 1,
-      "headings": [
-        "Жаккард"
-      ],
-      "mainTextLength": 1948,
-      "notFound": false,
-      "imageFallbackCount": 0,
-      "overflowElements": [],
-      "runtimeErrors": [],
-      "consoleErrors": [],
-      "failedResources": [],
-      "passed": true
-    },
-    {
-      "path": "/zhaluzi",
-      "width": 320,
-      "checkedAt": "2026-09-12T11:11:10.108Z",
-      "errors": [],
-      "httpStatus": 200,
-      "resolvedPath": "/zhaluzi",
-      "viewportWidth": 320,
-      "documentWidth": 320,
-      "overflow": false,
-      "h1Count": 1,
-      "headings": [
-        "Жалюзи"
-      ],
-      "mainTextLength": 986,
-      "notFound": false,
-      "imageFallbackCount": 0,
-      "overflowElements": [],
-      "runtimeErrors": [],
-      "consoleErrors": [],
-      "failedResources": [],
-      "passed": true
-    },
-    {
-      "path": "/zhaluzi",
-      "width": 1440,
-      "checkedAt": "2026-09-12T11:11:10.322Z",
-      "errors": [],
-      "httpStatus": 200,
-      "resolvedPath": "/zhaluzi",
-      "viewportWidth": 1440,
-      "documentWidth": 1440,
-      "overflow": false,
-      "h1Count": 1,
-      "headings": [
-        "Жалюзи"
-      ],
-      "mainTextLength": 1059,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3359,7 +3498,14 @@
       "incompleteCount": 1
     },
     {
-      "path": "/studio",
+      "path": "/company",
+      "width": 320,
+      "passed": true,
+      "violations": [],
+      "incompleteCount": 2
+    },
+    {
+      "path": "/curtains",
       "width": 320,
       "passed": true,
       "violations": [],
@@ -3401,7 +3547,14 @@
       "incompleteCount": 1
     },
     {
-      "path": "/studio",
+      "path": "/company",
+      "width": 1440,
+      "passed": true,
+      "violations": [],
+      "incompleteCount": 2
+    },
+    {
+      "path": "/curtains",
       "width": 1440,
       "passed": true,
       "violations": [],
@@ -3641,13 +3794,13 @@
               "left": 64,
               "right": 734.9375,
               "top": -251.96875,
-              "bottom": 487.34375
+              "bottom": 507.734375
             },
             "questions": {
               "left": 776.9375,
               "right": 1376,
               "top": -251.96875,
-              "bottom": 487.34375
+              "bottom": 507.734375
             },
             "documentWidth": 1440
           },
@@ -3680,11 +3833,10 @@
     "Favorites and filters use an isolated, temporary browser profile; user browser data is untouched.",
     "Automated accessibility checks do not replace manual screen reader and visual review."
   ],
-  "reusedPageChecksFrom": "2026-09-12T11:11:02.041Z",
   "summary": {
-    "routeChecks": 140,
+    "routeChecks": 146,
     "failedRouteChecks": 0,
-    "accessibilityScans": 12,
+    "accessibilityScans": 14,
     "failedAccessibilityScans": 0,
     "accessibilityViolationTypes": [],
     "scenarios": 5,

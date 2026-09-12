@@ -1,3 +1,5 @@
+import { motion, useReducedMotion } from "framer-motion";
+import { Reveal, MotionLink, ease } from "../components/Motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { useStore } from "../lib/store";
@@ -21,6 +23,7 @@ const steps = [
 ];
 export default function Home() {
   const { data } = useStore();
+  const reduced = useReducedMotion();
   const directions = [
     {
       title: "Портьерные ткани",
@@ -45,8 +48,13 @@ export default function Home() {
   return (
     <>
       <section className="hero" aria-labelledby="home-title">
-        <div className="hero-copy">
-          <p className="eyebrow">АТЕЛЬЕ ИНТЕРЬЕРНОГО ТЕКСТИЛЯ</p>
+        <motion.div
+          className="hero-copy"
+          initial={reduced ? false : { opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reduced ? 0 : 0.9, ease }}
+        >
+          <p className="eyebrow">ИНТЕРЬЕРНЫЙ ТЕКСТИЛЬ НА ЗАКАЗ</p>
           <h1 id="home-title">
             Текстиль,
             <br />
@@ -62,16 +70,25 @@ export default function Home() {
             </span>
             <span className="mobile-copy">От идеи до красивой драпировки.</span>
           </p>
-          <Link className="button hero-cta" to="/selection">
+          <MotionLink
+            whileTap={reduced ? undefined : { scale: 0.97 }}
+            className="button hero-cta"
+            to="/selection"
+          >
             Подобрать шторы
             <ArrowUpRight size={22} />
-          </Link>
+          </MotionLink>
           <Link className="hero-secondary" to="/projects">
             Смотреть проекты
           </Link>
           <p className="hero-location">МОСКВА · СОБСТВЕННЫЙ ПОШИВ</p>
-        </div>
-        <figure className="hero-image">
+        </motion.div>
+        <motion.figure
+          className="hero-image"
+          initial={reduced ? false : { opacity: 0, scale: 1.035 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: reduced ? 0 : 1.15, ease }}
+        >
           <Picture
             src="/images/concept-living.webp"
             alt="Натуральные льняные шторы и лёгкий тюль в залитой солнцем гостиной — концепция интерьера"
@@ -81,7 +98,7 @@ export default function Home() {
             <span>КОНЦЕПЦИЯ ИНТЕРЬЕРА</span>
             <span>ФАКТУРА. СВЕТ. ТИШИНА.</span>
           </figcaption>
-        </figure>
+        </motion.figure>
       </section>
       <div className="process-strip">
         <div className="container">
@@ -94,7 +111,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <section className="section container">
+      <Reveal className="section container">
         <p className="eyebrow">КОЛЛЕКЦИЯ РЕШЕНИЙ</p>
         <div className="section-heading">
           <h2>
@@ -133,8 +150,8 @@ export default function Home() {
           </p>
           <ArrowLink to="/catalog">Все направления</ArrowLink>
         </div>
-      </section>
-      <section className="section project-section">
+      </Reveal>
+      <Reveal className="section project-section">
         <div className="container">
           <div className="section-heading two-sided">
             <div>
@@ -167,12 +184,12 @@ export default function Home() {
                   src={data.gallery[0].src}
                   alt={
                     data.gallery[0].alt ||
-                    "Текстильное оформление из галереи студии"
+                    "Текстильное оформление из галереи наших работ"
                   }
                 />
                 <div>
                   <div>
-                    <p className="eyebrow">ГАЛЕРЕЯ СТУДИИ</p>
+                    <p className="eyebrow">НАШИ РАБОТЫ</p>
                     <h3>Текстиль в интерьере</h3>
                   </div>
                   <ArrowUpRight size={24} />
@@ -181,8 +198,8 @@ export default function Home() {
             )}
           </div>
         </div>
-      </section>
-      <section className="section container tactile-section">
+      </Reveal>
+      <Reveal className="section container tactile-section">
         <div className="tactile-photos">
           {data.products
             .filter(
@@ -205,8 +222,8 @@ export default function Home() {
           </p>
           <ArrowLink to="/tkani">Смотреть ткани</ArrowLink>
         </div>
-      </section>
-      <section className="section container how-section">
+      </Reveal>
+      <Reveal className="section container how-section">
         <p className="eyebrow">ВНИМАНИЕ К КАЖДОЙ ДЕТАЛИ</p>
         <h2>
           От первого разговора
@@ -223,7 +240,7 @@ export default function Home() {
           ))}
         </div>
         <ArrowLink to="/calculator">Рассчитать стоимость штор</ArrowLink>
-      </section>
+      </Reveal>
     </>
   );
 }

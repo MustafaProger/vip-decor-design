@@ -1,0 +1,356 @@
+.company-page {
+  padding-bottom: 100px;
+}
+.service-section {
+  margin-top: clamp(64px, 7vw, 110px);
+}
+.service-heading {
+  max-width: 860px;
+  margin-bottom: 36px;
+}
+.service-heading > p:last-child:not(.eyebrow) {
+  max-width: 580px;
+  margin: 22px 0 0;
+  color: var(--muted);
+}
+.company-intro {
+  gap: 9%;
+  margin-bottom: 65px;
+}
+.company-intro h1 {
+  font-size: clamp(60px, 6.4vw, 94px);
+}
+.company-portrait {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+.company-portrait > :is(img, .picture-crop) {
+  width: 100%;
+  height: 620px;
+  display: block;
+  object-fit: cover;
+}
+.portrait-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 52px 25px 22px;
+  color: #fff;
+  background: linear-gradient(transparent, #102d25bd);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.company-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 32px 0;
+  border-block: 1px solid var(--line);
+}
+.company-facts > div {
+  padding: 4px 32px;
+  border-right: 1px solid var(--line);
+}
+.company-facts > div:first-child {
+  padding-left: 0;
+}
+.company-facts > div:last-child {
+  border: 0;
+}
+.company-facts strong {
+  display: block;
+  font:
+    400 clamp(42px, 4.4vw, 64px)/1.1 "Cormorant Garamond",
+    serif;
+  letter-spacing: -0.04em;
+  margin-bottom: 9px;
+}
+.company-facts span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.company-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+}
+.company-story .story-lead {
+  font-size: 22px;
+  line-height: 1.65;
+  color: var(--forest);
+}
+.company-story p:not(.eyebrow) {
+  max-width: 620px;
+  color: var(--muted);
+}
+.company-story .text-link {
+  margin-top: 12px;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.benefit-card {
+  padding: 30px 24px;
+  border: 1px solid var(--line);
+  background: #efebe3;
+  display: flex;
+  flex-direction: column;
+}
+.benefit-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.benefit-top span {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+}
+.benefit-card h3 {
+  font-size: 32px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.benefit-card p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+.benefit-detail {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  line-height: 1.7;
+}
+.measurement-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 8%;
+  align-items: center;
+  padding: clamp(28px, 4.5vw, 66px);
+  margin-top: 90px;
+  background: #e8e5da;
+  position: relative;
+  border-top: 1px solid #a4ad98;
+}
+.measurement-card h2 {
+  font-size: clamp(38px, 4vw, 56px);
+  margin-bottom: 22px;
+}
+.measurement-card p:not(.eyebrow) {
+  max-width: 580px;
+  font-size: 14px;
+}
+.measurement-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  justify-self: end;
+}
+.measurement-actions .text-link {
+  font-size: 12px;
+  gap: 15px;
+}
+.offer-details {
+  max-width: 550px;
+  font-size: 12px;
+}
+.offer-details summary {
+  cursor: pointer;
+  padding: 8px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.offer-details p {
+  margin-top: 12px;
+  font-size: 12px !important;
+}
+.curtain-collection .curtain-types {
+  margin: 0;
+}
+.curtain-types a {
+  display: block;
+}
+.curtain-types h2 {
+  font-size: clamp(23px, 2.1vw, 31px);
+}
+.curtain-types :is(img, .picture-crop) {
+  height: 330px;
+}
+.order-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+}
+.order-steps > div {
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
+.order-steps h3 {
+  margin: 25px 0 18px;
+  font-size: 32px;
+}
+.order-steps p {
+  font-size: 14px;
+  max-width: 340px;
+  color: var(--muted);
+}
+.information-page .original-content {
+  max-width: 780px;
+  margin: 45px auto;
+  line-height: 1.85;
+}
+.original-content .original-block {
+  padding: 28px 0;
+}
+.original-content .original-block:empty {
+  display: none;
+}
+.original-content p {
+  margin: 0 0 20px;
+  white-space: normal;
+}
+.original-content .source-text > :last-child {
+  margin-bottom: 0;
+}
+.original-content .source-text > div + div {
+  margin-top: 0;
+}
+.original-content .source-link {
+  display: inline-flex;
+  margin: 12px 0;
+}
+.original-content h2 {
+  font-size: clamp(30px, 3vw, 44px);
+}
+.original-content :is(h2, h3, h4) + p {
+  margin-top: 20px;
+}
+@media (max-width: 1100px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .company-portrait > :is(img, .picture-crop) {
+    height: 540px;
+  }
+  .company-facts > div {
+    padding-inline: 20px;
+  }
+  .curtain-types :is(img, .picture-crop) {
+    height: 260px;
+  }
+}
+@media (max-width: 800px) {
+  .company-intro {
+    gap: 5%;
+  }
+  .company-intro h1 {
+    font-size: 58px;
+  }
+  .company-story {
+    gap: 40px;
+    grid-template-columns: 1fr;
+  }
+  .company-story .story-lead {
+    font-size: 20px;
+  }
+  .company-portrait > :is(img, .picture-crop) {
+    height: 450px;
+  }
+  .company-facts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 0;
+  }
+  .company-facts > div:nth-child(odd) {
+    padding-left: 0;
+  }
+  .company-facts > div:nth-child(even) {
+    border-right: 0;
+  }
+  .measurement-card {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 64px;
+  }
+  .measurement-actions {
+    justify-self: start;
+  }
+  .order-steps {
+    gap: 24px;
+  }
+  .order-steps h3 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 560px) {
+  .company-page {
+    padding-bottom: 60px;
+  }
+  .company-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 36px;
+    margin-bottom: 36px;
+  }
+  .company-intro h1 {
+    font-size: 58px;
+  }
+  .company-portrait > :is(img, .picture-crop) {
+    height: 410px;
+  }
+  .company-facts {
+    padding-block: 24px;
+  }
+  .company-facts strong {
+    font-size: 42px;
+  }
+  .company-facts span {
+    font-size: 11px;
+  }
+  .service-heading {
+    margin-bottom: 28px;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .benefit-card {
+    padding: 24px;
+  }
+  .benefit-top {
+    margin-bottom: 24px;
+  }
+  .benefit-card p {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+  .order-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .order-steps h3 {
+    margin: 15px 0 12px;
+  }
+  .measurement-card {
+    padding: 28px 22px;
+  }
+  .measurement-actions,
+  .measurement-actions .button {
+    width: 100%;
+  }
+  .measurement-actions .text-link {
+    gap: 10px;
+    font-size: 11px;
+  }
+  .curtain-types :is(img, .picture-crop) {
+    height: 220px;
+  }
+}

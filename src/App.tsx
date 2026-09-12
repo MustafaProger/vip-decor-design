@@ -7,6 +7,8 @@ import {
   type ReactNode,
 } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
+import { PageEntrance } from "./components/Motion";
 import { StoreProvider } from "./lib/store";
 import { localHref, type SiteContent } from "./lib/content";
 import { Header, Footer } from "./components/SiteChrome";
@@ -15,7 +17,7 @@ import Home from "./pages/Home";
 import Catalog, { Directions } from "./pages/Catalog";
 import Projects, { ConceptProject } from "./pages/Projects";
 import Information, {
-  Studio,
+  Company,
   Curtains,
   Price,
   Contacts,
@@ -56,7 +58,7 @@ function RouteContent({
         (data.pages
           .find((p) => p.path === "/")
           ?.blocks?.some((b) => "#" + b.id === hash)
-          ? "/studio" + hash
+          ? "/company" + hash
           : null);
       if (target) {
         navigate(target, { replace: true });
@@ -85,7 +87,9 @@ function RouteContent({
       "/calculator": "Калькулятор стоимости",
       "/favorites": "Избранное",
       "/cart": "Корзина",
-      "/studio": "О студии",
+      "/company": "О компании",
+      "/curtains": "Шторы на заказ",
+      "/price": "Цены на пошив",
       "/contacts": "Контакты",
       "/catalog": "Все направления",
       "/shop": "Магазин",
@@ -121,7 +125,8 @@ function RouteContent({
   if (path === "/privacy") return <Navigate to="/popd" replace />;
   if (path === "/projects/quiet-living-room") return <ConceptProject />;
   if (path === "/projects") return <Projects />;
-  if (path === "/studio") return <Studio />;
+  if (path === "/studio") return <Navigate to={"/company" + hash} replace />;
+  if (path === "/company") return <Company />;
   if (path === "/curtains") return <Curtains />;
   if (path === "/price") return <Price />;
   if (path === "/contacts") return <Contacts />;
@@ -139,6 +144,7 @@ function RouteContent({
   return <NotFound />;
 }
 export default function App() {
+  const location = useLocation();
   const [data, setData] = useState<SiteContent | null>(null);
   const [error, setError] = useState("");
   const [attempt, setAttempt] = useState(0);
@@ -183,32 +189,36 @@ export default function App() {
     );
   return (
     <AppBoundary>
-      <StoreProvider data={data} discuss={discuss}>
-        <div id="top" />
-        <Header />
-        <main id="main-content" tabIndex={-1}>
-          <Suspense
-            fallback={
-              <div className="page-loading" role="status">
-                Загружаем…
-              </div>
-            }
+      <MotionConfig reducedMotion="user">
+        <StoreProvider data={data} discuss={discuss}>
+          <div id="top" />
+          <Header />
+          <main id="main-content" tabIndex={-1}>
+            <Suspense
+              fallback={
+                <div className="page-loading" role="status">
+                  Загружаем…
+                </div>
+              }
+            >
+              <PageEntrance key={location.pathname}>
+                <RouteContent data={data} discuss={discuss} />
+              </PageEntrance>
+            </Suspense>
+          </main>
+          <Footer />
+          <Modal
+            open={inquiry.open}
+            onClose={() => setInquiry((v) => ({ ...v, open: false }))}
+            title="Расскажите о вашем проекте"
+            className="inquiry-dialog"
           >
-            <RouteContent data={data} discuss={discuss} />
-          </Suspense>
-        </main>
-        <Footer />
-        <Modal
-          open={inquiry.open}
-          onClose={() => setInquiry((v) => ({ ...v, open: false }))}
-          title="Расскажите о вашем проекте"
-          className="inquiry-dialog"
-        >
-          <p className="eyebrow">НАЧНЁМ ЗНАКОМСТВО</p>
-          <h2>Расскажите о вашем проекте</h2>
-          <InquiryForm context={inquiry.context} />
-        </Modal>
-      </StoreProvider>
+            <p className="eyebrow">НАЧНЁМ ЗНАКОМСТВО</p>
+            <h2>Расскажите о вашем проекте</h2>
+            <InquiryForm context={inquiry.context} />
+          </Modal>
+        </StoreProvider>
+      </MotionConfig>
     </AppBoundary>
   );
 }

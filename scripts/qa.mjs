@@ -16,6 +16,7 @@ const mainRoutes = [
   "/selection",
   "/projects",
   "/studio",
+  "/company",
   "/popd",
   "/kakpodobrat",
 ];
@@ -24,6 +25,7 @@ const customRoutes = [
   "/projects",
   "/projects/quiet-living-room",
   "/studio",
+  "/company",
   "/curtains",
   "/price",
   "/contacts",
@@ -48,7 +50,8 @@ const axeRoutes = [
   "/tkani",
   "/selection",
   "/projects",
-  "/studio",
+  "/company",
+  "/curtains",
   "/popd",
 ];
 const report = {
@@ -666,7 +669,7 @@ try {
     `Дата: ${report.checkedAt}. Адрес: ${baseURL}. Chrome ${report.browser}.`,
     ...(report.reusedPageChecksFrom ? [`Проверки маршрутов и Axe выполнены ${report.reusedPageChecksFrom}; затем отдельно повторены сценарии взаимодействия.`] : []),
     "",
-    `Проверено ${sourcePages.length} исходных страниц и ${data.categories.length} категорий (адреса категорий входят в исходные страницы), а также ${customRoutes.length} дополнительных маршрутов. Всего ${allRoutes.length} уникальных маршрутов на 320 и 1440 px. Семь основных страниц также проверены на 390, 768, 1024 и 1920 px.`,
+    `Проверено ${sourcePages.length} исходных страниц и ${data.categories.length} категорий (адреса категорий входят в исходные страницы), а также ${customRoutes.length} дополнительных маршрутов. Всего ${allRoutes.length} уникальных маршрутов на 320 и 1440 px. Основные страницы также проверены на 390, 768, 1024 и 1920 px.`,
     "",
     `Проверки страниц: ${report.summary.routeChecks - report.summary.failedRouteChecks}/${report.summary.routeChecks} пройдено. Axe WCAG A/AA: ${report.summary.accessibilityScans - report.summary.failedAccessibilityScans}/${report.summary.accessibilityScans} без нарушений. Сценарии: ${report.summary.scenarios - report.summary.failedScenarios}/${report.summary.scenarios} пройдено.`,
     "",

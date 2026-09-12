@@ -1,0 +1,241 @@
+/* Shared interaction language: restrained movement, clear focus and depth. */
+.picture-crop {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+}
+.button,
+.calc-button,
+.selection-next,
+.selection-back,
+.inquiry-submit {
+  position: relative;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+.button > svg,
+.text-link > svg,
+.calc-button > svg,
+.selection-next svg,
+.direction > div > svg,
+.studio-links svg,
+.direction-list-item > svg {
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.icon-button {
+  transition:
+    background 0.25s,
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.button:active,
+.calc-button:active,
+.selection-next:active,
+.inquiry-submit:active {
+  transform: translateY(0) scale(0.98);
+}
+.text-link {
+  position: relative;
+}
+.text-link::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gallery-photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--stone);
+}
+.gallery-grid .gallery-photo > :is(img, .picture-crop) {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s;
+}
+.gallery-open {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--forest);
+  background: var(--paper);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s,
+    transform 0.4s;
+}
+.gallery-grid button > span {
+  gap: 15px;
+  align-items: baseline;
+  font-size: 13px;
+}
+.gallery-index {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+.gallery-slide > :is(img, .picture-crop) {
+  height: calc(100dvh - 180px);
+  width: 100%;
+  object-fit: contain;
+}
+.gallery-slide {
+  overflow: hidden;
+}
+.project-wide {
+  overflow: hidden;
+}
+.project-wide > :is(img, .picture-crop) {
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.direction,
+.featured-concept,
+.featured-real {
+  overflow: hidden;
+}
+.direction > :is(img, .picture-crop),
+.featured-real > :is(img, .picture-crop),
+.featured-concept > :is(img, .picture-crop) {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.benefit-card {
+  transition:
+    background 0.35s,
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+.curtain-types a {
+  transition: transform 0.35s;
+}
+.curtain-types :is(img, .picture-crop) {
+  transition:
+    filter 0.35s,
+    box-shadow 0.35s;
+}
+.desktop-nav a::after {
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+.gallery-grid button:focus-visible .gallery-open {
+  opacity: 1;
+  transform: none;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .button:hover:not(:disabled),
+  .calc-button:hover:not(:disabled),
+  .selection-next:hover:not(:disabled),
+  .inquiry-submit:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px #173c3226;
+  }
+  .button:hover > svg,
+  .text-link:hover > svg,
+  .calc-button:hover > svg,
+  .selection-next:hover svg {
+    transform: translate(3px, -3px);
+  }
+  .text-link:hover::after {
+    transform: scaleX(1);
+  }
+  .icon-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px #173c3214;
+  }
+  .gallery-grid button:hover .gallery-photo > :is(img, .picture-crop) {
+    transform: scale(1.045);
+  }
+  .gallery-grid button:hover .gallery-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .project-wide:hover > :is(img, .picture-crop) {
+    transform: scale(1.035);
+  }
+  .direction:hover > :is(img, .picture-crop),
+  .featured-real:hover > :is(img, .picture-crop),
+  .featured-concept:hover > :is(img, .picture-crop) {
+    transform: scale(1.025);
+  }
+  .direction:hover > div > svg,
+  .studio-links a:hover svg,
+  .direction-list-item:hover > svg {
+    transform: translate(3px, -3px);
+  }
+  .benefit-card:hover {
+    background: #e8e4da;
+    border-color: #a5b2a4;
+    box-shadow: 0 8px 22px #173c3209;
+  }
+  .curtain-types a:hover {
+    transform: translateY(-5px);
+  }
+  .curtain-types a:hover :is(img, .picture-crop) {
+    box-shadow: 0 14px 24px #173c321b;
+    filter: saturate(1.06);
+  }
+}
+@media (hover: none) {
+  .gallery-open {
+    opacity: 1;
+    transform: none;
+    width: 34px;
+    height: 34px;
+    right: 10px;
+    bottom: 10px;
+  }
+  .gallery-open svg {
+    width: 19px;
+  }
+}
+@media (max-width: 560px) {
+  .gallery-grid button > span {
+    font-size: 11px;
+    line-height: 1.55;
+    padding-top: 10px;
+  }
+  .gallery-grid {
+    gap: 25px 14px;
+  }
+  .gallery-dialog {
+    padding-inline: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .button:active,
+  .calc-button:active,
+  .selection-next:active,
+  .inquiry-submit:active {
+    transform: none;
+  }
+  .gallery-open {
+    transform: none;
+  }
+}

@@ -128,7 +128,7 @@ export function InquiryForm({
         <p>{result.message}</p>
         {result.status === "saved_locally" && (
           <p>
-            Чтобы обсудить проект со студией сейчас, позвоните{" "}
+            Чтобы обсудить проект с нашей командой сейчас, позвоните{" "}
             <a href="tel:+74959693189">+7 495 969-31-89</a>.
           </p>
         )}
@@ -266,7 +266,7 @@ export function InquiryForm({
       {!import.meta.env.VITE_INQUIRY_ENDPOINT && (
         <p className="inquiry-local-note">
           Локальная версия: заявка будет сохранена на этом сервере. Доставка в
-          студию ещё не подключена.
+          компанию ещё не подключена.
         </p>
       )}
       {serverError && (

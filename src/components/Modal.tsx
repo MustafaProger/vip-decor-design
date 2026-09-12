@@ -1,5 +1,7 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { X } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ease } from "./Motion";
 export default function Modal({
   open,
   onClose,
@@ -14,6 +16,7 @@ export default function Modal({
   className?: string;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const reduced = useReducedMotion();
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
@@ -30,8 +33,15 @@ export default function Modal({
     }
   }, [open]);
   return (
-    <dialog
+    <motion.dialog
       ref={ref}
+      initial={false}
+      animate={
+        open
+          ? { opacity: 1, y: 0, scale: 1 }
+          : { opacity: 0, y: reduced ? 0 : 18, scale: reduced ? 1 : 0.98 }
+      }
+      transition={{ duration: reduced ? 0 : 0.3, ease }}
       className={"dialog " + className}
       aria-label={title}
       onCancel={onClose}
@@ -56,6 +66,6 @@ export default function Modal({
         <X size={24} />
       </button>
       {children}
-    </dialog>
+    </motion.dialog>
   );
 }

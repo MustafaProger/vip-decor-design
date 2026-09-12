@@ -27,7 +27,7 @@ export function Header() {
     ["/curtains", "Шторы на заказ"],
     ["/tkani", "Ткани"],
     ["/projects", "Проекты"],
-    ["/studio", "О студии"],
+    ["/company", "О компании"],
   ];
   return (
     <>
@@ -153,7 +153,7 @@ export function Footer() {
               <p className="footer-tagline">Фактура. Свет. Тишина.</p>
             </div>
             <div>
-              <p className="eyebrow">ЗАГЛЯНИТЕ В СТУДИЮ</p>
+              <p className="eyebrow">ЗАГЛЯНИТЕ В ШОУРУМ</p>
               <Link to="/contacts" className="footer-address">
                 <MapPin size={19} />
                 <span>
@@ -191,8 +191,8 @@ export function Footer() {
               <Link to="/catalog">Все направления</Link>
             </div>
             <div>
-              <h3>Студия</h3>
-              <Link to="/studio">О нас</Link>
+              <h3>Компания</h3>
+              <Link to="/company">О нас</Link>
               <Link to="/projects">Галерея работ</Link>
               <Link to="/curtains">Индивидуальный пошив</Link>
               <Link to="/price">Прайс на пошив</Link>

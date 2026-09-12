@@ -2,17 +2,47 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, MapPin, Phone, Mail } from "lucide-react";
 import { useStore } from "../lib/store";
 import { Breadcrumbs, Picture, EmptyState } from "../components/Primitives";
+import { Reveal } from "../components/Motion";
+import { Benefits, MeasurementCTA } from "../components/ServiceSections";
 import { localHref, type SourcePage } from "../lib/content";
-function prepareHTML(raw: string) {
+function prepareHTML(raw: string, pageTitle = "") {
   const doc = new DOMParser().parseFromString(raw, "text/html");
-  doc.querySelectorAll("h1").forEach((h) => {
-    const next = doc.createElement("h2");
-    next.innerHTML = h.innerHTML;
+  const normalized = (s: string) =>
+    s.replace(/\s+/g, " ").trim().toLocaleLowerCase();
+  doc.querySelectorAll("h1, h2, h3, h4").forEach((h) => {
+    const text = h.textContent?.trim() || "";
+    if (!text || normalized(text) === normalized(pageTitle)) {
+      h.remove();
+      return;
+    }
+    const next = doc.createElement(
+      h.tagName === "H1" ? "h2" : h.tagName.toLowerCase(),
+    );
+    next.textContent = text;
     h.replaceWith(next);
   });
   doc.querySelectorAll("a").forEach((a) => {
     const href = a.getAttribute("href");
     if (href) a.setAttribute("href", localHref(href));
+    if (a.querySelector("table")) a.textContent = a.textContent?.trim() || "";
+    a.classList.add("source-link");
+  });
+  // The imported div wrappers have no layout metadata. Unwrap them and keep
+  // actual paragraphs, headings, lists, links and data tables in reading order.
+  [...doc.querySelectorAll("div")].reverse().forEach((div) => {
+    if (
+      div.closest("a, td, th, li") ||
+      div.querySelector("div, p, h2, h3, h4, ul, ol, table")
+    ) {
+      div.replaceWith(...div.childNodes);
+    } else if (div.textContent?.trim()) {
+      const p = doc.createElement("p");
+      p.innerHTML = div.innerHTML.replace(
+        /^(\s*<br\s*\/?>)+|(<br\s*\/?>\s*)+$/gi,
+        "",
+      );
+      div.replaceWith(p);
+    } else div.remove();
   });
   return doc.body.innerHTML;
 }
@@ -34,7 +64,12 @@ export function OriginalContent({
         blocks.map((b) => (
           <section className="original-block" id={b.id} key={b.id}>
             {b.html ? (
-              <div dangerouslySetInnerHTML={{ __html: prepareHTML(b.html) }} />
+              <div
+                className="source-text"
+                dangerouslySetInnerHTML={{
+                  __html: prepareHTML(b.html, page.title),
+                }}
+              />
             ) : (
               <>
                 <h2>{b.heading}</h2>
@@ -46,7 +81,12 @@ export function OriginalContent({
           </section>
         ))
       ) : page.html ? (
-        <div dangerouslySetInnerHTML={{ __html: prepareHTML(page.html) }} />
+        <div
+          className="source-text"
+          dangerouslySetInnerHTML={{
+            __html: prepareHTML(page.html, page.title),
+          }}
+        />
       ) : (
         page.paragraphs.map((p, i) => <p key={i}>{p}</p>)
       )}
@@ -103,26 +143,14 @@ export default function Information({ page }: { page: SourcePage }) {
     </article>
   );
 }
-export function Studio() {
+export function Company() {
   const { data } = useStore();
-  const home = data.pages.find((p) => p.path === "/");
-  const shownElsewhere = new Set([
-    ...data.gallery.map((image) => image.src),
-    ...data.products.flatMap((product) => [product.image, ...product.images]),
-  ]);
-  const details =
-    home?.images.filter(
-      (image, index, images) =>
-        !/\.svg(?:\?|$)/i.test(image.src) &&
-        !shownElsewhere.has(image.src) &&
-        images.findIndex((other) => other.src === image.src) === index,
-    ) || [];
   return (
-    <div className="container studio-page">
-      <Breadcrumbs items={[{ label: "О студии" }]} />
-      <div className="studio-intro">
-        <div>
-          <p className="eyebrow">ЗНАКОМСТВО СО СТУДИЕЙ</p>
+    <div className="container company-page">
+      <Breadcrumbs items={[{ label: "О компании" }]} />
+      <div className="studio-intro company-intro">
+        <Reveal>
+          <p className="eyebrow">КОМПАНИЯ VIP DECOR DESIGN</p>
           <h1>
             Красота —<br />
             внимание
@@ -133,47 +161,70 @@ export function Studio() {
             ткани до последней складки.
           </p>
           <Link className="text-link" to="/contacts">
-            Загляните к нам
+            Познакомимся в шоуруме
             <ArrowUpRight size={18} />
           </Link>
-        </div>
-        <Picture
-          src={data.gallery[2]?.src || data.gallery[0]?.src}
-          alt="Текстильное оформление из галереи VIP Decor Design"
-          eager
-        />
+        </Reveal>
+        <Reveal delay={0.12} className="company-portrait">
+          <Picture
+            src={data.gallery[2]?.src}
+            alt="Узорчатые портьеры в интерьере — работа VIP Decor Design"
+            eager
+          />
+          <span className="portrait-caption">
+            Фактура, которую хочется рассматривать.
+          </span>
+        </Reveal>
       </div>
-      {home && (
-        <OriginalContent
-          page={home}
-          blockIds={[
-            "rec224459428",
-            "rec208310200",
-            "rec217622225",
-            "rec207714885",
-            "rec207850634",
-            "rec209177378",
-          ]}
-        />
-      )}
-      {details.length > 0 && (
-        <section
-          className="section"
-          id="studio-details"
-          aria-labelledby="studio-details-title"
-        >
-          <h2 id="studio-details-title">Детали студии</h2>
-          <div className="article-gallery">
-            {details.map((image) => (
-              <Picture
-                key={image.src}
-                src={image.src}
-                alt={image.alt || "Текстиль и детали интерьера"}
-              />
-            ))}
+      <Reveal
+        id="rec224459428"
+        className="company-facts"
+        aria-label="Компания в цифрах"
+      >
+        {[
+          ["21", "год работы"],
+          ["20 120", "довольных клиентов"],
+          ["10 000", "тканей в наличии"],
+          ["120", "мировых брендов"],
+        ].map(([value, label]) => (
+          <div key={label}>
+            <strong>{value}</strong>
+            <span>{label}</span>
           </div>
-        </section>
-      )}
+        ))}
+      </Reveal>
+      <section className="company-story service-section" id="rec207714885">
+        <Reveal id="rec208310200">
+          <p className="eyebrow">О НАС</p>
+          <h2>
+            Одна команда.
+            <br />
+            Цельный интерьер.
+          </h2>
+        </Reveal>
+        <Reveal id="rec217622225" delay={0.08}>
+          <p className="story-lead">
+            Мы — компания VIP DECOR DESIGN. Помогаем сделать дом уютнее с
+            помощью тканей, света и деталей.
+          </p>
+          <p>
+            В нашей команде работают дизайнеры, мастера по пошиву и специалисты
+            по монтажу. Подбираем материалы и аксессуары, продумываем оформление
+            и берём на себя изготовление и установку.
+          </p>
+          <p>
+            Работаем с мировыми брендами и собственным производством. Шьём
+            шторы, ламбрекены и бандо, покрывала, мебельные чехлы и декоративные
+            валики.
+          </p>
+          <Link className="text-link" to="/projects">
+            Посмотреть наши работы
+            <ArrowUpRight size={18} />
+          </Link>
+        </Reveal>
+      </section>
+      <Benefits />
+      <MeasurementCTA />
       <div className="studio-links">
         <Link to="/price">
           Цены на пошив
@@ -192,12 +243,11 @@ export function Studio() {
   );
 }
 export function Curtains() {
-  const { data, discuss } = useStore();
-  const home = data.pages.find((p) => p.path === "/");
+  const { data } = useStore();
   return (
     <div className="container curtains-page">
       <Breadcrumbs items={[{ label: "Шторы на заказ" }]} />
-      <div className="studio-intro">
+      <div className="studio-intro curtains-intro" id="rec214513799">
         <div>
           <p className="eyebrow">ИНДИВИДУАЛЬНЫЙ ПОШИВ</p>
           <h1>
@@ -220,49 +270,68 @@ export function Curtains() {
           <Picture
             src="/images/concept-living.webp"
             alt="Концепция интерьера с натуральными портьерами"
+            eager
           />
           <figcaption className="image-note">Концепция интерьера</figcaption>
         </figure>
       </div>
-      <div className="curtain-types">
-        {data.pages
-          .filter((p) =>
+      <section className="service-section curtain-collection">
+        <Reveal className="service-heading">
+          <p className="eyebrow">НАЙДИТЕ СВОЙ СИЛУЭТ</p>
+          <h2>Разные формы. Ваш характер.</h2>
+          <p>От лаконичных римских штор до мягкой классической драпировки.</p>
+        </Reveal>
+        <div className="curtain-types">
+          {data.pages
+            .filter((p) =>
+              [
+                "/rimskieshtori",
+                "/franzusckieshtoru",
+                "/avstriskieshtori",
+                "/klasiheskieshtori",
+              ].includes(p.path),
+            )
+            .map((p) => (
+              <Link key={p.path} to={p.path}>
+                <Picture src={p.images[0]?.src} alt={p.title} />
+                <h2>
+                  {p.title}
+                  <ArrowUpRight size={20} />
+                </h2>
+              </Link>
+            ))}
+        </div>
+      </section>
+      <Benefits />
+      <section className="service-section curtains-process">
+        <Reveal className="service-heading">
+          <p className="eyebrow">КАК ВСЁ ПРОИСХОДИТ</p>
+          <h2>От идеи до готового окна.</h2>
+        </Reveal>
+        <div className="order-steps">
+          {[
             [
-              "/rimskieshtori",
-              "/franzusckieshtoru",
-              "/avstriskieshtori",
-              "/klasiheskieshtori",
-            ].includes(p.path),
-          )
-          .map((p) => (
-            <Link key={p.path} to={p.path}>
-              <Picture src={p.images[0]?.src} alt={p.title} />
-              <h2>
-                {p.title}
-                <ArrowUpRight size={20} />
-              </h2>
-            </Link>
+              "Знакомство и замер",
+              "Обсудим комнату, ваши пожелания и размеры окна.",
+            ],
+            [
+              "Ткани и детали",
+              "Подберём фактуры, оттенки, карнизы и согласуем оформление.",
+            ],
+            [
+              "Пошив и установка",
+              "Изготовим текстиль, доставим, отпарим и повесим шторы.",
+            ],
+          ].map(([title, text], i) => (
+            <Reveal key={title} delay={i * 0.07}>
+              <span className="step-number">0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </Reveal>
           ))}
-      </div>
-      {home && (
-        <OriginalContent
-          page={home}
-          blockIds={["rec214513799", "rec207850634", "rec209177378"]}
-        />
-      )}
-      <div className="article-actions">
-        <Link className="button" to="/calculator">
-          Рассчитать стоимость
-          <ArrowUpRight size={20} />
-        </Link>
-        <button
-          className="text-link"
-          onClick={() => discuss("Замер и консультация")}
-        >
-          Заказать замер
-          <ArrowUpRight size={18} />
-        </button>
-      </div>
+        </div>
+      </section>
+      <MeasurementCTA />
     </div>
   );
 }
@@ -362,7 +431,7 @@ export function Sitemap() {
         {[
           ["/selection", "Подбор штор"],
           ["/calculator", "Калькулятор"],
-          ["/studio", "О студии"],
+          ["/company", "О компании"],
           ["/projects", "Проекты"],
           ["/contacts", "Контакты"],
           ["/price", "Прайс на пошив"],

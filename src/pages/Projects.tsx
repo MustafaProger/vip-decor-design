@@ -1,3 +1,6 @@
+import { motion, useReducedMotion } from "framer-motion";
+import { projectCaption } from "../data/gallery-presentation";
+import { Reveal } from "../components/Motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
@@ -8,6 +11,7 @@ export default function Projects() {
   const { data } = useStore();
   const [active, setActive] = useState<number | null>(null);
   const [shown, setShown] = useState(24);
+  const reduced = useReducedMotion();
   return (
     <div className="container projects-page">
       <Breadcrumbs items={[{ label: "Проекты" }]} />
@@ -20,7 +24,7 @@ export default function Projects() {
       <p className="page-intro">
         Свет, цвет и драпировка меняют ощущение комнаты.
         <br />
-        Собрали работы студии и идеи для вашего интерьера.
+        Собрали наши работы и идеи для вашего интерьера.
       </p>
       <Link className="project-wide" to="/projects/quiet-living-room">
         <Picture
@@ -37,25 +41,43 @@ export default function Projects() {
           <span>Посмотреть концепцию</span>
         </div>
       </Link>
-      <div className="section-heading two-sided">
-        <h2>Галерея работ студии</h2>
+      <Reveal className="section-heading two-sided" id="our-work">
+        <h2>Галерея наших работ</h2>
         <span>{data.gallery.length} фотографий</span>
-      </div>
+      </Reveal>
       <div className="gallery-grid">
         {data.gallery.slice(0, shown).map((photo, i) => (
-          <button
+          <motion.button
+            initial={reduced ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileFocus={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.08 }}
+            transition={{
+              duration: reduced ? 0 : 0.5,
+              delay: reduced ? 0 : (i % 3) * 0.05,
+            }}
             key={photo.src + i}
             onClick={() => setActive(i)}
-            aria-label={"Открыть фотографию " + (i + 1) + ": " + photo.alt}
+            aria-label={
+              "Открыть фотографию " + (i + 1) + ": " + projectCaption(photo.src)
+            }
           >
-            <Picture
-              src={photo.src}
-              alt={photo.alt || "Работа студии VIP Decor Design"}
-            />
+            <div className="gallery-photo">
+              <Picture
+                src={photo.src}
+                alt={projectCaption(photo.src) || photo.alt}
+              />
+              <span className="gallery-open" aria-hidden="true">
+                <ArrowUpRight size={24} />
+              </span>
+            </div>
             <span>
-              Работа студии <ArrowUpRight size={17} />
+              {projectCaption(photo.src) || "Текстиль в интерьере"}{" "}
+              <span className="gallery-index">
+                {String(i + 1).padStart(2, "0")}
+              </span>
             </span>
-          </button>
+          </motion.button>
         ))}
       </div>
       {shown < data.gallery.length && (
@@ -76,10 +98,23 @@ export default function Projects() {
       >
         {active !== null && (
           <>
-            <Picture
-              src={data.gallery[active].src}
-              alt={data.gallery[active].alt}
-            />
+            <motion.div
+              className="gallery-slide"
+              key={active}
+              initial={reduced ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: reduced ? 0 : 0.25 }}
+            >
+              <Picture
+                src={data.gallery[active].src}
+                alt={
+                  projectCaption(data.gallery[active].src) ||
+                  data.gallery[active].alt
+                }
+                fit="contain"
+                eager
+              />
+            </motion.div>
             <div className="gallery-controls">
               <button
                 className="icon-button"
@@ -92,7 +127,7 @@ export default function Projects() {
               >
                 <ArrowLeft />
               </button>
-              <span>
+              <span aria-live="polite">
                 {active + 1} / {data.gallery.length}
               </span>
               <button

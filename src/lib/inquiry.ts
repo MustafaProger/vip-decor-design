@@ -97,8 +97,8 @@ export async function submitInquiry(
       status: body.status,
       message:
         body.status === "saved_locally"
-          ? "Заявка сохранена в локальной версии. Доставка в студию ещё не подключена."
-          : "Заявка отправлена. Студия получила ваше обращение.",
+          ? "Заявка сохранена в локальной версии. Доставка в компанию ещё не подключена."
+          : "Заявка отправлена. Компания получила ваше обращение.",
     };
   } catch (error) {
     if (error instanceof InquiryError) throw error;

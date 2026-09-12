@@ -15,7 +15,7 @@ const paths = new Set([
     "/selection",
     "/projects",
     "/projects/quiet-living-room",
-    "/studio",
+    "/company",
     "/contacts",
     "/calculator",
     "/price",

@@ -154,7 +154,7 @@ categories=[{'title':labels.get(p['path']) or p['heading'],'path':p['path'],'ima
 gallery=[];seen=set()
 for p in pages:
  for im in p.pop('gallery',[]):
-  if im['originalUrl'] not in seen:seen.add(im['originalUrl']);gallery.append({'src':im['src'],'alt':im['alt'] or 'Работа студии VIP Decor Design','sourcePath':p['path'],'originalUrl':im['originalUrl']})
+  if im['originalUrl'] not in seen:seen.add(im['originalUrl']);gallery.append({'src':im['src'],'alt':im['alt'] or 'Текстильное оформление VIP Decor Design','sourcePath':p['path'],'originalUrl':im['originalUrl']})
 contacts={'phones':['+7 495 969 31 89','+7 969 035 98 89','+7 903 969 31 89'],'email':'info@vip2d.ru','address':'Москва, Сокольническая площадь 4А, 2 этаж, пав. 226','socials':[{'title':'Telegram','url':'https://t.me/vipdecordesign'},{'title':'Instagram','url':'https://www.instagram.com/vip2d.ru/'},{'title':'Facebook','url':'https://www.facebook.com/vipdecordesign/?modal=admin_todo_tour'}]}
 content={'crawledAt':datetime.now(timezone.utc).isoformat(),'pages':pages,'products':products,'categories':categories,'contacts':contacts,'gallery':gallery,'sourceErrors':errors}
 savejson(ROOT/'src/data/site-content.json',content)

@@ -1,0 +1,211 @@
+{
+  "checkedAt": "2026-09-12T11:47:22.939Z",
+  "base": "http://127.0.0.1:5180",
+  "layouts": [
+    {
+      "route": "/",
+      "width": 320,
+      "documentWidth": 320,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/company",
+      "width": 320,
+      "documentWidth": 320,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/curtains",
+      "width": 320,
+      "documentWidth": 320,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/projects",
+      "width": 320,
+      "documentWidth": 320,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "documentWidth": 390,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/company",
+      "width": 390,
+      "documentWidth": 390,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/curtains",
+      "width": 390,
+      "documentWidth": 390,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/projects",
+      "width": 390,
+      "documentWidth": 390,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "documentWidth": 768,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/company",
+      "width": 768,
+      "documentWidth": 768,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/curtains",
+      "width": 768,
+      "documentWidth": 768,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/projects",
+      "width": 768,
+      "documentWidth": 768,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "documentWidth": 1024,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/company",
+      "width": 1024,
+      "documentWidth": 1024,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/curtains",
+      "width": 1024,
+      "documentWidth": 1024,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/projects",
+      "width": 1024,
+      "documentWidth": 1024,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "documentWidth": 1440,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/company",
+      "width": 1440,
+      "documentWidth": 1440,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/curtains",
+      "width": 1440,
+      "documentWidth": 1440,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/projects",
+      "width": 1440,
+      "documentWidth": 1440,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "documentWidth": 1920,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/company",
+      "width": 1920,
+      "documentWidth": 1920,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/curtains",
+      "width": 1920,
+      "documentWidth": 1920,
+      "studio": false,
+      "hidden": 0
+    },
+    {
+      "route": "/projects",
+      "width": 1920,
+      "documentWidth": 1920,
+      "studio": false,
+      "hidden": 0
+    }
+  ],
+  "motion": [
+    {
+      "preference": "no-preference",
+      "resting": {
+        "transform": "none",
+        "shadow": "none"
+      },
+      "hovered": {
+        "transform": "matrix(1, 0, 0, 1, 0, -3)",
+        "shadow": "rgba(23, 60, 50, 0.15) 0px 9px 22px 0px"
+      },
+      "scrollReveal": "visible",
+      "dialog": "visible then closed"
+    },
+    {
+      "preference": "reduce",
+      "resting": {
+        "transform": "none",
+        "shadow": "none"
+      },
+      "hovered": {
+        "transform": "none",
+        "shadow": "none"
+      },
+      "scrollReveal": "visible",
+      "dialog": "visible then closed"
+    }
+  ],
+  "scenarios": [
+    "Company redirect, title, four facts and four benefits; legacy HTML absent.",
+    "Offer disclosure and measurement dialog open; Escape closes and restores focus. No submission.",
+    "All 28 photographs and distinct captions; cropped viewports, dialog navigation, focus restoration.",
+    "SVG clip path masks source frames in the lightbox at 320 and 1440 px. Legacy company anchor redirects and scrolls correctly."
+  ],
+  "passed": true,
+  "errors": [],
+  "finalImageCheckAt": "2026-09-12T11:49:57.128Z"
+}

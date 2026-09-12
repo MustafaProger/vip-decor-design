@@ -76,7 +76,7 @@ for p in data['pages']:
   if product:cat['image']=product['image']
  categories.append(cat)
 data['categories']=categories
-data['sourceAnchors']={'rec208310200':'/studio','rec207714887':'/projects','rec208301757':'/catalog','rec208194534':'/contacts','rec221002251':'/calculator'}
+data['sourceAnchors']={'rec208310200':'/company','rec207714887':'/projects','rec208301757':'/catalog','rec208194534':'/contacts','rec221002251':'/calculator'}
 f.write_text(json.dumps(data,ensure_ascii=False,indent=2))
 statusf=ROOT/'data/source/crawl-status.json';status=json.loads(statusf.read_text());status['gallery']=len(gallery);status['categories']=len(categories);status['uniquePublicSourceImages']=len({canon(u) for u in media});statusf.write_text(json.dumps(status,ensure_ascii=False,indent=2))
 # Full machine-readable migration registry, one entry per page, product, original gallery file and public link.

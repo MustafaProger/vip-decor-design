@@ -1,4 +1,6 @@
-import { useState, type ReactNode } from "react";
+import { photoCrops } from "../data/gallery-presentation";
+import { motion, useReducedMotion } from "framer-motion";
+import { useId, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Heart, ImageOff } from "lucide-react";
 import { useStore } from "../lib/store";
@@ -9,21 +11,58 @@ export function Picture({
   alt,
   className = "",
   eager = false,
+  fit = "cover",
 }: {
   src?: string;
   alt: string;
   className?: string;
   eager?: boolean;
+  fit?: "cover" | "contain";
 }) {
-  const [broken, setBroken] = useState(false);
-  return src && !broken ? (
+  const [brokenSrc, setBrokenSrc] = useState<string>();
+  const cropId = useId();
+  const crop = src ? photoCrops[src.split("/").pop() || ""] : undefined;
+  if (src && src !== brokenSrc && crop)
+    return (
+      <svg
+        className={"picture-crop " + className}
+        viewBox={crop.view.join(" ")}
+        width={crop.view[2]}
+        height={crop.view[3]}
+        preserveAspectRatio={
+          fit === "contain" ? "xMidYMid meet" : "xMidYMid slice"
+        }
+        role="img"
+        aria-label={alt}
+        data-image-src={src}
+      >
+        <defs>
+          <clipPath id={cropId}>
+            <rect
+              x={crop.view[0]}
+              y={crop.view[1]}
+              width={crop.view[2]}
+              height={crop.view[3]}
+            />
+          </clipPath>
+        </defs>
+        <image
+          href={src}
+          width={crop.size[0]}
+          height={crop.size[1]}
+          clipPath={`url(#${cropId})`}
+          onError={() => setBrokenSrc(src)}
+        />
+      </svg>
+    );
+  return src && src !== brokenSrc ? (
     <img
       className={className}
       src={src}
       alt={alt}
       loading={eager ? "eager" : "lazy"}
       decoding="async"
-      onError={() => setBroken(true)}
+      onError={() => setBrokenSrc(src)}
     />
   ) : (
     <div
@@ -84,8 +123,10 @@ export function FavoriteButton({
 }) {
   const { favorites, toggleFavorite } = useStore();
   const active = favorites.includes(id);
+  const reduced = useReducedMotion();
   return (
-    <button
+    <motion.button
+      whileTap={reduced ? undefined : { scale: 0.9 }}
       className={
         "icon-button favorite-button " +
         (active ? "is-active " : "") +
@@ -100,7 +141,7 @@ export function FavoriteButton({
         fill={active ? "currentColor" : "none"}
         strokeWidth={1.5}
       />
-    </button>
+    </motion.button>
   );
 }
 export function ProductCard({ product }: { product: Product }) {
