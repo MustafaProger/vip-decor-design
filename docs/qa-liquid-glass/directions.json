@@ -1,0 +1,1259 @@
+{
+  "checkedAt": "2026-09-15T09:52:01.032Z",
+  "layouts": [
+    {
+      "path": "/avstriskieshtori",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 400,
+      "title": "Австрийские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/blekaytrulonnieshtori",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 353,
+      "title": "Рулонные шторы Блэкаут",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/franzusckieshtoru",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 324,
+      "title": "Французские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/fyrnityra",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/gotovieizdelia",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 377,
+      "title": "Готовые изделия",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klasiheskieshtori",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 294,
+      "title": "Классические шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klassicheskierulonnieshtori",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 412,
+      "title": "Классические рулонные шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/mikrovual",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 412,
+      "title": "Микровуаль",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/podyshki",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 247,
+      "title": "Подушки",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/pokrivala",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 247,
+      "title": "Покрывала",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/rimskieshtori",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 341,
+      "title": "Римские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/shnypki",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 315,
+      "title": "Шнуры",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/tulizlna",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 540,
+      "title": "Тюль из льна",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/furnitura",
+      "width": 320,
+      "documentWidth": 320,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/avstriskieshtori",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 400,
+      "title": "Австрийские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/blekaytrulonnieshtori",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 353,
+      "title": "Рулонные шторы Блэкаут",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/franzusckieshtoru",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 324,
+      "title": "Французские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/fyrnityra",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/gotovieizdelia",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 377,
+      "title": "Готовые изделия",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klasiheskieshtori",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 294,
+      "title": "Классические шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klassicheskierulonnieshtori",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 412,
+      "title": "Классические рулонные шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/mikrovual",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 412,
+      "title": "Микровуаль",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/podyshki",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 247,
+      "title": "Подушки",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/pokrivala",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 247,
+      "title": "Покрывала",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/rimskieshtori",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 341,
+      "title": "Римские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/shnypki",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 315,
+      "title": "Шнуры",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/tulizlna",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 540,
+      "title": "Тюль из льна",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/furnitura",
+      "width": 390,
+      "documentWidth": 390,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/avstriskieshtori",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 400,
+      "title": "Австрийские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/blekaytrulonnieshtori",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 353,
+      "title": "Рулонные шторы Блэкаут",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/franzusckieshtoru",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 324,
+      "title": "Французские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/fyrnityra",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/gotovieizdelia",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 377,
+      "title": "Готовые изделия",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klasiheskieshtori",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 294,
+      "title": "Классические шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klassicheskierulonnieshtori",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 412,
+      "title": "Классические рулонные шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/mikrovual",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 412,
+      "title": "Микровуаль",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/podyshki",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 247,
+      "title": "Подушки",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/pokrivala",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 247,
+      "title": "Покрывала",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/rimskieshtori",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 341,
+      "title": "Римские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/shnypki",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 315,
+      "title": "Шнуры",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/tulizlna",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 540,
+      "title": "Тюль из льна",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/furnitura",
+      "width": 768,
+      "documentWidth": 768,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/avstriskieshtori",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 400,
+      "title": "Австрийские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/blekaytrulonnieshtori",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 353,
+      "title": "Рулонные шторы Блэкаут",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/franzusckieshtoru",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 324,
+      "title": "Французские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/fyrnityra",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/gotovieizdelia",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 377,
+      "title": "Готовые изделия",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klasiheskieshtori",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 294,
+      "title": "Классические шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klassicheskierulonnieshtori",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 412,
+      "title": "Классические рулонные шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/mikrovual",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 412,
+      "title": "Микровуаль",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/podyshki",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 247,
+      "title": "Подушки",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/pokrivala",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 247,
+      "title": "Покрывала",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/rimskieshtori",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 341,
+      "title": "Римские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/shnypki",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 315,
+      "title": "Шнуры",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/tulizlna",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 540,
+      "title": "Тюль из льна",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/furnitura",
+      "width": 1024,
+      "documentWidth": 1024,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/avstriskieshtori",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 400,
+      "title": "Австрийские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/blekaytrulonnieshtori",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 353,
+      "title": "Рулонные шторы Блэкаут",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/franzusckieshtoru",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 324,
+      "title": "Французские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/fyrnityra",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/gotovieizdelia",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 377,
+      "title": "Готовые изделия",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klasiheskieshtori",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 294,
+      "title": "Классические шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klassicheskierulonnieshtori",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 412,
+      "title": "Классические рулонные шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/mikrovual",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 412,
+      "title": "Микровуаль",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/podyshki",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 247,
+      "title": "Подушки",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/pokrivala",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 247,
+      "title": "Покрывала",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/rimskieshtori",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 341,
+      "title": "Римские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/shnypki",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 315,
+      "title": "Шнуры",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/tulizlna",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 540,
+      "title": "Тюль из льна",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/furnitura",
+      "width": 1440,
+      "documentWidth": 1440,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/avstriskieshtori",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 400,
+      "title": "Австрийские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/blekaytrulonnieshtori",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 353,
+      "title": "Рулонные шторы Блэкаут",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/franzusckieshtoru",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 324,
+      "title": "Французские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/fyrnityra",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/gotovieizdelia",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 377,
+      "title": "Готовые изделия",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klasiheskieshtori",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 294,
+      "title": "Классические шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/klassicheskierulonnieshtori",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 412,
+      "title": "Классические рулонные шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/mikrovual",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 412,
+      "title": "Микровуаль",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/podyshki",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 247,
+      "title": "Подушки",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/pokrivala",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 247,
+      "title": "Покрывала",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/rimskieshtori",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 341,
+      "title": "Римские шторы",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/shnypki",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 315,
+      "title": "Шнуры",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/tulizlna",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 540,
+      "title": "Тюль из льна",
+      "overflow": [],
+      "broken": []
+    },
+    {
+      "path": "/furnitura",
+      "width": 1920,
+      "documentWidth": 1920,
+      "main": 285,
+      "title": "Фурнитура",
+      "overflow": [],
+      "broken": []
+    }
+  ],
+  "accessibility": [
+    {
+      "path": "/avstriskieshtori",
+      "width": 320,
+      "violations": []
+    },
+    {
+      "path": "/fyrnityra",
+      "width": 320,
+      "violations": []
+    },
+    {
+      "path": "/podyshki",
+      "width": 320,
+      "violations": []
+    },
+    {
+      "path": "/avstriskieshtori",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "path": "/fyrnityra",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "path": "/podyshki",
+      "width": 1440,
+      "violations": []
+    }
+  ],
+  "links": [
+    {
+      "path": "/avstriskieshtori",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/blekaytrulonnieshtori",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/franzusckieshtoru",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/fyrnityra",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        },
+        {
+          "href": "/kisti",
+          "text": "Кисти"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        }
+      ]
+    },
+    {
+      "path": "/gotovieizdelia",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/klasiheskieshtori",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/klassicheskierulonnieshtori",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/mikrovual",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/podyshki",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/decor",
+          "text": "Декор"
+        },
+        {
+          "href": "/pokrivala",
+          "text": "Покрывала"
+        }
+      ]
+    },
+    {
+      "path": "/pokrivala",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/decor",
+          "text": "Декор"
+        },
+        {
+          "href": "/podyshki",
+          "text": "Подушки"
+        }
+      ]
+    },
+    {
+      "path": "/rimskieshtori",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/shnypki",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        },
+        {
+          "href": "/kisti",
+          "text": "Кисти"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        }
+      ]
+    },
+    {
+      "path": "/tulizlna",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/tkani",
+          "text": "Ткани"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        }
+      ]
+    },
+    {
+      "path": "/furnitura",
+      "links": [
+        {
+          "href": "/",
+          "text": "Главная"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/projects",
+          "text": "Посмотреть наши работы"
+        },
+        {
+          "href": "/catalog",
+          "text": "Все направления"
+        },
+        {
+          "href": "/karnizi",
+          "text": "Карнизы"
+        },
+        {
+          "href": "/kisti",
+          "text": "Кисти"
+        },
+        {
+          "href": "/tyl",
+          "text": "Тюль"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

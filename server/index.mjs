@@ -3,11 +3,12 @@ import { appendFile, mkdir, readFile } from "node:fs/promises";
 import { createHash, randomUUID } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { createReviewService } from "./reviews.mjs";
 
 const serverDirectory = dirname(fileURLToPath(import.meta.url));
 const MAX_BODY_BYTES = 16 * 1024;
 const LOCAL_MESSAGE =
-  "Заявка сохранена в локальной версии. Доставка в студию ещё не подключена.";
+  "Заявка сохранена в локальной версии. Передача заявки менеджеру ещё не подключена.";
 const allowedRooms = ["Гостиная", "Спальня", "Детская", "Кухня"];
 const allowedMaterials = [
   "Лёгкие и воздушные",
@@ -172,6 +173,13 @@ export async function createInquiryServer(options = {}) {
       resolve(serverDirectory, "../data/runtime"),
   );
   const filePath = resolve(dataDirectory, "inquiries.jsonl");
+  const reviewService =
+    options.reviewService ||
+    (await createReviewService({
+      dataDirectory: resolve(dataDirectory, "reviews"),
+      seedPath: resolve(serverDirectory, "../src/data/yandex-reviews.json"),
+      mediaDirectory: resolve(dataDirectory, "reviews/media"),
+    }));
   const originValues =
     options.allowedOrigins ||
     (
@@ -210,6 +218,45 @@ export async function createInquiryServer(options = {}) {
     const route = request.url?.split("?")[0];
     if (route === "/api/health" && request.method === "GET") {
       reply(response, 200, { status: "ok", delivery: "local_only" });
+      return;
+    }
+    if (route === "/api/reviews") {
+      if (request.method !== "GET") {
+        response.setHeader("Allow", "GET");
+        failure(response, 405, "Для просмотра отзывов используйте GET.");
+        return;
+      }
+      try {
+        reply(response, 200, await reviewService.getSnapshot());
+      } catch {
+        failure(response, 503, "Отзывы временно недоступны.");
+      }
+      return;
+    }
+    if (route?.startsWith("/api/review-media/")) {
+      if (!/^\/api\/review-media\/[a-f0-9]{64}\.webp$/.test(route)) {
+        failure(response, 404, "Фотография не найдена.");
+        return;
+      }
+      if (request.method !== "GET" && request.method !== "HEAD") {
+        response.setHeader("Allow", "GET, HEAD");
+        failure(response, 405, "Для просмотра фотографии используйте GET.");
+        return;
+      }
+      try {
+        const bytes = await readFile(
+          resolve(reviewService.mediaDirectory, route.split("/").pop()),
+        );
+        response.writeHead(200, {
+          "Content-Type": "image/webp",
+          "Content-Length": bytes.length,
+          "Cache-Control": "public, max-age=31536000, immutable",
+          "X-Content-Type-Options": "nosniff",
+        });
+        response.end(request.method === "HEAD" ? undefined : bytes);
+      } catch {
+        failure(response, 404, "Фотография не найдена.");
+      }
       return;
     }
     if (route !== "/api/inquiries") {
@@ -313,6 +360,7 @@ export async function createInquiryServer(options = {}) {
   });
   server.requestTimeout = 15000;
   server.headersTimeout = 10000;
+  server.reviewService = reviewService;
   return server;
 }
 
@@ -328,4 +376,37 @@ if (
       `Local inquiry server: http://${hostname}:${port} (studio delivery is not connected)`,
     ),
   );
+  let reviewTimer;
+  let reviewsStopped = false;
+  const refreshReviews = async () => {
+    let nextDelay = 60 * 60 * 1000;
+    try {
+      const result = await server.reviewService.refreshIfDue();
+      if (result.status === "updated")
+        console.log("Reviews refreshed:", result.snapshot.reviews.length);
+      if (result.status === "failed")
+        console.error(
+          "Reviews refresh failed; last successful snapshot retained:",
+          result.refresh?.errorCode || "source_unavailable",
+        );
+      const state = await server.reviewService.getStatus();
+      const attempted = Date.parse(state.lastAttemptAt);
+      if (Number.isFinite(attempted))
+        nextDelay = Math.max(
+          1000,
+          attempted + 24 * 60 * 60 * 1000 - Date.now() + 1000,
+        );
+    } catch {
+      console.error("Reviews refresh could not run; cached reviews retained.");
+    }
+    if (!reviewsStopped) {
+      reviewTimer = setTimeout(refreshReviews, nextDelay);
+      reviewTimer.unref();
+    }
+  };
+  void refreshReviews();
+  server.on("close", () => {
+    reviewsStopped = true;
+    clearTimeout(reviewTimer);
+  });
 }

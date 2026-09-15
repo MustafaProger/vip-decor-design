@@ -12,12 +12,12 @@ export function Reveal({
   const reduced = useReducedMotion();
   return (
     <motion.div
-      initial={reduced ? false : { opacity: 0, y: 26 }}
+      initial={reduced ? false : { opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       whileFocus={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.08 }}
       transition={{
-        duration: reduced ? 0 : 0.7,
+        duration: reduced ? 0 : 0.35,
         delay: reduced ? 0 : delay,
         ease,
       }}
@@ -33,7 +33,7 @@ export function PageEntrance({ children }: HTMLMotionProps<"div">) {
       className="page-entrance"
       initial={reduced ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: reduced ? 0 : 0.4, ease }}
+      transition={{ duration: reduced ? 0 : 0.18, ease }}
     >
       {children}
     </motion.div>

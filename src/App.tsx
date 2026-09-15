@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useLayoutEffect,
   useState,
   Suspense,
   lazy,
@@ -11,20 +12,29 @@ import { MotionConfig } from "framer-motion";
 import { PageEntrance } from "./components/Motion";
 import { StoreProvider } from "./lib/store";
 import { localHref, type SiteContent } from "./lib/content";
+import { pageMetadata } from "./lib/metadata";
 import { Header, Footer } from "./components/SiteChrome";
 import Modal from "./components/Modal";
 import Home from "./pages/Home";
-import Catalog, { Directions } from "./pages/Catalog";
-import Projects, { ConceptProject } from "./pages/Projects";
-import Information, {
-  Company,
-  Curtains,
-  Price,
-  Contacts,
-  Sitemap,
-  NotFound,
-} from "./pages/Information";
+import Catalog from "./pages/Catalog";
+const Projects = lazy(() => import("./pages/Projects"));
+import Information, { Company, Sitemap, NotFound } from "./pages/Information";
 import Cart from "./pages/Cart";
+const Contacts = lazy(() =>
+  import("./pages/EditorialPages").then((m) => ({ default: m.Contacts })),
+);
+const Price = lazy(() =>
+  import("./pages/EditorialPages").then((m) => ({ default: m.Price })),
+);
+const FabricGuide = lazy(() =>
+  import("./pages/EditorialPages").then((m) => ({ default: m.FabricGuide })),
+);
+const Delivery = lazy(() =>
+  import("./pages/ReadingPages").then((m) => ({ default: m.Delivery })),
+);
+const Privacy = lazy(() =>
+  import("./pages/ReadingPages").then((m) => ({ default: m.Privacy })),
+);
 import InquiryForm from "./features/inquiry/InquiryForm";
 const Selection = lazy(() => import("./features/selection/Selection"));
 const Calculator = lazy(() => import("./features/calculator/Calculator"));
@@ -39,7 +49,9 @@ const anchorRoutes: Record<string, string> = {
   "#rec207714893": "/page13486315.html",
   "#rec217629625": "/page13486315.html",
   "#rec209177378": "/selection",
-  "#rec214513799": "/curtains",
+  "#rec214513799": "/catalog",
+  "#rec207850634": "/company#service-terms",
+  "#rec224459428": "/company",
   "#rec207714883": "/catalog",
 };
 function RouteContent({
@@ -49,9 +61,9 @@ function RouteContent({
   data: SiteContent;
   discuss: (context?: string) => void;
 }) {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, search } = useLocation();
   const navigate = useNavigate();
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (pathname === "/" && hash) {
       const target =
         anchorRoutes[hash] ||
@@ -65,12 +77,14 @@ function RouteContent({
         return;
       }
     }
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      return;
+    }
     const frame = requestAnimationFrame(() => {
-      if (hash)
-        document
-          .getElementById(decodeURIComponent(hash.slice(1)))
-          ?.scrollIntoView();
-      else window.scrollTo(0, 0);
+      document
+        .getElementById(decodeURIComponent(hash.slice(1)))
+        ?.scrollIntoView();
     });
     return () => cancelAnimationFrame(frame);
   }, [pathname, hash, navigate, data]);
@@ -80,29 +94,22 @@ function RouteContent({
     ? data.products.find((p) => p.id === decodeURIComponent(path.slice(9)))
     : data.products.find((p) => localHref(p.url).split("?")[0] === path);
   useEffect(() => {
-    const names: Record<string, string> = {
-      "/": "Текстиль, который создаёт дом",
-      "/projects": "Галерея работ",
-      "/selection": "Подбор штор",
-      "/calculator": "Калькулятор стоимости",
-      "/favorites": "Избранное",
-      "/cart": "Корзина",
-      "/company": "О компании",
-      "/curtains": "Шторы на заказ",
-      "/price": "Цены на пошив",
-      "/contacts": "Контакты",
-      "/catalog": "Все направления",
-      "/shop": "Магазин",
-    };
-    document.title =
-      (product?.title || source?.title || names[path] || "VIP DECOR DESIGN") +
-      " — VIP DECOR DESIGN";
-    const meta = document.querySelector('meta[name="description"]');
-    meta?.setAttribute(
-      "content",
-      source?.description ||
-        "Шторы и интерьерный текстиль. Индивидуальный пошив, подбор тканей и оформление окон — VIP DECOR DESIGN, Москва.",
-    );
+    const metadata = pageMetadata(path, source, product);
+    document.title = metadata.title;
+    for (const [name, content] of [
+      ["description", metadata.description],
+      ["robots", metadata.robots],
+    ]) {
+      let meta = document.querySelector<HTMLMetaElement>(
+        `meta[name="${name}"]`,
+      );
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.name = name;
+        document.head.appendChild(meta);
+      }
+      meta.content = content;
+    }
     let canonical = document.querySelector<HTMLLinkElement>(
       "link[rel=canonical]",
     );
@@ -111,7 +118,7 @@ function RouteContent({
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = product?.url || source?.url || "https://vip2d.ru" + path;
+    canonical.href = metadata.canonical;
   }, [path, source, product]);
   if (path === "/") return <Home />;
   if (path === "/selection") return <Selection onDiscuss={discuss} />;
@@ -121,18 +128,30 @@ function RouteContent({
         <Calculator onDiscuss={discuss} />
       </div>
     );
-  if (path === "/fabrics") return <Navigate to="/tkani" replace />;
-  if (path === "/privacy") return <Navigate to="/popd" replace />;
-  if (path === "/projects/quiet-living-room") return <ConceptProject />;
+  if (path === "/fabrics")
+    return <Navigate to={"/tkani" + search + hash} replace />;
+  if (path === "/furnitura")
+    return <Navigate to={"/fyrnityra" + search + hash} replace />;
+  if (path === "/privacy")
+    return <Navigate to={"/popd" + search + hash} replace />;
+  if (path === "/projects/quiet-living-room")
+    return <Navigate to="/projects" replace />;
   if (path === "/projects") return <Projects />;
-  if (path === "/studio") return <Navigate to={"/company" + hash} replace />;
+  if (path === "/studio")
+    return <Navigate to={"/company" + search + hash} replace />;
   if (path === "/company") return <Company />;
-  if (path === "/curtains") return <Curtains />;
+  if (path === "/curtains")
+    return <Navigate to={"/" + search + hash} replace />;
   if (path === "/price") return <Price />;
   if (path === "/contacts") return <Contacts />;
+  if (path === "/kakpodobrat") return <FabricGuide />;
+  if (source && path === "/popd") return <Privacy page={source} />;
+  if (source && ["/dostavka", "/page13486315.html"].includes(path))
+    return <Delivery page={source} />;
   if (path === "/sitemap") return <Sitemap />;
-  if (path === "/catalog") return <Directions />;
-  if (path === "/shop") return <Catalog all />;
+  if (path === "/catalog") return <Catalog all />;
+  if (path === "/shop")
+    return <Navigate to={"/catalog" + search + hash} replace />;
   if (path === "/favorites") return <Catalog favoritesOnly />;
   if (path === "/cart") return <Cart />;
   if (product) return <ProductPage key={product.id} product={product} />;
@@ -179,7 +198,7 @@ export default function App() {
           <span>VIP</span>
           <small>DECOR DESIGN</small>
         </div>
-        <p role="status">{error || "Готовим пространство для вдохновения…"}</p>
+        <p role="status">{error || "Загружаем каталог…"}</p>
         {error && (
           <button className="button" onClick={() => setAttempt((x) => x + 1)}>
             Попробовать снова

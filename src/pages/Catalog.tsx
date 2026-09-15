@@ -1,17 +1,30 @@
-import { useEffect, useMemo, useState } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
-import { Search, SlidersHorizontal, X, ArrowUpRight } from "lucide-react";
-import { useStore } from "../lib/store";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
-  Breadcrumbs,
-  ProductCard,
-  EmptyState,
-  Picture,
-} from "../components/Primitives";
+  Link,
+  useLocation,
+  useNavigationType,
+  useSearchParams,
+} from "react-router-dom";
+import {
+  Search,
+  SlidersHorizontal,
+  X,
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { useStore } from "../lib/store";
+import { Breadcrumbs, ProductCard, EmptyState } from "../components/Primitives";
 import Modal from "../components/Modal";
 import type { Product } from "../lib/content";
 import { OriginalContent } from "./Information";
 import { translateLegacyFilters } from "../lib/legacyFilters";
+import {
+  categoryLabel,
+  getCategoryCounts,
+  orderedCategories,
+} from "../lib/catalog";
+import "./catalog.css";
 const productColors = (p: Product) =>
   (p.properties || [])
     .filter((x) => x.name.trim().toLowerCase() === "цвет")
@@ -21,14 +34,6 @@ const productColors = (p: Product) =>
         .map((v) => v.trim())
         .filter(Boolean),
     );
-const fabricTabs = [
-  ["/tkani", "Все ткани"],
-  ["/lnanaiatkan", "Лён"],
-  ["/barxat", "Бархат"],
-  ["/blekayt", "Блэкаут"],
-  ["/zhakkard", "Жаккард"],
-  ["/tyl", "Тюль"],
-];
 export default function Catalog({
   favoritesOnly = false,
   all = false,
@@ -37,8 +42,30 @@ export default function Catalog({
   all?: boolean;
 }) {
   const { data, favorites } = useStore();
-  const { pathname } = useLocation();
+  const { pathname, key: locationKey } = useLocation();
+  const navigationType = useNavigationType();
   const [params, setParams] = useSearchParams();
+  // Input feedback is immediate; router transitions can commit a frame later.
+  const [filters, setFilters] = useState(params);
+  const latestFilters = useRef(params);
+  const requestedSearch = useRef<string | null>(null);
+  useEffect(() => {
+    if (
+      requestedSearch.current !== null &&
+      navigationType === "REPLACE" &&
+      params.toString() !== requestedSearch.current
+    )
+      return;
+    latestFilters.current = params;
+    requestedSearch.current = null;
+    setFilters(params);
+  }, [params, locationKey, navigationType]);
+  const commitFilters = (next: URLSearchParams) => {
+    latestFilters.current = next;
+    requestedSearch.current = next.toString();
+    setFilters(next);
+    setParams(next, { replace: true });
+  };
   useEffect(() => {
     const next = translateLegacyFilters(params);
     if (next.toString() !== params.toString())
@@ -46,28 +73,119 @@ export default function Catalog({
   }, [params, setParams]);
   const [filterOpen, setFilterOpen] = useState(false);
   const [shown, setShown] = useState(24);
-  const cat = data.categories.find((c) => c.path === pathname);
-  const q = params.get("q") || "";
-  const selectedTypes = params.getAll("type");
-  const selectedColors = params.getAll("color");
-  const sort = params.get("sort") || "default";
-  const minPrice = params.get("minPrice") || "";
-  const maxPrice = params.get("maxPrice") || "";
+  const categoryCounts = useMemo(
+    () => getCategoryCounts(data.products),
+    [data.products],
+  );
+  const categories = useMemo(
+    () => orderedCategories(data.categories),
+    [data.categories],
+  );
+  const requestedCategory = filters.get("category") || "";
+  const categoryPath = all
+    ? (categoryCounts.get(requestedCategory) || 0) > 0
+      ? requestedCategory
+      : ""
+    : favoritesOnly
+      ? ""
+      : pathname;
+  const cat = data.categories.find((c) => c.path === categoryPath);
+  const categoryPage = data.pages.find((p) => p.path === categoryPath);
+  const hasDescription = categoryPage?.paragraphs.some(
+    (paragraph) =>
+      paragraph.trim().length > 80 &&
+      paragraph.trim().toLocaleLowerCase("ru") !==
+        cat?.title.toLocaleLowerCase("ru"),
+  );
+  const categoryRail = useRef<HTMLDivElement>(null);
+  const categoriesBar = useRef<HTMLElement>(null);
+  const catalogLayout = useRef<HTMLDivElement>(null);
+  const previousCategory = useRef(categoryPath);
+  const [railEdges, setRailEdges] = useState({ start: true, end: false });
+  const readRailEdges = () => {
+    const rail = categoryRail.current;
+    if (rail)
+      setRailEdges({
+        start: rail.scrollLeft <= 2,
+        end: rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 2,
+      });
+  };
+  useEffect(() => {
+    const rail = categoryRail.current;
+    if (!rail) return;
+    const active = rail.querySelector<HTMLElement>("[aria-current='page']");
+    if (active)
+      rail.scrollTo({
+        left:
+          active.offsetLeft -
+          rail.offsetLeft -
+          (rail.clientWidth - active.offsetWidth) / 2,
+        behavior: "instant",
+      });
+    readRailEdges();
+    const observer = new ResizeObserver(readRailEdges);
+    observer.observe(rail);
+    return () => observer.disconnect();
+  }, [categoryPath, favoritesOnly]);
+  useEffect(() => {
+    if (previousCategory.current === categoryPath) return;
+    previousCategory.current = categoryPath;
+    setShown(24);
+    setFilterOpen(false);
+    const layout = catalogLayout.current;
+    const bar = categoriesBar.current;
+    if (!layout || !bar) return;
+    const headerBottom =
+      Number.parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--site-header-bottom",
+        ),
+      ) || 104;
+    const target =
+      window.scrollY +
+      layout.getBoundingClientRect().top -
+      headerBottom -
+      bar.offsetHeight -
+      24;
+    if (window.scrollY > target)
+      window.scrollTo({ top: Math.max(0, target), behavior: "instant" });
+  }, [categoryPath]);
+  const scrollCategories = (direction: number) => {
+    const rail = categoryRail.current;
+    if (rail)
+      rail.scrollBy({
+        left: direction * rail.clientWidth * 0.75,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+      });
+  };
+  const categoryHref = (path: string) =>
+    path ? `/catalog?${new URLSearchParams({ category: path })}` : "/catalog";
+  const q = filters.get("q") || "";
+  const selectedTypes = filters.getAll("type");
+  const selectedColors = filters.getAll("color");
+  const sort = filters.get("sort") || "default";
+  const minPrice = filters.get("minPrice") || "";
+  const maxPrice = filters.get("maxPrice") || "";
   const source = useMemo(
     () =>
       data.products.filter((p) =>
         favoritesOnly
           ? favorites.includes(p.id)
-          : all
+          : !categoryPath
             ? true
-            : (p.categoryPaths || [p.categoryPath]).includes(pathname),
+            : (p.categoryPaths || [p.categoryPath]).includes(categoryPath),
       ),
-    [data, pathname, all, favoritesOnly, favorites],
+    [data, categoryPath, favoritesOnly, favorites],
   );
   const types = data.categories
     .filter(
       (c) =>
-        c.path !== pathname && source.some((p) => p.categoryPath === c.path),
+        c.path !== categoryPath &&
+        source.some((p) =>
+          (p.categoryPaths || [p.categoryPath]).includes(c.path),
+        ),
     )
     .sort((a, b) => a.title.localeCompare(b.title, "ru"));
   const colors = Array.from(new Set(source.flatMap(productColors))).sort(
@@ -101,7 +219,7 @@ export default function Catalog({
     );
   }, [source, q, selectedTypes, selectedColors, sort, minPrice, maxPrice]);
   const update = (key: string, value: string, multi = false) => {
-    const next = new URLSearchParams(params);
+    const next = new URLSearchParams(latestFilters.current);
     if (multi) {
       const values = next.getAll(key);
       next.delete(key);
@@ -111,10 +229,10 @@ export default function Catalog({
       ).forEach((v) => next.append(key, v));
     } else if (value) next.set(key, value);
     else next.delete(key);
-    setParams(next, { replace: true });
+    commitFilters(next);
     setShown(24);
   };
-  const filters = (
+  const filterControls = (
     <>
       <fieldset className="filter-group price-filter">
         <legend>Цена, ₽</legend>
@@ -145,19 +263,21 @@ export default function Catalog({
           </label>
         </div>
       </fieldset>
-      <fieldset className="filter-group">
-        <legend>Тип материала / изделия</legend>
-        {types.map((t) => (
-          <label key={t.path}>
-            <input
-              type="checkbox"
-              checked={selectedTypes.includes(t.path)}
-              onChange={() => update("type", t.path, true)}
-            />
-            <span>{t.title}</span>
-          </label>
-        ))}
-      </fieldset>
+      {types.length > 0 && (
+        <fieldset className="filter-group">
+          <legend>Тип материала / изделия</legend>
+          {types.map((t) => (
+            <label key={t.path}>
+              <input
+                type="checkbox"
+                checked={selectedTypes.includes(t.path)}
+                onChange={() => update("type", t.path, true)}
+              />
+              <span>{t.title}</span>
+            </label>
+          ))}
+        </fieldset>
+      )}
       {colors.length > 0 && (
         <fieldset className="filter-group">
           <legend>Цвет</legend>
@@ -178,7 +298,11 @@ export default function Catalog({
       <button
         className="text-link reset-filters"
         onClick={() => {
-          setParams({});
+          commitFilters(
+            new URLSearchParams(
+              all && categoryPath ? { category: categoryPath } : undefined,
+            ),
+          );
           setShown(24);
         }}
       >
@@ -188,11 +312,11 @@ export default function Catalog({
     </>
   );
   const title = favoritesOnly
-    ? "То, что вам близко."
+    ? "Избранное"
     : all
-      ? "Детали вашего интерьера."
+      ? "Каталог"
       : pathname === "/tkani"
-        ? "Ткани, которые хочется трогать."
+        ? "Ткани для штор"
         : cat?.title || "Коллекция";
   return (
     <div className="container catalog-page">
@@ -202,21 +326,20 @@ export default function Catalog({
             label: favoritesOnly
               ? "Избранное"
               : all
-                ? "Магазин"
+                ? "Каталог"
                 : cat?.title || "Каталог",
           },
         ]}
       />
       <div className="catalog-heading">
         <div>
-          <p className="eyebrow">
-            {favoritesOnly ? "ВАША ЛИЧНАЯ КОЛЛЕКЦИЯ" : "МАТЕРИАЛЫ И НАСТРОЕНИЯ"}
-          </p>
           <h1>{title}</h1>
           <p>
             {favoritesOnly
-              ? "Сохранённые ткани и детали — чтобы вернуться к ним вместе с дизайнером."
-              : "Найдите свою фактуру, оттенок и настроение."}
+              ? "Сохранённые товары для вашего проекта."
+              : all
+                ? "Ткани для штор, тюль, карнизы и декор для вашего интерьера."
+                : "Выберите материал, цвет и подходящую цену."}
           </p>
         </div>
         <Link className="text-link" to="/selection">
@@ -224,21 +347,74 @@ export default function Catalog({
           <ArrowUpRight size={18} />
         </Link>
       </div>
-      <nav className="category-tabs" aria-label="Категории тканей">
-        {fabricTabs.map(([to, label]) => (
-          <Link to={to} className={pathname === to ? "active" : ""} key={to}>
-            {label}
+      <nav
+        className="category-tabs catalog-categories"
+        aria-label="Категории каталога"
+        ref={categoriesBar}
+      >
+        <button
+          className="category-scroll"
+          type="button"
+          onClick={() => scrollCategories(-1)}
+          disabled={railEdges.start}
+          aria-label="Предыдущие категории"
+        >
+          <ChevronLeft size={18} />
+        </button>
+        <div
+          className="category-rail"
+          ref={categoryRail}
+          onScroll={readRailEdges}
+        >
+          <Link
+            to="/catalog"
+            className={all && !categoryPath ? "active" : ""}
+            aria-current={all && !categoryPath ? "page" : undefined}
+          >
+            Все товары
           </Link>
-        ))}
-        <Link to="/catalog">
-          Все направления
-          <ArrowUpRight size={15} />
-        </Link>
+          {categories.map((category) => {
+            const count = categoryCounts.get(category.path) || 0;
+            const label = categoryLabel(category);
+            return count ? (
+              <Link
+                to={categoryHref(category.path)}
+                className={categoryPath === category.path ? "active" : ""}
+                aria-current={
+                  categoryPath === category.path ? "page" : undefined
+                }
+                key={category.path}
+              >
+                {label}
+              </Link>
+            ) : (
+              <button
+                type="button"
+                className="category-unavailable"
+                disabled
+                title="В категории пока нет товаров"
+                key={category.path}
+              >
+                {label}
+                <span className="sr-only"> — пока нет товаров</span>
+              </button>
+            );
+          })}
+        </div>
+        <button
+          className="category-scroll"
+          type="button"
+          onClick={() => scrollCategories(1)}
+          disabled={railEdges.end}
+          aria-label="Следующие категории"
+        >
+          <ChevronRight size={18} />
+        </button>
       </nav>
-      <div className="catalog-layout">
+      <div className="catalog-layout" ref={catalogLayout}>
         <aside className="filters-sidebar">
           <h2>Фильтры</h2>
-          {filters}
+          {filterControls}
         </aside>
         <div className="catalog-results">
           <h2 className="sr-only">Товары</h2>
@@ -263,6 +439,7 @@ export default function Catalog({
             <label className="sort-field">
               <span className="sr-only">Сортировка</span>
               <select
+                aria-label="Сортировка"
                 value={sort}
                 onChange={(e) => update("sort", e.target.value)}
               >
@@ -325,14 +502,16 @@ export default function Catalog({
             </>
           ) : (
             <EmptyState
+              to="/catalog"
+              link="Посмотреть каталог"
               title={
                 favoritesOnly && !favorites.length
-                  ? "Сохраните то, что откликнулось."
+                  ? "В избранном пока нет товаров"
                   : "Пока ничего не найдено."
               }
               text={
                 favoritesOnly
-                  ? "Нажмите на сердечко у понравившейся ткани — она появится здесь."
+                  ? "Нажмите на сердечко у понравившегося товара — он появится здесь."
                   : source.length
                     ? "Попробуйте другое название или сбросьте выбранные фильтры."
                     : "В этой категории исходный каталог пока не содержит товаров. Поможем подобрать решение в нашей компании."
@@ -341,22 +520,10 @@ export default function Catalog({
           )}
         </div>
       </div>
-      {data.pages.find((p) => p.path === pathname) && (
-        <section className="catalog-description">
-          <OriginalContent
-            page={data.pages.find((p) => p.path === pathname)!}
-          />
-          <div className="article-gallery">
-            {data.pages
-              .find((p) => p.path === pathname)!
-              .images.map((im, i) => (
-                <Picture
-                  key={im.src + i}
-                  src={im.src}
-                  alt={im.alt || cat?.title || "Коллекция"}
-                />
-              ))}
-          </div>
+      {categoryPage && hasDescription && (
+        <section className="catalog-description collection-note">
+          <h2>О категории «{cat?.title}»</h2>
+          <OriginalContent page={categoryPage} />
         </section>
       )}
       <Modal
@@ -366,46 +533,11 @@ export default function Catalog({
         className="filters-dialog"
       >
         <h2>Фильтры</h2>
-        {filters}
+        {filterControls}
         <button className="button" onClick={() => setFilterOpen(false)}>
           Показать результаты · {products.length}
         </button>
       </Modal>
-    </div>
-  );
-}
-export function Directions() {
-  const { data } = useStore();
-  return (
-    <div className="container directions-page">
-      <Breadcrumbs items={[{ label: "Все направления" }]} />
-      <p className="eyebrow">КОЛЛЕКЦИЯ РЕШЕНИЙ</p>
-      <h1>
-        У каждой детали
-        <br />
-        своё место.
-      </h1>
-      <p className="page-intro">
-        Ткани, шторы и предметы, которые делают пространство вашим.
-      </p>
-      <div className="all-directions">
-        {data.categories.map((c) => (
-          <Link className="direction-list-item" key={c.path} to={c.path}>
-            <Picture src={c.image} alt={c.title} />
-            <div>
-              <h2>{c.title}</h2>
-              <span>
-                {c.count !== undefined ? c.count + " позиций" : "Узнать больше"}
-              </span>
-            </div>
-            <ArrowUpRight size={24} />
-          </Link>
-        ))}
-      </div>
-      <Link className="button" to="/shop">
-        Все товары
-        <ArrowUpRight size={19} />
-      </Link>
     </div>
   );
 }

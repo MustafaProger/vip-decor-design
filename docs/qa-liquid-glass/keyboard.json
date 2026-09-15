@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-09-15T09:45:38.794Z",
+  "checks": [
+    "Skip link reaches main with keyboard.",
+    "Mobile menu opens with Enter, traps 20 Tab steps, Escape returns focus.",
+    "Room picker and full article work with keyboard.",
+    "All compatible redirects preserve query and hash.",
+    "320px inquiry dialog fits viewport."
+  ],
+  "passed": true
+}

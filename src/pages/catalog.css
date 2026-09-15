@@ -1,0 +1,109 @@
+/* Keep the existing category pills; only their navigation and positioning change. */
+body .catalog-page .catalog-categories {
+  position: sticky;
+  top: calc(var(--site-header-bottom, 104px) + 12px);
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+  background: var(--surface, #fffefa);
+}
+
+.catalog-categories .category-rail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.category-rail::-webkit-scrollbar {
+  display: none;
+}
+
+body .catalog-categories .category-rail > a,
+body .catalog-categories .category-unavailable {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+body .catalog-categories .category-unavailable {
+  color: var(--muted);
+  background: transparent;
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+body .catalog-categories .category-scroll {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--forest);
+}
+
+.catalog-categories .category-scroll:hover:not(:disabled) {
+  background: var(--sage, #e7ece6);
+}
+.catalog-categories .category-scroll:disabled {
+  opacity: 0.24;
+  cursor: default;
+}
+
+body .catalog-page .filters-sidebar {
+  position: sticky;
+  top: calc(var(--site-header-bottom, 104px) + 90px);
+  max-height: calc(100dvh - var(--site-header-bottom, 104px) - 110px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+body .catalog-page .collection-note {
+  margin-top: 64px;
+  max-width: 860px;
+}
+
+body .collection-note > h2 {
+  margin-bottom: 20px;
+}
+body .collection-note .original-block {
+  padding-block: 0;
+}
+
+@media (max-width: 600px) {
+  body .catalog-page .catalog-categories {
+    top: calc(var(--site-header-bottom, 84px) + 8px);
+  }
+  body .catalog-categories .category-rail > a,
+  body .catalog-categories .category-unavailable {
+    font-size: 12px;
+    padding: 9px 14px;
+  }
+  body .catalog-categories .category-scroll {
+    flex-basis: 28px;
+    width: 28px;
+    height: 36px;
+  }
+  .catalog-categories .category-rail {
+    gap: 2px;
+  }
+}

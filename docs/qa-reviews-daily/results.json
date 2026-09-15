@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-15T15:36:25.924Z",
+  "checks": [
+    "12 route/viewport checks: Home3, reviews9 initially, photos-first order, single concise heading, responsive3/2/1 columns;4 Axe scans.",
+    "Scroll appends nine at a time in stable photos-first order: 9→18→27→36→45→54→63→71; every displayed photo belongs to a review attachment.",
+    "Review sheet has matching original source, passes Axe, traps keyboard focus and restores focus on Escape.",
+    "Cards show at most two previews; gallery opens every photo of its review, supports arrows, stops at end, passes Axe and restores focus.",
+    "Mobile photo and review sheets fit390px; opening/closing sheets does not append extra reviews.",
+    "Unavailable attachment images collapse cleanly to text-only cards without substitute images.",
+    "Manual load-more button adds next9 when IntersectionObserver is unavailable.",
+    "Runtime API data and new local media appear without rebuilding; partial responses retain valid session data or bundled fallback; homepage all-reviews link navigates internally."
+  ],
+  "layouts": [
+    {
+      "route": "/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 2
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/projects",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 1
+    },
+    {
+      "route": "/projects",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 1
+    },
+    {
+      "route": "/projects",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 2
+    },
+    {
+      "route": "/projects",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/projects",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/projects",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    }
+  ],
+  "batches": [
+    9,
+    18,
+    27,
+    36,
+    45,
+    54,
+    63,
+    71
+  ],
+  "errors": [],
+  "videoRequests": []
+}

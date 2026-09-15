@@ -5,7 +5,7 @@ import { chromium, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
 const baseURL = process.env.QA_BASE_URL || "http://127.0.0.1:5180";
-const outputDirectory = resolve("docs");
+const outputDirectory = resolve(process.env.QA_OUTPUT_DIR || "docs");
 const data = JSON.parse(await readFile("src/data/site-content.json", "utf8"));
 const sourcePages = JSON.parse(
   await readFile("data/source/page-inventory.json", "utf8"),
@@ -248,7 +248,7 @@ async function scenario(name, run) {
     result.details = await run();
     result.passed = true;
   } catch (error) {
-    result.error = error.message;
+    result.error = error.stack || error.message;
     console.log(`FAIL scenario ${name}: ${error.message}`);
   }
   report.scenarios.push(result);
@@ -480,7 +480,7 @@ async function checkFavorites() {
   try {
     await openPage(page, "/favorites");
     await page
-      .getByRole("heading", { name: "Сохраните то, что откликнулось." })
+      .getByRole("heading", { name: "В избранном пока нет товаров" })
       .waitFor();
     await openPage(page, "/tkani");
     const first = page.locator(".product-card").first();
@@ -508,7 +508,7 @@ async function checkFavorites() {
       .getByRole("button", { name: "Убрать из избранного:", exact: false })
       .click();
     await page
-      .getByRole("heading", { name: "Сохраните то, что откликнулось." })
+      .getByRole("heading", { name: "В избранном пока нет товаров" })
       .waitFor();
     assert.equal(await page.locator(".product-card").count(), 0);
     assert.equal(

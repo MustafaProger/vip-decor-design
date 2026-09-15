@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-15T14:36:11.546Z",
+  "checks": [
+    "Autoplay muted inline, pause freezes currentTime, resume plays.",
+    "Film pauses off screen and resumes when hero is visible.",
+    "Reduced motion renders static image, no video resource element or motion control.",
+    "Visual screenshots after all reveal and lazy content loaded at 1440px.",
+    "Visual screenshots after all reveal and lazy content loaded at 390px.",
+    "Video network failure preserves static image and hides playback control."
+  ],
+  "errors": []
+}

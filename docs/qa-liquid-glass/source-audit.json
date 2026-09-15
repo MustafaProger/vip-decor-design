@@ -1,0 +1,391 @@
+{
+  "checkedAt": "2026-09-15T09:29:09.259Z",
+  "sitemapUrls": 39,
+  "live": [
+    {
+      "url": "https://vip2d.ru/",
+      "status": 200,
+      "bytes": 199649,
+      "known": true,
+      "title": "Vip decor design"
+    },
+    {
+      "url": "https://vip2d.ru/barxat",
+      "status": 200,
+      "bytes": 63491,
+      "known": true,
+      "title": "Бархат"
+    },
+    {
+      "url": "https://vip2d.ru/blekayt",
+      "status": 200,
+      "bytes": 65537,
+      "known": true,
+      "title": "Блэкаут"
+    },
+    {
+      "url": "https://vip2d.ru/tkani",
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://vip2d.ru/atlas",
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://vip2d.ru/zhakkard",
+      "status": 200,
+      "bytes": 62890,
+      "known": true,
+      "title": "Жаккард"
+    },
+    {
+      "url": "https://vip2d.ru/lnanaiatkan",
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://vip2d.ru/vual",
+      "status": 200,
+      "bytes": 63026,
+      "known": true,
+      "title": "Вуаль"
+    },
+    {
+      "url": "https://vip2d.ru/tyl",
+      "status": 200,
+      "bytes": 59843,
+      "known": true,
+      "title": "Тюль"
+    },
+    {
+      "url": "https://vip2d.ru/tulizlna",
+      "status": 200,
+      "bytes": 55257,
+      "known": true,
+      "title": "Тюль из льна"
+    },
+    {
+      "url": "https://vip2d.ru/tulsetka",
+      "status": 200,
+      "bytes": 63846,
+      "known": true,
+      "title": "Тюль сетка"
+    },
+    {
+      "url": "https://vip2d.ru/organza",
+      "status": 200,
+      "bytes": 62719,
+      "known": true,
+      "title": "Органза"
+    },
+    {
+      "url": "https://vip2d.ru/zhaluzi",
+      "status": 200,
+      "bytes": 60400,
+      "known": true,
+      "title": "Жалюзи"
+    },
+    {
+      "url": "https://vip2d.ru/mikrovual",
+      "status": 200,
+      "bytes": 54936,
+      "known": true,
+      "title": "Микровуаль"
+    },
+    {
+      "url": "https://vip2d.ru/gorizontalniezhaluzi",
+      "status": 200,
+      "bytes": 60509,
+      "known": true,
+      "title": "Горизонтальные жалюзи"
+    },
+    {
+      "url": "https://vip2d.ru/rulonnieshtori",
+      "status": 200,
+      "bytes": 60695,
+      "known": true,
+      "title": "Рулонные шторы"
+    },
+    {
+      "url": "https://vip2d.ru/vertikalniezhaluzi",
+      "status": 200,
+      "bytes": 60368,
+      "known": true,
+      "title": "Вертикальные жалюзи"
+    },
+    {
+      "url": "https://vip2d.ru/klassicheskierulonnieshtori",
+      "status": 200,
+      "bytes": 52894,
+      "known": true,
+      "title": "Классические рулонные шторы"
+    },
+    {
+      "url": "https://vip2d.ru/karnizi",
+      "status": 200,
+      "bytes": 59677,
+      "known": true,
+      "title": "Карнизы"
+    },
+    {
+      "url": "https://vip2d.ru/nastenniekarnizi",
+      "status": 200,
+      "bytes": 60617,
+      "known": true,
+      "title": "Настенные карнизы"
+    },
+    {
+      "url": "https://vip2d.ru/potolochniekarnizi",
+      "status": 200,
+      "bytes": 60639,
+      "known": true,
+      "title": "Потолочные карнизы"
+    },
+    {
+      "url": "https://vip2d.ru/blekaytrulonnieshtori",
+      "status": 200,
+      "bytes": 52947,
+      "known": true,
+      "title": "Рулонные шторы Блэкаут "
+    },
+    {
+      "url": "https://vip2d.ru/plastikoviekarnizi",
+      "status": 200,
+      "bytes": 60632,
+      "known": true,
+      "title": "Пластиковые карнизы"
+    },
+    {
+      "url": "https://vip2d.ru/derevanniekarnizi",
+      "status": 200,
+      "bytes": 60265,
+      "known": true,
+      "title": "Деревянные карнизы"
+    },
+    {
+      "url": "https://vip2d.ru/fyrnityra",
+      "status": 200,
+      "bytes": 52800,
+      "known": true,
+      "title": "Фурнитура"
+    },
+    {
+      "url": "https://vip2d.ru/decor",
+      "status": 200,
+      "bytes": 59681,
+      "known": true,
+      "title": "Декор"
+    },
+    {
+      "url": "https://vip2d.ru/podyshki",
+      "status": 200,
+      "bytes": 52798,
+      "known": true,
+      "title": "Подушки"
+    },
+    {
+      "url": "https://vip2d.ru/pokrivala",
+      "status": 200,
+      "bytes": 52806,
+      "known": true,
+      "title": "Покрывала"
+    },
+    {
+      "url": "https://vip2d.ru/kisti",
+      "status": 200,
+      "bytes": 59128,
+      "known": true,
+      "title": "Кисти"
+    },
+    {
+      "url": "https://vip2d.ru/shnypki",
+      "status": 200,
+      "bytes": 52865,
+      "known": true,
+      "title": "Шнуры"
+    },
+    {
+      "url": "https://vip2d.ru/metallicheskiekarnizi",
+      "status": 200,
+      "bytes": 60653,
+      "known": true,
+      "title": "Металлические карнизы"
+    },
+    {
+      "url": "https://vip2d.ru/kartini",
+      "status": 200,
+      "bytes": 60521,
+      "known": true,
+      "title": "Картины"
+    },
+    {
+      "url": "https://vip2d.ru/gotovieizdelia",
+      "status": 200,
+      "bytes": 52962,
+      "known": true,
+      "title": "Готовые изделия"
+    },
+    {
+      "url": "https://vip2d.ru/avstriskieshtori",
+      "status": 200,
+      "bytes": 52963,
+      "known": true,
+      "title": "Австрийские шторы"
+    },
+    {
+      "url": "https://vip2d.ru/franzusckieshtoru",
+      "status": 200,
+      "bytes": 52905,
+      "known": true,
+      "title": "Французские шторы "
+    },
+    {
+      "url": "https://vip2d.ru/rimskieshtori",
+      "status": 200,
+      "bytes": 52922,
+      "known": true,
+      "title": "Римские шторы"
+    },
+    {
+      "url": "https://vip2d.ru/klasiheskieshtori",
+      "status": 200,
+      "bytes": 52874,
+      "known": true,
+      "title": "Классические шторы"
+    },
+    {
+      "url": "https://vip2d.ru/kakpodobrat",
+      "status": 200,
+      "bytes": 125944,
+      "known": true,
+      "title": "Как подобрать?"
+    },
+    {
+      "url": "https://vip2d.ru/dostavka",
+      "status": 200,
+      "bytes": 65396,
+      "known": true,
+      "title": "Доставка и оплата"
+    }
+  ],
+  "unknownLocalLinks": [
+    {
+      "path": "/londonskieshtori",
+      "from": [
+        "/atlas",
+        "/avstriskieshtori",
+        "/barxat",
+        "/blekayt",
+        "/blekaytrulonnieshtori",
+        "/decor",
+        "/derevanniekarnizi",
+        "/dostavka",
+        "/franzusckieshtoru",
+        "/fyrnityra",
+        "/gorizontalniezhaluzi",
+        "/gotovieizdelia",
+        "/kakpodobrat",
+        "/karnizi",
+        "/kartini",
+        "/kisti",
+        "/klasiheskieshtori",
+        "/klassicheskierulonnieshtori",
+        "/lnanaiatkan",
+        "/metallicheskiekarnizi",
+        "/mikrovual",
+        "/nastenniekarnizi",
+        "/organza",
+        "/page13486315.html",
+        "/plastikoviekarnizi",
+        "/podyshki",
+        "/pokrivala",
+        "/popd",
+        "/potolochniekarnizi",
+        "/rimskieshtori",
+        "/rulonnieshtori",
+        "/shnypki",
+        "/tkani",
+        "/tulizlna",
+        "/tulsetka",
+        "/tyl",
+        "/vertikalniezhaluzi",
+        "/vual",
+        "/zhakkard",
+        "/zhaluzi"
+      ]
+    },
+    {
+      "path": "/%20",
+      "from": [
+        "/atlas",
+        "/avstriskieshtori",
+        "/barxat",
+        "/blekayt",
+        "/blekaytrulonnieshtori",
+        "/decor",
+        "/derevanniekarnizi",
+        "/dostavka",
+        "/franzusckieshtoru",
+        "/fyrnityra",
+        "/gorizontalniezhaluzi",
+        "/gotovieizdelia",
+        "/kakpodobrat",
+        "/karnizi",
+        "/kartini",
+        "/kisti",
+        "/klasiheskieshtori",
+        "/klassicheskierulonnieshtori",
+        "/lnanaiatkan",
+        "/metallicheskiekarnizi",
+        "/mikrovual",
+        "/nastenniekarnizi",
+        "/organza",
+        "/page13486315.html",
+        "/plastikoviekarnizi",
+        "/podyshki",
+        "/pokrivala",
+        "/popd",
+        "/potolochniekarnizi",
+        "/rimskieshtori",
+        "/rulonnieshtori",
+        "/shnypki",
+        "/tkani",
+        "/tulizlna",
+        "/tulsetka",
+        "/tyl",
+        "/vertikalniezhaluzi",
+        "/vual",
+        "/zhakkard",
+        "/zhaluzi"
+      ]
+    }
+  ],
+  "liveContacts": " КОНТАКТЫ+7 495 969 31 89+7 969 035 98 89+7 903 969 31 89info@vip2d.ruМосква Сокольническая площадь 4А2 этаж, пав. 226var arMapMarkers208194534 = [\n{\ntitle: \"\",\ndescr: \"\",\nlat: \"55.789952\",\nlng: \"37.678541\",\ncolor: null,\nurl: null,\nisOpen: false,\nisHidden: false,\noffset: null,\n},\n];\nt_onReady(function () {\nt_map_lazyload_add_map();\nwindow.addEventListener('scroll', t_throttle(t_map_lazyload_add_map, 300));\nfunction t_map_lazyload_add_map() {\nvar windowHeight = window.innerHeight;\nvar scrollDiffHeigth = 700;\nvar rec = document.getElementById('rec' + 208194534);\nif (!rec) return;\nvar map = rec.querySelector('.t-map-lazyload');\nif (!map) return;\nvar blockTop = map.getBoundingClientRect().top + window.pageYOffset;\nif (window.pageYOffset > blockTop - windowHeight - scrollDiffHeigth) {\nif (map.getAttribute('data-maplazy-load') === 'false') {\nmap.setAttribute('data-maplazy-load', 'true');\nt_onFuncLoad('t_appendYandexMap', function () {\nt_appendYandexMap(\"208194534\",\"\");\n});\n}\n}\n}\n});t_onReady(function () {\nt_onFuncLoad('t554__init', function () {\nt554__init('208194534');\n});\n});",
+  "livePrice": "ЦЕНЫ НА ПОШИВ 1 метр строчки тюль 120 руб1 метр сторочки портьера 150 рубЛюверс+работа 180 руб/штЛамбрекен пошив от 1600 руб/мБандо+пошив - 3500/мпосмотреть тканиПокрывало от 7350руб(фабричная стежка, подкладка, пошив)Римская штора- 2350/метрНаволочка- от 650/штПодхват- от 500 руб/штВалик+работа - 3500посмотреть тканиt_onReady(function () {\nt_onFuncLoad('t843_init', function () {\nt843_init('214496134');\n});\n}); #rec214496134 .t-card__title { color: #ffffff; text-transform: uppercase; } #rec214496134 .t-card__descr { color: #ffffff; }",
+  "localCounts": {
+    "pages": 41,
+    "categories": 36,
+    "products": 477
+  },
+  "fallbackVerification": {
+    "checkedAt": "2026-09-15T09:41:50.411Z",
+    "method": "web open of primary source pages",
+    "pages": [
+      {
+        "url": "https://vip2d.ru/tkani",
+        "title": "Ткани",
+        "crawlerRecency": "2 days ago"
+      },
+      {
+        "url": "https://vip2d.ru/atlas",
+        "title": "Атлас",
+        "crawlerRecency": "today"
+      },
+      {
+        "url": "https://vip2d.ru/lnanaiatkan",
+        "title": "Льняная Ткань",
+        "crawlerRecency": "today"
+      }
+    ],
+    "note": "Content readable through web tool; Node fetch transport errors remain recorded, not misreported as HTTP success."
+  }
+}

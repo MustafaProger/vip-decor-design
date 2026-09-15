@@ -1,7 +1,7 @@
 .inquiry-form,
 .inquiry-result {
   color: #173c32;
-  font-family: Manrope, Arial, sans-serif;
+  font-family: var(--font-ui);
 }
 .inquiry-form {
   display: flex;
@@ -162,7 +162,7 @@
   margin-bottom: 24px;
 }
 .inquiry-result h3 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-ui);
   font-size: clamp(32px, 4vw, 48px);
   line-height: 1.1;
   font-weight: 400;

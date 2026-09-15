@@ -16,8 +16,6 @@ export default function Cart() {
   const [checkout, setCheckout] = useState(false);
   const [delivery, setDelivery] = useState("Самовывоз");
   const [payment, setPayment] = useState("Наличными при получении");
-  const [promo, setPromo] = useState("");
-  const [promoInfo, setPromoInfo] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [values, setValues] = useState<InquiryValues>({
@@ -81,7 +79,6 @@ export default function Cart() {
         ),
         "Доставка: " + delivery + (address ? ", " + address : ""),
         "Оплата: " + payment,
-        promo ? "Промокод (не проверен): " + promo : "",
       ]
         .filter(Boolean)
         .join("\n");
@@ -112,11 +109,11 @@ export default function Cart() {
     <div className="container cart-page">
       <Breadcrumbs items={[{ label: "Корзина" }]} />
       <p className="eyebrow">ВАШ ВЫБОР</p>
-      <h1>Всё складывается.</h1>
+      <h1>Корзина</h1>
       {cart.length === 0 ? (
         <EmptyState
           title="Ваша корзина пока пуста."
-          text="Посмотрите коллекции и добавьте нужные материалы. Понравившиеся идеи можно отдельно сохранить в избранное."
+          text="Выберите товары в каталоге."
         />
       ) : (
         <div className="cart-layout">
@@ -308,36 +305,6 @@ export default function Cart() {
                       )}
                     </fieldset>
                     <label>
-                      Промокод
-                      <div className="promo-field">
-                        <input
-                          value={promo}
-                          onChange={(e) => {
-                            setPromo(e.target.value);
-                            setPromoInfo("");
-                          }}
-                        />
-                        <button
-                          type="button"
-                          className="button secondary"
-                          onClick={() =>
-                            setPromoInfo(
-                              promo
-                                ? "Проверка промокодов будет доступна после подключения магазина. Скидка не применена."
-                                : "Введите промокод.",
-                            )
-                          }
-                        >
-                          Проверить
-                        </button>
-                      </div>
-                    </label>
-                    {promoInfo && (
-                      <p className="fine-print" role="status">
-                        {promoInfo}
-                      </p>
-                    )}
-                    <label>
                       Комментарий
                       <textarea
                         value={values.comment}
@@ -386,8 +353,8 @@ export default function Cart() {
             <p className="cart-total">{money(total)}</p>
             {hasUnknown && <p>Некоторые позиции требуют уточнения цены.</p>}
             <p>
-              Стоимость указана по сохранённым данным каталога. Наличие, цена и
-              условия заказа уточняются в нашей компании.
+              Итоговую стоимость, наличие и условия доставки подтвердим при
+              согласовании заказа.
             </p>
             <button
               className="button"

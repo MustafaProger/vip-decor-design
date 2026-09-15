@@ -1,246 +1,176 @@
-import { motion, useReducedMotion } from "framer-motion";
-import { Reveal, MotionLink, ease } from "../components/Motion";
-import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { useStore } from "../lib/store";
+import { lazy, Suspense } from "react";
+import { Link } from "react-router-dom";
+import { ButtonLink } from "../components/Button";
+import { Reveal } from "../components/Motion";
 import { ArrowLink, Picture } from "../components/Primitives";
+import { useStore } from "../lib/store";
+import "./home.css";
+
+const Reviews = lazy(() => import("../components/Reviews"));
+
+const directions = [
+  ["/tkani", "Ткани для штор", "Фактура, цвет и плотность"],
+  ["/tyl", "Тюль", "Мягкий дневной свет"],
+  ["/karnizi", "Карнизы", "Продуманные крепления"],
+  ["/decor", "Декор", "Детали, которые дополняют"],
+];
 const steps = [
   [
-    "Подбор тканей",
-    "Обсудим пространство",
-    "Уточним задачу, пожелания и особенности комнаты.",
+    "Обсудим вашу идею",
+    "Расскажите о комнате и желаемом результате. Подберём ткани, оттенки и способ крепления.",
   ],
   [
-    "Индивидуальный пошив",
-    "Подберём решение",
-    "Согласуем ткани, оттенки и способ крепления.",
+    "Согласуем каждую деталь",
+    "После замера определим количество ткани, стоимость работ и сроки изготовления.",
   ],
   [
-    "Монтаж и декорирование",
-    "Изготовим и установим",
-    "Подготовим изделия и согласуем оформление на месте.",
+    "Сошьём и установим",
+    "Изготовим шторы по вашим размерам, доставим, отпарим и аккуратно повесим.",
   ],
 ];
+
 export default function Home() {
   const { data } = useStore();
-  const reduced = useReducedMotion();
-  const directions = [
-    {
-      title: "Портьерные ткани",
-      path: "/tkani",
-      image:
-        data.categories.find((c) => c.path === "/tkani")?.image ||
-        data.products[0]?.image,
-    },
-    {
-      title: "Тюль и вуали",
-      path: "/tyl",
-      image:
-        data.categories.find((c) => c.path === "/tyl")?.image ||
-        data.products.find((p) => /тюль|вуаль/i.test(p.category))?.image,
-    },
-    {
-      title: "Декоративный текстиль",
-      path: "/decor",
-      image: data.categories.find((c) => /декор/i.test(c.title))?.image,
-    },
-  ];
   return (
-    <>
-      <section className="hero" aria-labelledby="home-title">
-        <motion.div
-          className="hero-copy"
-          initial={reduced ? false : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: reduced ? 0 : 0.9, ease }}
-        >
-          <p className="eyebrow">ИНТЕРЬЕРНЫЙ ТЕКСТИЛЬ НА ЗАКАЗ</p>
+    <div className="home-page container">
+      <section className="home-opening" aria-labelledby="home-title">
+        <div className="home-hero-copy">
+          <p className="eyebrow">VIP DECOR DESIGN · МОСКВА</p>
           <h1 id="home-title">
-            Текстиль,
+            Шторы на заказ
             <br />
-            который
-            <br />
-            создаёт дом.
+            для вашего дома
           </h1>
-          <p className="hero-description">
-            Шторы и текстиль на заказ.
+          <p className="home-hero-description">
+            Ткани, в которые влюбляешься.
             <br />
-            <span className="desktop-copy">
-              От первой идеи до красивой драпировки.
-            </span>
-            <span className="mobile-copy">От идеи до красивой драпировки.</span>
+            Шторы, с которыми хочется жить.
           </p>
-          <MotionLink
-            whileTap={reduced ? undefined : { scale: 0.97 }}
-            className="button hero-cta"
-            to="/selection"
-          >
-            Подобрать шторы
-            <ArrowUpRight size={22} />
-          </MotionLink>
-          <Link className="hero-secondary" to="/projects">
-            Смотреть проекты
-          </Link>
-          <p className="hero-location">МОСКВА · СОБСТВЕННЫЙ ПОШИВ</p>
-        </motion.div>
-        <motion.figure
-          className="hero-image"
-          initial={reduced ? false : { opacity: 0, scale: 1.035 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: reduced ? 0 : 1.15, ease }}
-        >
-          <Picture
-            src="/images/concept-living.webp"
-            alt="Натуральные льняные шторы и лёгкий тюль в залитой солнцем гостиной — концепция интерьера"
-            eager
-          />
-          <figcaption>
-            <span>КОНЦЕПЦИЯ ИНТЕРЬЕРА</span>
-            <span>ФАКТУРА. СВЕТ. ТИШИНА.</span>
-          </figcaption>
-        </motion.figure>
-      </section>
-      <div className="process-strip">
-        <div className="container">
-          {steps.map(([title], i) => (
-            <div key={title}>
-              <span className="step-number">0{i + 1}</span>
-              <span className="short-rule" />
-              <span>{title}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-      <Reveal className="section container">
-        <p className="eyebrow">КОЛЛЕКЦИЯ РЕШЕНИЙ</p>
-        <div className="section-heading">
-          <h2>
-            Ваш интерьер
-            <br className="mobile-break" /> начинается с деталей.
-          </h2>
-        </div>
-        <div className="direction-grid">
-          {directions.map((d, i) => (
-            <Link
-              className="direction"
-              key={d.title}
-              to={
-                data.categories.find((c) => c.path === d.path)?.path ||
-                (i === 1
-                  ? data.categories.find((c) => /тюль/i.test(c.title))?.path
-                  : i === 2
-                    ? data.categories.find((c) => /декор/i.test(c.title))?.path
-                    : d.path) ||
-                "/catalog"
-              }
-            >
-              <Picture src={d.image} alt={d.title} />
-              <div>
-                <span>{d.title}</span>
-                <ArrowUpRight size={27} />
-              </div>
-            </Link>
-          ))}
-        </div>
-        <div className="section-tail">
-          <p>
-            Шторы, карнизы и текстильные детали,
-            <br />
-            которые складываются в цельный интерьер.
+          <p className="home-hero-service">
+            От первого образца ткани до последней складки — берём всё на себя.
           </p>
-          <ArrowLink to="/catalog">Все направления</ArrowLink>
-        </div>
-      </Reveal>
-      <Reveal className="section project-section">
-        <div className="container">
-          <div className="section-heading two-sided">
-            <div>
-              <p className="eyebrow">ПРОСТРАНСТВА И НАСТРОЕНИЯ</p>
-              <h2>
-                Посмотрите, как
-                <br />
-                работает текстиль.
-              </h2>
-            </div>
-            <ArrowLink to="/projects">Галерея работ</ArrowLink>
+          <div className="home-actions">
+            <ButtonLink to="/selection">
+              Обсудить мои шторы <ArrowUpRight size={19} />
+            </ButtonLink>
+            <ArrowLink to="/catalog">Выбрать ткань</ArrowLink>
           </div>
-          <div className="featured-projects">
-            <Link to="/projects/quiet-living-room" className="featured-concept">
+        </div>
+        <figure className="home-hero-photo">
+          <img
+            src="/images/concept-living.webp"
+            alt="Светлые портьеры и воздушный тюль в гостиной — идея оформления"
+            width="1672"
+            height="941"
+            fetchPriority="high"
+            decoding="async"
+          />
+          <figcaption>Идея оформления · визуализация</figcaption>
+        </figure>
+      </section>
+
+      <section
+        className="home-section home-order"
+        id="order"
+        aria-labelledby="home-order-title"
+      >
+        <div className="home-order-heading">
+          <div>
+            <p className="eyebrow">ОТ ЗАМЕРА ДО УСТАНОВКИ</p>
+            <h2 id="home-order-title">Всё начинается с вашей идеи</h2>
+            <p>
+              Начать можно с фотографии комнаты и примерных размеров окна.
+              Остальное обсудим вместе.
+            </p>
+          </div>
+          <ArrowLink to="/price">Цены на пошив</ArrowLink>
+        </div>
+        <ol className="home-order-steps" aria-label="Как заказать шторы">
+          {steps.map(([title, text], index) => (
+            <li key={title}>
+              <Reveal className="home-order-step">
+                <span className="home-step-number" aria-hidden="true">
+                  0{index + 1}
+                </span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section
+        className="home-section home-materials"
+        aria-labelledby="home-catalog-title"
+      >
+        <div className="section-heading two-sided">
+          <div>
+            <p className="eyebrow">ФАКТУРА, СВЕТ И ДЕТАЛИ</p>
+            <h2 id="home-catalog-title">То, из чего складывается уют</h2>
+          </div>
+          <ArrowLink to="/catalog">Весь каталог</ArrowLink>
+        </div>
+        <div className="home-directions">
+          {directions.map(([path, title, description]) => (
+            <Link
+              to={`/catalog?category=${encodeURIComponent(path)}`}
+              className="home-direction"
+              key={path}
+            >
               <Picture
-                src="/images/concept-living.webp"
-                alt="Тихая гостиная — концепция интерьера"
+                src={
+                  data.categories.find((category) => category.path === path)
+                    ?.image
+                }
+                alt={title}
               />
               <div>
-                <div>
-                  <p className="eyebrow">КОНЦЕПЦИЯ ИНТЕРЬЕРА</p>
-                  <h3>Тихая гостиная</h3>
-                </div>
-                <ArrowUpRight size={26} />
+                <h3>
+                  {title}
+                  <ArrowUpRight size={19} aria-hidden="true" />
+                </h3>
+                <p>{description}</p>
               </div>
             </Link>
-            {data.gallery[0] && (
-              <Link to="/projects" className="featured-real">
-                <Picture
-                  src={data.gallery[0].src}
-                  alt={
-                    data.gallery[0].alt ||
-                    "Текстильное оформление из галереи наших работ"
-                  }
-                />
-                <div>
-                  <div>
-                    <p className="eyebrow">НАШИ РАБОТЫ</p>
-                    <h3>Текстиль в интерьере</h3>
-                  </div>
-                  <ArrowUpRight size={24} />
-                </div>
-              </Link>
-            )}
-          </div>
-        </div>
-      </Reveal>
-      <Reveal className="section container tactile-section">
-        <div className="tactile-photos">
-          {data.products
-            .filter(
-              (p) => p.categoryPath === "/tkani" || /ткан/i.test(p.category),
-            )
-            .slice(1, 4)
-            .map((p) => (
-              <Picture key={p.id} src={p.image} alt={p.title} />
-            ))}
-        </div>
-        <div>
-          <p className="eyebrow">ЗНАКОМСТВО С МАТЕРИАЛОМ</p>
-          <h2>
-            Начните
-            <br />с прикосновения.
-          </h2>
-          <p>
-            Рассмотрите фактуру, выберите оттенок и сохраните материалы для
-            обсуждения с дизайнером.
-          </p>
-          <ArrowLink to="/tkani">Смотреть ткани</ArrowLink>
-        </div>
-      </Reveal>
-      <Reveal className="section container how-section">
-        <p className="eyebrow">ВНИМАНИЕ К КАЖДОЙ ДЕТАЛИ</p>
-        <h2>
-          От первого разговора
-          <br />
-          до последней складки.
-        </h2>
-        <div className="how-grid">
-          {steps.map(([, title, text], i) => (
-            <div key={title}>
-              <span className="step-number">0{i + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </div>
           ))}
         </div>
-        <ArrowLink to="/calculator">Рассчитать стоимость штор</ArrowLink>
-      </Reveal>
-    </>
+      </section>
+
+      <div className="home-section home-reviews" id="reviews">
+        <Suspense
+          fallback={
+            <p className="home-reviews-loading" role="status">
+              Загружаем отзывы клиентов…
+            </p>
+          }
+        >
+          <Reviews variant="preview" />
+        </Suspense>
+      </div>
+
+      <section className="home-help" aria-labelledby="home-help-title">
+        <div>
+          <p className="eyebrow">ПРИГЛАШАЕМ В ШОУРУМ</p>
+          <h2 id="home-help-title">
+            Почувствуйте ткань.
+            <br />
+            Представьте её дома.
+          </h2>
+          <p>
+            Посмотрите оттенки вживую и найдите свою фактуру вместе с
+            дизайнером.
+          </p>
+          <p className="home-help-address">{data.contacts.address}</p>
+        </div>
+        <div className="home-help-actions">
+          <ButtonLink to="/selection">
+            Обсудить мой заказ <ArrowUpRight size={18} />
+          </ButtonLink>
+          <ArrowLink to="/contacts">Контакты и маршрут</ArrowLink>
+        </div>
+      </section>
+    </div>
   );
 }

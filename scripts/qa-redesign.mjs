@@ -85,27 +85,24 @@ try {
   await open(p, "/studio");
   await expect(p).toHaveURL(/\/company$/);
   await expect(p).toHaveTitle("О компании — VIP DECOR DESIGN");
-  await expect(p.locator(".company-facts > div")).toHaveCount(4);
-  await expect(p.locator(".benefit-card")).toHaveCount(4);
+  await expect(p.locator(".company-services li")).toHaveCount(3);
+  await expect(p.locator(".company-terms dl > div")).toHaveCount(3);
   await expect(p.locator(".original-content")).toHaveCount(0);
   results.scenarios.push(
-    "Company redirect, title, four facts and four benefits; legacy HTML absent.",
+    "Company redirect, services and practical terms; legacy HTML absent.",
   );
   await open(p, "/curtains");
   await expect(p.locator(".original-content")).toHaveCount(0);
-  await p.locator(".offer-details summary").click();
-  await expect(p.locator(".offer-details p")).toBeVisible();
-  const measure = p.getByRole("button", {
-    name: "Заказать замер",
-    exact: true,
-  });
+  await expect(p).toHaveURL(base + "/");
+  await expect(p.locator(".home-curtain-types a")).toHaveCount(5);
+  const measure = p.locator(".header-discuss");
   await measure.click();
   await expect(p.getByRole("dialog")).toBeVisible();
   await p.keyboard.press("Escape");
   await expect(p.getByRole("dialog")).not.toBeVisible();
   await expect(measure).toBeFocused();
   results.scenarios.push(
-    "Offer disclosure and measurement dialog open; Escape closes and restores focus. No submission.",
+    "Curtains redirects to the unified homepage; inquiry dialog opens and Escape restores focus. No submission.",
   );
   await open(p, "/projects");
   const photo = p.locator(".gallery-grid button").first();
@@ -146,7 +143,7 @@ try {
   for (const preference of ["no-preference", "reduce"]) {
     const { c, p } = await context(preference);
     await open(p, "/");
-    const cta = p.locator(".hero-cta");
+    const cta = p.locator(".home-actions .button");
     await expect(cta).toBeVisible();
     await p.waitForTimeout(1200);
     const resting = await cta.evaluate((el) => ({

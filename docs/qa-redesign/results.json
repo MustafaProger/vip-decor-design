@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-12T11:47:22.939Z",
+  "checkedAt": "2026-09-15T09:36:35.244Z",
   "base": "http://127.0.0.1:5180",
   "layouts": [
     {
@@ -176,7 +176,7 @@
       "preference": "no-preference",
       "resting": {
         "transform": "none",
-        "shadow": "none"
+        "shadow": "rgba(255, 255, 255, 0.22) 0px 1px 1px 0px inset, rgba(16, 55, 45, 0.6) 0px 6px 15px -10px"
       },
       "hovered": {
         "transform": "matrix(1, 0, 0, 1, 0, -3)",
@@ -189,11 +189,11 @@
       "preference": "reduce",
       "resting": {
         "transform": "none",
-        "shadow": "none"
+        "shadow": "rgba(255, 255, 255, 0.22) 0px 1px 1px 0px inset, rgba(16, 55, 45, 0.6) 0px 6px 15px -10px"
       },
       "hovered": {
         "transform": "none",
-        "shadow": "none"
+        "shadow": "rgba(255, 255, 255, 0.22) 0px 1px 1px 0px inset, rgba(16, 55, 45, 0.5) 0px 8px 22px -12px"
       },
       "scrollReveal": "visible",
       "dialog": "visible then closed"
@@ -202,10 +202,8 @@
   "scenarios": [
     "Company redirect, title, four facts and four benefits; legacy HTML absent.",
     "Offer disclosure and measurement dialog open; Escape closes and restores focus. No submission.",
-    "All 28 photographs and distinct captions; cropped viewports, dialog navigation, focus restoration.",
-    "SVG clip path masks source frames in the lightbox at 320 and 1440 px. Legacy company anchor redirects and scrolls correctly."
+    "All 28 photographs and distinct captions; cropped viewports, dialog navigation, focus restoration."
   ],
   "passed": true,
-  "errors": [],
-  "finalImageCheckAt": "2026-09-12T11:49:57.128Z"
+  "errors": []
 }

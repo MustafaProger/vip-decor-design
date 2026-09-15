@@ -60,9 +60,7 @@
 }
 .company-facts strong {
   display: block;
-  font:
-    400 clamp(42px, 4.4vw, 64px)/1.1 "Cormorant Garamond",
-    serif;
+  font: 400 clamp(42px, 4.4vw, 64px)/1.1 var(--font-ui);
   letter-spacing: -0.04em;
   margin-bottom: 9px;
 }

@@ -101,18 +101,13 @@
 }
 .pd-eyebrow {
   color: #586052;
-  font:
-    500 10px/1.8 "Manrope",
-    sans-serif;
+  font: 500 10px/1.8 var(--font-ui);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin: 0 0 20px;
 }
 .pd-information h1 {
-  font:
-    400 clamp(42px, 4vw, 64px)/1.04 "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 clamp(42px, 4vw, 64px)/1.04 var(--font-ui);
   margin: 0 0 14px;
   letter-spacing: -0.02em;
   overflow-wrap: anywhere;
@@ -130,10 +125,7 @@
   gap: 8px 14px;
 }
 .pd-price strong {
-  font:
-    400 34px "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 34px var(--font-ui);
 }
 .pd-price > span {
   font-size: 11px;
@@ -171,9 +163,7 @@
   border-radius: 2px;
   padding: 9px 30px 9px 12px;
   color: #173c32;
-  font:
-    400 12px "Manrope",
-    sans-serif;
+  font: 400 12px var(--font-ui);
   cursor: pointer;
   text-overflow: ellipsis;
 }
@@ -224,9 +214,7 @@
   width: 25px;
   text-align: center;
   color: #173c32;
-  font:
-    500 13px "Manrope",
-    sans-serif;
+  font: 500 13px var(--font-ui);
   appearance: textfield;
   -moz-appearance: textfield;
 }
@@ -245,9 +233,7 @@
   border-radius: 3px;
   background: #173c32;
   color: #f6f3ed;
-  font:
-    500 12px "Manrope",
-    sans-serif;
+  font: 500 12px var(--font-ui);
   cursor: pointer;
   padding: 12px;
 }
@@ -281,9 +267,7 @@
   border: 0;
   border-bottom: 1px solid #173c32;
   color: #173c32;
-  font:
-    500 12px "Manrope",
-    sans-serif;
+  font: 500 12px var(--font-ui);
   padding: 12px 0;
   display: flex;
   align-items: center;
@@ -322,10 +306,7 @@
   gap: 9%;
 }
 .pd-description-section h2 {
-  font:
-    400 46px/1.07 "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 46px/1.07 var(--font-ui);
   margin: 0;
 }
 .pd-description-copy {
@@ -361,10 +342,7 @@
   margin-bottom: 28px;
 }
 .pd-related-heading h2 {
-  font:
-    400 46px/1.1 "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 46px/1.1 var(--font-ui);
   margin: 0;
 }
 .pd-related-heading > a {

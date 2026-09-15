@@ -16,7 +16,7 @@ import {
   ProductCard,
 } from "../components/Primitives";
 import Modal from "../components/Modal";
-import { money, plain, type Product as ProductData } from "../lib/content";
+import { money, type Product as ProductData } from "../lib/content";
 import {
   getDefaultSelection,
   getEditionAttributes,
@@ -25,6 +25,7 @@ import {
   quoteProduct,
 } from "../lib/commerce";
 import { useStore } from "../lib/store";
+import { productDescription } from "../lib/productDescription";
 import "./product.css";
 
 export default function Product({ product }: { product: ProductData }) {
@@ -61,14 +62,7 @@ function ProductDetails({ product }: { product: ProductData }) {
   );
   const unavailable =
     quote.availableQuantity !== null && quote.availableQuantity < 1;
-  const description = useMemo(
-    () =>
-      (product.descriptionHtml || product.description)
-        .split(/<br\s*\/?\s*>/i)
-        .map((text) => plain(text))
-        .filter(Boolean),
-    [product],
-  );
+  const description = useMemo(() => productDescription(product), [product]);
   const categoryPath =
     (product.categoryPaths || []).find(
       (path) => !["/tkani", "/tyl", "/shop"].includes(path),
@@ -432,38 +426,67 @@ function ProductDetails({ product }: { product: ProductData }) {
           </div>
         </div>
       </div>
-      <section className="pd-description-section">
-        <div>
-          <p className="pd-eyebrow">В деталях</p>
-          <h2>
-            О материале
-            <br />и его характере.
-          </h2>
-        </div>
-        <div className="pd-description-copy">
-          {description.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-          {(product.properties || []).length > 0 && (
-            <dl className="pd-properties">
-              {product.properties!.map((property, index) => (
-                <div key={index}>
-                  <dt>{property.name}</dt>
-                  <dd>
-                    {quote.attributes.find(
-                      (attribute) => attribute.title === property.name,
-                    )?.value || property.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          )}
-        </div>
-      </section>
+      {(description.summary ||
+        (product.properties || []).length > 0 ||
+        description.terms.length > 0) && (
+        <section
+          className="pd-description-section"
+          aria-labelledby="product-description-title"
+        >
+          <h2 id="product-description-title">О товаре</h2>
+          <div className="pd-description-copy">
+            {description.summary && (
+              <p className="pd-description-summary">{description.summary}</p>
+            )}
+            {(product.properties || []).length > 0 && (
+              <dl className="pd-properties">
+                {product.properties!.map((property, index) => (
+                  <div key={index}>
+                    <dt>{property.name}</dt>
+                    <dd>
+                      {quote.attributes.find(
+                        (attribute) => attribute.title === property.name,
+                      )?.value || property.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+            {description.hasMore && (
+              <details className="pd-description-details">
+                <summary>Полное описание</summary>
+                {description.paragraphs.map((paragraph, index) => {
+                  const list =
+                    index > 0 && description.paragraphs[index - 1].endsWith(":")
+                      ? paragraph.split(/[,;]\s*(?=[А-ЯЁ])|\.\s+(?=[А-ЯЁ])/)
+                      : [];
+                  return list.length > 1 ? (
+                    <ul key={index}>
+                      {list.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p key={index}>{paragraph}</p>
+                  );
+                })}
+              </details>
+            )}
+            {description.terms.length > 0 && (
+              <details className="pd-description-details">
+                <summary>Условия расчёта стоимости</summary>
+                {description.terms.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </details>
+            )}
+          </div>
+        </section>
+      )}
       {related.length > 0 && (
         <section className="pd-related">
           <div className="pd-related-heading">
-            <h2>В той же коллекции.</h2>
+            <h2>В той же коллекции</h2>
             {categoryPath && (
               <Link to={categoryPath}>
                 Смотреть все <ArrowUpRight size={17} />

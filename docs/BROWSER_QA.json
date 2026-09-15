@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-12T11:44:35.314Z",
+  "checkedAt": "2026-09-15T09:37:02.490Z",
   "baseURL": "http://127.0.0.1:5180",
   "browser": "152.0.7977.83",
   "scope": {
@@ -112,7 +112,7 @@
     {
       "path": "/",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:35.738Z",
+      "checkedAt": "2026-09-15T09:37:03.071Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -135,7 +135,7 @@
     {
       "path": "/",
       "width": 390,
-      "checkedAt": "2026-09-12T11:44:46.481Z",
+      "checkedAt": "2026-09-15T09:37:18.470Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -158,7 +158,7 @@
     {
       "path": "/",
       "width": 768,
-      "checkedAt": "2026-09-12T11:44:47.981Z",
+      "checkedAt": "2026-09-15T09:37:20.733Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -181,7 +181,7 @@
     {
       "path": "/",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:44:49.481Z",
+      "checkedAt": "2026-09-15T09:37:22.973Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -204,7 +204,7 @@
     {
       "path": "/",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:35.741Z",
+      "checkedAt": "2026-09-15T09:37:03.083Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -227,7 +227,7 @@
     {
       "path": "/",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:44:50.979Z",
+      "checkedAt": "2026-09-15T09:37:25.136Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/",
@@ -250,7 +250,7 @@
     {
       "path": "/atlas",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:36.036Z",
+      "checkedAt": "2026-09-15T09:37:03.373Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/atlas",
@@ -273,7 +273,7 @@
     {
       "path": "/atlas",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:36.020Z",
+      "checkedAt": "2026-09-15T09:37:03.374Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/atlas",
@@ -296,7 +296,7 @@
     {
       "path": "/avstriskieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:36.268Z",
+      "checkedAt": "2026-09-15T09:37:03.658Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/avstriskieshtori",
@@ -319,7 +319,7 @@
     {
       "path": "/avstriskieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:36.269Z",
+      "checkedAt": "2026-09-15T09:37:03.658Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/avstriskieshtori",
@@ -342,7 +342,7 @@
     {
       "path": "/barxat",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:36.433Z",
+      "checkedAt": "2026-09-15T09:37:03.931Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/barxat",
@@ -365,7 +365,7 @@
     {
       "path": "/barxat",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:36.452Z",
+      "checkedAt": "2026-09-15T09:37:03.907Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/barxat",
@@ -388,7 +388,7 @@
     {
       "path": "/blekayt",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:36.618Z",
+      "checkedAt": "2026-09-15T09:37:04.380Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/blekayt",
@@ -411,7 +411,7 @@
     {
       "path": "/blekayt",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:36.651Z",
+      "checkedAt": "2026-09-15T09:37:04.147Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/blekayt",
@@ -434,7 +434,7 @@
     {
       "path": "/blekaytrulonnieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:36.805Z",
+      "checkedAt": "2026-09-15T09:37:04.610Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/blekaytrulonnieshtori",
@@ -457,7 +457,7 @@
     {
       "path": "/blekaytrulonnieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:36.851Z",
+      "checkedAt": "2026-09-15T09:37:04.376Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/blekaytrulonnieshtori",
@@ -480,7 +480,7 @@
     {
       "path": "/calculator",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:45.384Z",
+      "checkedAt": "2026-09-15T09:37:17.205Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/calculator",
@@ -503,7 +503,7 @@
     {
       "path": "/calculator",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:45.348Z",
+      "checkedAt": "2026-09-15T09:37:16.878Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/calculator",
@@ -526,7 +526,7 @@
     {
       "path": "/cart",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:45.850Z",
+      "checkedAt": "2026-09-15T09:37:17.673Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/cart",
@@ -549,7 +549,7 @@
     {
       "path": "/cart",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:45.799Z",
+      "checkedAt": "2026-09-15T09:37:17.405Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/cart",
@@ -572,7 +572,7 @@
     {
       "path": "/catalog",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:44.854Z",
+      "checkedAt": "2026-09-15T09:37:16.459Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/catalog",
@@ -595,7 +595,7 @@
     {
       "path": "/catalog",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:44.817Z",
+      "checkedAt": "2026-09-15T09:37:16.156Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/catalog",
@@ -618,7 +618,7 @@
     {
       "path": "/company",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:44.032Z",
+      "checkedAt": "2026-09-15T09:37:14.733Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -641,7 +641,7 @@
     {
       "path": "/company",
       "width": 390,
-      "checkedAt": "2026-09-12T11:44:47.512Z",
+      "checkedAt": "2026-09-15T09:37:19.598Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -664,7 +664,7 @@
     {
       "path": "/company",
       "width": 768,
-      "checkedAt": "2026-09-12T11:44:49.017Z",
+      "checkedAt": "2026-09-15T09:37:21.891Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -687,7 +687,7 @@
     {
       "path": "/company",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:44:50.512Z",
+      "checkedAt": "2026-09-15T09:37:24.051Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -710,7 +710,7 @@
     {
       "path": "/company",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:44.032Z",
+      "checkedAt": "2026-09-15T09:37:14.661Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -733,7 +733,7 @@
     {
       "path": "/company",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:44:52.011Z",
+      "checkedAt": "2026-09-15T09:37:26.151Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -756,7 +756,7 @@
     {
       "path": "/contacts",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:44.533Z",
+      "checkedAt": "2026-09-15T09:37:15.790Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/contacts",
@@ -765,9 +765,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Приходите\nза вдохновением."
+        "Начнём с вашего интерьера."
       ],
-      "mainTextLength": 371,
+      "mainTextLength": 565,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -779,7 +779,7 @@
     {
       "path": "/contacts",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:44.515Z",
+      "checkedAt": "2026-09-15T09:37:15.522Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/contacts",
@@ -788,9 +788,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Приходите\nза вдохновением."
+        "Начнём с вашего интерьера."
       ],
-      "mainTextLength": 371,
+      "mainTextLength": 575,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -802,7 +802,7 @@
     {
       "path": "/curtains",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:44.200Z",
+      "checkedAt": "2026-09-15T09:37:14.907Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/curtains",
@@ -825,7 +825,7 @@
     {
       "path": "/curtains",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:44.181Z",
+      "checkedAt": "2026-09-15T09:37:14.889Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/curtains",
@@ -848,7 +848,7 @@
     {
       "path": "/decor",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:36.985Z",
+      "checkedAt": "2026-09-15T09:37:04.821Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/decor",
@@ -871,7 +871,7 @@
     {
       "path": "/decor",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:37.021Z",
+      "checkedAt": "2026-09-15T09:37:04.575Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/decor",
@@ -894,7 +894,7 @@
     {
       "path": "/derevanniekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:37.149Z",
+      "checkedAt": "2026-09-15T09:37:05.089Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/derevanniekarnizi",
@@ -917,7 +917,7 @@
     {
       "path": "/derevanniekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:37.203Z",
+      "checkedAt": "2026-09-15T09:37:04.825Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/derevanniekarnizi",
@@ -940,7 +940,7 @@
     {
       "path": "/dostavka",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:37.350Z",
+      "checkedAt": "2026-09-15T09:37:05.289Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/dostavka",
@@ -949,9 +949,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Доставка и оплата"
+        "Доставка и оплата."
       ],
-      "mainTextLength": 2424,
+      "mainTextLength": 2017,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -963,7 +963,7 @@
     {
       "path": "/dostavka",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:37.368Z",
+      "checkedAt": "2026-09-15T09:37:05.090Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/dostavka",
@@ -972,9 +972,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Доставка и оплата"
+        "Доставка и оплата."
       ],
-      "mainTextLength": 2424,
+      "mainTextLength": 2017,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -986,7 +986,7 @@
     {
       "path": "/fabrics",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:46.016Z",
+      "checkedAt": "2026-09-15T09:37:17.973Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -1009,7 +1009,7 @@
     {
       "path": "/fabrics",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:45.947Z",
+      "checkedAt": "2026-09-15T09:37:17.573Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -1032,7 +1032,7 @@
     {
       "path": "/favorites",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:45.220Z",
+      "checkedAt": "2026-09-15T09:37:17.006Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/favorites",
@@ -1055,7 +1055,7 @@
     {
       "path": "/favorites",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:45.198Z",
+      "checkedAt": "2026-09-15T09:37:16.591Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/favorites",
@@ -1078,7 +1078,7 @@
     {
       "path": "/franzusckieshtoru",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:37.501Z",
+      "checkedAt": "2026-09-15T09:37:05.738Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/franzusckieshtoru",
@@ -1101,7 +1101,7 @@
     {
       "path": "/franzusckieshtoru",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:37.518Z",
+      "checkedAt": "2026-09-15T09:37:05.572Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/franzusckieshtoru",
@@ -1124,7 +1124,7 @@
     {
       "path": "/fyrnityra",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:37.652Z",
+      "checkedAt": "2026-09-15T09:37:05.922Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/fyrnityra",
@@ -1147,7 +1147,7 @@
     {
       "path": "/fyrnityra",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:37.686Z",
+      "checkedAt": "2026-09-15T09:37:05.739Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/fyrnityra",
@@ -1170,7 +1170,7 @@
     {
       "path": "/gorizontalniezhaluzi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:37.818Z",
+      "checkedAt": "2026-09-15T09:37:06.139Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/gorizontalniezhaluzi",
@@ -1193,7 +1193,7 @@
     {
       "path": "/gorizontalniezhaluzi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:37.869Z",
+      "checkedAt": "2026-09-15T09:37:05.922Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/gorizontalniezhaluzi",
@@ -1216,7 +1216,7 @@
     {
       "path": "/gotovieizdelia",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:38.002Z",
+      "checkedAt": "2026-09-15T09:37:06.371Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/gotovieizdelia",
@@ -1227,7 +1227,7 @@
       "headings": [
         "Готовые изделия"
       ],
-      "mainTextLength": 288,
+      "mainTextLength": 280,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1239,7 +1239,7 @@
     {
       "path": "/gotovieizdelia",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:38.040Z",
+      "checkedAt": "2026-09-15T09:37:06.139Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/gotovieizdelia",
@@ -1250,7 +1250,7 @@
       "headings": [
         "Готовые изделия"
       ],
-      "mainTextLength": 288,
+      "mainTextLength": 280,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1262,7 +1262,7 @@
     {
       "path": "/kakpodobrat",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:38.151Z",
+      "checkedAt": "2026-09-15T09:37:06.538Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1271,9 +1271,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Как подобрать шторы"
+        "Ткань, которая подходит вам."
       ],
-      "mainTextLength": 25985,
+      "mainTextLength": 1085,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1285,7 +1285,7 @@
     {
       "path": "/kakpodobrat",
       "width": 390,
-      "checkedAt": "2026-09-12T11:44:47.745Z",
+      "checkedAt": "2026-09-15T09:37:20.164Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1294,9 +1294,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Как подобрать шторы"
+        "Ткань, которая подходит вам."
       ],
-      "mainTextLength": 25985,
+      "mainTextLength": 1085,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1308,7 +1308,7 @@
     {
       "path": "/kakpodobrat",
       "width": 768,
-      "checkedAt": "2026-09-12T11:44:49.250Z",
+      "checkedAt": "2026-09-15T09:37:22.440Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1317,9 +1317,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Как подобрать шторы"
+        "Ткань, которая подходит вам."
       ],
-      "mainTextLength": 25985,
+      "mainTextLength": 1085,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1331,7 +1331,7 @@
     {
       "path": "/kakpodobrat",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:44:50.747Z",
+      "checkedAt": "2026-09-15T09:37:24.585Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1340,9 +1340,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Как подобрать шторы"
+        "Ткань, которая подходит вам."
       ],
-      "mainTextLength": 25985,
+      "mainTextLength": 1085,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1354,7 +1354,7 @@
     {
       "path": "/kakpodobrat",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:38.202Z",
+      "checkedAt": "2026-09-15T09:37:06.356Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1363,9 +1363,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Как подобрать шторы"
+        "Ткань, которая подходит вам."
       ],
-      "mainTextLength": 25985,
+      "mainTextLength": 1118,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1377,7 +1377,7 @@
     {
       "path": "/kakpodobrat",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:44:52.247Z",
+      "checkedAt": "2026-09-15T09:37:26.701Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kakpodobrat",
@@ -1386,9 +1386,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Как подобрать шторы"
+        "Ткань, которая подходит вам."
       ],
-      "mainTextLength": 25985,
+      "mainTextLength": 1118,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1400,7 +1400,7 @@
     {
       "path": "/karnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:38.317Z",
+      "checkedAt": "2026-09-15T09:37:06.987Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/karnizi",
@@ -1423,7 +1423,7 @@
     {
       "path": "/karnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:38.368Z",
+      "checkedAt": "2026-09-15T09:37:06.823Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/karnizi",
@@ -1446,7 +1446,7 @@
     {
       "path": "/kartini",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:38.483Z",
+      "checkedAt": "2026-09-15T09:37:07.157Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kartini",
@@ -1469,7 +1469,7 @@
     {
       "path": "/kartini",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:38.552Z",
+      "checkedAt": "2026-09-15T09:37:07.139Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kartini",
@@ -1492,7 +1492,7 @@
     {
       "path": "/kisti",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:38.688Z",
+      "checkedAt": "2026-09-15T09:37:07.372Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kisti",
@@ -1515,7 +1515,7 @@
     {
       "path": "/kisti",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:38.716Z",
+      "checkedAt": "2026-09-15T09:37:07.373Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/kisti",
@@ -1538,7 +1538,7 @@
     {
       "path": "/klasiheskieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:38.899Z",
+      "checkedAt": "2026-09-15T09:37:07.555Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/klasiheskieshtori",
@@ -1561,7 +1561,7 @@
     {
       "path": "/klasiheskieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:38.921Z",
+      "checkedAt": "2026-09-15T09:37:07.573Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/klasiheskieshtori",
@@ -1584,7 +1584,7 @@
     {
       "path": "/klassicheskierulonnieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:39.066Z",
+      "checkedAt": "2026-09-15T09:37:07.740Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/klassicheskierulonnieshtori",
@@ -1607,7 +1607,7 @@
     {
       "path": "/klassicheskierulonnieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:39.083Z",
+      "checkedAt": "2026-09-15T09:37:07.723Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/klassicheskierulonnieshtori",
@@ -1630,7 +1630,7 @@
     {
       "path": "/lnanaiatkan",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:39.217Z",
+      "checkedAt": "2026-09-15T09:37:07.954Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/lnanaiatkan",
@@ -1653,7 +1653,7 @@
     {
       "path": "/lnanaiatkan",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:39.252Z",
+      "checkedAt": "2026-09-15T09:37:07.957Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/lnanaiatkan",
@@ -1676,7 +1676,7 @@
     {
       "path": "/metallicheskiekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:39.404Z",
+      "checkedAt": "2026-09-15T09:37:08.205Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/metallicheskiekarnizi",
@@ -1699,7 +1699,7 @@
     {
       "path": "/metallicheskiekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:39.454Z",
+      "checkedAt": "2026-09-15T09:37:08.206Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/metallicheskiekarnizi",
@@ -1722,7 +1722,7 @@
     {
       "path": "/mikrovual",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:39.599Z",
+      "checkedAt": "2026-09-15T09:37:08.405Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/mikrovual",
@@ -1745,7 +1745,7 @@
     {
       "path": "/mikrovual",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:39.633Z",
+      "checkedAt": "2026-09-15T09:37:08.427Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/mikrovual",
@@ -1768,7 +1768,7 @@
     {
       "path": "/nastenniekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:39.802Z",
+      "checkedAt": "2026-09-15T09:37:08.628Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/nastenniekarnizi",
@@ -1791,7 +1791,7 @@
     {
       "path": "/nastenniekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:39.798Z",
+      "checkedAt": "2026-09-15T09:37:08.679Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/nastenniekarnizi",
@@ -1814,7 +1814,7 @@
     {
       "path": "/organza",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:39.985Z",
+      "checkedAt": "2026-09-15T09:37:08.895Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/organza",
@@ -1837,7 +1837,7 @@
     {
       "path": "/organza",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:39.982Z",
+      "checkedAt": "2026-09-15T09:37:08.928Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/organza",
@@ -1860,7 +1860,7 @@
     {
       "path": "/page13486315.html",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:40.168Z",
+      "checkedAt": "2026-09-15T09:37:09.096Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/page13486315.html",
@@ -1869,9 +1869,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Доставка и оплата"
+        "Доставка и оплата."
       ],
-      "mainTextLength": 2424,
+      "mainTextLength": 2017,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1883,7 +1883,7 @@
     {
       "path": "/page13486315.html",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:40.148Z",
+      "checkedAt": "2026-09-15T09:37:09.145Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/page13486315.html",
@@ -1892,9 +1892,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Доставка и оплата"
+        "Доставка и оплата."
       ],
-      "mainTextLength": 2424,
+      "mainTextLength": 2017,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -1906,7 +1906,7 @@
     {
       "path": "/plastikoviekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:40.335Z",
+      "checkedAt": "2026-09-15T09:37:09.571Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/plastikoviekarnizi",
@@ -1929,7 +1929,7 @@
     {
       "path": "/plastikoviekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:40.300Z",
+      "checkedAt": "2026-09-15T09:37:09.640Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/plastikoviekarnizi",
@@ -1952,7 +1952,7 @@
     {
       "path": "/podyshki",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:40.502Z",
+      "checkedAt": "2026-09-15T09:37:09.722Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/podyshki",
@@ -1975,7 +1975,7 @@
     {
       "path": "/podyshki",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:40.482Z",
+      "checkedAt": "2026-09-15T09:37:09.789Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/podyshki",
@@ -1998,7 +1998,7 @@
     {
       "path": "/pokrivala",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:40.670Z",
+      "checkedAt": "2026-09-15T09:37:09.905Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/pokrivala",
@@ -2021,7 +2021,7 @@
     {
       "path": "/pokrivala",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:40.632Z",
+      "checkedAt": "2026-09-15T09:37:09.973Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/pokrivala",
@@ -2044,7 +2044,7 @@
     {
       "path": "/popd",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:40.835Z",
+      "checkedAt": "2026-09-15T09:37:10.072Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2055,7 +2055,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8374,
+      "mainTextLength": 8798,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2067,7 +2067,7 @@
     {
       "path": "/popd",
       "width": 390,
-      "checkedAt": "2026-09-12T11:44:47.628Z",
+      "checkedAt": "2026-09-15T09:37:19.732Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2078,7 +2078,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8374,
+      "mainTextLength": 8798,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2090,7 +2090,7 @@
     {
       "path": "/popd",
       "width": 768,
-      "checkedAt": "2026-09-12T11:44:49.131Z",
+      "checkedAt": "2026-09-15T09:37:22.024Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2101,7 +2101,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8374,
+      "mainTextLength": 8798,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2113,7 +2113,7 @@
     {
       "path": "/popd",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:44:50.628Z",
+      "checkedAt": "2026-09-15T09:37:24.168Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2124,7 +2124,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8374,
+      "mainTextLength": 8798,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2136,7 +2136,7 @@
     {
       "path": "/popd",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:40.782Z",
+      "checkedAt": "2026-09-15T09:37:10.160Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2147,7 +2147,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8374,
+      "mainTextLength": 8798,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2159,7 +2159,7 @@
     {
       "path": "/popd",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:44:52.129Z",
+      "checkedAt": "2026-09-15T09:37:26.267Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2170,7 +2170,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8374,
+      "mainTextLength": 8798,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2182,7 +2182,7 @@
     {
       "path": "/potolochniekarnizi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:40.984Z",
+      "checkedAt": "2026-09-15T09:37:10.571Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/potolochniekarnizi",
@@ -2205,7 +2205,7 @@
     {
       "path": "/potolochniekarnizi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:40.931Z",
+      "checkedAt": "2026-09-15T09:37:10.631Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/potolochniekarnizi",
@@ -2228,7 +2228,7 @@
     {
       "path": "/price",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:44.369Z",
+      "checkedAt": "2026-09-15T09:37:15.124Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/price",
@@ -2237,9 +2237,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Цена каждой детали."
+        "Каждая деталь —\nв цене."
       ],
-      "mainTextLength": 427,
+      "mainTextLength": 1012,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2251,7 +2251,7 @@
     {
       "path": "/price",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:44.365Z",
+      "checkedAt": "2026-09-15T09:37:15.073Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/price",
@@ -2260,9 +2260,9 @@
       "overflow": false,
       "h1Count": 1,
       "headings": [
-        "Цена каждой детали."
+        "Каждая деталь —\nв цене."
       ],
-      "mainTextLength": 427,
+      "mainTextLength": 1006,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2274,7 +2274,7 @@
     {
       "path": "/privacy",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:46.200Z",
+      "checkedAt": "2026-09-15T09:37:18.221Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2285,7 +2285,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8374,
+      "mainTextLength": 8798,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2297,7 +2297,7 @@
     {
       "path": "/privacy",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:46.132Z",
+      "checkedAt": "2026-09-15T09:37:17.766Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/popd",
@@ -2308,7 +2308,7 @@
       "headings": [
         "Политика обработки персональных данных"
       ],
-      "mainTextLength": 8374,
+      "mainTextLength": 8798,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -2320,7 +2320,7 @@
     {
       "path": "/projects",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:43.519Z",
+      "checkedAt": "2026-09-15T09:37:13.994Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2343,7 +2343,7 @@
     {
       "path": "/projects",
       "width": 390,
-      "checkedAt": "2026-09-12T11:44:47.245Z",
+      "checkedAt": "2026-09-15T09:37:19.281Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2366,7 +2366,7 @@
     {
       "path": "/projects",
       "width": 768,
-      "checkedAt": "2026-09-12T11:44:48.749Z",
+      "checkedAt": "2026-09-15T09:37:21.591Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2389,7 +2389,7 @@
     {
       "path": "/projects",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:44:50.247Z",
+      "checkedAt": "2026-09-15T09:37:23.767Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2412,7 +2412,7 @@
     {
       "path": "/projects",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:43.498Z",
+      "checkedAt": "2026-09-15T09:37:13.972Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2435,7 +2435,7 @@
     {
       "path": "/projects",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:44:51.730Z",
+      "checkedAt": "2026-09-15T09:37:25.885Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects",
@@ -2458,7 +2458,7 @@
     {
       "path": "/projects/quiet-living-room",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:43.685Z",
+      "checkedAt": "2026-09-15T09:37:14.280Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects/quiet-living-room",
@@ -2481,7 +2481,7 @@
     {
       "path": "/projects/quiet-living-room",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:43.682Z",
+      "checkedAt": "2026-09-15T09:37:14.207Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/projects/quiet-living-room",
@@ -2504,7 +2504,7 @@
     {
       "path": "/rimskieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:41.152Z",
+      "checkedAt": "2026-09-15T09:37:10.794Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/rimskieshtori",
@@ -2527,7 +2527,7 @@
     {
       "path": "/rimskieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:41.098Z",
+      "checkedAt": "2026-09-15T09:37:10.927Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/rimskieshtori",
@@ -2550,7 +2550,7 @@
     {
       "path": "/rulonnieshtori",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:41.301Z",
+      "checkedAt": "2026-09-15T09:37:11.072Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/rulonnieshtori",
@@ -2573,7 +2573,7 @@
     {
       "path": "/rulonnieshtori",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:41.249Z",
+      "checkedAt": "2026-09-15T09:37:11.158Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/rulonnieshtori",
@@ -2596,7 +2596,7 @@
     {
       "path": "/selection",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:43.066Z",
+      "checkedAt": "2026-09-15T09:37:13.439Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2619,7 +2619,7 @@
     {
       "path": "/selection",
       "width": 390,
-      "checkedAt": "2026-09-12T11:44:46.811Z",
+      "checkedAt": "2026-09-15T09:37:18.849Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2642,7 +2642,7 @@
     {
       "path": "/selection",
       "width": 768,
-      "checkedAt": "2026-09-12T11:44:48.316Z",
+      "checkedAt": "2026-09-15T09:37:21.158Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2665,7 +2665,7 @@
     {
       "path": "/selection",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:44:49.813Z",
+      "checkedAt": "2026-09-15T09:37:23.318Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2688,7 +2688,7 @@
     {
       "path": "/selection",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:43.015Z",
+      "checkedAt": "2026-09-15T09:37:13.441Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2711,7 +2711,7 @@
     {
       "path": "/selection",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:44:51.314Z",
+      "checkedAt": "2026-09-15T09:37:25.467Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/selection",
@@ -2734,7 +2734,7 @@
     {
       "path": "/shnypki",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:41.484Z",
+      "checkedAt": "2026-09-15T09:37:11.344Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/shnypki",
@@ -2757,7 +2757,7 @@
     {
       "path": "/shnypki",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:41.432Z",
+      "checkedAt": "2026-09-15T09:37:11.407Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/shnypki",
@@ -2780,7 +2780,7 @@
     {
       "path": "/shop",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:45.037Z",
+      "checkedAt": "2026-09-15T09:37:16.759Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/shop",
@@ -2803,7 +2803,7 @@
     {
       "path": "/shop",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:45.015Z",
+      "checkedAt": "2026-09-15T09:37:16.361Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/shop",
@@ -2826,7 +2826,7 @@
     {
       "path": "/sitemap",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:44.683Z",
+      "checkedAt": "2026-09-15T09:37:16.220Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/sitemap",
@@ -2849,7 +2849,7 @@
     {
       "path": "/sitemap",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:44.665Z",
+      "checkedAt": "2026-09-15T09:37:16.005Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/sitemap",
@@ -2872,7 +2872,7 @@
     {
       "path": "/studio",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:43.849Z",
+      "checkedAt": "2026-09-15T09:37:14.474Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -2895,7 +2895,7 @@
     {
       "path": "/studio",
       "width": 390,
-      "checkedAt": "2026-09-12T11:44:47.378Z",
+      "checkedAt": "2026-09-15T09:37:19.449Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -2918,7 +2918,7 @@
     {
       "path": "/studio",
       "width": 768,
-      "checkedAt": "2026-09-12T11:44:48.883Z",
+      "checkedAt": "2026-09-15T09:37:21.744Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -2941,7 +2941,7 @@
     {
       "path": "/studio",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:44:50.379Z",
+      "checkedAt": "2026-09-15T09:37:23.918Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -2964,7 +2964,7 @@
     {
       "path": "/studio",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:43.849Z",
+      "checkedAt": "2026-09-15T09:37:14.424Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -2987,7 +2987,7 @@
     {
       "path": "/studio",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:44:51.879Z",
+      "checkedAt": "2026-09-15T09:37:26.017Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/company",
@@ -3010,7 +3010,7 @@
     {
       "path": "/tkani",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:41.670Z",
+      "checkedAt": "2026-09-15T09:37:11.640Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -3033,7 +3033,7 @@
     {
       "path": "/tkani",
       "width": 390,
-      "checkedAt": "2026-09-12T11:44:46.661Z",
+      "checkedAt": "2026-09-15T09:37:18.697Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -3056,7 +3056,7 @@
     {
       "path": "/tkani",
       "width": 768,
-      "checkedAt": "2026-09-12T11:44:48.167Z",
+      "checkedAt": "2026-09-15T09:37:20.976Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -3079,7 +3079,7 @@
     {
       "path": "/tkani",
       "width": 1024,
-      "checkedAt": "2026-09-12T11:44:49.662Z",
+      "checkedAt": "2026-09-15T09:37:23.152Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -3090,7 +3090,7 @@
       "headings": [
         "Ткани, которые хочется трогать."
       ],
-      "mainTextLength": 1806,
+      "mainTextLength": 1588,
       "notFound": false,
       "imageFallbackCount": 0,
       "overflowElements": [],
@@ -3102,7 +3102,7 @@
     {
       "path": "/tkani",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:41.599Z",
+      "checkedAt": "2026-09-15T09:37:11.641Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -3125,7 +3125,7 @@
     {
       "path": "/tkani",
       "width": 1920,
-      "checkedAt": "2026-09-12T11:44:51.162Z",
+      "checkedAt": "2026-09-15T09:37:25.318Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tkani",
@@ -3148,7 +3148,7 @@
     {
       "path": "/tulizlna",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:41.852Z",
+      "checkedAt": "2026-09-15T09:37:11.909Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tulizlna",
@@ -3171,7 +3171,7 @@
     {
       "path": "/tulizlna",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:41.765Z",
+      "checkedAt": "2026-09-15T09:37:11.902Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tulizlna",
@@ -3194,7 +3194,7 @@
     {
       "path": "/tulsetka",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:42.026Z",
+      "checkedAt": "2026-09-15T09:37:12.090Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tulsetka",
@@ -3217,7 +3217,7 @@
     {
       "path": "/tulsetka",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:41.935Z",
+      "checkedAt": "2026-09-15T09:37:12.091Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tulsetka",
@@ -3240,7 +3240,7 @@
     {
       "path": "/tyl",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:42.199Z",
+      "checkedAt": "2026-09-15T09:37:12.355Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tyl",
@@ -3263,7 +3263,7 @@
     {
       "path": "/tyl",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:42.131Z",
+      "checkedAt": "2026-09-15T09:37:12.340Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/tyl",
@@ -3286,7 +3286,7 @@
     {
       "path": "/vertikalniezhaluzi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:42.370Z",
+      "checkedAt": "2026-09-15T09:37:12.608Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/vertikalniezhaluzi",
@@ -3309,7 +3309,7 @@
     {
       "path": "/vertikalniezhaluzi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:42.316Z",
+      "checkedAt": "2026-09-15T09:37:12.609Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/vertikalniezhaluzi",
@@ -3332,7 +3332,7 @@
     {
       "path": "/vual",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:42.518Z",
+      "checkedAt": "2026-09-15T09:37:12.821Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/vual",
@@ -3355,7 +3355,7 @@
     {
       "path": "/vual",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:42.514Z",
+      "checkedAt": "2026-09-15T09:37:12.876Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/vual",
@@ -3378,7 +3378,7 @@
     {
       "path": "/zhakkard",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:42.701Z",
+      "checkedAt": "2026-09-15T09:37:13.006Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/zhakkard",
@@ -3401,7 +3401,7 @@
     {
       "path": "/zhakkard",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:42.681Z",
+      "checkedAt": "2026-09-15T09:37:13.045Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/zhakkard",
@@ -3424,7 +3424,7 @@
     {
       "path": "/zhaluzi",
       "width": 320,
-      "checkedAt": "2026-09-12T11:44:42.901Z",
+      "checkedAt": "2026-09-15T09:37:13.212Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/zhaluzi",
@@ -3447,7 +3447,7 @@
     {
       "path": "/zhaluzi",
       "width": 1440,
-      "checkedAt": "2026-09-12T11:44:42.852Z",
+      "checkedAt": "2026-09-15T09:37:13.256Z",
       "errors": [],
       "httpStatus": 200,
       "resolvedPath": "/zhaluzi",
@@ -3509,14 +3509,14 @@
       "width": 320,
       "passed": true,
       "violations": [],
-      "incompleteCount": 0
+      "incompleteCount": 1
     },
     {
       "path": "/popd",
       "width": 320,
       "passed": true,
       "violations": [],
-      "incompleteCount": 0
+      "incompleteCount": 1
     },
     {
       "path": "/",
@@ -3530,7 +3530,7 @@
       "width": 1440,
       "passed": true,
       "violations": [],
-      "incompleteCount": 0
+      "incompleteCount": 1
     },
     {
       "path": "/selection",
@@ -3558,14 +3558,14 @@
       "width": 1440,
       "passed": true,
       "violations": [],
-      "incompleteCount": 0
+      "incompleteCount": 1
     },
     {
       "path": "/popd",
       "width": 1440,
       "passed": true,
       "violations": [],
-      "incompleteCount": 0
+      "incompleteCount": 1
     }
   ],
   "scenarios": [
@@ -3613,14 +3613,14 @@
             "image": {
               "left": 16,
               "right": 304,
-              "top": 444.609375,
-              "bottom": 578.5625
+              "top": 443.609375,
+              "bottom": 577.5625
             },
             "questions": {
               "left": 16,
               "right": 304,
-              "top": 602.5625,
-              "bottom": 1209.796875
+              "top": 601.5625,
+              "bottom": 1297.21875
             },
             "documentWidth": 320
           },
@@ -3629,16 +3629,16 @@
             "width": 390,
             "columns": false,
             "image": {
-              "left": 20,
-              "right": 370,
-              "top": 448.828125,
-              "bottom": 611.609375
+              "left": 16,
+              "right": 374,
+              "top": 447.828125,
+              "bottom": 614.328125
             },
             "questions": {
-              "left": 20,
-              "right": 370,
-              "top": 635.609375,
-              "bottom": 1257.65625
+              "left": 16,
+              "right": 374,
+              "top": 638.328125,
+              "bottom": 1283.65625
             },
             "documentWidth": 390
           },
@@ -3647,16 +3647,16 @@
             "width": 768,
             "columns": true,
             "image": {
-              "left": 24,
-              "right": 333.328125,
-              "top": 363.5625,
-              "bottom": 983.5625
+              "left": 25.34375,
+              "right": 333.46875,
+              "top": 362.5625,
+              "bottom": 998.265625
             },
             "questions": {
-              "left": 357.328125,
-              "right": 744,
-              "top": 363.5625,
-              "bottom": 971.796875
+              "left": 357.46875,
+              "right": 742.640625,
+              "top": 362.5625,
+              "bottom": 998.265625
             },
             "documentWidth": 768
           },
@@ -3665,16 +3665,16 @@
             "width": 1024,
             "columns": true,
             "image": {
-              "left": 40,
+              "left": 33.796875,
               "right": 498,
-              "top": 375.34375,
-              "bottom": 1025.34375
+              "top": 382.34375,
+              "bottom": 1043.234375
             },
             "questions": {
               "left": 526,
-              "right": 984,
-              "top": 375.34375,
-              "bottom": 1024.015625
+              "right": 990.203125,
+              "top": 382.34375,
+              "bottom": 1043.234375
             },
             "documentWidth": 1024
           },
@@ -3683,16 +3683,16 @@
             "width": 1440,
             "columns": true,
             "image": {
-              "left": 64,
-              "right": 734.9375,
-              "top": 426.03125,
-              "bottom": 1191.921875
+              "left": 47.515625,
+              "right": 735.859375,
+              "top": 429.03125,
+              "bottom": 1212.796875
             },
             "questions": {
-              "left": 776.9375,
-              "right": 1376,
-              "top": 426.03125,
-              "bottom": 1191.921875
+              "left": 777.859375,
+              "right": 1392.46875,
+              "top": 429.03125,
+              "bottom": 1212.796875
             },
             "documentWidth": 1440
           },
@@ -3701,16 +3701,16 @@
             "width": 1920,
             "columns": true,
             "image": {
-              "left": 224,
-              "right": 976.296875,
-              "top": 433.828125,
-              "bottom": 1263.34375
+              "left": 240,
+              "right": 975.390625,
+              "top": 442.828125,
+              "bottom": 1270.15625
             },
             "questions": {
-              "left": 1024.296875,
-              "right": 1696,
-              "top": 433.828125,
-              "bottom": 1263.34375
+              "left": 1023.390625,
+              "right": 1680,
+              "top": 442.828125,
+              "bottom": 1270.15625
             },
             "documentWidth": 1920
           },
@@ -3721,14 +3721,14 @@
             "image": {
               "left": 16,
               "right": 304,
-              "top": -233.390625,
-              "bottom": -99.4375
+              "top": -179.390625,
+              "bottom": -45.4375
             },
             "questions": {
               "left": 16,
               "right": 304,
-              "top": -75.4375,
-              "bottom": 873.578125
+              "top": -21.4375,
+              "bottom": 1012.421875
             },
             "documentWidth": 320
           },
@@ -3737,16 +3737,16 @@
             "width": 390,
             "columns": false,
             "image": {
-              "left": 20,
-              "right": 370,
-              "top": -229.171875,
-              "bottom": -66.390625
+              "left": 16,
+              "right": 374,
+              "top": -179.171875,
+              "bottom": -12.671875
             },
             "questions": {
-              "left": 20,
-              "right": 370,
-              "top": -42.390625,
-              "bottom": 848.125
+              "left": 16,
+              "right": 374,
+              "top": 11.328125,
+              "bottom": 991.65625
             },
             "documentWidth": 390
           },
@@ -3755,16 +3755,16 @@
             "width": 768,
             "columns": true,
             "image": {
-              "left": 24,
-              "right": 333.328125,
-              "top": -314.4375,
-              "bottom": 431.578125
+              "left": 25.34375,
+              "right": 333.46875,
+              "top": -264.4375,
+              "bottom": 539.265625
             },
             "questions": {
-              "left": 357.328125,
-              "right": 744,
-              "top": -314.4375,
-              "bottom": 431.578125
+              "left": 357.46875,
+              "right": 742.640625,
+              "top": -264.4375,
+              "bottom": 539.265625
             },
             "documentWidth": 768
           },
@@ -3773,16 +3773,16 @@
             "width": 1024,
             "columns": true,
             "image": {
-              "left": 40,
+              "left": 33.796875,
               "right": 498,
-              "top": -302.65625,
-              "bottom": 441.1875
+              "top": -244.65625,
+              "bottom": 541.78125
             },
             "questions": {
               "left": 526,
-              "right": 984,
-              "top": -302.65625,
-              "bottom": 441.1875
+              "right": 990.203125,
+              "top": -244.65625,
+              "bottom": 541.78125
             },
             "documentWidth": 1024
           },
@@ -3791,16 +3791,16 @@
             "width": 1440,
             "columns": true,
             "image": {
-              "left": 64,
-              "right": 734.9375,
-              "top": -251.96875,
-              "bottom": 507.734375
+              "left": 47.515625,
+              "right": 735.859375,
+              "top": -197.96875,
+              "bottom": 604.328125
             },
             "questions": {
-              "left": 776.9375,
-              "right": 1376,
-              "top": -251.96875,
-              "bottom": 507.734375
+              "left": 777.859375,
+              "right": 1392.46875,
+              "top": -197.96875,
+              "bottom": 604.328125
             },
             "documentWidth": 1440
           },
@@ -3809,16 +3809,16 @@
             "width": 1920,
             "columns": true,
             "image": {
-              "left": 224,
-              "right": 976.296875,
-              "top": -244.171875,
-              "bottom": 498.96875
+              "left": 240,
+              "right": 975.390625,
+              "top": -184.171875,
+              "bottom": 621.953125
             },
             "questions": {
-              "left": 1024.296875,
-              "right": 1696,
-              "top": -244.171875,
-              "bottom": 498.96875
+              "left": 1023.390625,
+              "right": 1680,
+              "top": -184.171875,
+              "bottom": 621.953125
             },
             "documentWidth": 1920
           }

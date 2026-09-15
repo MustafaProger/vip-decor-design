@@ -59,7 +59,7 @@ export default function Selection({
   const [complete, setComplete] = useState(false);
   const [pending, setPending] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const initialRender = useRef(true);
+  const previousStep = useRef(step);
   const selectedRoom = rooms.find((item) => item.id === room) || rooms[0];
   const context = source ? `Подбор штор · ${source}` : "Подбор штор";
   const answers: SelectionAnswers = {
@@ -71,10 +71,8 @@ export default function Selection({
   };
 
   useEffect(() => {
-    if (initialRender.current) {
-      initialRender.current = false;
-      return;
-    }
+    if (previousStep.current === step) return;
+    previousStep.current = step;
     headingRef.current?.focus({ preventScroll: true });
     if (window.matchMedia("(max-width: 900px)").matches) {
       headingRef.current?.scrollIntoView({
@@ -128,11 +126,8 @@ export default function Selection({
         <span>Подбор штор</span>
       </nav>
       <header className="selection-header">
-        <p className="selection-eyebrow">ВАШ ДОМ — ВАША ИСТОРИЯ</p>
-        <h1>Начнём с вашего пространства.</h1>
-        <p>
-          Несколько деталей помогут дизайнеру предложить подходящее решение.
-        </p>
+        <h1>Подбор штор</h1>
+        <p>Укажите комнату, материал и размеры окна.</p>
       </header>
       <div className="selection-progress">
         <ol aria-label="Этапы подбора">

@@ -9,9 +9,7 @@
 }
 .calc-eyebrow {
   margin: 0 0 20px;
-  font:
-    500 11px/1.5 "Manrope",
-    sans-serif;
+  font: 500 11px/1.5 var(--font-ui);
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -20,10 +18,7 @@
   margin-bottom: 54px;
 }
 .calc-intro h1 {
-  font:
-    400 clamp(46px, 5.6vw, 82px)/0.98 "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 clamp(46px, 5.6vw, 82px)/0.98 var(--font-ui);
   margin: 0 0 26px;
   letter-spacing: -0.025em;
 }
@@ -56,9 +51,7 @@
 }
 .calc-step {
   display: inline-block;
-  font:
-    400 12px "Manrope",
-    sans-serif;
+  font: 400 12px var(--font-ui);
   color: #586052;
   margin-right: 14px;
 }
@@ -148,10 +141,7 @@
   color: #586052;
 }
 .calc-width-value {
-  font:
-    400 38px "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 38px var(--font-ui);
   white-space: nowrap;
 }
 .calc-range {
@@ -173,10 +163,7 @@
   border: 1px solid #d9d4ca;
 }
 .calc-summary h2 {
-  font:
-    400 36px/1.1 "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 36px/1.1 var(--font-ui);
   margin: 0 0 28px;
 }
 .calc-summary dl {
@@ -210,10 +197,7 @@
 }
 .calc-total output {
   display: block;
-  font:
-    400 clamp(44px, 5vw, 64px)/1.25 "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 clamp(44px, 5vw, 64px)/1.25 var(--font-ui);
   padding-top: 6px;
 }
 .calc-disclaimer {
@@ -234,9 +218,7 @@
   border-radius: 3px;
   background: #173c32;
   color: #f6f3ed;
-  font:
-    500 12px/1.5 "Manrope",
-    sans-serif;
+  font: 500 12px/1.5 var(--font-ui);
   cursor: pointer;
 }
 .calc-button:hover {
@@ -259,10 +241,7 @@
   border-top: 1px solid #c7c7b9;
 }
 .calc-contact h3 {
-  font:
-    400 28px/1.1 "Cormorant Garamond",
-    Georgia,
-    serif;
+  font: 400 28px/1.1 var(--font-ui);
   margin: 0 0 12px;
 }
 .calc-contact-description {
@@ -289,9 +268,7 @@
   border-radius: 2px;
   color: #173c32;
   background: #f6f3ed;
-  font:
-    400 14px "Manrope",
-    sans-serif;
+  font: 400 14px var(--font-ui);
 }
 .calc-input[aria-invalid="true"] {
   border-color: #913e2a;

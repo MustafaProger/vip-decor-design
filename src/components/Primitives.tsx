@@ -1,5 +1,4 @@
 import { photoCrops } from "../data/gallery-presentation";
-import { motion, useReducedMotion } from "framer-motion";
 import { useId, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Heart, ImageOff } from "lucide-react";
@@ -123,10 +122,9 @@ export function FavoriteButton({
 }) {
   const { favorites, toggleFavorite } = useStore();
   const active = favorites.includes(id);
-  const reduced = useReducedMotion();
   return (
-    <motion.button
-      whileTap={reduced ? undefined : { scale: 0.9 }}
+    <button
+      type="button"
       className={
         "icon-button favorite-button " +
         (active ? "is-active " : "") +
@@ -141,7 +139,7 @@ export function FavoriteButton({
         fill={active ? "currentColor" : "none"}
         strokeWidth={1.5}
       />
-    </motion.button>
+    </button>
   );
 }
 export function ProductCard({ product }: { product: Product }) {

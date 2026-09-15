@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useStore } from "../lib/store";
 import Modal from "./Modal";
+import { Button } from "./Button";
 export function Brand() {
   return (
     <Link to="/" className="brand" aria-label="VIP Decor Design — главная">
@@ -20,13 +21,36 @@ export function Brand() {
   );
 }
 export function Header() {
-  const { favorites, cart, discuss } = useStore();
-  const [menu, setMenu] = useState(false);
+  const { favorites, cart, discuss, data } = useStore();
   const { pathname } = useLocation();
+  const header = useRef<HTMLElement>(null);
+  const inCatalog =
+    ["/catalog", "/shop", "/tkani"].includes(pathname) ||
+    data.categories.some((category) => category.path === pathname);
+  useLayoutEffect(() => {
+    const element = header.current;
+    if (!element) return;
+    const measure = () => {
+      const top = Number.parseFloat(getComputedStyle(element).top) || 0;
+      document.documentElement.style.setProperty(
+        "--site-header-bottom",
+        `${element.offsetHeight + top}px`,
+      );
+    };
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    window.addEventListener("resize", measure);
+    measure();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+  const [menu, setMenu] = useState(false);
   const nav = [
-    ["/curtains", "Шторы на заказ"],
-    ["/tkani", "Ткани"],
-    ["/projects", "Проекты"],
+    ["/", "Шторы на заказ"],
+    ["/catalog", "Каталог"],
+    ["/projects", "Отзывы"],
     ["/company", "О компании"],
   ];
   return (
@@ -34,20 +58,32 @@ export function Header() {
       <a className="skip-link" href="#main-content">
         Перейти к содержимому
       </a>
-      <header className="site-header">
+      <header ref={header} className="site-header">
         <div className="header-inner">
           <Brand />
           <nav className="desktop-nav" aria-label="Основная навигация">
             {nav.map(([to, label]) => (
-              <NavLink key={to} to={to}>
+              <NavLink
+                key={to}
+                to={to}
+                end={to === "/"}
+                className={({ isActive }) =>
+                  isActive || (to === "/catalog" && inCatalog)
+                    ? "active"
+                    : undefined
+                }
+                aria-current={
+                  to === "/catalog" && inCatalog ? "page" : undefined
+                }
+              >
                 {label}
               </NavLink>
             ))}
           </nav>
           <div className="header-actions">
-            <button className="button header-discuss" onClick={() => discuss()}>
+            <Button className="header-discuss" onClick={() => discuss()}>
               Обсудить проект
-            </button>
+            </Button>
             <Link
               className="icon-button"
               to="/favorites"
@@ -61,10 +97,7 @@ export function Header() {
               )}
             </Link>
             <Link
-              className={
-                "icon-button header-cart " +
-                (pathname === "/" && !cart.length ? "home-cart" : "")
-              }
+              className="icon-button header-cart"
               to="/cart"
               aria-label={
                 "Корзина" +
@@ -98,11 +131,13 @@ export function Header() {
         className="menu-dialog"
       >
         <p className="eyebrow">VIP DECOR DESIGN</p>
-        <h2>Ваше пространство</h2>
+        <h2>Меню</h2>
         <nav aria-label="Мобильная навигация">
           {[
             ...nav,
-            ["/catalog", "Все направления"],
+            ["/price", "Цены на пошив"],
+            ["/kakpodobrat", "Гид по тканям"],
+            ["/selection", "Подбор штор"],
             ["/calculator", "Калькулятор"],
             ["/contacts", "Контакты"],
             ["/cart", "Корзина"],
@@ -122,38 +157,19 @@ export function Header() {
 }
 export function Footer() {
   const { data, discuss } = useStore();
+  const { pathname } = useLocation();
+  const documentPage = ["/popd", "/privacy", "/sitemap"].includes(pathname);
   return (
     <>
-      <section className="contact-band">
-        <div className="container contact-band-inner">
-          <div>
-            <p className="eyebrow">НАЧНЁМ С ВАШЕЙ ИДЕИ</p>
-            <h2>
-              Давайте найдём текстиль
-              <br />
-              для вашего дома.
-            </h2>
-            <p>
-              Расскажите о комнате и о том, что хочется изменить.
-              <br />
-              Начнём с ваших пожеланий.
-            </p>
-          </div>
-          <button className="button button-light" onClick={() => discuss()}>
-            Обсудить проект
-            <ArrowUpRight size={20} />
-          </button>
-        </div>
-      </section>
       <footer className="site-footer">
         <div className="container">
           <div className="footer-top">
             <div>
               <Brand />
-              <p className="footer-tagline">Фактура. Свет. Тишина.</p>
+              <p className="footer-tagline">Шторы и интерьерный текстиль</p>
             </div>
             <div>
-              <p className="eyebrow">ЗАГЛЯНИТЕ В ШОУРУМ</p>
+              <p className="eyebrow">ШОУРУМ В МОСКВЕ</p>
               <Link to="/contacts" className="footer-address">
                 <MapPin size={19} />
                 <span>
@@ -167,7 +183,7 @@ export function Footer() {
               </a>
             </div>
             <div>
-              <p className="eyebrow">МЫ НА СВЯЗИ</p>
+              <p className="eyebrow">КОНТАКТЫ</p>
               {data.contacts.phones.map((p) => (
                 <a
                   className="footer-phone"
@@ -183,18 +199,22 @@ export function Footer() {
           <div className="footer-links">
             <div>
               <h3>Коллекции</h3>
-              {data.categories.slice(0, 10).map((c) => (
-                <Link key={c.path} to={c.path}>
-                  {c.title}
+              {[
+                ["/tkani", "Ткани для штор"],
+                ["/tyl", "Тюль"],
+                ["/karnizi", "Карнизы"],
+                ["/decor", "Декоративный текстиль"],
+              ].map(([path, title]) => (
+                <Link key={path} to={path}>
+                  {title}
                 </Link>
               ))}
-              <Link to="/catalog">Все направления</Link>
+              <Link to="/catalog">Весь каталог</Link>
             </div>
             <div>
               <h3>Компания</h3>
               <Link to="/company">О нас</Link>
-              <Link to="/projects">Галерея работ</Link>
-              <Link to="/curtains">Индивидуальный пошив</Link>
+              <Link to="/projects">Отзывы клиентов</Link>
               <Link to="/price">Прайс на пошив</Link>
               <Link to="/contacts">Контакты</Link>
             </div>
@@ -203,13 +223,11 @@ export function Footer() {
               <Link to="/selection">Подобрать шторы</Link>
               <Link to="/calculator">Рассчитать стоимость</Link>
               <Link to="/kakpodobrat">Как подобрать</Link>
-              <Link to="/favorites">Избранное</Link>
-              <Link to="/cart">Корзина</Link>
             </div>
             <div>
               <h3>Информация</h3>
               <Link to="/page13486315.html">Доставка и оплата</Link>
-              <Link to="/privacy">Политика конфиденциальности</Link>
+              <Link to="/popd">Политика конфиденциальности</Link>
               <Link to="/sitemap">Карта сайта</Link>
               {data.contacts.socials.map((s) => (
                 <a
@@ -233,12 +251,14 @@ export function Footer() {
           </div>
         </div>
       </footer>
-      <div className="mobile-action">
-        <button onClick={() => discuss()}>
-          Обсудить проект
-          <ArrowUpRight size={21} />
-        </button>
-      </div>
+      {!documentPage && (
+        <div className="mobile-action">
+          <Button onClick={() => discuss()}>
+            Обсудить проект
+            <ArrowUpRight size={21} />
+          </Button>
+        </div>
+      )}
     </>
   );
 }

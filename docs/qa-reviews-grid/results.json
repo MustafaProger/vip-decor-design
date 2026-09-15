@@ -1,0 +1,137 @@
+{
+  "date": "2026-09-15T15:12:01.420Z",
+  "checks": [
+    "12 route/viewport checks: exactly9 initial reviews, responsive3/2/1 columns, no horizontal overflow or broken images;4 Axe scans.",
+    "Scroll appends nine at a time through all71 in original order: 9→18→27→36→45→54→63→71; every displayed photo belongs to a review attachment.",
+    "Review sheet has matching original source, passes Axe, traps keyboard focus and restores focus on Escape.",
+    "Cards show at most two previews; gallery opens every photo of its review, supports arrows, stops at end, passes Axe and restores focus.",
+    "Mobile photo and review sheets fit390px; opening/closing sheets does not append extra reviews.",
+    "Unavailable attachment images collapse cleanly to text-only cards without substitute images.",
+    "Manual load-more button adds next9 when IntersectionObserver is unavailable.",
+    "Final mobile photo layout: landscape keeps its natural ratio; portrait fits54dvh; dialog has no horizontal overflow."
+  ],
+  "layouts": [
+    {
+      "route": "/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 2
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/projects",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 1
+    },
+    {
+      "route": "/projects",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 1
+    },
+    {
+      "route": "/projects",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 2
+    },
+    {
+      "route": "/projects",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/projects",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    },
+    {
+      "route": "/projects",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1,
+      "columns": 3
+    }
+  ],
+  "batches": [
+    9,
+    18,
+    27,
+    36,
+    45,
+    54,
+    63,
+    71
+  ],
+  "errors": [],
+  "videoRequests": [],
+  "photoLayout": {
+    "landscape": {
+      "w": 326,
+      "h": 245,
+      "nw": 1400,
+      "nh": 1050
+    },
+    "portrait": {
+      "w": 326,
+      "h": 435,
+      "nw": 1050,
+      "nh": 1400
+    }
+  }
+}

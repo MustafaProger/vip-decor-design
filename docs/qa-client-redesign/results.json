@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-15T15:00:55.307Z",
+  "checks": [
+    "12 route/viewport checks: no horizontal overflow, broken images or old gallery; 4 Axe scans.",
+    "Review carousel responds to keyboard arrows.",
+    "Carousel controls correctly stop at both ends.",
+    "Carousel buttons work with smooth motion and immediate reversal.",
+    "Text and photo sheets open; original source matches; focus stays inside and restores on Escape/close; dialog Axe passes.",
+    "Native mobile touch swipe advances reviews; client portrait at least 220×220 px; mobile photo/text sheets fit.",
+    "Failed client image uses initials, removes zoom button, preserves all 71 reviews."
+  ],
+  "layouts": [
+    {
+      "route": "/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/projects",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/projects",
+      "width": 390,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/projects",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/projects",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/projects",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    },
+    {
+      "route": "/projects",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1s": 1
+    }
+  ],
+  "errors": [],
+  "videoRequests": []
+}

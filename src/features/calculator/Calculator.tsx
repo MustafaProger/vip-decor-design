@@ -146,15 +146,9 @@ export default function Calculator({
     <div className="calc-page">
       <div className="calc-shell">
         <div className="calc-intro">
-          <p className="calc-eyebrow">С первой идеи — к вашему интерьеру</p>
-          <h1>
-            Сколько стоят
-            <br />
-            ваши будущие шторы?
-          </h1>
+          <h1>Калькулятор стоимости штор</h1>
           <p>
-            Выберите ткань, обработку и крепление. Калькулятор поможет
-            сориентироваться в стоимости будущего оформления.
+            Выберите ткань, подшив и крепление для предварительного расчёта.
           </p>
         </div>
         <div className="calc-layout">
@@ -192,7 +186,7 @@ export default function Calculator({
               </legend>
               <p className="calc-hint">
                 От крепления зависит, как ткань собирается в складки.{" "}
-                <Link to="/furnitura">Смотреть фурнитуру</Link>.
+                <Link to="/fyrnityra">Смотреть фурнитуру</Link>.
               </p>
               <ChoiceGroup
                 name="kreplenie"
@@ -254,7 +248,7 @@ export default function Calculator({
           </div>
           <aside className="calc-summary" aria-label="Результат расчёта">
             <p className="calc-eyebrow">Ваше оформление</p>
-            <h2>Оттенки будущего дома.</h2>
+            <h2>Ваш расчёт</h2>
             <dl>
               <div className="calc-summary-row">
                 <dt>Ткань</dt>

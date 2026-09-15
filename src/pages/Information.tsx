@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, MapPin, Phone, Mail } from "lucide-react";
+import {
+  ArrowUpRight,
+  Award,
+  Layers3,
+  Sparkles,
+  UsersRound,
+} from "lucide-react";
 import { useStore } from "../lib/store";
 import { Breadcrumbs, Picture, EmptyState } from "../components/Primitives";
 import { Reveal } from "../components/Motion";
-import { Benefits, MeasurementCTA } from "../components/ServiceSections";
+import { Benefits } from "../components/ServiceSections";
 import { localHref, type SourcePage } from "../lib/content";
+import "./company-refresh.css";
 function prepareHTML(raw: string, pageTitle = "") {
   const doc = new DOMParser().parseFromString(raw, "text/html");
   const normalized = (s: string) =>
@@ -94,7 +101,7 @@ export function OriginalContent({
   );
 }
 export default function Information({ page }: { page: SourcePage }) {
-  const { data } = useStore();
+  const { data, discuss } = useStore();
   const home = data.pages.find((p) => p.path === "/");
   const isDelivery = ["/dostavka", "/page13486315.html"].includes(page.path);
   const title =
@@ -104,6 +111,78 @@ export default function Information({ page }: { page: SourcePage }) {
       !img.src.includes("/resizeb/20") &&
       arr.findIndex((x) => x.src === img.src) === i,
   );
+  const category = data.categories.find((c) => c.path === page.path);
+  if (category && !category.sourceHasCatalog) {
+    const relatedPaths = ["/podyshki", "/pokrivala"].includes(page.path)
+      ? [
+          "/tkani",
+          "/decor",
+          page.path === "/podyshki" ? "/pokrivala" : "/podyshki",
+        ]
+      : ["/fyrnityra", "/shnypki"].includes(page.path)
+        ? ["/karnizi", "/kisti", "/tyl"]
+        : ["/tkani", "/tyl", "/karnizi"];
+    return (
+      <article className="container direction-editorial">
+        <Breadcrumbs
+          items={[
+            { label: "Все направления", to: "/catalog" },
+            { label: title },
+          ]}
+        />
+        <div className="direction-editorial-hero">
+          <figure>
+            <Picture src={images[0]?.src} alt={images[0]?.alt || title} eager />
+          </figure>
+          <div className="direction-editorial-copy surface">
+            <p className="eyebrow">ИНТЕРЬЕРНЫЙ ТЕКСТИЛЬ И ДЕТАЛИ</p>
+            <h1>{title}</h1>
+            <OriginalContent page={page} />
+            <button
+              className="button"
+              onClick={() => discuss("Подбор — " + title)}
+            >
+              Обсудить с дизайнером <ArrowUpRight size={18} />
+            </button>
+            <Link className="text-link" to="/projects">
+              Отзывы клиентов <ArrowUpRight size={18} />
+            </Link>
+          </div>
+        </div>
+        {images.length > 1 && (
+          <div className="article-gallery">
+            {images.slice(1).map((im, i) => (
+              <Picture key={im.src + i} src={im.src} alt={im.alt || title} />
+            ))}
+          </div>
+        )}
+        <section className="direction-related">
+          <div className="section-heading">
+            <h2>Дополните интерьер</h2>
+            <Link className="text-link" to="/catalog">
+              Все направления <ArrowUpRight size={18} />
+            </Link>
+          </div>
+          <div className="direction-related-grid">
+            {relatedPaths.map((path) => {
+              const item = data.categories.find((c) => c.path === path);
+              return (
+                item && (
+                  <Link to={path} className="surface" key={path}>
+                    <Picture src={item.image} alt={item.title} />
+                    <span>
+                      {item.title}
+                      <ArrowUpRight size={21} />
+                    </span>
+                  </Link>
+                )
+              );
+            })}
+          </div>
+        </section>
+      </article>
+    );
+  }
   return (
     <article className="container information-page">
       <Breadcrumbs items={[{ label: title }]} />
@@ -144,87 +223,139 @@ export default function Information({ page }: { page: SourcePage }) {
   );
 }
 export function Company() {
-  const { data } = useStore();
+  const { data, discuss } = useStore();
+  // Business figures supplied by the owner, independent of the online inventory.
+  const facts = [
+    { value: "20 120", label: "Довольных клиентов", Icon: UsersRound },
+    { value: "10 000", label: "Тканей в наличии", Icon: Layers3 },
+    { value: "120", label: "Лучших мировых брендов", Icon: Sparkles },
+    { value: "21", label: "Год успешной работы", Icon: Award },
+  ];
+  const services = [
+    {
+      title: "Шторы по вашим размерам",
+      text: "Портьеры, тюль, ламбрекены и бандо. Подберём сочетание ткани и формы под ваш интерьер.",
+      image: data.gallery.find((photo) =>
+        photo.src.endsWith("74a4c8d1c28498b376.webp"),
+      )?.src,
+      alt: "Портьеры и тюль в интерьере — работа VIP Decor Design",
+      to: "/curtains",
+      action: "Выбрать оформление",
+    },
+    {
+      title: "Домашний текстиль",
+      text: "Покрывала, мебельные чехлы, подушки и декоративные валики. Детали, которые собирают интерьер воедино.",
+      image: data.gallery.find((photo) =>
+        photo.src.endsWith("bdf7eaa4894d2a9641.webp"),
+      )?.src,
+      alt: "Бирюзовое покрывало и подушки — работа VIP Decor Design",
+      to: "/projects",
+      action: "Отзывы клиентов",
+    },
+    {
+      title: "Оформление окна",
+      text: "Подбор карнизов и креплений, навеска и отпаривание. Продумываем каждую деталь готового окна.",
+      image: data.categories.find((category) => category.path === "/karnizi")
+        ?.image,
+      alt: "Декоративный карниз и крепления для штор",
+      to: "/karnizi",
+      action: "Подобрать карниз",
+    },
+  ];
   return (
     <div className="container company-page">
       <Breadcrumbs items={[{ label: "О компании" }]} />
       <div className="studio-intro company-intro">
         <Reveal>
           <p className="eyebrow">КОМПАНИЯ VIP DECOR DESIGN</p>
-          <h1>
-            Красота —<br />
-            внимание
-            <br />к деталям.
-          </h1>
+          <h1>О компании</h1>
           <p>
-            Индивидуальный пошив и текстильное оформление интерьеров. От выбора
-            ткани до последней складки.
+            Шьём шторы и домашний текстиль в Москве. Подбираем ткани,
+            изготавливаем и устанавливаем изделия.
           </p>
-          <Link className="text-link" to="/contacts">
-            Познакомимся в шоуруме
-            <ArrowUpRight size={18} />
-          </Link>
+          <div className="company-intro-actions">
+            <button
+              className="button"
+              onClick={() => discuss("Знакомство с VIP Decor Design")}
+            >
+              Обсудить ваш интерьер <ArrowUpRight size={18} />
+            </button>
+            <Link className="text-link" to="/contacts">
+              В гости в шоурум <ArrowUpRight size={18} />
+            </Link>
+          </div>
         </Reveal>
         <Reveal delay={0.12} className="company-portrait">
           <Picture
-            src={data.gallery[2]?.src}
-            alt="Узорчатые портьеры в интерьере — работа VIP Decor Design"
+            src={
+              data.gallery.find((photo) =>
+                photo.src.endsWith("df413fa7967205199b.webp"),
+              )?.src || data.gallery[2]?.src
+            }
+            alt="Оформление окон в гостиной — работа VIP Decor Design"
             eager
           />
-          <span className="portrait-caption">
-            Фактура, которую хочется рассматривать.
-          </span>
+          <span className="portrait-caption">Работа VIP DECOR DESIGN</span>
         </Reveal>
       </div>
-      <Reveal
-        id="rec224459428"
-        className="company-facts"
-        aria-label="Компания в цифрах"
+      <section
+        className="company-numbers"
+        aria-labelledby="company-numbers-title"
       >
-        {[
-          ["21", "год работы"],
-          ["20 120", "довольных клиентов"],
-          ["10 000", "тканей в наличии"],
-          ["120", "мировых брендов"],
-        ].map(([value, label]) => (
-          <div key={label}>
-            <strong>{value}</strong>
-            <span>{label}</span>
+        <Reveal className="company-numbers-heading">
+          <p className="eyebrow">ОПЫТ В КАЖДОЙ ДЕТАЛИ</p>
+          <h2 id="company-numbers-title">Компания в цифрах</h2>
+        </Reveal>
+        <div className="company-numbers-grid">
+          {facts.map(({ value, label, Icon }, index) => (
+            <Reveal className="company-number" key={label} delay={index * 0.06}>
+              <Icon size={23} strokeWidth={1.5} aria-hidden="true" />
+              <strong>{value}</strong>
+              <span>{label}</span>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+      <section
+        className="company-expertise"
+        id="rec207714885"
+        aria-labelledby="company-expertise-title"
+      >
+        <Reveal className="company-expertise-heading" id="rec208310200">
+          <div>
+            <p className="eyebrow">ОТ ИДЕИ ДО ГОТОВОГО ИНТЕРЬЕРА</p>
+            <h2 id="company-expertise-title">Что мы делаем</h2>
           </div>
-        ))}
-      </Reveal>
-      <section className="company-story service-section" id="rec207714885">
-        <Reveal id="rec208310200">
-          <p className="eyebrow">О НАС</p>
-          <h2>
-            Одна команда.
-            <br />
-            Цельный интерьер.
-          </h2>
+          <p id="rec217622225">
+            Дизайнер, мастер по пошиву и монтажник сопровождают заказ от выбора
+            ткани до установки.
+          </p>
         </Reveal>
-        <Reveal id="rec217622225" delay={0.08}>
-          <p className="story-lead">
-            Мы — компания VIP DECOR DESIGN. Помогаем сделать дом уютнее с
-            помощью тканей, света и деталей.
-          </p>
-          <p>
-            В нашей команде работают дизайнеры, мастера по пошиву и специалисты
-            по монтажу. Подбираем материалы и аксессуары, продумываем оформление
-            и берём на себя изготовление и установку.
-          </p>
-          <p>
-            Работаем с мировыми брендами и собственным производством. Шьём
-            шторы, ламбрекены и бандо, покрывала, мебельные чехлы и декоративные
-            валики.
-          </p>
-          <Link className="text-link" to="/projects">
-            Посмотреть наши работы
-            <ArrowUpRight size={18} />
-          </Link>
-        </Reveal>
+        <div className="company-expertise-grid">
+          {services.map((service, index) => (
+            <Reveal
+              className="company-service"
+              key={service.title}
+              delay={index * 0.06}
+            >
+              <figure>
+                <Picture src={service.image} alt={service.alt} />
+                <span className="company-service-index" aria-hidden="true">
+                  0{index + 1}
+                </span>
+              </figure>
+              <div className="company-service-copy">
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+                <Link className="button secondary" to={service.to}>
+                  {service.action} <ArrowUpRight size={18} />
+                </Link>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
       <Benefits />
-      <MeasurementCTA />
       <div className="studio-links">
         <Link to="/price">
           Цены на пошив
@@ -235,188 +366,9 @@ export function Company() {
           <ArrowUpRight />
         </Link>
         <Link to="/projects">
-          Галерея работ
+          Отзывы клиентов
           <ArrowUpRight />
         </Link>
-      </div>
-    </div>
-  );
-}
-export function Curtains() {
-  const { data } = useStore();
-  return (
-    <div className="container curtains-page">
-      <Breadcrumbs items={[{ label: "Шторы на заказ" }]} />
-      <div className="studio-intro curtains-intro" id="rec214513799">
-        <div>
-          <p className="eyebrow">ИНДИВИДУАЛЬНЫЙ ПОШИВ</p>
-          <h1>
-            Шторы, которые
-            <br />
-            подходят
-            <br />
-            именно вам.
-          </h1>
-          <p>
-            Начнём с особенностей вашей комнаты, подберём ткань и создадим
-            оформление, с которым дома станет уютнее.
-          </p>
-          <Link className="button" to="/selection">
-            Подобрать шторы
-            <ArrowUpRight size={20} />
-          </Link>
-        </div>
-        <figure>
-          <Picture
-            src="/images/concept-living.webp"
-            alt="Концепция интерьера с натуральными портьерами"
-            eager
-          />
-          <figcaption className="image-note">Концепция интерьера</figcaption>
-        </figure>
-      </div>
-      <section className="service-section curtain-collection">
-        <Reveal className="service-heading">
-          <p className="eyebrow">НАЙДИТЕ СВОЙ СИЛУЭТ</p>
-          <h2>Разные формы. Ваш характер.</h2>
-          <p>От лаконичных римских штор до мягкой классической драпировки.</p>
-        </Reveal>
-        <div className="curtain-types">
-          {data.pages
-            .filter((p) =>
-              [
-                "/rimskieshtori",
-                "/franzusckieshtoru",
-                "/avstriskieshtori",
-                "/klasiheskieshtori",
-              ].includes(p.path),
-            )
-            .map((p) => (
-              <Link key={p.path} to={p.path}>
-                <Picture src={p.images[0]?.src} alt={p.title} />
-                <h2>
-                  {p.title}
-                  <ArrowUpRight size={20} />
-                </h2>
-              </Link>
-            ))}
-        </div>
-      </section>
-      <Benefits />
-      <section className="service-section curtains-process">
-        <Reveal className="service-heading">
-          <p className="eyebrow">КАК ВСЁ ПРОИСХОДИТ</p>
-          <h2>От идеи до готового окна.</h2>
-        </Reveal>
-        <div className="order-steps">
-          {[
-            [
-              "Знакомство и замер",
-              "Обсудим комнату, ваши пожелания и размеры окна.",
-            ],
-            [
-              "Ткани и детали",
-              "Подберём фактуры, оттенки, карнизы и согласуем оформление.",
-            ],
-            [
-              "Пошив и установка",
-              "Изготовим текстиль, доставим, отпарим и повесим шторы.",
-            ],
-          ].map(([title, text], i) => (
-            <Reveal key={title} delay={i * 0.07}>
-              <span className="step-number">0{i + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <MeasurementCTA />
-    </div>
-  );
-}
-export function Price() {
-  const { data } = useStore();
-  const home = data.pages.find((p) => p.path === "/");
-  return (
-    <article className="container information-page">
-      <Breadcrumbs items={[{ label: "Прайс на пошив" }]} />
-      <p className="eyebrow">РАБОТА С ТЕКСТИЛЕМ</p>
-      <h1>Цена каждой детали.</h1>
-      {home && <OriginalContent page={home} blockIds={["rec214496134"]} />}
-      <Link className="button" to="/calculator">
-        Рассчитать стоимость штор
-        <ArrowUpRight size={19} />
-      </Link>
-    </article>
-  );
-}
-export function Contacts() {
-  const { data, discuss } = useStore();
-  return (
-    <div className="container contacts-page">
-      <Breadcrumbs items={[{ label: "Контакты" }]} />
-      <p className="eyebrow">БУДЕМ РАДЫ ЗНАКОМСТВУ</p>
-      <h1>
-        Приходите
-        <br />
-        за вдохновением.
-      </h1>
-      <div className="contacts-layout">
-        <div>
-          <h2>Шоурум в Москве</h2>
-          <p className="contact-line">
-            <MapPin size={22} />
-            {data.contacts.address}
-          </p>
-          <p>
-            Рассмотрите ткани вживую, почувствуйте фактуру
-            <br />и обсудите свой интерьер с дизайнером.
-          </p>
-          <a
-            className="text-link"
-            href="https://yandex.ru/maps/?text=Москва%20Сокольническая%20площадь%204А"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Построить маршрут
-            <ArrowUpRight size={18} />
-          </a>
-        </div>
-        <div>
-          <h2>Давайте поговорим</h2>
-          {data.contacts.phones.map((p) => (
-            <a
-              className="contact-line"
-              key={p}
-              href={"tel:" + p.replace(/[^+\d]/g, "")}
-            >
-              <Phone size={19} />
-              {p}
-            </a>
-          ))}
-          <a className="contact-line" href={"mailto:" + data.contacts.email}>
-            <Mail size={20} />
-            {data.contacts.email}
-          </a>
-          <div className="social-links">
-            {data.contacts.socials.map((s) => (
-              <a
-                key={s.url}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {s.title}
-                <ArrowUpRight size={16} />
-              </a>
-            ))}
-          </div>
-          <button className="button" onClick={() => discuss()}>
-            Обсудить проект
-            <ArrowUpRight size={19} />
-          </button>
-        </div>
       </div>
     </div>
   );
@@ -426,13 +378,13 @@ export function Sitemap() {
   return (
     <div className="container information-page">
       <Breadcrumbs items={[{ label: "Карта сайта" }]} />
-      <h1>Всё, что вам нужно.</h1>
+      <h1>Карта сайта</h1>
       <div className="sitemap-links">
         {[
           ["/selection", "Подбор штор"],
           ["/calculator", "Калькулятор"],
           ["/company", "О компании"],
-          ["/projects", "Проекты"],
+          ["/projects", "Отзывы клиентов"],
           ["/contacts", "Контакты"],
           ["/price", "Прайс на пошив"],
           ...data.pages.map((p) => [p.path, p.title]),
@@ -448,7 +400,11 @@ export function Sitemap() {
 }
 export function NotFound() {
   return (
-    <div className="container">
+    <div className="container not-found-page">
+      <p className="error-number" aria-hidden="true">
+        404
+      </p>
+      <h1 className="sr-only">Страница не найдена</h1>
       <EmptyState
         title="Эта страница не найдена."
         text="Загляните в коллекции или вернитесь на главную."

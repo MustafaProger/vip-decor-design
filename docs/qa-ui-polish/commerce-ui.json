@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-09-15T10:40:38.318Z",
+  "checks": [
+    {
+      "width": 390,
+      "scenario": "Product → cart, exact quantity totals, reload persistence, increment, checkout validation and removal",
+      "unit": 3390
+    },
+    {
+      "width": 390,
+      "scenario": "Calculator choices and keyboard range: default 3960, selected 9450; contact validation without API writes"
+    },
+    {
+      "width": 390,
+      "scenario": "Inquiry required fields, consent, payload and local-save feedback; API response mocked, no real submission"
+    },
+    {
+      "width": 390,
+      "scenario": "Gallery open, next image, Escape and focus restoration"
+    },
+    {
+      "width": 1440,
+      "scenario": "Product → cart, exact quantity totals, reload persistence, increment, checkout validation and removal",
+      "unit": 3390
+    },
+    {
+      "width": 1440,
+      "scenario": "Calculator choices and keyboard range: default 3960, selected 9450; contact validation without API writes"
+    },
+    {
+      "width": 1440,
+      "scenario": "Inquiry required fields, consent, payload and local-save feedback; API response mocked, no real submission"
+    },
+    {
+      "width": 1440,
+      "scenario": "Gallery open, next image, Escape and focus restoration"
+    }
+  ],
+  "errors": [],
+  "mockedRequests": 2,
+  "passed": true
+}
