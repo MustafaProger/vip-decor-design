@@ -1,7 +1,15 @@
 import { defineConfig } from "vite";
+import { blogPages } from "./scripts/blog-vite-plugin";
 import react from "@vitejs/plugin-react";
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), blogPages()],
+  ssr: {
+    noExternal: ["react-router-dom", "react-router"],
+    resolve: {
+      conditions: ["module", "module-sync", "node", "development|production"],
+    },
+  },
+  optimizeDeps: { entries: ["index.html"] },
   server: {
     port: 5180,
     strictPort: true,

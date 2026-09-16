@@ -51,6 +51,7 @@ export function Header() {
     ["/", "Шторы на заказ"],
     ["/catalog", "Каталог"],
     ["/projects", "Отзывы"],
+    ["/blog", "Блог"],
     ["/company", "О компании"],
   ];
   return (
@@ -158,7 +159,9 @@ export function Header() {
 export function Footer() {
   const { data, discuss } = useStore();
   const { pathname } = useLocation();
-  const documentPage = ["/popd", "/privacy", "/sitemap"].includes(pathname);
+  const documentPage =
+    ["/popd", "/privacy", "/sitemap", "/blog"].includes(pathname) ||
+    pathname.startsWith("/blog/");
   return (
     <>
       <footer className="site-footer">
@@ -223,6 +226,7 @@ export function Footer() {
               <Link to="/selection">Подобрать шторы</Link>
               <Link to="/calculator">Рассчитать стоимость</Link>
               <Link to="/kakpodobrat">Как подобрать</Link>
+              <Link to="/blog">Блог об интерьере</Link>
             </div>
             <div>
               <h3>Информация</h3>

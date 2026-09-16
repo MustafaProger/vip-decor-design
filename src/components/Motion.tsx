@@ -26,12 +26,15 @@ export function Reveal({
   );
 }
 
-export function PageEntrance({ children }: HTMLMotionProps<"div">) {
+export function PageEntrance({
+  children,
+  immediate = false,
+}: HTMLMotionProps<"div"> & { immediate?: boolean }) {
   const reduced = useReducedMotion();
   return (
     <motion.div
       className="page-entrance"
-      initial={reduced ? false : { opacity: 0 }}
+      initial={reduced || immediate ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: reduced ? 0 : 0.18, ease }}
     >

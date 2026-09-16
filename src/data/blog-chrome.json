@@ -1,0 +1,346 @@
+{
+  "crawledAt": "2026-09-12T10:45:43.076879+00:00",
+  "pages": [],
+  "products": [],
+  "categories": [
+    {
+      "title": "Атлас",
+      "path": "/atlas",
+      "image": "/source-media/875e96dee79ef197c2.webp",
+      "description": "",
+      "count": 8,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Австрийские шторы",
+      "path": "/avstriskieshtori",
+      "image": "/source-media/121164f5e2d1429d83.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Бархат",
+      "path": "/barxat",
+      "image": "/source-media/2c88152e87c1eeb014.webp",
+      "description": "",
+      "count": 40,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Блэкаут",
+      "path": "/blekayt",
+      "image": "/source-media/a49e7dc9540172a187.webp",
+      "description": "",
+      "count": 8,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Рулонные шторы Блэкаут",
+      "path": "/blekaytrulonnieshtori",
+      "image": "/source-media/f9d696e7c63446c6c7.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Декор",
+      "path": "/decor",
+      "image": "/source-media/3005d6a9448ccd771a.webp",
+      "description": "",
+      "count": 130,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Деревянные карнизы",
+      "path": "/derevanniekarnizi",
+      "image": "/source-media/a9b29aaaaaa8facb8b.webp",
+      "description": "",
+      "count": 7,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Французские шторы",
+      "path": "/franzusckieshtoru",
+      "image": "/source-media/45a8a8247755194569.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Фурнитура",
+      "path": "/fyrnityra",
+      "image": "/source-media/f39a68799fb690f7a2.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Горизонтальные жалюзи",
+      "path": "/gorizontalniezhaluzi",
+      "image": "/source-media/884732a3fed0a703e1.webp",
+      "description": "",
+      "count": 4,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Готовые изделия",
+      "path": "/gotovieizdelia",
+      "image": "/source-media/967e49ea9157e98207.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Карнизы",
+      "path": "/karnizi",
+      "image": "/source-media/5defb0558485b7c16d.webp",
+      "description": "",
+      "count": 20,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Картины",
+      "path": "/kartini",
+      "image": "/source-media/a6d7e959a157ec6920.webp",
+      "description": "",
+      "count": 81,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Кисти",
+      "path": "/kisti",
+      "image": "/source-media/12153be9a008b12016.webp",
+      "description": "",
+      "count": 6,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Классические шторы",
+      "path": "/klasiheskieshtori",
+      "image": "/source-media/65654ffe2c41d6474c.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Классические рулонные шторы",
+      "path": "/klassicheskierulonnieshtori",
+      "image": "/source-media/4bdc2ceb3b99ca5fe7.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Льняная Ткань",
+      "path": "/lnanaiatkan",
+      "image": "/source-media/12f4844f7579b0c93d.webp",
+      "description": "",
+      "count": 49,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Металлические карнизы",
+      "path": "/metallicheskiekarnizi",
+      "image": "/source-media/642b6dda60e8b76001.webp",
+      "description": "",
+      "count": 4,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Микровуаль",
+      "path": "/mikrovual",
+      "image": "/source-media/ea1907f3f784be9dc5.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Настенные карнизы",
+      "path": "/nastenniekarnizi",
+      "image": "/source-media/8ed86c8ccaca0334da.webp",
+      "description": "",
+      "count": 16,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Органза",
+      "path": "/organza",
+      "image": "/source-media/6b67f51e0178f03a05.webp",
+      "description": "",
+      "count": 3,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Пластиковые карнизы",
+      "path": "/plastikoviekarnizi",
+      "image": "/source-media/4a3275c157147be002.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Подушки",
+      "path": "/podyshki",
+      "image": "/source-media/1baf73bbbcf93cea7e.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Покрывала",
+      "path": "/pokrivala",
+      "image": "/source-media/2ab70afca70c06f74e.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Потолочные карнизы",
+      "path": "/potolochniekarnizi",
+      "image": "/source-media/bfab1c6880ea08e635.webp",
+      "description": "",
+      "count": 13,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Римские шторы",
+      "path": "/rimskieshtori",
+      "image": "/source-media/d05c7b555737ff8a6d.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Рулонные шторы",
+      "path": "/rulonnieshtori",
+      "image": "/source-media/8362f08e9a27dba1cc.webp",
+      "description": "",
+      "count": 54,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Шнуры",
+      "path": "/shnypki",
+      "image": "/source-media/300244506f2192b2f7.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Ткани",
+      "path": "/tkani",
+      "image": "/source-media/c5e5ca43f83e0d4bba.webp",
+      "description": "",
+      "count": 263,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Тюль из льна",
+      "path": "/tulizlna",
+      "image": "/source-media/18d85f27b51f55b60d.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": false
+    },
+    {
+      "title": "Тюль сетка",
+      "path": "/tulsetka",
+      "image": "/source-media/f513207835b8a2bd59.webp",
+      "description": "",
+      "count": 49,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Тюль",
+      "path": "/tyl",
+      "image": "/source-media/fa16fb606fc6bfc709.webp",
+      "description": "",
+      "count": 65,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Вертикальные жалюзи",
+      "path": "/vertikalniezhaluzi",
+      "image": "/source-media/427b0365bf0a352d7b.webp",
+      "description": "",
+      "count": 0,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Вуаль",
+      "path": "/vual",
+      "image": "/source-media/17ba14ae6c4f92547e.webp",
+      "description": "",
+      "count": 3,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Жаккард",
+      "path": "/zhakkard",
+      "image": "/source-media/622e34ecd2485931a7.webp",
+      "description": "",
+      "count": 76,
+      "sourceHasCatalog": true
+    },
+    {
+      "title": "Жалюзи",
+      "path": "/zhaluzi",
+      "image": "/source-media/0f8f86b14bf329749e.webp",
+      "description": "",
+      "count": 4,
+      "sourceHasCatalog": true
+    }
+  ],
+  "contacts": {
+    "phones": [
+      "+7 495 969 31 89",
+      "+7 969 035 98 89",
+      "+7 903 969 31 89"
+    ],
+    "email": "info@vip2d.ru",
+    "address": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
+    "socials": [
+      {
+        "title": "Telegram",
+        "url": "https://t.me/vipdecordesign"
+      },
+      {
+        "title": "Instagram",
+        "url": "https://www.instagram.com/vip2d.ru/"
+      },
+      {
+        "title": "Facebook",
+        "url": "https://www.facebook.com/vipdecordesign/?modal=admin_todo_tour"
+      }
+    ]
+  },
+  "gallery": [],
+  "sourceErrors": [
+    {
+      "url": "https://vip2d.ru/londonskieshtori",
+      "error": "404 Client Error: Not Found for url: https://vip2d.ru/londonskieshtori",
+      "kind": "page"
+    },
+    {
+      "url": "https://vip2d.ru/ ",
+      "error": "404 Client Error: Not Found for url: https://vip2d.ru/%20",
+      "kind": "page"
+    },
+    {
+      "kind": "source-image-truncated",
+      "url": "https://static.tildacdn.com/stor3632-3838-4234-b363-363237346665/94894997.jpg",
+      "productId": "306608456632",
+      "localPath": "/source-media/72c93b610eaf23da93.jpg",
+      "error": "Source JPEG is truncated; decoder reports premature end, no JPEG EOI marker. A second GET returned identical bytes. Original retained without replacement.",
+      "sha256": "4cb4de9cd4217ac4453f9db92096f16fa638e043848c69234f0d6397ebd37b01"
+    }
+  ],
+  "sourceAnchors": {
+    "rec208310200": "/company",
+    "rec207714887": "/projects",
+    "rec208301757": "/catalog",
+    "rec208194534": "/contacts",
+    "rec221002251": "/calculator"
+  }
+}

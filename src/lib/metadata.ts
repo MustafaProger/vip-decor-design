@@ -1,3 +1,4 @@
+import { blogMetadata } from "../blog/content";
 import type { Product, SourcePage } from "./content";
 
 const pages: Record<string, [string, string]> = {
@@ -76,6 +77,7 @@ export function pageMetadata(
   source?: SourcePage,
   product?: Product,
 ) {
+  if (path === "/blog" || path.startsWith("/blog/")) return blogMetadata(path);
   const canonicalPath = path === "/page13486315.html" ? "/dostavka" : path;
   const known = pages[canonicalPath];
   const title =

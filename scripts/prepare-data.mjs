@@ -1,3 +1,5 @@
+import "./prepare-blog.mjs";
+import { readBlog, blogPaths } from "./blog-content.mjs";
 import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 const content = JSON.parse(
   await readFile("src/data/site-content.json", "utf8"),
@@ -8,6 +10,7 @@ await mkdir("public/data", { recursive: true });
 await copyFile("src/data/site-content.json", "public/data/site-content.json");
 const origin = "https://vip2d.ru";
 const paths = new Set([
+  ...blogPaths(await readBlog()).map(p => origin + p),
   ...content.pages.map((p) => p.url),
   ...content.products.map((p) => p.url),
   ...[

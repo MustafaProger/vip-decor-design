@@ -1,3 +1,4 @@
+import { posts, postPath, categories, categoryPath } from "../blog/content";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -381,6 +382,9 @@ export function Sitemap() {
       <h1>Карта сайта</h1>
       <div className="sitemap-links">
         {[
+          ["/blog", "Блог об интерьере"],
+          ...categories.map((c) => [categoryPath(c.slug), c.title]),
+          ...posts.map((p) => [postPath(p), p.title]),
           ["/selection", "Подбор штор"],
           ["/calculator", "Калькулятор"],
           ["/company", "О компании"],

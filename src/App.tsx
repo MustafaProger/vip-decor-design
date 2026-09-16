@@ -12,6 +12,9 @@ import { MotionConfig } from "framer-motion";
 import { PageEntrance } from "./components/Motion";
 import { StoreProvider } from "./lib/store";
 import { localHref, type SiteContent } from "./lib/content";
+import Blog from "./blog/Blog";
+import blogChrome from "./data/blog-chrome.json";
+import { blogMetadata, blogSchema } from "./blog/content";
 import { pageMetadata } from "./lib/metadata";
 import { Header, Footer } from "./components/SiteChrome";
 import Modal from "./components/Modal";
@@ -95,6 +98,32 @@ function RouteContent({
     : data.products.find((p) => localHref(p.url).split("?")[0] === path);
   useEffect(() => {
     const metadata = pageMetadata(path, source, product);
+    document.querySelectorAll("[data-blog-meta]").forEach((el) => el.remove());
+    if (path === "/blog" || path.startsWith("/blog/")) {
+      const blog = blogMetadata(path);
+      for (const [property, content] of Object.entries({
+        "og:title": blog.title,
+        "og:description": blog.description,
+        "og:url": blog.canonical,
+        "og:image": blog.image,
+        "og:type":
+          path.startsWith("/blog/category/") || path === "/blog"
+            ? "website"
+            : "article",
+        "og:locale": "ru_RU",
+      })) {
+        const tag = document.createElement("meta");
+        tag.setAttribute("property", property);
+        tag.content = content;
+        tag.dataset.blogMeta = "";
+        document.head.appendChild(tag);
+      }
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.dataset.blogMeta = "";
+      script.textContent = JSON.stringify(blogSchema(path));
+      document.head.appendChild(script);
+    }
     document.title = metadata.title;
     for (const [name, content] of [
       ["description", metadata.description],
@@ -120,6 +149,8 @@ function RouteContent({
     }
     canonical.href = metadata.canonical;
   }, [path, source, product]);
+  if (path === "/blog" || path.startsWith("/blog/"))
+    return <Blog path={path} />;
   if (path === "/") return <Home />;
   if (path === "/selection") return <Selection onDiscuss={discuss} />;
   if (path === "/calculator")
@@ -164,7 +195,11 @@ function RouteContent({
 }
 export default function App() {
   const location = useLocation();
-  const [data, setData] = useState<SiteContent | null>(null);
+  const [data, setData] = useState<SiteContent | null>(() =>
+    location.pathname === "/blog" || location.pathname.startsWith("/blog/")
+      ? blogChrome
+      : null,
+  );
   const [error, setError] = useState("");
   const [attempt, setAttempt] = useState(0);
   const [inquiry, setInquiry] = useState<{ open: boolean; context: string }>({
@@ -220,7 +255,13 @@ export default function App() {
                 </div>
               }
             >
-              <PageEntrance key={location.pathname}>
+              <PageEntrance
+                key={location.pathname}
+                immediate={
+                  location.pathname === "/blog" ||
+                  location.pathname.startsWith("/blog/")
+                }
+              >
                 <RouteContent data={data} discuss={discuss} />
               </PageEntrance>
             </Suspense>

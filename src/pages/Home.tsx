@@ -1,3 +1,4 @@
+import { RecommendedArticles } from "../blog/Blog";
 import { ArrowUpRight } from "lucide-react";
 import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
@@ -149,6 +150,8 @@ export default function Home() {
           <Reviews variant="preview" />
         </Suspense>
       </div>
+
+      <RecommendedArticles />
 
       <section className="home-help" aria-labelledby="home-help-title">
         <div>
