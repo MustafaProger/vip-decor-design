@@ -1,3 +1,4 @@
+import { CountUp } from "./CountUp";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -210,17 +211,17 @@ export default function Reviews({
           <div>
             <dt>Средняя оценка</dt>
             <dd>
-              {reviewData.rating.toFixed(1).replace(".", ",")}{" "}
+              <CountUp value={reviewData.rating} decimals={1} />{" "}
               <Star size={24} fill="currentColor" aria-hidden="true" />
             </dd>
           </div>
           <div>
             <dt>Оценок клиентов</dt>
-            <dd>{reviewData.ratingCount}</dd>
+            <dd><CountUp value={reviewData.ratingCount} /></dd>
           </div>
           <div>
             <dt>Отзывов</dt>
-            <dd>{reviewData.reviewCount}</dd>
+            <dd><CountUp value={reviewData.reviewCount} /></dd>
           </div>
           <div>
             <dt>
@@ -234,8 +235,10 @@ export default function Reviews({
               </a>
             </dt>
             <dd>
-              {reviewData.businessExperience.years}
-              {reviewData.businessExperience.isMinimum ? "+" : ""}
+              <CountUp
+                value={reviewData.businessExperience.years}
+                suffix={reviewData.businessExperience.isMinimum ? "+" : ""}
+              />
             </dd>
           </div>
         </dl>

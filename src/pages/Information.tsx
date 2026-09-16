@@ -1,3 +1,4 @@
+import { CountUp } from "../components/CountUp";
 import { posts, postPath, categories, categoryPath } from "../blog/content";
 import { Link } from "react-router-dom";
 import {
@@ -311,7 +312,7 @@ export function Company() {
           {facts.map(({ value, label, Icon }, index) => (
             <Reveal className="company-number" key={label} delay={index * 0.06}>
               <Icon size={23} strokeWidth={1.5} aria-hidden="true" />
-              <strong>{value}</strong>
+              <strong><CountUp value={Number(value.replace(/\s/g, ""))} /></strong>
               <span>{label}</span>
             </Reveal>
           ))}
