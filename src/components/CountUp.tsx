@@ -39,7 +39,7 @@ export function CountUp({
     let start: number | undefined;
     const tick = (time: number) => {
       start ??= time;
-      const progress = Math.min((time - start) / 500, 1);
+      const progress = Math.min((time - start) / 1000, 1);
       const current = value * (1 - (1 - progress) ** 3);
       element.textContent =
         progress === 1
