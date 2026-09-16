@@ -1,3 +1,4 @@
+import { RevealArticle } from "./Motion";
 import { photoCrops } from "../data/gallery-presentation";
 import { useId, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -142,12 +143,18 @@ export function FavoriteButton({
     </button>
   );
 }
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({
+  product,
+  index = 0,
+}: {
+  product: Product;
+  index?: number;
+}) {
   const oldPrice =
     parseSourcePrice(product.variants?.editions?.[0]?.priceold) ??
     parseSourcePrice(product.oldPrice);
   return (
-    <article className="product-card">
+    <RevealArticle className="product-card" delay={(index % 3) * 0.07}>
       <div className="product-photo">
         <Link to={productHref(product)} tabIndex={-1} aria-hidden="true">
           <Picture src={product.image} alt={product.title} />
@@ -171,7 +178,7 @@ export function ProductCard({ product }: { product: Product }) {
       <Link to={productHref(product)} className="product-more">
         Подробнее <ArrowUpRight size={15} />
       </Link>
-    </article>
+    </RevealArticle>
   );
 }
 export function EmptyState({

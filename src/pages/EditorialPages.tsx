@@ -7,12 +7,12 @@ import {
   Mail,
   Navigation,
   Layers,
-  MessageCircle,
   Ruler,
   ArrowRight,
 } from "lucide-react";
 import { useStore } from "../lib/store";
 import { Breadcrumbs, Picture } from "../components/Primitives";
+import { Reveal, RevealSection } from "../components/Motion";
 import guide from "../data/fabric-guide.json";
 
 export function HelpStrip({
@@ -59,7 +59,7 @@ export function Contacts() {
     <div className="container glass-contacts">
       <Breadcrumbs items={[{ label: "Контакты" }]} />
       <div className="contact-composition">
-        <div className="contact-visual">
+        <Reveal className="contact-visual">
           <figure className="contact-photo">
             <Picture
               src={data.gallery[14]?.src}
@@ -86,8 +86,8 @@ export function Contacts() {
             </div>
             <ArrowUpRight size={23} />
           </a>
-        </div>
-        <div className="contact-content">
+        </Reveal>
+        <Reveal className="contact-content" delay={0.08}>
           <p className="eyebrow">КОНТАКТЫ</p>
           <h1>Контакты и шоурум</h1>
           <p className="page-lead">
@@ -154,33 +154,7 @@ export function Contacts() {
               </a>
             ))}
           </div>
-        </div>
-      </div>
-      <div className="contact-paths surface">
-        <Link to="/tkani">
-          <Layers />
-          <div>
-            <h2>Ткани вживую</h2>
-            <p>Начните знакомство с коллекцией</p>
-          </div>
-          <ArrowUpRight />
-        </Link>
-        <Link to="/kakpodobrat">
-          <MessageCircle />
-          <div>
-            <h2>Советы дизайнера</h2>
-            <p>Найдите решение для своей комнаты</p>
-          </div>
-          <ArrowUpRight />
-        </Link>
-        <Link to="/projects">
-          <Ruler />
-          <div>
-            <h2>Отзывы клиентов</h2>
-            <p>Личный опыт выбора тканей и пошива штор</p>
-          </div>
-          <ArrowUpRight />
-        </Link>
+        </Reveal>
       </div>
     </div>
   );
@@ -252,7 +226,7 @@ export function Price() {
               ))}
             </nav>
             {priceGroups.map((g, i) => (
-              <section className="price-category" id={g.id} key={g.id}>
+              <RevealSection className="price-category" id={g.id} key={g.id}>
                 <h2>
                   <span>0{i + 1}</span>
                   {g.title}
@@ -282,7 +256,7 @@ export function Price() {
                     ))}
                   </tbody>
                 </table>
-              </section>
+              </RevealSection>
             ))}
             <p className="price-note">
               Точную стоимость вашего заказа уточнит дизайнер после обсуждения

@@ -1,0 +1,1195 @@
+{
+  "checkedAt": "2026-09-16T12:17:25.163Z",
+  "baseURL": "http://127.0.0.1:4173",
+  "browser": "153.0.8010.47",
+  "widths": [320, 390, 768, 1024, 1440, 1920],
+  "paths": [
+    "/catalog",
+    "/blekayt",
+    "/catalog?category=%2Fkarnizi",
+    "/catalog?category=%2Fdecor"
+  ],
+  "routeChecks": [
+    {
+      "width": 320,
+      "path": "/catalog",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/2bc22ecb78d9518da8.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "overflow": false,
+        "activeFamily": "Все товары",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "path": "/blekayt",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 8,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/6eae1d6ba035ba9043.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "overflow": false,
+        "activeFamily": "Ткани для штор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "path": "/catalog?category=%2Fkarnizi",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 20,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/8f6e2739fed5ceeed6.webp",
+            "complete": true,
+            "width": 1119,
+            "height": 839
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "overflow": false,
+        "activeFamily": "Карнизы",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "path": "/catalog?category=%2Fdecor",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/15e373917b09872929.webp",
+            "complete": true,
+            "width": 795,
+            "height": 596
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "overflow": false,
+        "activeFamily": "Декор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "path": "/catalog",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/2bc22ecb78d9518da8.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/d3194599d5347b3038.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/269671e0fedeb077cc.webp",
+            "complete": true,
+            "width": 960,
+            "height": 1280
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/e9f45785195c4607d2.webp",
+            "complete": true,
+            "width": 527,
+            "height": 956
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "activeFamily": "Все товары",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      },
+      "screenshot": "catalog-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/blekayt",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 8,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/6eae1d6ba035ba9043.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/bbbdae58db01a10334.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1199
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/33415990dec739a60b.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1199
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/4f74408bff7b59fde6.webp",
+            "complete": true,
+            "width": 505,
+            "height": 316
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "activeFamily": "Ткани для штор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      },
+      "screenshot": "catalog-blackout-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/catalog?category=%2Fkarnizi",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 20,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/8f6e2739fed5ceeed6.webp",
+            "complete": true,
+            "width": 1119,
+            "height": 839
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/e84ff6d8d78e0fad71.webp",
+            "complete": true,
+            "width": 1251,
+            "height": 938
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/c73671345017157144.webp",
+            "complete": true,
+            "width": 985,
+            "height": 739
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/87b685b5c0a23b7742.webp",
+            "complete": true,
+            "width": 1206,
+            "height": 905
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "activeFamily": "Карнизы",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      },
+      "screenshot": "catalog-rods-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/catalog?category=%2Fdecor",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/15e373917b09872929.webp",
+            "complete": true,
+            "width": 795,
+            "height": 596
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/a309c9941edbf9274e.webp",
+            "complete": true,
+            "width": 1028,
+            "height": 771
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/b9e7cf7f0c2b13830f.webp",
+            "complete": true,
+            "width": 951,
+            "height": 714
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/9a75d8b394c72da4d1.webp",
+            "complete": true,
+            "width": 922,
+            "height": 692
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "activeFamily": "Декор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      },
+      "screenshot": "catalog-decor-390.png"
+    },
+    {
+      "width": 768,
+      "path": "/catalog",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/2bc22ecb78d9518da8.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/d3194599d5347b3038.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "overflow": false,
+        "activeFamily": "Все товары",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 768,
+      "path": "/blekayt",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 8,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/6eae1d6ba035ba9043.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/bbbdae58db01a10334.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1199
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "overflow": false,
+        "activeFamily": "Ткани для штор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 768,
+      "path": "/catalog?category=%2Fkarnizi",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 20,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/8f6e2739fed5ceeed6.webp",
+            "complete": true,
+            "width": 1119,
+            "height": 839
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/e84ff6d8d78e0fad71.webp",
+            "complete": true,
+            "width": 1251,
+            "height": 938
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "overflow": false,
+        "activeFamily": "Карнизы",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 768,
+      "path": "/catalog?category=%2Fdecor",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/15e373917b09872929.webp",
+            "complete": true,
+            "width": 795,
+            "height": 596
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/a309c9941edbf9274e.webp",
+            "complete": true,
+            "width": 1028,
+            "height": 771
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "overflow": false,
+        "activeFamily": "Декор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 1024,
+      "path": "/catalog",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/2bc22ecb78d9518da8.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/d3194599d5347b3038.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1024,
+        "scrollWidth": 1024,
+        "overflow": false,
+        "activeFamily": "Все товары",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 1024,
+      "path": "/blekayt",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 8,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/6eae1d6ba035ba9043.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/bbbdae58db01a10334.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1199
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1024,
+        "scrollWidth": 1024,
+        "overflow": false,
+        "activeFamily": "Ткани для штор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 1024,
+      "path": "/catalog?category=%2Fkarnizi",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 20,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/8f6e2739fed5ceeed6.webp",
+            "complete": true,
+            "width": 1119,
+            "height": 839
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/e84ff6d8d78e0fad71.webp",
+            "complete": true,
+            "width": 1251,
+            "height": 938
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1024,
+        "scrollWidth": 1024,
+        "overflow": false,
+        "activeFamily": "Карнизы",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 1024,
+      "path": "/catalog?category=%2Fdecor",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/15e373917b09872929.webp",
+            "complete": true,
+            "width": 795,
+            "height": 596
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/a309c9941edbf9274e.webp",
+            "complete": true,
+            "width": 1028,
+            "height": 771
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1024,
+        "scrollWidth": 1024,
+        "overflow": false,
+        "activeFamily": "Декор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "path": "/catalog",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/2bc22ecb78d9518da8.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/d3194599d5347b3038.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/269671e0fedeb077cc.webp",
+            "complete": true,
+            "width": 960,
+            "height": 1280
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "overflow": false,
+        "activeFamily": "Все товары",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      },
+      "screenshot": "catalog-1440.png"
+    },
+    {
+      "width": 1440,
+      "path": "/blekayt",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 8,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/6eae1d6ba035ba9043.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/bbbdae58db01a10334.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1199
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/33415990dec739a60b.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1199
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "overflow": false,
+        "activeFamily": "Ткани для штор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      },
+      "screenshot": "catalog-blackout-1440.png"
+    },
+    {
+      "width": 1440,
+      "path": "/catalog?category=%2Fkarnizi",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 20,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/8f6e2739fed5ceeed6.webp",
+            "complete": true,
+            "width": 1119,
+            "height": 839
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/e84ff6d8d78e0fad71.webp",
+            "complete": true,
+            "width": 1251,
+            "height": 938
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/c73671345017157144.webp",
+            "complete": true,
+            "width": 985,
+            "height": 739
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "overflow": false,
+        "activeFamily": "Карнизы",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      },
+      "screenshot": "catalog-rods-1440.png"
+    },
+    {
+      "width": 1440,
+      "path": "/catalog?category=%2Fdecor",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/15e373917b09872929.webp",
+            "complete": true,
+            "width": 795,
+            "height": 596
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/a309c9941edbf9274e.webp",
+            "complete": true,
+            "width": 1028,
+            "height": 771
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/b9e7cf7f0c2b13830f.webp",
+            "complete": true,
+            "width": 951,
+            "height": 714
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "overflow": false,
+        "activeFamily": "Декор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      },
+      "screenshot": "catalog-decor-1440.png"
+    },
+    {
+      "width": 1920,
+      "path": "/catalog",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/2bc22ecb78d9518da8.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/d3194599d5347b3038.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/269671e0fedeb077cc.webp",
+            "complete": true,
+            "width": 960,
+            "height": 1280
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1920,
+        "scrollWidth": 1920,
+        "overflow": false,
+        "activeFamily": "Все товары",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "path": "/blekayt",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 8,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/6eae1d6ba035ba9043.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1200
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/bbbdae58db01a10334.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1199
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/33415990dec739a60b.webp",
+            "complete": true,
+            "width": 1600,
+            "height": 1199
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1920,
+        "scrollWidth": 1920,
+        "overflow": false,
+        "activeFamily": "Ткани для штор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "path": "/catalog?category=%2Fkarnizi",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 20,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/8f6e2739fed5ceeed6.webp",
+            "complete": true,
+            "width": 1119,
+            "height": 839
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/e84ff6d8d78e0fad71.webp",
+            "complete": true,
+            "width": 1251,
+            "height": 938
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/c73671345017157144.webp",
+            "complete": true,
+            "width": 985,
+            "height": 739
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1920,
+        "scrollWidth": 1920,
+        "overflow": false,
+        "activeFamily": "Карнизы",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "path": "/catalog?category=%2Fdecor",
+      "passed": true,
+      "errors": [],
+      "httpStatus": 200,
+      "h1Count": 1,
+      "images": {
+        "htmlImageCount": 24,
+        "svgImageCount": 0,
+        "failures": [],
+        "fallbackCount": 0,
+        "visibleImages": [
+          {
+            "src": "http://127.0.0.1:4173/source-media/15e373917b09872929.webp",
+            "complete": true,
+            "width": 795,
+            "height": 596
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/a309c9941edbf9274e.webp",
+            "complete": true,
+            "width": 1028,
+            "height": 771
+          },
+          {
+            "src": "http://127.0.0.1:4173/source-media/b9e7cf7f0c2b13830f.webp",
+            "complete": true,
+            "width": 951,
+            "height": 714
+          }
+        ]
+      },
+      "layout": {
+        "viewport": 1920,
+        "scrollWidth": 1920,
+        "overflow": false,
+        "activeFamily": "Декор",
+        "railLabels": [
+          "Все товары",
+          "Ткани для штор",
+          "Тюль",
+          "Рулонные шторы",
+          "Жалюзи",
+          "Карнизы",
+          "Декор"
+        ]
+      }
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 390,
+      "path": "/catalog",
+      "passed": true,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "path": "/blekayt",
+      "passed": true,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "path": "/catalog",
+      "passed": true,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "path": "/blekayt",
+      "passed": true,
+      "violations": []
+    }
+  ],
+  "scenarios": [
+    {
+      "width": 390,
+      "passed": true,
+      "checks": [
+        "All 477 products and six nonempty families in textile-first order",
+        "Velvet selection, search, reload persistence, reset and browser Back",
+        "Both legacy and query Blackout URLs retain eight products and link to parent family",
+        "Contextual rod facets intersect mounting/material; removable chip restores 16 wall rods",
+        "Decor includes 131 products including painting with missing imported parent membership"
+      ],
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "All 477 products and six nonempty families in textile-first order",
+        "Velvet selection, search, reload persistence, reset and browser Back",
+        "Both legacy and query Blackout URLs retain eight products and link to parent family",
+        "Contextual rod facets intersect mounting/material; removable chip restores 16 wall rods",
+        "Decor includes 131 products including painting with missing imported parent membership"
+      ],
+      "errors": []
+    }
+  ],
+  "blockedWrites": [],
+  "errors": [],
+  "limitations": [
+    "Local production-build preview; no deployment or production integration is claimed.",
+    "Screenshots and image checks cover the initially rendered catalogue cards, not all 477 product pages.",
+    "Axe checks WCAG 2 A/AA and WCAG 2.1 A/AA rules on /catalog and /blekayt at 390 and 1440 pixels; this is not a screen-reader audit.",
+    "Isolated browser contexts allow only GET, HEAD and OPTIONS. No forms are submitted."
+  ],
+  "summary": {
+    "routeChecks": 24,
+    "routeFailures": 0,
+    "accessibilityChecks": 4,
+    "accessibilityFailures": 0,
+    "scenarios": 2,
+    "scenarioFailures": 0
+  },
+  "passed": true
+}

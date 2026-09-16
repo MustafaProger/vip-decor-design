@@ -1,0 +1,158 @@
+[
+  {
+    "width": 390,
+    "route": "/blog",
+    "overflow": false,
+    "heading": "36px",
+    "prose": null,
+    "cards": [
+      {
+        "width": 358,
+        "height": 523.53125,
+        "image": 238.65625,
+        "readTop": 995.40625
+      },
+      {
+        "width": 358,
+        "height": 523.53125,
+        "image": 238.65625,
+        "readTop": 1518.9375
+      },
+      {
+        "width": 358,
+        "height": 523.53125,
+        "image": 238.65625,
+        "readTop": 2042.46875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "route": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+    "overflow": false,
+    "heading": "30px",
+    "prose": {
+      "width": 358,
+      "left": 16,
+      "font": "17px"
+    },
+    "cards": [
+      {
+        "width": 358,
+        "height": 523.53125,
+        "image": 238.65625,
+        "readTop": 9179.828125
+      },
+      {
+        "width": 358,
+        "height": 523.53125,
+        "image": 238.65625,
+        "readTop": 9703.359375
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "route": "/blog",
+    "overflow": false,
+    "heading": "36px",
+    "prose": null,
+    "cards": [
+      {
+        "width": 346.640625,
+        "height": 543.6875,
+        "image": 231.09375,
+        "readTop": 925.671875
+      },
+      {
+        "width": 346.65625,
+        "height": 543.6875,
+        "image": 231.09375,
+        "readTop": 925.671875
+      },
+      {
+        "width": 346.640625,
+        "height": 515.96875,
+        "image": 231.09375,
+        "readTop": 1441.640625
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "route": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+    "overflow": false,
+    "heading": "30px",
+    "prose": {
+      "width": 700,
+      "left": 33.984375,
+      "font": "18px"
+    },
+    "cards": [
+      {
+        "width": 346.640625,
+        "height": 543.6875,
+        "image": 231.09375,
+        "readTop": 6571.25
+      },
+      {
+        "width": 346.65625,
+        "height": 543.6875,
+        "image": 231.09375,
+        "readTop": 6571.25
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "route": "/blog",
+    "overflow": false,
+    "heading": "56px",
+    "prose": null,
+    "cards": [
+      {
+        "width": 429.640625,
+        "height": 552.8125,
+        "image": 286.421875,
+        "readTop": 996.796875
+      },
+      {
+        "width": 429.65625,
+        "height": 552.8125,
+        "image": 286.4375,
+        "readTop": 996.796875
+      },
+      {
+        "width": 429.640625,
+        "height": 552.8125,
+        "image": 286.421875,
+        "readTop": 996.796875
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "route": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+    "overflow": false,
+    "heading": "44px",
+    "prose": {
+      "width": 700,
+      "left": 369.984375,
+      "font": "18px"
+    },
+    "cards": [
+      {
+        "width": 429.640625,
+        "height": 552.8125,
+        "image": 286.421875,
+        "readTop": 6869.46875
+      },
+      {
+        "width": 429.65625,
+        "height": 552.8125,
+        "image": 286.4375,
+        "readTop": 6869.46875
+      }
+    ]
+  }
+]

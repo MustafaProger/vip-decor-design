@@ -1,0 +1,146 @@
+[
+  {
+    "label": "product",
+    "width": 320,
+    "fields": [
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "number",
+        "size": 16
+      }
+    ]
+  },
+  {
+    "label": "cart checkout",
+    "width": 320,
+    "fields": [
+      {
+        "type": "number",
+        "size": 16
+      },
+      {
+        "type": "text",
+        "size": 16
+      },
+      {
+        "type": "tel",
+        "size": 16
+      },
+      {
+        "type": "email",
+        "size": 16
+      },
+      {
+        "type": "textarea",
+        "size": 16
+      }
+    ]
+  },
+  {
+    "label": "product",
+    "width": 390,
+    "fields": [
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "number",
+        "size": 16
+      }
+    ]
+  },
+  {
+    "label": "cart checkout",
+    "width": 390,
+    "fields": [
+      {
+        "type": "number",
+        "size": 16
+      },
+      {
+        "type": "text",
+        "size": 16
+      },
+      {
+        "type": "tel",
+        "size": 16
+      },
+      {
+        "type": "email",
+        "size": 16
+      },
+      {
+        "type": "textarea",
+        "size": 16
+      }
+    ]
+  },
+  {
+    "label": "product",
+    "width": 1440,
+    "fields": [
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "select-one",
+        "size": 16
+      },
+      {
+        "type": "number",
+        "size": 16
+      }
+    ]
+  },
+  {
+    "label": "cart checkout",
+    "width": 1440,
+    "fields": [
+      {
+        "type": "number",
+        "size": 16
+      },
+      {
+        "type": "text",
+        "size": 16
+      },
+      {
+        "type": "tel",
+        "size": 16
+      },
+      {
+        "type": "email",
+        "size": 16
+      },
+      {
+        "type": "textarea",
+        "size": 16
+      }
+    ]
+  }
+]

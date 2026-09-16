@@ -144,7 +144,7 @@ body .page-entrance .home-order-step h3 {
 }
 .home-directions {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 .home-direction {
@@ -195,35 +195,48 @@ body .page-entrance .home-direction h3 {
 }
 .home-help {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
-  padding: clamp(28px, 4.5vw, 64px);
-  margin-top: clamp(64px, 6.6vw, 104px);
+  gap: 24px;
+  max-width: 1040px;
+  padding: clamp(28px, 3.4vw, 48px);
+  margin: clamp(56px, 5vw, 80px) auto 0;
   background: #e9ece4;
   border-radius: 30px;
+  text-align: center;
+}
+.home-help .eyebrow {
+  margin-bottom: 16px;
 }
 body .page-entrance .home-help h2 {
-  margin: 0 0 20px;
-  font-size: clamp(28px, 3vw, 42px);
+  margin: 0 0 16px;
+  font-size: clamp(28px, 2.8vw, 38px);
 }
 .home-help p:not(.eyebrow) {
-  max-width: 45ch;
+  max-width: 51ch;
   font-size: 15px;
   color: var(--muted);
   line-height: 1.65;
-  margin: 0;
+  margin: 0 auto;
 }
 .home-help p.home-help-address {
-  margin-top: 16px;
-  font-size: 13px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  max-width: none;
+  font-size: 12px;
+}
+.home-help-address svg {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 .home-help-actions {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  gap: 20px;
-  flex-shrink: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
 }
 .home-help-actions .text-link {
   font-size: 13px;
@@ -337,12 +350,9 @@ body .page-entrance .home-help h2 {
     margin-top: 14px;
   }
   .home-help {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 26px;
+    gap: 22px;
   }
   .home-help-actions {
-    align-items: flex-start;
     gap: 10px;
   }
 }

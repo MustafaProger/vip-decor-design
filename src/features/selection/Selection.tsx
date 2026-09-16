@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import {
+  AnimatePresence,
+  motion,
+  useAnimate,
+  useReducedMotion,
+} from "framer-motion";
+import { ease } from "../../components/Motion";
 import InquiryForm from "../inquiry/InquiryForm";
 import type { SelectionAnswers } from "../../lib/inquiry";
 import "./selection.css";
@@ -60,6 +67,8 @@ export default function Selection({
   const [pending, setPending] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const previousStep = useRef(step);
+  const reduced = useReducedMotion();
+  const [questionsRef, animateQuestions] = useAnimate();
   const selectedRoom = rooms.find((item) => item.id === room) || rooms[0];
   const context = source ? `Подбор штор · ${source}` : "Подбор штор";
   const answers: SelectionAnswers = {
@@ -73,6 +82,14 @@ export default function Selection({
   useEffect(() => {
     if (previousStep.current === step) return;
     previousStep.current = step;
+    // Animate in place so going back never clears the mounted contact form.
+    const animation = reduced
+      ? null
+      : animateQuestions(
+          questionsRef.current,
+          { opacity: [0.65, 1], y: [8, 0] },
+          { duration: 0.28, ease },
+        );
     headingRef.current?.focus({ preventScroll: true });
     if (window.matchMedia("(max-width: 900px)").matches) {
       headingRef.current?.scrollIntoView({
@@ -80,7 +97,8 @@ export default function Selection({
         block: "start",
       });
     }
-  }, [step]);
+    return () => animation?.stop();
+  }, [step, reduced, animateQuestions, questionsRef]);
 
   function next() {
     setError("");
@@ -142,6 +160,15 @@ export default function Selection({
               </span>
               <span className="selection-step-number">0{index + 1}</span>
               <span>{label}</span>
+              {index < stepLabels.length - 1 && (
+                <span className="selection-step-line" aria-hidden="true">
+                  <motion.span
+                    initial={false}
+                    animate={{ scaleX: index < step ? 1 : 0 }}
+                    transition={{ duration: reduced ? 0 : 0.35, ease }}
+                  />
+                </span>
+              )}
             </li>
           ))}
         </ol>
@@ -151,18 +178,25 @@ export default function Selection({
       </div>
       <div className="selection-layout">
         <figure className="selection-visual">
-          <img
-            src={selectedRoom.image}
-            alt={`Концепция: ${selectedRoom.title.toLowerCase()} с мягким естественным светом и шторами`}
-            width="1200"
-            height="1500"
-          />
+          <AnimatePresence initial={false}>
+            <motion.img
+              key={selectedRoom.image}
+              initial={reduced ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: reduced ? 0 : 0.35, ease }}
+              src={selectedRoom.image}
+              alt={`Концепция: ${selectedRoom.title.toLowerCase()} с мягким естественным светом и шторами`}
+              width="1200"
+              height="1500"
+            />
+          </AnimatePresence>
           <figcaption>
             <span>Концепция интерьера</span>
             <span>{selectedRoom.title}</span>
           </figcaption>
         </figure>
-        <div className="selection-questions">
+        <div className="selection-questions" ref={questionsRef}>
           <h2 ref={headingRef} tabIndex={-1}>
             {
               [

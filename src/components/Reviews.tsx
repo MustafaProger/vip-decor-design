@@ -1,4 +1,5 @@
 import { CountUp } from "./CountUp";
+import { Reveal, RevealItem } from "./Motion";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -181,7 +182,7 @@ export default function Reviews({
       className={`client-reviews client-reviews-${variant}`}
       aria-labelledby={titleId}
     >
-      <div className="reviews-heading">
+      <Reveal className="reviews-heading">
         <div>
           <Heading id={titleId}>Отзывы клиентов</Heading>
           <p className="reviews-intro">
@@ -196,8 +197,8 @@ export default function Reviews({
         >
           Яндекс Карты <ArrowUpRight size={18} aria-hidden="true" />
         </a>
-      </div>
-      <div
+      </Reveal>
+      <Reveal
         className="reviews-stats"
         aria-label="Опыт компании и оценки клиентов"
       >
@@ -242,14 +243,15 @@ export default function Reviews({
             </dd>
           </div>
         </dl>
-      </div>
+      </Reveal>
       <ul className="reviews-grid" id={gridId} aria-label="Отзывы клиентов">
         {reviews.slice(0, displayedCount).map((review, index) => {
           const photos = (review.photos || [])
             .map((photo, photoIndex) => ({ ...photo, photoIndex }))
             .filter((photo) => !failedPhotos.has(photo.src));
           return (
-            <li
+            <RevealItem
+              delay={(index % 3) * 0.08}
               className={`review-card ${photos.length ? "review-card-with-photo" : "review-card-without-photo"}`}
               key={review.id}
               aria-label={`Отзыв ${index + 1} из ${reviews.length}`}
@@ -323,7 +325,7 @@ export default function Reviews({
                   Яндекс Карты <ArrowUpRight size={14} aria-hidden="true" />
                 </a>
               </div>
-            </li>
+            </RevealItem>
           );
         })}
       </ul>

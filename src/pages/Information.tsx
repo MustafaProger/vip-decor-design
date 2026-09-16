@@ -118,7 +118,7 @@ export default function Information({ page }: { page: SourcePage }) {
     const relatedPaths = ["/podyshki", "/pokrivala"].includes(page.path)
       ? [
           "/tkani",
-          "/decor",
+          "/kisti",
           page.path === "/podyshki" ? "/pokrivala" : "/podyshki",
         ]
       : ["/fyrnityra", "/shnypki"].includes(page.path)

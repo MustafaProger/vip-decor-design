@@ -23,6 +23,7 @@ const paths = new Set([
     "/calculator",
     "/price",
     "/catalog",
+    "/derzhateli-dlya-shtor",
     "/shop",
   ].map((p) => origin + p),
 ]);

@@ -68,13 +68,20 @@
 .selection-progress li:not(:last-child) {
   flex: 1;
 }
-.selection-progress li:not(:last-child)::after {
-  content: "";
+.selection-step-line {
+  position: relative;
+  overflow: hidden;
   height: 1px;
   min-width: 18px;
-  background: #d9d4ca;
+  background: #adb5a8;
   flex: 1;
   margin-left: 10px;
+}
+.selection-step-line > span {
+  position: absolute;
+  inset: 0;
+  background: #173c32;
+  transform-origin: left center;
 }
 .selection-progress .selection-step-active {
   color: #173c32;
@@ -544,7 +551,7 @@
   .selection-progress li {
     gap: 6px;
   }
-  .selection-progress li:not(:last-child)::after {
+  .selection-step-line {
     margin-left: 4px;
   }
   .selection-step-number {
@@ -611,10 +618,12 @@
   }
   .selection-progress ol {
     flex: 1 1 100%;
-    justify-content: space-between;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
   }
   .selection-progress li {
+    position: relative;
     flex-direction: column;
     align-items: center;
     gap: 7px;
@@ -623,8 +632,13 @@
   .selection-progress li:not(:last-child) {
     flex: none;
   }
-  .selection-progress li:not(:last-child)::after {
-    display: none;
+  .selection-step-line {
+    position: absolute;
+    top: 10px;
+    left: calc(50% + 16px);
+    right: calc(-50% + 16px);
+    margin: 0;
+    min-width: 0;
   }
   .selection-step-count {
     font-size: 10px;

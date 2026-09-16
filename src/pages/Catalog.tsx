@@ -1,3 +1,4 @@
+import { Reveal } from "../components/Motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Link,
@@ -21,8 +22,14 @@ import { OriginalContent } from "./Information";
 import { translateLegacyFilters } from "../lib/legacyFilters";
 import {
   categoryLabel,
+  catalogCategories,
   getCategoryCounts,
-  orderedCategories,
+  catalogFamilies,
+  catalogFilterGroups,
+  categoryFamily,
+  compareCatalogProducts,
+  matchesCatalogTypes,
+  productCategoryPaths,
 } from "../lib/catalog";
 import "./catalog.css";
 const productColors = (p: Product) =>
@@ -77,9 +84,13 @@ export default function Catalog({
     () => getCategoryCounts(data.products),
     [data.products],
   );
-  const categories = useMemo(
-    () => orderedCategories(data.categories),
+  const availableCategories = useMemo(
+    () => catalogCategories(data.categories),
     [data.categories],
+  );
+  const categories = useMemo(
+    () => catalogFamilies(availableCategories, categoryCounts),
+    [availableCategories, categoryCounts],
   );
   const requestedCategory = filters.get("category") || "";
   const categoryPath = all
@@ -89,7 +100,9 @@ export default function Catalog({
     : favoritesOnly
       ? ""
       : pathname;
-  const cat = data.categories.find((c) => c.path === categoryPath);
+  const activeFamily = categoryFamily(categoryPath);
+  const cat = availableCategories.find((c) => c.path === categoryPath);
+  const family = availableCategories.find((c) => c.path === activeFamily);
   const categoryPage = data.pages.find((p) => p.path === categoryPath);
   const hasDescription = categoryPage?.paragraphs.some(
     (paragraph) =>
@@ -175,19 +188,15 @@ export default function Catalog({
           ? favorites.includes(p.id)
           : !categoryPath
             ? true
-            : (p.categoryPaths || [p.categoryPath]).includes(categoryPath),
+            : productCategoryPaths(p).has(categoryPath),
       ),
     [data, categoryPath, favoritesOnly, favorites],
   );
-  const types = data.categories
-    .filter(
-      (c) =>
-        c.path !== categoryPath &&
-        source.some((p) =>
-          (p.categoryPaths || [p.categoryPath]).includes(c.path),
-        ),
-    )
-    .sort((a, b) => a.title.localeCompare(b.title, "ru"));
+  const typeGroups = catalogFilterGroups(
+    availableCategories,
+    source,
+    selectedTypes,
+  );
   const colors = Array.from(new Set(source.flatMap(productColors))).sort(
     (a, b) => a.localeCompare(b, "ru"),
   );
@@ -201,10 +210,7 @@ export default function Catalog({
             .includes(q.toLowerCase())) &&
         (!minPrice || (p.price !== null && p.price >= Number(minPrice))) &&
         (!maxPrice || (p.price !== null && p.price <= Number(maxPrice))) &&
-        (!selectedTypes.length ||
-          selectedTypes.some((t) =>
-            (p.categoryPaths || [p.categoryPath]).includes(t),
-          )) &&
+        matchesCatalogTypes(p, selectedTypes) &&
         (!selectedColors.length ||
           productColors(p).some((color) => selectedColors.includes(color))),
     );
@@ -215,7 +221,7 @@ export default function Catalog({
           ? (a.price ?? Infinity) - (b.price ?? Infinity)
           : sort === "price-desc"
             ? (b.price ?? -1) - (a.price ?? -1)
-            : 0,
+            : compareCatalogProducts(a, b),
     );
   }, [source, q, selectedTypes, selectedColors, sort, minPrice, maxPrice]);
   const update = (key: string, value: string, multi = false) => {
@@ -263,21 +269,24 @@ export default function Catalog({
           </label>
         </div>
       </fieldset>
-      {types.length > 0 && (
-        <fieldset className="filter-group">
-          <legend>Тип материала / изделия</legend>
-          {types.map((t) => (
-            <label key={t.path}>
+      {typeGroups.map((group) => (
+        <fieldset className="filter-group category-filter" key={group.id}>
+          <legend>{group.title}</legend>
+          {group.options.map((option) => (
+            <label key={option.path}>
               <input
                 type="checkbox"
-                checked={selectedTypes.includes(t.path)}
-                onChange={() => update("type", t.path, true)}
+                checked={selectedTypes.includes(option.path)}
+                onChange={() => update("type", option.path, true)}
               />
-              <span>{t.title}</span>
+              <span>{categoryLabel(option)}</span>
+              <span className="filter-option-count" aria-hidden="true">
+                {option.count}
+              </span>
             </label>
           ))}
         </fieldset>
-      )}
+      ))}
       {colors.length > 0 && (
         <fieldset className="filter-group">
           <legend>Цвет</legend>
@@ -331,7 +340,7 @@ export default function Catalog({
           },
         ]}
       />
-      <div className="catalog-heading">
+      <Reveal className="catalog-heading">
         <div>
           <h1>{title}</h1>
           <p>
@@ -346,7 +355,7 @@ export default function Catalog({
           Помочь с выбором
           <ArrowUpRight size={18} />
         </Link>
-      </div>
+      </Reveal>
       <nav
         className="category-tabs catalog-categories"
         aria-label="Категории каталога"
@@ -373,33 +382,16 @@ export default function Catalog({
           >
             Все товары
           </Link>
-          {categories.map((category) => {
-            const count = categoryCounts.get(category.path) || 0;
-            const label = categoryLabel(category);
-            return count ? (
-              <Link
-                to={categoryHref(category.path)}
-                className={categoryPath === category.path ? "active" : ""}
-                aria-current={
-                  categoryPath === category.path ? "page" : undefined
-                }
-                key={category.path}
-              >
-                {label}
-              </Link>
-            ) : (
-              <button
-                type="button"
-                className="category-unavailable"
-                disabled
-                title="В категории пока нет товаров"
-                key={category.path}
-              >
-                {label}
-                <span className="sr-only"> — пока нет товаров</span>
-              </button>
-            );
-          })}
+          {categories.map((category) => (
+            <Link
+              to={categoryHref(category.path)}
+              className={activeFamily === category.path ? "active" : ""}
+              aria-current={activeFamily === category.path ? "page" : undefined}
+              key={category.path}
+            >
+              {categoryLabel(category)}
+            </Link>
+          ))}
         </div>
         <button
           className="category-scroll"
@@ -418,6 +410,17 @@ export default function Catalog({
         </aside>
         <div className="catalog-results">
           <h2 className="sr-only">Товары</h2>
+          {cat && activeFamily !== categoryPath && family && (
+            <div className="catalog-collection-context">
+              <span>
+                Коллекция: <strong>{categoryLabel(cat)}</strong>
+              </span>
+              <Link to={categoryHref(activeFamily)}>
+                Весь раздел «{categoryLabel(family)}»
+                <ArrowUpRight size={16} />
+              </Link>
+            </div>
+          )}
           <div className="catalog-toolbar">
             <label className="search-field">
               <Search size={20} />
@@ -466,13 +469,21 @@ export default function Catalog({
                 </button>
               )}
               {selectedTypes.map((t) => (
-                <button key={t} onClick={() => update("type", t, true)}>
-                  {data.categories.find((c) => c.path === t)?.title || t}
+                <button
+                  key={t}
+                  onClick={() => update("type", t, true)}
+                  aria-label={`Убрать фильтр: ${availableCategories.find((c) => c.path === t)?.title || t}`}
+                >
+                  {availableCategories.find((c) => c.path === t)?.title || t}
                   <X size={14} />
                 </button>
               ))}
               {selectedColors.map((c) => (
-                <button key={c} onClick={() => update("color", c, true)}>
+                <button
+                  key={c}
+                  onClick={() => update("color", c, true)}
+                  aria-label={`Убрать цвет: ${c}`}
+                >
                   {c}
                   <X size={14} />
                 </button>
@@ -482,8 +493,8 @@ export default function Catalog({
           {products.length > 0 ? (
             <>
               <div className="product-grid">
-                {products.slice(0, shown).map((p) => (
-                  <ProductCard key={p.id} product={p} />
+                {products.slice(0, shown).map((p, index) => (
+                  <ProductCard key={p.id} product={p} index={index} />
                 ))}
               </div>
               {shown < products.length && (

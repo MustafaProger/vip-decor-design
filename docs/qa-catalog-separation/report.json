@@ -1,0 +1,286 @@
+{
+  "routes": [
+    {
+      "width": 320,
+      "path": "/catalog",
+      "count": 477
+    },
+    {
+      "width": 320,
+      "path": "/catalog?category=%2Fderzhateli-dlya-shtor",
+      "count": 39
+    },
+    {
+      "width": 320,
+      "path": "/catalog?category=%2Fkisti",
+      "count": 11
+    },
+    {
+      "width": 320,
+      "path": "/catalog?category=%2Fkartini",
+      "count": 81
+    },
+    {
+      "width": 320,
+      "path": "/derzhateli-dlya-shtor",
+      "count": 39
+    },
+    {
+      "width": 320,
+      "path": "/kisti",
+      "count": 11
+    },
+    {
+      "width": 320,
+      "path": "/kartini",
+      "count": 81
+    },
+    {
+      "width": 320,
+      "path": "/tkani",
+      "count": 199
+    },
+    {
+      "width": 320,
+      "path": "/tyl",
+      "count": 69
+    },
+    {
+      "width": 320,
+      "path": "/decor",
+      "count": 131
+    },
+    {
+      "width": 390,
+      "path": "/catalog",
+      "count": 477
+    },
+    {
+      "width": 390,
+      "path": "/catalog?category=%2Fderzhateli-dlya-shtor",
+      "count": 39
+    },
+    {
+      "width": 390,
+      "path": "/catalog?category=%2Fkisti",
+      "count": 11
+    },
+    {
+      "width": 390,
+      "path": "/catalog?category=%2Fkartini",
+      "count": 81
+    },
+    {
+      "width": 390,
+      "path": "/derzhateli-dlya-shtor",
+      "count": 39
+    },
+    {
+      "width": 390,
+      "path": "/kisti",
+      "count": 11
+    },
+    {
+      "width": 390,
+      "path": "/kartini",
+      "count": 81
+    },
+    {
+      "width": 390,
+      "path": "/tkani",
+      "count": 199
+    },
+    {
+      "width": 390,
+      "path": "/tyl",
+      "count": 69
+    },
+    {
+      "width": 390,
+      "path": "/decor",
+      "count": 131
+    },
+    {
+      "width": 1440,
+      "path": "/catalog",
+      "count": 477
+    },
+    {
+      "width": 1440,
+      "path": "/catalog?category=%2Fderzhateli-dlya-shtor",
+      "count": 39
+    },
+    {
+      "width": 1440,
+      "path": "/catalog?category=%2Fkisti",
+      "count": 11
+    },
+    {
+      "width": 1440,
+      "path": "/catalog?category=%2Fkartini",
+      "count": 81
+    },
+    {
+      "width": 1440,
+      "path": "/derzhateli-dlya-shtor",
+      "count": 39
+    },
+    {
+      "width": 1440,
+      "path": "/kisti",
+      "count": 11
+    },
+    {
+      "width": 1440,
+      "path": "/kartini",
+      "count": 81
+    },
+    {
+      "width": 1440,
+      "path": "/tkani",
+      "count": 199
+    },
+    {
+      "width": 1440,
+      "path": "/tyl",
+      "count": 69
+    },
+    {
+      "width": 1440,
+      "path": "/decor",
+      "count": 131
+    }
+  ],
+  "menus": [
+    {
+      "width": 320,
+      "styles": {
+        "background": "rgb(250, 249, 246)",
+        "blur": "none",
+        "shadow": "none",
+        "radius": "8px",
+        "backdropBlur": "none",
+        "links": [
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          }
+        ]
+      },
+      "keyboardAndNavigation": true
+    },
+    {
+      "width": 390,
+      "styles": {
+        "background": "rgb(250, 249, 246)",
+        "blur": "none",
+        "shadow": "none",
+        "radius": "8px",
+        "backdropBlur": "none",
+        "links": [
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          },
+          {
+            "radius": "0px",
+            "shadow": "none"
+          }
+        ]
+      },
+      "keyboardAndNavigation": true
+    }
+  ],
+  "scenarios": [
+    {
+      "width": 320,
+      "check": "Holder search, reload, product breadcrumb and related holders"
+    },
+    {
+      "width": 390,
+      "check": "Holder search, reload, product breadcrumb and related holders"
+    },
+    {
+      "width": 1440,
+      "check": "Holder search, reload, product breadcrumb and related holders"
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

@@ -1,0 +1,568 @@
+{
+  "checks": [
+    {
+      "label": "selection room 320",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection dimensions 320",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "selection-width",
+          "type": "number",
+          "font": 16
+        },
+        {
+          "id": "selection-height",
+          "type": "number",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "selection contacts 320",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_3_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "contacts 320",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "inquiry modal 320",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_0_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/tkani 320",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "search",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "select-one",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/calculator 320",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "email",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/cart 320",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection room 390",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection dimensions 390",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "selection-width",
+          "type": "number",
+          "font": 16
+        },
+        {
+          "id": "selection-height",
+          "type": "number",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "selection contacts 390",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_3_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "contacts 390",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "inquiry modal 390",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_0_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/tkani 390",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "search",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "select-one",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/calculator 390",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "email",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/cart 390",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection room 700",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection dimensions 700",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "selection-width",
+          "type": "number",
+          "font": 16
+        },
+        {
+          "id": "selection-height",
+          "type": "number",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "selection contacts 700",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_3_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "contacts 700",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "inquiry modal 700",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_0_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/tkani 700",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "search",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "select-one",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/calculator 700",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "email",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/cart 700",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection room 768",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection dimensions 768",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "selection-width",
+          "type": "number",
+          "font": 16
+        },
+        {
+          "id": "selection-height",
+          "type": "number",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "selection contacts 768",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_3_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "contacts 768",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "inquiry modal 768",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_0_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/tkani 768",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "search",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "select-one",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/calculator 768",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "email",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/cart 768",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection room 1440",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "selection dimensions 1440",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "selection-width",
+          "type": "number",
+          "font": 16
+        },
+        {
+          "id": "selection-height",
+          "type": "number",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "selection contacts 1440",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_3_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_3_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "contacts 1440",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "inquiry modal 1440",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "_r_0_-name",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-phone",
+          "type": "tel",
+          "font": 16
+        },
+        {
+          "id": "_r_0_-comment",
+          "type": "textarea",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/tkani 1440",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "number",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "number",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "search",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "select-one",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/calculator 1440",
+      "overflow": false,
+      "fields": [
+        {
+          "id": "",
+          "type": "text",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "email",
+          "font": 16
+        },
+        {
+          "id": "",
+          "type": "tel",
+          "font": 16
+        }
+      ]
+    },
+    {
+      "label": "/cart 1440",
+      "overflow": false,
+      "fields": []
+    },
+    {
+      "label": "reduced motion: no question translation, completed connector visible"
+    }
+  ],
+  "errors": []
+}

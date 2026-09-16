@@ -1,3 +1,9 @@
+import { Reveal, RevealSection } from "../components/Motion";
+import {
+  catalogCategories,
+  primaryProductCategory,
+  productCategoryPaths,
+} from "../lib/catalog";
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
@@ -63,10 +69,7 @@ function ProductDetails({ product }: { product: ProductData }) {
   const unavailable =
     quote.availableQuantity !== null && quote.availableQuantity < 1;
   const description = useMemo(() => productDescription(product), [product]);
-  const categoryPath =
-    (product.categoryPaths || []).find(
-      (path) => !["/tkani", "/tyl", "/shop"].includes(path),
-    ) || product.categoryPath;
+  const categoryPath = primaryProductCategory(product);
   const related = useMemo(
     () =>
       data.products
@@ -74,17 +77,16 @@ function ProductDetails({ product }: { product: ProductData }) {
           (item) =>
             item.id !== product.id &&
             (categoryPath
-              ? (item.categoryPaths || [item.categoryPath]).includes(
-                  categoryPath,
-                )
+              ? productCategoryPaths(item).has(categoryPath)
               : item.category === product.category),
         )
         .slice(0, 3),
     [data, product, categoryPath],
   );
   const categoryTitle =
-    data.categories.find((category) => category.path === categoryPath)?.title ||
-    product.category;
+    catalogCategories(data.categories).find(
+      (category) => category.path === categoryPath,
+    )?.title || product.category;
   const itemTotal =
     quote.unitPrice === null
       ? null
@@ -172,7 +174,7 @@ function ProductDetails({ product }: { product: ProductData }) {
         ]}
       />
       <div className="pd-layout">
-        <section
+        <RevealSection
           className="pd-gallery"
           aria-label={`Фотографии ${product.title}`}
         >
@@ -220,8 +222,8 @@ function ProductDetails({ product }: { product: ProductData }) {
               ))}
             </div>
           )}
-        </section>
-        <div className="pd-information">
+        </RevealSection>
+        <Reveal className="pd-information" delay={0.12}>
           <p className="pd-eyebrow">
             {product.shortDescription || product.category}
           </p>
@@ -424,7 +426,7 @@ function ProductDetails({ product }: { product: ProductData }) {
               Рассчитать пошив <ArrowUpRight size={15} />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </div>
       {(description.summary ||
         (product.properties || []).length > 0 ||

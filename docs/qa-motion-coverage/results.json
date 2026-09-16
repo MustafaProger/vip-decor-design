@@ -1,0 +1,384 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "width": 390,
+      "blocks": 17,
+      "samples": [
+        {
+          "class": "home-hero-copy",
+          "opacity": 0.0118579,
+          "transform": "matrix(1, 0, 0, 1, 0, 27.4095)"
+        },
+        {
+          "class": "home-hero-copy",
+          "opacity": 0.124265,
+          "transform": "matrix(1, 0, 0, 1, 0, 24.2256)"
+        },
+        {
+          "class": "home-hero-copy",
+          "opacity": 0.328816,
+          "transform": "matrix(1, 0, 0, 1, 0, 18.5856)"
+        },
+        {
+          "class": "home-hero-copy",
+          "opacity": 0.499206,
+          "transform": "matrix(1, 0, 0, 1, 0, 13.8969)"
+        }
+      ]
+    },
+    {
+      "route": "/catalog",
+      "width": 390,
+      "blocks": 25,
+      "samples": [
+        {
+          "class": "catalog-heading",
+          "opacity": 0.16583,
+          "transform": "matrix(1, 0, 0, 1, 0, 23.1254)"
+        },
+        {
+          "class": "product-card",
+          "opacity": 0.16583,
+          "transform": "matrix(1, 0, 0, 1, 0, 23.1254)"
+        },
+        {
+          "class": "catalog-heading",
+          "opacity": 0.269116,
+          "transform": "matrix(1, 0, 0, 1, 0, 20.1902)"
+        },
+        {
+          "class": "product-card",
+          "opacity": 0.269116,
+          "transform": "matrix(1, 0, 0, 1, 0, 20.1902)"
+        }
+      ]
+    },
+    {
+      "route": "/product/325186268288",
+      "width": 390,
+      "blocks": 5,
+      "samples": [
+        {
+          "class": "pd-gallery",
+          "opacity": 0.0034939,
+          "transform": "matrix(1, 0, 0, 1, 0, 27.8158)"
+        },
+        {
+          "class": "pd-gallery",
+          "opacity": 0.222456,
+          "transform": "matrix(1, 0, 0, 1, 0, 21.5384)"
+        },
+        {
+          "class": "pd-gallery",
+          "opacity": 0.412001,
+          "transform": "matrix(1, 0, 0, 1, 0, 16.3418)"
+        },
+        {
+          "class": "pd-gallery",
+          "opacity": 0.493682,
+          "transform": "matrix(1, 0, 0, 1, 0, 14.0259)"
+        }
+      ]
+    },
+    {
+      "route": "/projects",
+      "width": 390,
+      "blocks": 11,
+      "samples": [
+        {
+          "class": "reviews-heading",
+          "opacity": 0.128862,
+          "transform": "matrix(1, 0, 0, 1, 0, 23.8551)"
+        },
+        {
+          "class": "reviews-stats",
+          "opacity": 0.128862,
+          "transform": "matrix(1, 0, 0, 1, 0, 23.8551)"
+        },
+        {
+          "class": "review-card review-card-with-photo",
+          "opacity": 0.128862,
+          "transform": "matrix(1, 0, 0, 1, 0, 23.8551)"
+        },
+        {
+          "class": "reviews-heading",
+          "opacity": 0.332757,
+          "transform": "matrix(1, 0, 0, 1, 0, 18.43)"
+        }
+      ]
+    },
+    {
+      "route": "/price",
+      "width": 390,
+      "blocks": 3,
+      "samples": [
+        {
+          "class": "price-category",
+          "opacity": 0.199442,
+          "transform": "matrix(1, 0, 0, 1, 0, 22.2345)"
+        },
+        {
+          "class": "price-category",
+          "opacity": 0.392695,
+          "transform": "matrix(1, 0, 0, 1, 0, 16.7752)"
+        },
+        {
+          "class": "price-category",
+          "opacity": 0.550652,
+          "transform": "matrix(1, 0, 0, 1, 0, 12.4345)"
+        },
+        {
+          "class": "price-category",
+          "opacity": 0.6743,
+          "transform": "matrix(1, 0, 0, 1, 0, 9.03095)"
+        }
+      ]
+    },
+    {
+      "route": "/contacts",
+      "width": 390,
+      "blocks": 2,
+      "samples": [
+        {
+          "class": "contact-content",
+          "opacity": 0.12295,
+          "transform": "matrix(1, 0, 0, 1, 0, 24.3748)"
+        },
+        {
+          "class": "contact-content",
+          "opacity": 0.229838,
+          "transform": "matrix(1, 0, 0, 1, 0, 21.3667)"
+        },
+        {
+          "class": "contact-content",
+          "opacity": 0.417656,
+          "transform": "matrix(1, 0, 0, 1, 0, 16.199)"
+        },
+        {
+          "class": "contact-content",
+          "opacity": 0.570504,
+          "transform": "matrix(1, 0, 0, 1, 0, 11.8471)"
+        }
+      ]
+    },
+    {
+      "route": "/company",
+      "width": 390,
+      "blocks": 15,
+      "samples": [
+        {
+          "class": "",
+          "opacity": 0.0470606,
+          "transform": "matrix(1, 0, 0, 1, 0, 26.4504)"
+        },
+        {
+          "class": "company-numbers-heading",
+          "opacity": 0.0470606,
+          "transform": "matrix(1, 0, 0, 1, 0, 26.4504)"
+        },
+        {
+          "class": "",
+          "opacity": 0.261357,
+          "transform": "matrix(1, 0, 0, 1, 0, 20.3556)"
+        },
+        {
+          "class": "company-numbers-heading",
+          "opacity": 0.261357,
+          "transform": "matrix(1, 0, 0, 1, 0, 20.3556)"
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "blocks": 17,
+      "samples": [
+        {
+          "class": "home-hero-copy",
+          "opacity": 0.158117,
+          "transform": "matrix(1, 0, 0, 1, 0, 23.3064)"
+        },
+        {
+          "class": "home-hero-copy",
+          "opacity": 0.357185,
+          "transform": "matrix(1, 0, 0, 1, 0, 17.8162)"
+        },
+        {
+          "class": "home-hero-copy",
+          "opacity": 0.522168,
+          "transform": "matrix(1, 0, 0, 1, 0, 13.1398)"
+        },
+        {
+          "class": "home-hero-copy",
+          "opacity": 0.652472,
+          "transform": "matrix(1, 0, 0, 1, 0, 9.58191)"
+        }
+      ]
+    },
+    {
+      "route": "/catalog",
+      "width": 1440,
+      "blocks": 25,
+      "samples": [
+        {
+          "class": "catalog-heading",
+          "opacity": 0.205075,
+          "transform": "matrix(1, 0, 0, 1, 0, 22.0591)"
+        },
+        {
+          "class": "product-card",
+          "opacity": 0.205075,
+          "transform": "matrix(1, 0, 0, 1, 0, 22.0591)"
+        },
+        {
+          "class": "catalog-heading",
+          "opacity": 0.396906,
+          "transform": "matrix(1, 0, 0, 1, 0, 16.7752)"
+        },
+        {
+          "class": "product-card",
+          "opacity": 0.396906,
+          "transform": "matrix(1, 0, 0, 1, 0, 16.7752)"
+        }
+      ]
+    },
+    {
+      "route": "/product/325186268288",
+      "width": 1440,
+      "blocks": 5,
+      "samples": [
+        {
+          "class": "pd-gallery",
+          "opacity": 0.0970998,
+          "transform": "matrix(1, 0, 0, 1, 0, 25.1304)"
+        },
+        {
+          "class": "pd-gallery",
+          "opacity": 0.304856,
+          "transform": "matrix(1, 0, 0, 1, 0, 19.3769)"
+        },
+        {
+          "class": "pd-gallery",
+          "opacity": 0.480141,
+          "transform": "matrix(1, 0, 0, 1, 0, 14.4175)"
+        },
+        {
+          "class": "pd-gallery",
+          "opacity": 0.619591,
+          "transform": "matrix(1, 0, 0, 1, 0, 10.5778)"
+        }
+      ]
+    },
+    {
+      "route": "/projects",
+      "width": 1440,
+      "blocks": 11,
+      "samples": [
+        {
+          "class": "reviews-heading",
+          "opacity": 0.193158,
+          "transform": "matrix(1, 0, 0, 1, 0, 22.588)"
+        },
+        {
+          "class": "reviews-stats",
+          "opacity": 0.193158,
+          "transform": "matrix(1, 0, 0, 1, 0, 22.588)"
+        },
+        {
+          "class": "review-card review-card-with-photo",
+          "opacity": 0.193158,
+          "transform": "matrix(1, 0, 0, 1, 0, 22.588)"
+        },
+        {
+          "class": "reviews-heading",
+          "opacity": 0.387403,
+          "transform": "matrix(1, 0, 0, 1, 0, 17.0684)"
+        }
+      ]
+    },
+    {
+      "route": "/price",
+      "width": 1440,
+      "blocks": 3,
+      "samples": [
+        {
+          "class": "price-category",
+          "opacity": 0.0944277,
+          "transform": "matrix(1, 0, 0, 1, 0, 25.1304)"
+        },
+        {
+          "class": "price-category",
+          "opacity": 0.202574,
+          "transform": "matrix(1, 0, 0, 1, 0, 22.2345)"
+        },
+        {
+          "class": "price-category",
+          "opacity": 0.394803,
+          "transform": "matrix(1, 0, 0, 1, 0, 16.7752)"
+        },
+        {
+          "class": "price-category",
+          "opacity": 0.552334,
+          "transform": "matrix(1, 0, 0, 1, 0, 12.4345)"
+        }
+      ]
+    },
+    {
+      "route": "/contacts",
+      "width": 1440,
+      "blocks": 2,
+      "samples": [
+        {
+          "class": "contact-visual",
+          "opacity": 0.0904124,
+          "transform": "matrix(1, 0, 0, 1, 0, 25.3217)"
+        },
+        {
+          "class": "contact-visual",
+          "opacity": 0.299073,
+          "transform": "matrix(1, 0, 0, 1, 0, 19.5377)"
+        },
+        {
+          "class": "contact-visual",
+          "opacity": 0.299073,
+          "transform": "matrix(1, 0, 0, 1, 0, 19.5377)"
+        },
+        {
+          "class": "contact-visual",
+          "opacity": 0.299073,
+          "transform": "matrix(1, 0, 0, 1, 0, 19.5377)"
+        }
+      ]
+    },
+    {
+      "route": "/company",
+      "width": 1440,
+      "blocks": 15,
+      "samples": [
+        {
+          "class": "",
+          "opacity": 0.0877308,
+          "transform": "matrix(1, 0, 0, 1, 0, 25.3217)"
+        },
+        {
+          "class": "company-numbers-heading",
+          "opacity": 0.0877308,
+          "transform": "matrix(1, 0, 0, 1, 0, 25.3217)"
+        },
+        {
+          "class": "company-number",
+          "opacity": 0.0877308,
+          "transform": "matrix(1, 0, 0, 1, 0, 25.3217)"
+        },
+        {
+          "class": "",
+          "opacity": 0.296751,
+          "transform": "matrix(1, 0, 0, 1, 0, 19.5377)"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "reducedMotion": true
+}

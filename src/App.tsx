@@ -181,6 +181,7 @@ function RouteContent({
     return <Delivery page={source} />;
   if (path === "/sitemap") return <Sitemap />;
   if (path === "/catalog") return <Catalog all />;
+  if (path === "/derzhateli-dlya-shtor") return <Catalog />;
   if (path === "/shop")
     return <Navigate to={"/catalog" + search + hash} replace />;
   if (path === "/favorites") return <Catalog favoritesOnly />;

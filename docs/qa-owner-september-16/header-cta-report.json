@@ -1,0 +1,1910 @@
+{
+  "checkedAt": "2026-09-16T12:12:41.004Z",
+  "widths": [
+    {
+      "width": 320,
+      "desktop": false,
+      "header": {
+        "box": {
+          "x": 12,
+          "y": 10,
+          "width": 296,
+          "height": 62,
+          "top": 10,
+          "right": 308,
+          "bottom": 72,
+          "left": 12
+        },
+        "overflow": false,
+        "links": [
+          {
+            "text": "Главная",
+            "href": "/",
+            "active": "page",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgb(228, 234, 228)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "rgba(255, 255, 255, 0.79) 0px 1px 0px 0px inset, rgba(23, 63, 54, 0.063) 0px 1px 3px 0px"
+            }
+          },
+          {
+            "text": "О компании",
+            "href": "/company",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Каталог",
+            "href": "/catalog",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Отзывы",
+            "href": "/projects",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Блог",
+            "href": "/blog",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          }
+        ]
+      },
+      "cta": {
+        "box": {
+          "x": 16,
+          "y": 305.328125,
+          "width": 288,
+          "height": 486.21875,
+          "top": 305.328125,
+          "right": 304,
+          "bottom": 791.546875,
+          "left": 16
+        },
+        "overflow": false,
+        "text": "ПРИГЛАШАЕМ В ШОУРУМПочувствуйте ткань.Представьте её дома.Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.Обсудить мой заказ Контакты и маршрутМосква, Сокольническая площадь 4А, 2 этаж, пав. 226",
+        "children": [
+          {
+            "text": "ПРИГЛАШАЕМ В ШОУРУМ",
+            "box": {
+              "x": 40,
+              "y": 329.328125,
+              "width": 240,
+              "height": 16.5,
+              "top": 329.328125,
+              "right": 280,
+              "bottom": 345.828125,
+              "left": 40
+            }
+          },
+          {
+            "text": "Почувствуйте ткань.Представьте её дома.",
+            "box": {
+              "x": 40,
+              "y": 361.828125,
+              "width": 240,
+              "height": 129.875,
+              "top": 361.828125,
+              "right": 280,
+              "bottom": 491.703125,
+              "left": 40
+            }
+          },
+          {
+            "text": "Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.",
+            "box": {
+              "x": 40,
+              "y": 507.703125,
+              "width": 240,
+              "height": 74.25,
+              "top": 507.703125,
+              "right": 280,
+              "bottom": 581.953125,
+              "left": 40
+            }
+          },
+          {
+            "text": "Обсудить мой заказ ",
+            "box": {
+              "x": 47.984375,
+              "y": 603.953125,
+              "width": 224.03125,
+              "height": 48,
+              "top": 603.953125,
+              "right": 272.015625,
+              "bottom": 651.953125,
+              "left": 47.984375
+            }
+          },
+          {
+            "text": "Контакты и маршрут",
+            "box": {
+              "x": 76.890625,
+              "y": 661.953125,
+              "width": 166.203125,
+              "height": 44,
+              "top": 661.953125,
+              "right": 243.09375,
+              "bottom": 705.953125,
+              "left": 76.890625
+            }
+          },
+          {
+            "text": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
+            "box": {
+              "x": 40,
+              "y": 727.953125,
+              "width": 240,
+              "height": 39.59375,
+              "top": 727.953125,
+              "right": 280,
+              "bottom": 767.546875,
+              "left": 40
+            }
+          }
+        ],
+        "documentOverflow": false
+      }
+    },
+    {
+      "width": 390,
+      "desktop": false,
+      "header": {
+        "box": {
+          "x": 12,
+          "y": 10,
+          "width": 366,
+          "height": 62,
+          "top": 10,
+          "right": 378,
+          "bottom": 72,
+          "left": 12
+        },
+        "overflow": false,
+        "links": [
+          {
+            "text": "Главная",
+            "href": "/",
+            "active": "page",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgb(228, 234, 228)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "rgba(255, 255, 255, 0.79) 0px 1px 0px 0px inset, rgba(23, 63, 54, 0.063) 0px 1px 3px 0px"
+            }
+          },
+          {
+            "text": "О компании",
+            "href": "/company",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Каталог",
+            "href": "/catalog",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Отзывы",
+            "href": "/projects",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Блог",
+            "href": "/blog",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          }
+        ]
+      },
+      "cta": {
+        "box": {
+          "x": 16,
+          "y": 349.421875,
+          "width": 358,
+          "height": 396.53125,
+          "top": 349.421875,
+          "right": 374,
+          "bottom": 745.953125,
+          "left": 16
+        },
+        "overflow": false,
+        "text": "ПРИГЛАШАЕМ В ШОУРУМПочувствуйте ткань.Представьте её дома.Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.Обсудить мой заказ Контакты и маршрутМосква, Сокольническая площадь 4А, 2 этаж, пав. 226",
+        "children": [
+          {
+            "text": "ПРИГЛАШАЕМ В ШОУРУМ",
+            "box": {
+              "x": 40,
+              "y": 373.421875,
+              "width": 310,
+              "height": 16.5,
+              "top": 373.421875,
+              "right": 350,
+              "bottom": 389.921875,
+              "left": 40
+            }
+          },
+          {
+            "text": "Почувствуйте ткань.Представьте её дома.",
+            "box": {
+              "x": 40,
+              "y": 405.921875,
+              "width": 310,
+              "height": 64.9375,
+              "top": 405.921875,
+              "right": 350,
+              "bottom": 470.859375,
+              "left": 40
+            }
+          },
+          {
+            "text": "Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.",
+            "box": {
+              "x": 40,
+              "y": 486.859375,
+              "width": 310,
+              "height": 49.5,
+              "top": 486.859375,
+              "right": 350,
+              "bottom": 536.359375,
+              "left": 40
+            }
+          },
+          {
+            "text": "Обсудить мой заказ ",
+            "box": {
+              "x": 82.984375,
+              "y": 558.359375,
+              "width": 224.03125,
+              "height": 48,
+              "top": 558.359375,
+              "right": 307.015625,
+              "bottom": 606.359375,
+              "left": 82.984375
+            }
+          },
+          {
+            "text": "Контакты и маршрут",
+            "box": {
+              "x": 111.890625,
+              "y": 616.359375,
+              "width": 166.203125,
+              "height": 44,
+              "top": 616.359375,
+              "right": 278.09375,
+              "bottom": 660.359375,
+              "left": 111.890625
+            }
+          },
+          {
+            "text": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
+            "box": {
+              "x": 40,
+              "y": 682.359375,
+              "width": 310,
+              "height": 39.59375,
+              "top": 682.359375,
+              "right": 350,
+              "bottom": 721.953125,
+              "left": 40
+            }
+          }
+        ],
+        "documentOverflow": false
+      }
+    },
+    {
+      "width": 768,
+      "desktop": false,
+      "header": {
+        "box": {
+          "x": 25.34375,
+          "y": 10,
+          "width": 717.296875,
+          "height": 66,
+          "top": 10,
+          "right": 742.640625,
+          "bottom": 76,
+          "left": 25.34375
+        },
+        "overflow": false,
+        "links": [
+          {
+            "text": "Главная",
+            "href": "/",
+            "active": "page",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgb(228, 234, 228)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "rgba(255, 255, 255, 0.79) 0px 1px 0px 0px inset, rgba(23, 63, 54, 0.063) 0px 1px 3px 0px"
+            }
+          },
+          {
+            "text": "О компании",
+            "href": "/company",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Каталог",
+            "href": "/catalog",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Отзывы",
+            "href": "/projects",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Блог",
+            "href": "/blog",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          }
+        ]
+      },
+      "cta": {
+        "box": {
+          "x": 25.34375,
+          "y": 384.25,
+          "width": 717.296875,
+          "height": 330.734375,
+          "top": 384.25,
+          "right": 742.640625,
+          "bottom": 714.984375,
+          "left": 25.34375
+        },
+        "overflow": false,
+        "text": "ПРИГЛАШАЕМ В ШОУРУМПочувствуйте ткань.Представьте её дома.Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.Обсудить мой заказ Контакты и маршрутМосква, Сокольническая площадь 4А, 2 этаж, пав. 226",
+        "children": [
+          {
+            "text": "ПРИГЛАШАЕМ В ШОУРУМ",
+            "box": {
+              "x": 143.0625,
+              "y": 412.25,
+              "width": 481.859375,
+              "height": 16.5,
+              "top": 412.25,
+              "right": 624.921875,
+              "bottom": 428.75,
+              "left": 143.0625
+            }
+          },
+          {
+            "text": "Почувствуйте ткань.Представьте её дома.",
+            "box": {
+              "x": 143.0625,
+              "y": 444.75,
+              "width": 481.859375,
+              "height": 64.9375,
+              "top": 444.75,
+              "right": 624.921875,
+              "bottom": 509.6875,
+              "left": 143.0625
+            }
+          },
+          {
+            "text": "Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.",
+            "box": {
+              "x": 143.0625,
+              "y": 525.6875,
+              "width": 481.859375,
+              "height": 49.5,
+              "top": 525.6875,
+              "right": 624.921875,
+              "bottom": 575.1875,
+              "left": 143.0625
+            }
+          },
+          {
+            "text": "Обсудить мой заказ ",
+            "box": {
+              "x": 183.875,
+              "y": 597.1875,
+              "width": 224.03125,
+              "height": 48,
+              "top": 597.1875,
+              "right": 407.90625,
+              "bottom": 645.1875,
+              "left": 183.875
+            }
+          },
+          {
+            "text": "Контакты и маршрут",
+            "box": {
+              "x": 417.90625,
+              "y": 597.1875,
+              "width": 166.203125,
+              "height": 44,
+              "top": 597.1875,
+              "right": 584.109375,
+              "bottom": 641.1875,
+              "left": 417.90625
+            }
+          },
+          {
+            "text": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
+            "box": {
+              "x": 209.46875,
+              "y": 667.1875,
+              "width": 349.03125,
+              "height": 19.796875,
+              "top": 667.1875,
+              "right": 558.5,
+              "bottom": 686.984375,
+              "left": 209.46875
+            }
+          }
+        ],
+        "documentOverflow": false
+      }
+    },
+    {
+      "width": 1024,
+      "desktop": false,
+      "header": {
+        "box": {
+          "x": 33.796875,
+          "y": 16,
+          "width": 956.40625,
+          "height": 72,
+          "top": 16,
+          "right": 990.203125,
+          "bottom": 88,
+          "left": 33.796875
+        },
+        "overflow": false,
+        "links": [
+          {
+            "text": "Главная",
+            "href": "/",
+            "active": "page",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgb(228, 234, 228)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "rgba(255, 255, 255, 0.79) 0px 1px 0px 0px inset, rgba(23, 63, 54, 0.063) 0px 1px 3px 0px"
+            }
+          },
+          {
+            "text": "О компании",
+            "href": "/company",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Каталог",
+            "href": "/catalog",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Отзывы",
+            "href": "/projects",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Блог",
+            "href": "/blog",
+            "active": null,
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          }
+        ]
+      },
+      "cta": {
+        "box": {
+          "x": 33.796875,
+          "y": 381.046875,
+          "width": 956.40625,
+          "height": 349.921875,
+          "top": 381.046875,
+          "right": 990.203125,
+          "bottom": 730.96875,
+          "left": 33.796875
+        },
+        "overflow": false,
+        "text": "ПРИГЛАШАЕМ В ШОУРУМПочувствуйте ткань.Представьте её дома.Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.Обсудить мой заказ Контакты и маршрутМосква, Сокольническая площадь 4А, 2 этаж, пав. 226",
+        "children": [
+          {
+            "text": "ПРИГЛАШАЕМ В ШОУРУМ",
+            "box": {
+              "x": 271.0625,
+              "y": 415.859375,
+              "width": 481.859375,
+              "height": 16.5,
+              "top": 415.859375,
+              "right": 752.921875,
+              "bottom": 432.359375,
+              "left": 271.0625
+            }
+          },
+          {
+            "text": "Почувствуйте ткань.Представьте её дома.",
+            "box": {
+              "x": 271.0625,
+              "y": 448.359375,
+              "width": 481.859375,
+              "height": 66.5,
+              "top": 448.359375,
+              "right": 752.921875,
+              "bottom": 514.859375,
+              "left": 271.0625
+            }
+          },
+          {
+            "text": "Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.",
+            "box": {
+              "x": 271.0625,
+              "y": 530.859375,
+              "width": 481.859375,
+              "height": 49.5,
+              "top": 530.859375,
+              "right": 752.921875,
+              "bottom": 580.359375,
+              "left": 271.0625
+            }
+          },
+          {
+            "text": "Обсудить мой заказ ",
+            "box": {
+              "x": 304.875,
+              "y": 604.359375,
+              "width": 224.03125,
+              "height": 48,
+              "top": 604.359375,
+              "right": 528.90625,
+              "bottom": 652.359375,
+              "left": 304.875
+            }
+          },
+          {
+            "text": "Контакты и маршрут",
+            "box": {
+              "x": 552.90625,
+              "y": 604.359375,
+              "width": 166.203125,
+              "height": 44,
+              "top": 604.359375,
+              "right": 719.109375,
+              "bottom": 648.359375,
+              "left": 552.90625
+            }
+          },
+          {
+            "text": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
+            "box": {
+              "x": 337.484375,
+              "y": 676.359375,
+              "width": 349.03125,
+              "height": 19.796875,
+              "top": 676.359375,
+              "right": 686.515625,
+              "bottom": 696.15625,
+              "left": 337.484375
+            }
+          }
+        ],
+        "documentOverflow": false
+      }
+    },
+    {
+      "width": 1100,
+      "desktop": true,
+      "header": {
+        "box": {
+          "x": 36.296875,
+          "y": 16,
+          "width": 1027.390625,
+          "height": 78,
+          "top": 16,
+          "right": 1063.6875,
+          "bottom": 94,
+          "left": 36.296875
+        },
+        "overflow": false,
+        "links": [
+          {
+            "text": "Главная",
+            "href": "/",
+            "active": "page",
+            "box": {
+              "x": 307.5,
+              "y": 33,
+              "width": 66.171875,
+              "height": 44,
+              "top": 33,
+              "right": 373.671875,
+              "bottom": 77,
+              "left": 307.5
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgb(228, 234, 228)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "rgba(255, 255, 255, 0.79) 0px 1px 0px 0px inset, rgba(23, 63, 54, 0.063) 0px 1px 3px 0px"
+            }
+          },
+          {
+            "text": "О компании",
+            "href": "/company",
+            "active": null,
+            "box": {
+              "x": 377.671875,
+              "y": 33,
+              "width": 90.765625,
+              "height": 44,
+              "top": 33,
+              "right": 468.4375,
+              "bottom": 77,
+              "left": 377.671875
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Каталог",
+            "href": "/catalog",
+            "active": null,
+            "box": {
+              "x": 472.4375,
+              "y": 33,
+              "width": 66.828125,
+              "height": 44,
+              "top": 33,
+              "right": 539.265625,
+              "bottom": 77,
+              "left": 472.4375
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Отзывы",
+            "href": "/projects",
+            "active": null,
+            "box": {
+              "x": 543.265625,
+              "y": 33,
+              "width": 65.78125,
+              "height": 44,
+              "top": 33,
+              "right": 609.046875,
+              "bottom": 77,
+              "left": 543.265625
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Блог",
+            "href": "/blog",
+            "active": null,
+            "box": {
+              "x": 613.046875,
+              "y": 33,
+              "width": 47.234375,
+              "height": 44,
+              "top": 33,
+              "right": 660.28125,
+              "bottom": 77,
+              "left": 613.046875
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          }
+        ]
+      },
+      "cta": {
+        "box": {
+          "x": 36.296875,
+          "y": 379.03125,
+          "width": 1027.390625,
+          "height": 360.015625,
+          "top": 379.03125,
+          "right": 1063.6875,
+          "bottom": 739.046875,
+          "left": 36.296875
+        },
+        "overflow": false,
+        "text": "ПРИГЛАШАЕМ В ШОУРУМПочувствуйте ткань.Представьте её дома.Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.Обсудить мой заказ Контакты и маршрутМосква, Сокольническая площадь 4А, 2 этаж, пав. 226",
+        "children": [
+          {
+            "text": "ПРИГЛАШАЕМ В ШОУРУМ",
+            "box": {
+              "x": 309.0625,
+              "y": 416.421875,
+              "width": 481.859375,
+              "height": 16.5,
+              "top": 416.421875,
+              "right": 790.921875,
+              "bottom": 432.921875,
+              "left": 309.0625
+            }
+          },
+          {
+            "text": "Почувствуйте ткань.Представьте её дома.",
+            "box": {
+              "x": 309.0625,
+              "y": 448.921875,
+              "width": 481.859375,
+              "height": 71.4375,
+              "top": 448.921875,
+              "right": 790.921875,
+              "bottom": 520.359375,
+              "left": 309.0625
+            }
+          },
+          {
+            "text": "Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.",
+            "box": {
+              "x": 309.0625,
+              "y": 536.359375,
+              "width": 481.859375,
+              "height": 49.5,
+              "top": 536.359375,
+              "right": 790.921875,
+              "bottom": 585.859375,
+              "left": 309.0625
+            }
+          },
+          {
+            "text": "Обсудить мой заказ ",
+            "box": {
+              "x": 342.875,
+              "y": 609.859375,
+              "width": 224.03125,
+              "height": 48,
+              "top": 609.859375,
+              "right": 566.90625,
+              "bottom": 657.859375,
+              "left": 342.875
+            }
+          },
+          {
+            "text": "Контакты и маршрут",
+            "box": {
+              "x": 590.90625,
+              "y": 609.859375,
+              "width": 166.203125,
+              "height": 44,
+              "top": 609.859375,
+              "right": 757.109375,
+              "bottom": 653.859375,
+              "left": 590.90625
+            }
+          },
+          {
+            "text": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
+            "box": {
+              "x": 375.46875,
+              "y": 681.859375,
+              "width": 349.03125,
+              "height": 19.796875,
+              "top": 681.859375,
+              "right": 724.5,
+              "bottom": 701.65625,
+              "left": 375.46875
+            }
+          }
+        ],
+        "documentOverflow": false
+      }
+    },
+    {
+      "width": 1440,
+      "desktop": true,
+      "header": {
+        "box": {
+          "x": 47.515625,
+          "y": 16,
+          "width": 1344.953125,
+          "height": 78,
+          "top": 16,
+          "right": 1392.46875,
+          "bottom": 94,
+          "left": 47.515625
+        },
+        "overflow": false,
+        "links": [
+          {
+            "text": "Главная",
+            "href": "/",
+            "active": "page",
+            "box": {
+              "x": 425.34375,
+              "y": 31.796875,
+              "width": 86.8125,
+              "height": 46.390625,
+              "top": 31.796875,
+              "right": 512.15625,
+              "bottom": 78.1875,
+              "left": 425.34375
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgb(228, 234, 228)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "rgba(255, 255, 255, 0.79) 0px 1px 0px 0px inset, rgba(23, 63, 54, 0.063) 0px 1px 3px 0px"
+            }
+          },
+          {
+            "text": "О компании",
+            "href": "/company",
+            "active": null,
+            "box": {
+              "x": 516.15625,
+              "y": 31.796875,
+              "width": 115.046875,
+              "height": 46.390625,
+              "top": 31.796875,
+              "right": 631.203125,
+              "bottom": 78.1875,
+              "left": 516.15625
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Каталог",
+            "href": "/catalog",
+            "active": null,
+            "box": {
+              "x": 635.203125,
+              "y": 31.796875,
+              "width": 87.578125,
+              "height": 46.390625,
+              "top": 31.796875,
+              "right": 722.78125,
+              "bottom": 78.1875,
+              "left": 635.203125
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Отзывы",
+            "href": "/projects",
+            "active": null,
+            "box": {
+              "x": 726.78125,
+              "y": 31.796875,
+              "width": 86.5,
+              "height": 46.390625,
+              "top": 31.796875,
+              "right": 813.28125,
+              "bottom": 78.1875,
+              "left": 726.78125
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Блог",
+            "href": "/blog",
+            "active": null,
+            "box": {
+              "x": 817.28125,
+              "y": 31.796875,
+              "width": 65.171875,
+              "height": 46.390625,
+              "top": 31.796875,
+              "right": 882.453125,
+              "bottom": 78.1875,
+              "left": 817.28125
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          }
+        ]
+      },
+      "cta": {
+        "box": {
+          "x": 199.984375,
+          "y": 360.3125,
+          "width": 1040,
+          "height": 397.953125,
+          "top": 360.3125,
+          "right": 1239.984375,
+          "bottom": 758.265625,
+          "left": 199.984375
+        },
+        "overflow": false,
+        "text": "ПРИГЛАШАЕМ В ШОУРУМПочувствуйте ткань.Представьте её дома.Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.Обсудить мой заказ Контакты и маршрутМосква, Сокольническая площадь 4А, 2 этаж, пав. 226",
+        "children": [
+          {
+            "text": "ПРИГЛАШАЕМ В ШОУРУМ",
+            "box": {
+              "x": 479.046875,
+              "y": 408.3125,
+              "width": 481.859375,
+              "height": 16.5,
+              "top": 408.3125,
+              "right": 960.90625,
+              "bottom": 424.8125,
+              "left": 479.046875
+            }
+          },
+          {
+            "text": "Почувствуйте ткань.Представьте её дома.",
+            "box": {
+              "x": 479.046875,
+              "y": 440.8125,
+              "width": 481.859375,
+              "height": 88.15625,
+              "top": 440.8125,
+              "right": 960.90625,
+              "bottom": 528.96875,
+              "left": 479.046875
+            }
+          },
+          {
+            "text": "Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.",
+            "box": {
+              "x": 479.046875,
+              "y": 544.96875,
+              "width": 481.859375,
+              "height": 49.5,
+              "top": 544.96875,
+              "right": 960.90625,
+              "bottom": 594.46875,
+              "left": 479.046875
+            }
+          },
+          {
+            "text": "Обсудить мой заказ ",
+            "box": {
+              "x": 512.859375,
+              "y": 618.46875,
+              "width": 224.03125,
+              "height": 48,
+              "top": 618.46875,
+              "right": 736.890625,
+              "bottom": 666.46875,
+              "left": 512.859375
+            }
+          },
+          {
+            "text": "Контакты и маршрут",
+            "box": {
+              "x": 760.890625,
+              "y": 618.46875,
+              "width": 166.203125,
+              "height": 44,
+              "top": 618.46875,
+              "right": 927.09375,
+              "bottom": 662.46875,
+              "left": 760.890625
+            }
+          },
+          {
+            "text": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
+            "box": {
+              "x": 545.46875,
+              "y": 690.46875,
+              "width": 349.03125,
+              "height": 19.796875,
+              "top": 690.46875,
+              "right": 894.5,
+              "bottom": 710.265625,
+              "left": 545.46875
+            }
+          }
+        ],
+        "documentOverflow": false
+      }
+    },
+    {
+      "width": 1920,
+      "desktop": true,
+      "header": {
+        "box": {
+          "x": 240,
+          "y": 16,
+          "width": 1440,
+          "height": 84,
+          "top": 16,
+          "right": 1680,
+          "bottom": 100,
+          "left": 240
+        },
+        "overflow": false,
+        "links": [
+          {
+            "text": "Главная",
+            "href": "/",
+            "active": "page",
+            "box": {
+              "x": 665.34375,
+              "y": 34.796875,
+              "width": 86.8125,
+              "height": 46.390625,
+              "top": 34.796875,
+              "right": 752.15625,
+              "bottom": 81.1875,
+              "left": 665.34375
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgb(228, 234, 228)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "rgba(255, 255, 255, 0.79) 0px 1px 0px 0px inset, rgba(23, 63, 54, 0.063) 0px 1px 3px 0px"
+            }
+          },
+          {
+            "text": "О компании",
+            "href": "/company",
+            "active": null,
+            "box": {
+              "x": 756.15625,
+              "y": 34.796875,
+              "width": 115.046875,
+              "height": 46.390625,
+              "top": 34.796875,
+              "right": 871.203125,
+              "bottom": 81.1875,
+              "left": 756.15625
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Каталог",
+            "href": "/catalog",
+            "active": null,
+            "box": {
+              "x": 875.203125,
+              "y": 34.796875,
+              "width": 87.578125,
+              "height": 46.390625,
+              "top": 34.796875,
+              "right": 962.78125,
+              "bottom": 81.1875,
+              "left": 875.203125
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Отзывы",
+            "href": "/projects",
+            "active": null,
+            "box": {
+              "x": 966.78125,
+              "y": 34.796875,
+              "width": 86.5,
+              "height": 46.390625,
+              "top": 34.796875,
+              "right": 1053.28125,
+              "bottom": 81.1875,
+              "left": 966.78125
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          },
+          {
+            "text": "Блог",
+            "href": "/blog",
+            "active": null,
+            "box": {
+              "x": 1057.28125,
+              "y": 34.796875,
+              "width": 65.171875,
+              "height": 46.390625,
+              "top": 34.796875,
+              "right": 1122.453125,
+              "bottom": 81.1875,
+              "left": 1057.28125
+            },
+            "style": {
+              "borderRadius": "999px",
+              "background": "rgba(0, 0, 0, 0)",
+              "outline": "rgb(23, 63, 54) none 3px",
+              "boxShadow": "none"
+            }
+          }
+        ]
+      },
+      "cta": {
+        "box": {
+          "x": 440,
+          "y": 363.125,
+          "width": 1040,
+          "height": 397.953125,
+          "top": 363.125,
+          "right": 1480,
+          "bottom": 761.078125,
+          "left": 440
+        },
+        "overflow": false,
+        "text": "ПРИГЛАШАЕМ В ШОУРУМПочувствуйте ткань.Представьте её дома.Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.Обсудить мой заказ Контакты и маршрутМосква, Сокольническая площадь 4А, 2 этаж, пав. 226",
+        "children": [
+          {
+            "text": "ПРИГЛАШАЕМ В ШОУРУМ",
+            "box": {
+              "x": 719.0625,
+              "y": 411.125,
+              "width": 481.859375,
+              "height": 16.5,
+              "top": 411.125,
+              "right": 1200.921875,
+              "bottom": 427.625,
+              "left": 719.0625
+            }
+          },
+          {
+            "text": "Почувствуйте ткань.Представьте её дома.",
+            "box": {
+              "x": 719.0625,
+              "y": 443.625,
+              "width": 481.859375,
+              "height": 88.15625,
+              "top": 443.625,
+              "right": 1200.921875,
+              "bottom": 531.78125,
+              "left": 719.0625
+            }
+          },
+          {
+            "text": "Посмотрите оттенки вживую и найдите свою фактуру вместе с дизайнером.",
+            "box": {
+              "x": 719.0625,
+              "y": 547.78125,
+              "width": 481.859375,
+              "height": 49.5,
+              "top": 547.78125,
+              "right": 1200.921875,
+              "bottom": 597.28125,
+              "left": 719.0625
+            }
+          },
+          {
+            "text": "Обсудить мой заказ ",
+            "box": {
+              "x": 752.875,
+              "y": 621.28125,
+              "width": 224.03125,
+              "height": 48,
+              "top": 621.28125,
+              "right": 976.90625,
+              "bottom": 669.28125,
+              "left": 752.875
+            }
+          },
+          {
+            "text": "Контакты и маршрут",
+            "box": {
+              "x": 1000.90625,
+              "y": 621.28125,
+              "width": 166.203125,
+              "height": 44,
+              "top": 621.28125,
+              "right": 1167.109375,
+              "bottom": 665.28125,
+              "left": 1000.90625
+            }
+          },
+          {
+            "text": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
+            "box": {
+              "x": 785.484375,
+              "y": 693.28125,
+              "width": 349.03125,
+              "height": 19.796875,
+              "top": 693.28125,
+              "right": 1134.515625,
+              "bottom": 713.078125,
+              "left": 785.484375
+            }
+          }
+        ],
+        "documentOverflow": false
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "320 header order",
+      "ok": true
+    },
+    {
+      "name": "320 header no overflow",
+      "ok": true,
+      "details": {
+        "x": 12,
+        "y": 10,
+        "width": 296,
+        "height": 62,
+        "top": 10,
+        "right": 308,
+        "bottom": 72,
+        "left": 12
+      }
+    },
+    {
+      "name": "320 header home active",
+      "ok": true
+    },
+    {
+      "name": "320 mobile order",
+      "ok": true
+    },
+    {
+      "name": "320 mobile active",
+      "ok": true
+    },
+    {
+      "name": "320 escape closes menu",
+      "ok": true
+    },
+    {
+      "name": "320 focus restored",
+      "ok": true
+    },
+    {
+      "name": "320 mobile navigate closes",
+      "ok": true
+    },
+    {
+      "name": "320 mobile company active",
+      "ok": true
+    },
+    {
+      "name": "320 button closes",
+      "ok": true
+    },
+    {
+      "name": "320 CTA no overflow",
+      "ok": true
+    },
+    {
+      "name": "390 header order",
+      "ok": true
+    },
+    {
+      "name": "390 header no overflow",
+      "ok": true,
+      "details": {
+        "x": 12,
+        "y": 10,
+        "width": 366,
+        "height": 62,
+        "top": 10,
+        "right": 378,
+        "bottom": 72,
+        "left": 12
+      }
+    },
+    {
+      "name": "390 header home active",
+      "ok": true
+    },
+    {
+      "name": "390 mobile order",
+      "ok": true
+    },
+    {
+      "name": "390 mobile active",
+      "ok": true
+    },
+    {
+      "name": "390 escape closes menu",
+      "ok": true
+    },
+    {
+      "name": "390 focus restored",
+      "ok": true
+    },
+    {
+      "name": "390 mobile navigate closes",
+      "ok": true
+    },
+    {
+      "name": "390 mobile company active",
+      "ok": true
+    },
+    {
+      "name": "390 button closes",
+      "ok": true
+    },
+    {
+      "name": "390 CTA no overflow",
+      "ok": true
+    },
+    {
+      "name": "768 header order",
+      "ok": true
+    },
+    {
+      "name": "768 header no overflow",
+      "ok": true,
+      "details": {
+        "x": 25.34375,
+        "y": 10,
+        "width": 717.296875,
+        "height": 66,
+        "top": 10,
+        "right": 742.640625,
+        "bottom": 76,
+        "left": 25.34375
+      }
+    },
+    {
+      "name": "768 header home active",
+      "ok": true
+    },
+    {
+      "name": "768 mobile order",
+      "ok": true
+    },
+    {
+      "name": "768 mobile active",
+      "ok": true
+    },
+    {
+      "name": "768 escape closes menu",
+      "ok": true
+    },
+    {
+      "name": "768 focus restored",
+      "ok": true
+    },
+    {
+      "name": "768 mobile navigate closes",
+      "ok": true
+    },
+    {
+      "name": "768 mobile company active",
+      "ok": true
+    },
+    {
+      "name": "768 button closes",
+      "ok": true
+    },
+    {
+      "name": "768 CTA no overflow",
+      "ok": true
+    },
+    {
+      "name": "1024 header order",
+      "ok": true
+    },
+    {
+      "name": "1024 header no overflow",
+      "ok": true,
+      "details": {
+        "x": 33.796875,
+        "y": 16,
+        "width": 956.40625,
+        "height": 72,
+        "top": 16,
+        "right": 990.203125,
+        "bottom": 88,
+        "left": 33.796875
+      }
+    },
+    {
+      "name": "1024 header home active",
+      "ok": true
+    },
+    {
+      "name": "1024 mobile order",
+      "ok": true
+    },
+    {
+      "name": "1024 mobile active",
+      "ok": true
+    },
+    {
+      "name": "1024 escape closes menu",
+      "ok": true
+    },
+    {
+      "name": "1024 focus restored",
+      "ok": true
+    },
+    {
+      "name": "1024 mobile navigate closes",
+      "ok": true
+    },
+    {
+      "name": "1024 mobile company active",
+      "ok": true
+    },
+    {
+      "name": "1024 button closes",
+      "ok": true
+    },
+    {
+      "name": "1024 CTA no overflow",
+      "ok": true
+    },
+    {
+      "name": "1100 header order",
+      "ok": true
+    },
+    {
+      "name": "1100 header no overflow",
+      "ok": true,
+      "details": {
+        "x": 36.296875,
+        "y": 16,
+        "width": 1027.390625,
+        "height": 78,
+        "top": 16,
+        "right": 1063.6875,
+        "bottom": 94,
+        "left": 36.296875
+      }
+    },
+    {
+      "name": "1100 header home active",
+      "ok": true
+    },
+    {
+      "name": "1100 CTA no overflow",
+      "ok": true
+    },
+    {
+      "name": "1440 header order",
+      "ok": true
+    },
+    {
+      "name": "1440 header no overflow",
+      "ok": true,
+      "details": {
+        "x": 47.515625,
+        "y": 16,
+        "width": 1344.953125,
+        "height": 78,
+        "top": 16,
+        "right": 1392.46875,
+        "bottom": 94,
+        "left": 47.515625
+      }
+    },
+    {
+      "name": "1440 header home active",
+      "ok": true
+    },
+    {
+      "name": "1440 CTA no overflow",
+      "ok": true
+    },
+    {
+      "name": "1920 header order",
+      "ok": true
+    },
+    {
+      "name": "1920 header no overflow",
+      "ok": true,
+      "details": {
+        "x": 240,
+        "y": 16,
+        "width": 1440,
+        "height": 84,
+        "top": 16,
+        "right": 1680,
+        "bottom": 100,
+        "left": 240
+      }
+    },
+    {
+      "name": "1920 header home active",
+      "ok": true
+    },
+    {
+      "name": "1920 CTA no overflow",
+      "ok": true
+    },
+    {
+      "name": "desktop keyboard focus visible",
+      "ok": true,
+      "details": {
+        "focused": true,
+        "outline": "rgb(52, 119, 102) solid 2px",
+        "boxShadow": "none"
+      }
+    },
+    {
+      "name": "desktop Enter navigation",
+      "ok": true
+    },
+    {
+      "name": "catalog category active",
+      "ok": true,
+      "recheckedAt": "2026-09-16T12:13:36.195Z"
+    },
+    {
+      "name": "CTA selection route",
+      "ok": true
+    },
+    {
+      "name": "CTA contacts route",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 1440 /",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 1440 /company",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 1440 /catalog",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 1440 /tkani",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 1440 /shop",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 1440 /blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 390 /",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 390 /company",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 390 /catalog",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 390 /tkani",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 390 /shop",
+      "ok": true
+    },
+    {
+      "name": "After aria-current fix 390 /blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-09-16T12:13:36.196Z"
+}

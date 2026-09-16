@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, ChevronDown } from "lucide-react";
 import {
   blogPage,
   categories,
@@ -15,9 +15,11 @@ import "./blog.css";
 function EditorialImage({
   image,
   hero = false,
+  priority = false,
 }: {
   image: ArticleImage;
   hero?: boolean;
+  priority?: boolean;
 }) {
   return (
     <img
@@ -25,35 +27,35 @@ function EditorialImage({
       srcSet={image.variants.map((v) => `${v.src} ${v.width}w`).join(", ")}
       sizes={
         hero
-          ? "(max-width: 760px) 100vw, 85vw"
-          : "(max-width: 760px) 100vw, 40vw"
+          ? "(max-width: 960px) 92vw, 900px"
+          : "(max-width: 640px) 92vw, (max-width: 1000px) 44vw, (max-width: 1600px) 29vw, 472px"
       }
       alt={image.alt}
       width={image.width}
       height={image.height}
-      loading={hero ? "eager" : "lazy"}
-      fetchPriority={hero ? "high" : undefined}
+      loading={hero || priority ? "eager" : "lazy"}
+      fetchPriority={hero || priority ? "high" : undefined}
       decoding="async"
     />
   );
 }
 export function ArticleCard({
   post,
-  featured = false,
+  priority = false,
 }: {
   post: Article;
-  featured?: boolean;
+  priority?: boolean;
 }) {
   const category = categories.find((c) => c.slug === post.category);
   return (
-    <article className={`blog-card${featured ? " blog-card-featured" : ""}`}>
+    <article className="blog-card">
       <Link
         to={postPath(post)}
         className="blog-card-image"
         tabIndex={-1}
         aria-hidden="true"
       >
-        <EditorialImage image={post.image} hero={featured} />
+        <EditorialImage image={post.image} priority={priority} />
       </Link>
       <div className="blog-card-copy">
         <div className="blog-meta">
@@ -185,19 +187,24 @@ function ArticlePage({ post }: { post: Article }) {
           <figcaption>{post.image.caption}</figcaption>
         </figure>
         <div className="blog-reading-layout">
-          <nav className="blog-toc" aria-label="Оглавление статьи">
-            <p className="eyebrow">В ЭТОЙ СТАТЬЕ</p>
-            <ol>
-              {post.sections.map((s) => (
-                <li key={s.id}>
-                  <a href={`#${s.id}`}>{s.title}</a>
-                </li>
-              ))}
-            </ol>
-            <a className="blog-source-jump" href="#sources">
-              Источники материала
-            </a>
-          </nav>
+          <details className="blog-toc">
+            <summary>
+              Содержание статьи
+              <ChevronDown size={18} aria-hidden="true" />
+            </summary>
+            <nav aria-label="Оглавление статьи">
+              <ol>
+                {post.sections.map((s) => (
+                  <li key={s.id}>
+                    <a href={`#${s.id}`}>{s.title}</a>
+                  </li>
+                ))}
+              </ol>
+              <a className="blog-source-jump" href="#sources">
+                Источники материала
+              </a>
+            </nav>
+          </details>
           <div className="blog-prose">
             {post.sections.map((s) => (
               <section id={s.id} key={s.id} aria-labelledby={`${s.id}-title`}>
@@ -374,20 +381,11 @@ export default function Blog({ path }: { path: string }) {
           </Link>
         ))}
       </nav>
-      {visible[0] && <ArticleCard post={visible[0]} featured />}
-      {visible.length > 1 && (
-        <section className="blog-more" aria-labelledby="more-title">
-          <div className="section-heading">
-            <p className="eyebrow">ПРАКТИКА И ВДОХНОВЕНИЕ</p>
-            <h2 id="more-title">Ещё о доме</h2>
-          </div>
-          <div className="blog-grid">
-            {visible.slice(1).map((p) => (
-              <ArticleCard post={p} key={p.slug} />
-            ))}
-          </div>
-        </section>
-      )}
+      <div className="blog-grid">
+        {visible.map((p, index) => (
+          <ArticleCard post={p} key={p.slug} priority={index === 0} />
+        ))}
+      </div>
       <aside className="blog-service">
         <div>
           <p className="eyebrow">ОТ ИДЕИ К ВАШЕМУ ИНТЕРЬЕРУ</p>

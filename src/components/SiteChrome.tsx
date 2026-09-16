@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowUpRight,
   Heart,
@@ -48,12 +48,16 @@ export function Header() {
   }, []);
   const [menu, setMenu] = useState(false);
   const nav = [
-    ["/", "Шторы на заказ"],
+    ["/", "Главная"],
+    ["/company", "О компании"],
     ["/catalog", "Каталог"],
     ["/projects", "Отзывы"],
     ["/blog", "Блог"],
-    ["/company", "О компании"],
   ];
+  const isCurrentLink = (to: string) =>
+    to === "/catalog"
+      ? inCatalog
+      : pathname === to || (to !== "/" && pathname.startsWith(`${to}/`));
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -64,21 +68,14 @@ export function Header() {
           <Brand />
           <nav className="desktop-nav" aria-label="Основная навигация">
             {nav.map(([to, label]) => (
-              <NavLink
+              <Link
                 key={to}
                 to={to}
-                end={to === "/"}
-                className={({ isActive }) =>
-                  isActive || (to === "/catalog" && inCatalog)
-                    ? "active"
-                    : undefined
-                }
-                aria-current={
-                  to === "/catalog" && inCatalog ? "page" : undefined
-                }
+                className={isCurrentLink(to) ? "active" : undefined}
+                aria-current={isCurrentLink(to) ? "page" : undefined}
               >
                 {label}
-              </NavLink>
+              </Link>
             ))}
           </nav>
           <div className="header-actions">
@@ -143,7 +140,13 @@ export function Header() {
             ["/contacts", "Контакты"],
             ["/cart", "Корзина"],
           ].map(([to, label]) => (
-            <Link key={to} to={to} onClick={() => setMenu(false)}>
+            <Link
+              key={to}
+              to={to}
+              className={isCurrentLink(to) ? "active" : undefined}
+              aria-current={isCurrentLink(to) ? "page" : undefined}
+              onClick={() => setMenu(false)}
+            >
               {label}
               <ArrowUpRight size={22} />
             </Link>
@@ -206,7 +209,9 @@ export function Footer() {
                 ["/tkani", "Ткани для штор"],
                 ["/tyl", "Тюль"],
                 ["/karnizi", "Карнизы"],
-                ["/decor", "Декоративный текстиль"],
+                ["/derzhateli-dlya-shtor", "Держатели для штор"],
+                ["/kisti", "Кисти для штор"],
+                ["/kartini", "Картины"],
               ].map(([path, title]) => (
                 <Link key={path} to={path}>
                   {title}

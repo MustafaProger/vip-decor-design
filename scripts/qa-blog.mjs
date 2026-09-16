@@ -4,7 +4,7 @@ import { chromium, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readBlog, blogPaths } from "./blog-content.mjs";
 const base = process.env.QA_BASE_URL || "http://127.0.0.1:4173";
-const out = "docs/qa-blog";
+const out = process.env.QA_OUTPUT_DIR || "docs/qa-blog";
 await mkdir(out, { recursive: true });
 const blog = await readBlog();
 const paths = blogPaths(blog);
@@ -136,15 +136,45 @@ try {
     "content",
     /index, follow/,
   );
+  await p.locator(".blog-toc summary").click();
   await p
     .getByRole("navigation", { name: "Оглавление статьи" })
     .getByRole("link", { name: "Как подобрать размер картины над диваном" })
     .click();
   await expect(p).toHaveURL(/#size$/);
-  const sectionTop = await p
-    .locator("#size")
-    .evaluate((el) => el.getBoundingClientRect().top);
-  assert.ok(sectionTop >= 0 && sectionTop < 950);
+  let previousHeadingTop;
+  await expect
+    .poll(
+      async () => {
+        const position = await p.locator("#size-title").evaluate((el) => {
+          const heading = el.getBoundingClientRect();
+          const header = document
+            .querySelector(".site-header")
+            ?.getBoundingClientRect();
+          return {
+            top: heading.top,
+            bottom: heading.bottom,
+            headerBottom: header?.bottom || 0,
+            viewportHeight: innerHeight,
+          };
+        });
+        const settled =
+          previousHeadingTop !== undefined &&
+          Math.abs(position.top - previousHeadingTop) < 1;
+        previousHeadingTop = position.top;
+        return (
+          settled &&
+          position.top >= position.headerBottom &&
+          position.bottom <= position.viewportHeight
+        );
+      },
+      {
+        message:
+          "TOC scroll settles with the target heading below the sticky header and fully in view",
+        timeout: 5000,
+      },
+    )
+    .toBe(true);
   await p
     .getByRole("link", { name: "Посмотреть картины в каталоге", exact: true })
     .click();
