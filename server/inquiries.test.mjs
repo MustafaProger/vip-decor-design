@@ -64,7 +64,7 @@ test("saves locally and deduplicates concurrent retries with the same request id
     );
     assert.equal(new Set(results.map((result) => result.id)).size, 1);
     assert.equal(results[0].status, "saved_locally");
-    assert.match(results[0].message, /Передача заявки менеджеру ещё не подключена/);
+    assert.match(results[0].message, /Она доступна в панели управления/);
     const records = (await readFile(join(directory, "inquiries.jsonl"), "utf8"))
       .trim()
       .split("\n")

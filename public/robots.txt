@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Allow: /api/cms-media/
+Allow: /api/review-media/
+Disallow: /admin
 
 Sitemap: https://vip2d.ru/sitemap.xml

@@ -2891,3 +2891,22 @@ body:has(dialog[open]) .mobile-action {
     font-size: 25px;
   }
 }
+
+/* A content outage remains visible without discarding the current page. */
+.content-load-error {
+  position: fixed;
+  z-index: 200;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  padding: 16px;
+  background: #fff5ed;
+  color: #602e19;
+  border: 1px solid #deb59f;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px #0002;
+}
+.content-load-error button {
+  margin-left: 12px;
+  text-decoration: underline;
+}

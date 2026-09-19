@@ -265,8 +265,7 @@ export function InquiryForm({
       </div>
       {!import.meta.env.VITE_INQUIRY_ENDPOINT && (
         <p className="inquiry-local-note">
-          Локальная версия: заявка будет сохранена на этом сервере. Доставка в
-          компанию ещё не подключена.
+          Сохраним ваши пожелания и контактный телефон для обсуждения проекта.
         </p>
       )}
       {serverError && (

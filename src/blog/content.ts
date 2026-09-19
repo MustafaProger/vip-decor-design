@@ -1,4 +1,3 @@
-import data from "../data/blog.json";
 export type ArticleImage = {
   src: string;
   alt: string;
@@ -32,8 +31,10 @@ export type Article = {
   datePublished?: string;
   dateModified?: string;
 };
-export const posts: Article[] = data.posts;
-export const categories = data.categories;
+export type BlogCategory = { slug: string; title: string; description: string };
+export type BlogData = { posts: Article[]; categories: BlogCategory[] };
+// Runtime content comes from CMS; do not bundle old publications into public JS.
+export const seedBlog: BlogData = { posts: [], categories: [] };
 export const postPath = (p: Article) => `/blog/${p.slug}`;
 export const categoryPath = (slug: string) => `/blog/category/${slug}`;
 export const readingMinutes = (p: Article) =>
@@ -52,15 +53,18 @@ export const readingMinutes = (p: Article) =>
         .split(/\s+/).length / 180,
     ),
   );
-export function blogPage(path: string) {
+export function blogPage(
+  path: string,
+  { posts, categories }: BlogData = seedBlog,
+) {
   const normalized = path.replace(/\/$/, "");
   const post = posts.find((p) => postPath(p) === normalized);
   const category = categories.find((c) => categoryPath(c.slug) === normalized);
   const known = normalized === "/blog" || !!post || !!category;
   return { post, category, known, path: normalized };
 }
-export function blogMetadata(path: string) {
-  const page = blogPage(path);
+export function blogMetadata(path: string, data: BlogData = seedBlog) {
+  const page = blogPage(path, data);
   return {
     title: `${page.post?.seoTitle || (page.category ? `${page.category.title} — статьи о доме` : page.known ? "Блог об интерьере, дизайне и обустройстве дома" : "Статья не найдена")} — VIP DECOR DESIGN`,
     description:
@@ -71,13 +75,17 @@ export function blogMetadata(path: string) {
     robots: page.known
       ? "index, follow, max-image-preview:large"
       : "noindex, follow",
-    image: `https://vip2d.ru${(page.post || posts[0])?.image.src || "/images/concept-living.webp"}`,
+    image: new URL(
+      (page.post || data.posts[0])?.image.src || "/images/concept-living.webp",
+      "https://vip2d.ru",
+    ).href,
   };
 }
-export function blogSchema(path: string) {
-  const { post, category, known } = blogPage(path);
+export function blogSchema(path: string, data: BlogData = seedBlog) {
+  const { posts, categories } = data;
+  const { post, category, known } = blogPage(path, data);
   if (!known) return [];
-  const meta = blogMetadata(path);
+  const meta = blogMetadata(path, data);
   const currentCategory =
     category || categories.find((c) => c.slug === post?.category);
   const crumbs = [

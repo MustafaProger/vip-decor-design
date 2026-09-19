@@ -97,7 +97,7 @@ export async function submitInquiry(
       status: body.status,
       message:
         body.status === "saved_locally"
-          ? "Заявка сохранена в локальной версии. Доставка в компанию ещё не подключена."
+          ? "Заявка сохранена. Номер обращения указан ниже."
           : "Заявка отправлена. Компания получила ваше обращение.",
     };
   } catch (error) {

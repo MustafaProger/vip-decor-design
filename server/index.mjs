@@ -4,11 +4,11 @@ import { createHash, randomUUID } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { createReviewService } from "./reviews.mjs";
+import { createCmsService } from "./cms.mjs";
 
 const serverDirectory = dirname(fileURLToPath(import.meta.url));
 const MAX_BODY_BYTES = 16 * 1024;
-const LOCAL_MESSAGE =
-  "Заявка сохранена в локальной версии. Передача заявки менеджеру ещё не подключена.";
+const LOCAL_MESSAGE = "Заявка сохранена. Она доступна в панели управления.";
 const allowedRooms = ["Гостиная", "Спальня", "Детская", "Кухня"];
 const allowedMaterials = [
   "Лёгкие и воздушные",
@@ -184,11 +184,18 @@ export async function createInquiryServer(options = {}) {
     options.allowedOrigins ||
     (
       process.env.APP_ORIGIN ||
-      "http://localhost:5180,http://127.0.0.1:5180,http://localhost:4173,http://127.0.0.1:4173"
+      `http://localhost:5180,http://127.0.0.1:5180,http://localhost:4173,http://127.0.0.1:4173,http://localhost:${process.env.INQUIRY_PORT || process.env.PORT || 3001},http://127.0.0.1:${process.env.INQUIRY_PORT || process.env.PORT || 3001}`
     ).split(",");
   const allowedOrigins = new Set(
     originValues.map((origin) => origin.trim()).filter(Boolean),
   );
+  const cmsService =
+    options.cmsService ||
+    (await createCmsService({
+      dataDirectory,
+      allowedOrigins: [...allowedOrigins],
+      ...options.cmsOptions,
+    }));
   const records = new Map();
   let queue = Promise.resolve();
   await mkdir(dataDirectory, { recursive: true, mode: 0o700 });
@@ -210,11 +217,15 @@ export async function createInquiryServer(options = {}) {
         /* A partial trailing write does not prevent reading confirmed entries. */
       }
     }
+    // Keep the next confirmed record separate after a process interrupted a write.
+    if (previous && !previous.endsWith("\n"))
+      await appendFile(filePath, "\n", { encoding: "utf8", mode: 0o600 });
   } catch (error) {
     if (error.code !== "ENOENT") throw error;
   }
 
   const server = createServer(async (request, response) => {
+    if (await cmsService.handle(request, response)) return;
     const route = request.url?.split("?")[0];
     if (route === "/api/health" && request.method === "GET") {
       reply(response, 200, { status: "ok", delivery: "local_only" });
@@ -260,6 +271,20 @@ export async function createInquiryServer(options = {}) {
       return;
     }
     if (route !== "/api/inquiries") {
+      if (!route?.startsWith("/api/") && options.siteHandler) {
+        try {
+          if (
+            await options.siteHandler(request, response, {
+              cmsService,
+              reviewService,
+            })
+          )
+            return;
+        } catch {
+          failure(response, 503, "Сайт временно недоступен. Попробуйте позже.");
+          return;
+        }
+      }
       failure(response, 404, "Адрес не найден.");
       return;
     }
@@ -361,6 +386,8 @@ export async function createInquiryServer(options = {}) {
   server.requestTimeout = 15000;
   server.headersTimeout = 10000;
   server.reviewService = reviewService;
+  server.cmsService = cmsService;
+  server.on("close", () => cmsService.close());
   return server;
 }
 
@@ -368,7 +395,7 @@ if (
   process.argv[1] &&
   import.meta.url === pathToFileURL(resolve(process.argv[1])).href
 ) {
-  const port = Number(process.env.INQUIRY_PORT || 3001);
+  const port = Number(process.env.INQUIRY_PORT || process.env.PORT || 3001);
   const hostname = process.env.INQUIRY_HOST || "127.0.0.1";
   const server = await createInquiryServer();
   server.listen(port, hostname, () =>

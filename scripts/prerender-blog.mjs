@@ -12,16 +12,17 @@ try {
   );
   const template = await readFile("dist/index.html", "utf8");
   const paths = blogPaths(await readBlog());
+  const blog = JSON.parse(await readFile("src/data/blog.json", "utf8"));
   for (const path of paths) {
     await mkdir(`dist${path}`, { recursive: true });
     await writeFile(
       `dist${path}/index.html`,
-      renderBlogDocument(path, template),
+      renderBlogDocument(path, template, blog),
     );
   }
   await writeFile(
     "dist/blog/404.html",
-    renderBlogDocument("/blog/not-found", template),
+    renderBlogDocument("/blog/not-found", template, blog),
   );
   console.log(
     `Prerendered ${paths.length} blog pages with complete HTML, plus 404.`,

@@ -7,7 +7,7 @@
     "predev": "node scripts/prepare-data.mjs",
     "dev": "concurrently -k -n api,web \"node server/index.mjs\" \"vite --host 127.0.0.1\"",
     "prebuild": "node scripts/prepare-data.mjs",
-    "build": "tsc -b && vite build && node scripts/prerender-blog.mjs",
+    "build": "tsc -b && vite build && node scripts/prerender-blog.mjs && vite build --ssr src/blog/render.tsx --outDir dist/server",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test tests/*.test.mjs server/*.test.mjs",
     "qa": "node scripts/qa.mjs",
@@ -23,7 +23,10 @@
     "reviews:status": "node scripts/sync-reviews.mjs --status",
     "blog:prepare": "node scripts/prepare-data.mjs",
     "qa:blog": "node scripts/qa-blog.mjs",
-    "blog:new": "node scripts/new-blog-post.mjs"
+    "blog:new": "node scripts/new-blog-post.mjs",
+    "start": "node server/start.mjs",
+    "cms:open": "node scripts/open-cms.mjs",
+    "qa:cms": "node scripts/qa-cms.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.2.0",
@@ -44,5 +47,8 @@
     "prettier": "^3.9.6",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
+  },
+  "engines": {
+    "node": ">=24.15.0"
   }
 }

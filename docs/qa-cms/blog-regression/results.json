@@ -1,0 +1,289 @@
+{
+  "base": "http://127.0.0.1:5180",
+  "rawHTML": [
+    {
+      "path": "/blog",
+      "title": "Блог об интерьере, дизайне и обустройстве дома — VIP DECOR DESIGN",
+      "passed": true
+    },
+    {
+      "path": "/blog/category/interior",
+      "title": "Интерьер и цвет — статьи о доме — VIP DECOR DESIGN",
+      "passed": true
+    },
+    {
+      "path": "/blog/category/art-and-decor",
+      "title": "Картины и декор — статьи о доме — VIP DECOR DESIGN",
+      "passed": true
+    },
+    {
+      "path": "/blog/category/textiles",
+      "title": "Шторы и текстиль — статьи о доме — VIP DECOR DESIGN",
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "title": "Сочетание цветов и фактур в интерьере: примеры и план — VIP DECOR DESIGN",
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-shtory-pokryvalo-i-podushki",
+      "title": "Как сочетать шторы, покрывало и подушки: палитры и ткани — VIP DECOR DESIGN",
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-vybrat-kartinu-dlya-gostinoj",
+      "title": "Как выбрать картину для гостиной: размер, цвет и размещение — VIP DECOR DESIGN",
+      "passed": true
+    }
+  ],
+  "layouts": [
+    {
+      "path": "/",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "path": "/blog",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/interior",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/art-and-decor",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/textiles",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-shtory-pokryvalo-i-podushki",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-vybrat-kartinu-dlya-gostinoj",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/blog",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/interior",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/art-and-decor",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/textiles",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-shtory-pokryvalo-i-podushki",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-vybrat-kartinu-dlya-gostinoj",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/blog",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/interior",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/art-and-decor",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/textiles",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-shtory-pokryvalo-i-podushki",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-vybrat-kartinu-dlya-gostinoj",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "path": "/blog",
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/interior",
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/art-and-decor",
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/textiles",
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-shtory-pokryvalo-i-podushki",
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-vybrat-kartinu-dlya-gostinoj",
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/blog",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/interior",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/art-and-decor",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/blog/category/textiles",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-sochetat-shtory-pokryvalo-i-podushki",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/blog/kak-vybrat-kartinu-dlya-gostinoj",
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "accessibility": [
+    {
+      "path": "/blog",
+      "width": 390,
+      "violations": 0
+    },
+    {
+      "path": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "width": 390,
+      "violations": 0
+    },
+    {
+      "path": "/blog/kak-sochetat-shtory-pokryvalo-i-podushki",
+      "width": 390,
+      "violations": 0
+    },
+    {
+      "path": "/blog/kak-vybrat-kartinu-dlya-gostinoj",
+      "width": 390,
+      "violations": 0
+    },
+    {
+      "path": "/blog",
+      "width": 1440,
+      "violations": 0
+    },
+    {
+      "path": "/blog/kak-sochetat-cveta-i-faktury-v-interere",
+      "width": 1440,
+      "violations": 0
+    },
+    {
+      "path": "/blog/kak-sochetat-shtory-pokryvalo-i-podushki",
+      "width": 1440,
+      "violations": 0
+    },
+    {
+      "path": "/blog/kak-vybrat-kartinu-dlya-gostinoj",
+      "width": 1440,
+      "violations": 0
+    }
+  ],
+  "scenarios": [
+    "All 7 pages readable without JavaScript; unique metadata, canonical, JSON-LD, sitemap; unknown blog URL 404 and trailing slash 301",
+    "Category → article → TOC → catalogue; metadata cleanup; home recommendations → blog; no browser errors",
+    "12 editorial internal links resolve"
+  ]
+}

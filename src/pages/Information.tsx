@@ -1,5 +1,6 @@
 import { CountUp } from "../components/CountUp";
-import { posts, postPath, categories, categoryPath } from "../blog/content";
+import { postPath, categoryPath } from "../blog/content";
+import { useBlogData } from "../blog/runtime";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -312,7 +313,9 @@ export function Company() {
           {facts.map(({ value, label, Icon }, index) => (
             <Reveal className="company-number" key={label} delay={index * 0.06}>
               <Icon size={23} strokeWidth={1.5} aria-hidden="true" />
-              <strong><CountUp value={Number(value.replace(/\s/g, ""))} /></strong>
+              <strong>
+                <CountUp value={Number(value.replace(/\s/g, ""))} />
+              </strong>
               <span>{label}</span>
             </Reveal>
           ))}
@@ -377,6 +380,7 @@ export function Company() {
 }
 export function Sitemap() {
   const { data } = useStore();
+  const { posts, categories } = useBlogData();
   return (
     <div className="container information-page">
       <Breadcrumbs items={[{ label: "Карта сайта" }]} />

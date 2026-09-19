@@ -57,7 +57,19 @@ export function productCategoryPaths(product: Product) {
     ),
   );
   const label = `${product.title} ${product.category}`.toLocaleLowerCase("ru");
-  if (paths.has("/decor") || paths.has("/kisti") || paths.has("/kartini")) {
+  if (product.categoryOverride) {
+    // Explicit choices in CMS take precedence over legacy import heuristics.
+    if (
+      ["/derzhateli-dlya-shtor", "/kisti", "/kartini"].some((path) =>
+        paths.has(path),
+      )
+    )
+      paths.add("/decor");
+  } else if (
+    paths.has("/decor") ||
+    paths.has("/kisti") ||
+    paths.has("/kartini")
+  ) {
     paths.add("/decor"); // Keep the legacy collection accessible.
     if (!paths.has("/kartini")) {
       // The old /kisti collection also contained two tiebacks, and missed

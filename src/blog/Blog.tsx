@@ -2,14 +2,13 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight, ChevronDown } from "lucide-react";
 import {
   blogPage,
-  categories,
   categoryPath,
-  posts,
   postPath,
   readingMinutes,
   type Article,
   type ArticleImage,
 } from "./content";
+import { useBlogData } from "./runtime";
 import "./blog.css";
 
 function EditorialImage({
@@ -24,7 +23,10 @@ function EditorialImage({
   return (
     <img
       src={image.src}
-      srcSet={image.variants.map((v) => `${v.src} ${v.width}w`).join(", ")}
+      srcSet={
+        image.variants?.map((v) => `${v.src} ${v.width}w`).join(", ") ||
+        undefined
+      }
       sizes={
         hero
           ? "(max-width: 960px) 92vw, 900px"
@@ -46,6 +48,7 @@ export function ArticleCard({
   post: Article;
   priority?: boolean;
 }) {
+  const { categories } = useBlogData();
   const category = categories.find((c) => c.slug === post.category);
   return (
     <article className="blog-card">
@@ -81,6 +84,8 @@ export function ArticleCard({
   );
 }
 export function RecommendedArticles() {
+  const { posts } = useBlogData();
+  if (!posts.length) return null;
   return (
     <section
       className="home-section blog-recommendations"
@@ -110,6 +115,7 @@ function Crumbs({
   post?: Article;
   category?: { slug: string; title: string };
 }) {
+  const { categories } = useBlogData();
   const currentCategory =
     category || categories.find((c) => c.slug === post?.category);
   return (
@@ -146,6 +152,7 @@ function Crumbs({
   );
 }
 function ArticlePage({ post }: { post: Article }) {
+  const { posts, categories } = useBlogData();
   const category = categories.find((c) => c.slug === post.category);
   const related = post.related
     .map((slug) => posts.find((p) => p.slug === slug))
@@ -332,7 +339,9 @@ function ArticlePage({ post }: { post: Article }) {
   );
 }
 export default function Blog({ path }: { path: string }) {
-  const { post, category, known } = blogPage(path);
+  const data = useBlogData();
+  const { posts, categories } = data;
+  const { post, category, known } = blogPage(path, data);
   if (!known)
     return (
       <div className="container blog-page">

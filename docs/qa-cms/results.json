@@ -1,0 +1,106 @@
+{
+  "checks": [
+    "First administrator setup through the browser; setup fragment cleared",
+    "All 477 products and 3 source articles imported",
+    "Draft product excluded from public API",
+    "Published product immediately renders on the public website",
+    "Product editor saves title, price and uploaded photo through real API",
+    "New article receives live server-rendered HTML, SEO and sitemap without rebuild",
+    "Editing an article updates SSR immediately",
+    "Article editor saves real structured article content",
+    "Unpublishing removes article from public API, HTML and sitemap",
+    "Public contact form saves a real inquiry, visible and editable in CMS",
+    "Inquiry details are unavailable without administrator authentication",
+    "Admin responsive at 320/390/768/1440; WCAG A/AA automated scan passes",
+    "Content, inquiry status/notes and session persist after restart",
+    "No browser runtime errors"
+  ],
+  "layouts": [
+    {
+      "view": "overview",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320
+    },
+    {
+      "view": "overview",
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "view": "overview",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768
+    },
+    {
+      "view": "overview",
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "view": "product-editor",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320
+    },
+    {
+      "view": "product-editor",
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "view": "product-editor",
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "view": "article-editor",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320
+    },
+    {
+      "view": "article-editor",
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "view": "article-editor",
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "view": "inquiries",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320
+    },
+    {
+      "view": "inquiries",
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "view": "inquiries",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768
+    },
+    {
+      "view": "inquiries",
+      "width": 1440,
+      "viewport": 1440,
+      "scroll": 1440
+    }
+  ],
+  "accessibility": [],
+  "consoleErrors": []
+}

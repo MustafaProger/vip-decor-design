@@ -40,6 +40,7 @@ export type Product = {
   category: string;
   categoryPath?: string;
   categoryPaths?: string[];
+  categoryOverride?: boolean;
   shortDescription?: string;
   descriptionHtml?: string;
   properties?: { name: string; value: string }[];
@@ -74,9 +75,8 @@ export type SiteContent = {
 export const money = (n: number) =>
   new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 2 }).format(n) + " ₽";
 export const plain = (html: string) => {
-  const el = document.createElement("div");
-  el.innerHTML = html;
-  return el.textContent?.trim() || "";
+  const el = new DOMParser().parseFromString(html, "text/html");
+  return el.body.textContent?.trim() || "";
 };
 export function localHref(href: string) {
   try {

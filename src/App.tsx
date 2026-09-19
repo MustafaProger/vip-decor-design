@@ -14,7 +14,8 @@ import { StoreProvider } from "./lib/store";
 import { localHref, type SiteContent } from "./lib/content";
 import Blog from "./blog/Blog";
 import blogChrome from "./data/blog-chrome.json";
-import { blogMetadata, blogSchema } from "./blog/content";
+import { blogMetadata, blogSchema, type BlogData } from "./blog/content";
+import { BlogContext, readBlogBootstrap, useBlogData } from "./blog/runtime";
 import { pageMetadata } from "./lib/metadata";
 import { Header, Footer } from "./components/SiteChrome";
 import Modal from "./components/Modal";
@@ -42,6 +43,7 @@ import InquiryForm from "./features/inquiry/InquiryForm";
 const Selection = lazy(() => import("./features/selection/Selection"));
 const Calculator = lazy(() => import("./features/calculator/Calculator"));
 const ProductPage = lazy(() => import("./pages/Product"));
+const Admin = lazy(() => import("./admin/Admin"));
 const anchorRoutes: Record<string, string> = {
   "#rec207714887": "/projects",
   "#rec208301757": "/catalog",
@@ -66,6 +68,7 @@ function RouteContent({
 }) {
   const { pathname, hash, search } = useLocation();
   const navigate = useNavigate();
+  const blogData = useBlogData();
   useLayoutEffect(() => {
     if (pathname === "/" && hash) {
       const target =
@@ -97,10 +100,13 @@ function RouteContent({
     ? data.products.find((p) => p.id === decodeURIComponent(path.slice(9)))
     : data.products.find((p) => localHref(p.url).split("?")[0] === path);
   useEffect(() => {
-    const metadata = pageMetadata(path, source, product);
+    const metadata =
+      path === "/blog" || path.startsWith("/blog/")
+        ? blogMetadata(path, blogData)
+        : pageMetadata(path, source, product);
     document.querySelectorAll("[data-blog-meta]").forEach((el) => el.remove());
     if (path === "/blog" || path.startsWith("/blog/")) {
-      const blog = blogMetadata(path);
+      const blog = blogMetadata(path, blogData);
       for (const [property, content] of Object.entries({
         "og:title": blog.title,
         "og:description": blog.description,
@@ -121,7 +127,7 @@ function RouteContent({
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.dataset.blogMeta = "";
-      script.textContent = JSON.stringify(blogSchema(path));
+      script.textContent = JSON.stringify(blogSchema(path, blogData));
       document.head.appendChild(script);
     }
     document.title = metadata.title;
@@ -148,7 +154,7 @@ function RouteContent({
       document.head.appendChild(canonical);
     }
     canonical.href = metadata.canonical;
-  }, [path, source, product]);
+  }, [path, source, product, blogData]);
   if (path === "/blog" || path.startsWith("/blog/"))
     return <Blog path={path} />;
   if (path === "/") return <Home />;
@@ -194,8 +200,41 @@ function RouteContent({
   if (source) return <Information page={source} />;
   return <NotFound />;
 }
-export default function App() {
+export default function App({ initialBlog }: { initialBlog?: BlogData }) {
   const location = useLocation();
+  const isAdmin =
+    location.pathname === "/admin" || location.pathname.startsWith("/admin/");
+  useEffect(() => {
+    if (!isAdmin) return;
+    document.title = "Управление сайтом — VIP DECOR DESIGN";
+    let robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement("meta");
+      robots.name = "robots";
+      document.head.appendChild(robots);
+    }
+    robots.content = "noindex, nofollow";
+  }, [isAdmin]);
+  if (isAdmin)
+    return (
+      <AppBoundary>
+        <Suspense
+          fallback={
+            <div className="boot-screen">Открываем панель управления…</div>
+          }
+        >
+          <Admin />
+        </Suspense>
+      </AppBoundary>
+    );
+  return <PublicApp initialBlog={initialBlog} />;
+}
+
+function PublicApp({ initialBlog }: { initialBlog?: BlogData }) {
+  const location = useLocation();
+  const [blogData, setBlogData] = useState<BlogData | null>(
+    () => initialBlog || readBlogBootstrap() || null,
+  );
   const [data, setData] = useState<SiteContent | null>(() =>
     location.pathname === "/blog" || location.pathname.startsWith("/blog/")
       ? blogChrome
@@ -210,24 +249,36 @@ export default function App() {
   useEffect(() => {
     const ctrl = new AbortController();
     setError("");
-    fetch("/data/site-content.json", { signal: ctrl.signal })
-      .then((r) => {
-        if (!r.ok) throw new Error("Каталог временно недоступен.");
-        return r.json();
+    Promise.all([
+      fetch("/api/content", { signal: ctrl.signal }),
+      fetch("/api/blog", { signal: ctrl.signal }),
+    ])
+      .then(async ([contentResponse, blogResponse]) => {
+        if (!contentResponse.ok || !blogResponse.ok)
+          throw new Error(
+            "Не удалось загрузить данные сайта. Попробуйте ещё раз.",
+          );
+        return Promise.all([contentResponse.json(), blogResponse.json()]);
       })
-      .then((d) => {
-        if (!Array.isArray(d.pages) || !Array.isArray(d.products))
-          throw new Error("Не удалось прочитать каталог.");
+      .then(([d, blog]) => {
+        if (
+          !Array.isArray(d.pages) ||
+          !Array.isArray(d.products) ||
+          !Array.isArray(blog.posts) ||
+          !Array.isArray(blog.categories)
+        )
+          throw new Error("Не удалось прочитать данные сайта.");
         setData(d);
+        setBlogData(blog);
       })
       .catch((e) => {
         if (e.name !== "AbortError") setError(e.message);
       });
     return () => ctrl.abort();
-  }, [attempt]);
+  }, [attempt, location.pathname]);
   const discuss = (context = "Обсудить проект") =>
     setInquiry({ open: true, context });
-  if (!data)
+  if (!data || !blogData)
     return (
       <div className="boot-screen">
         <div className="brand">
@@ -244,42 +295,52 @@ export default function App() {
     );
   return (
     <AppBoundary>
-      <MotionConfig reducedMotion="user">
-        <StoreProvider data={data} discuss={discuss}>
-          <div id="top" />
-          <Header />
-          <main id="main-content" tabIndex={-1}>
-            <Suspense
-              fallback={
-                <div className="page-loading" role="status">
-                  Загружаем…
-                </div>
-              }
-            >
-              <PageEntrance
-                key={location.pathname}
-                immediate={
-                  location.pathname === "/blog" ||
-                  location.pathname.startsWith("/blog/")
+      <BlogContext.Provider value={blogData}>
+        {error && (
+          <div className="content-load-error" role="alert">
+            {error}{" "}
+            <button type="button" onClick={() => setAttempt((x) => x + 1)}>
+              Повторить загрузку
+            </button>
+          </div>
+        )}
+        <MotionConfig reducedMotion="user">
+          <StoreProvider data={data} discuss={discuss}>
+            <div id="top" />
+            <Header />
+            <main id="main-content" tabIndex={-1}>
+              <Suspense
+                fallback={
+                  <div className="page-loading" role="status">
+                    Загружаем…
+                  </div>
                 }
               >
-                <RouteContent data={data} discuss={discuss} />
-              </PageEntrance>
-            </Suspense>
-          </main>
-          <Footer />
-          <Modal
-            open={inquiry.open}
-            onClose={() => setInquiry((v) => ({ ...v, open: false }))}
-            title="Расскажите о вашем проекте"
-            className="inquiry-dialog"
-          >
-            <p className="eyebrow">НАЧНЁМ ЗНАКОМСТВО</p>
-            <h2>Расскажите о вашем проекте</h2>
-            <InquiryForm context={inquiry.context} />
-          </Modal>
-        </StoreProvider>
-      </MotionConfig>
+                <PageEntrance
+                  key={location.pathname}
+                  immediate={
+                    location.pathname === "/blog" ||
+                    location.pathname.startsWith("/blog/")
+                  }
+                >
+                  <RouteContent data={data} discuss={discuss} />
+                </PageEntrance>
+              </Suspense>
+            </main>
+            <Footer />
+            <Modal
+              open={inquiry.open}
+              onClose={() => setInquiry((v) => ({ ...v, open: false }))}
+              title="Расскажите о вашем проекте"
+              className="inquiry-dialog"
+            >
+              <p className="eyebrow">НАЧНЁМ ЗНАКОМСТВО</p>
+              <h2>Расскажите о вашем проекте</h2>
+              <InquiryForm context={inquiry.context} />
+            </Modal>
+          </StoreProvider>
+        </MotionConfig>
+      </BlogContext.Provider>
     </AppBoundary>
   );
 }

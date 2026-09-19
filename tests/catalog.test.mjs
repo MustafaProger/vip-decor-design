@@ -190,3 +190,25 @@ test("decor is partitioned by source product type, including misleading names an
     "Imported products must not be mutated",
   );
 });
+
+test("explicit CMS category choices take precedence over imported name heuristics", () => {
+  const managed = {
+    ...products[0],
+    title: "Кисть — название коллекции",
+    category: "Держатели",
+    categoryPath: "/derzhateli-dlya-shtor",
+    categoryPaths: ["/derzhateli-dlya-shtor"],
+    categoryOverride: true,
+  };
+  assert.ok(productCategoryPaths(managed).has("/derzhateli-dlya-shtor"));
+  assert.ok(productCategoryPaths(managed).has("/decor"));
+  assert.ok(!productCategoryPaths(managed).has("/kisti"));
+  const tassel = {
+    ...managed,
+    title: "Модель 123",
+    categoryPath: "/kisti",
+    categoryPaths: ["/kisti"],
+  };
+  assert.ok(productCategoryPaths(tassel).has("/kisti"));
+  assert.ok(!productCategoryPaths(tassel).has("/derzhateli-dlya-shtor"));
+});
