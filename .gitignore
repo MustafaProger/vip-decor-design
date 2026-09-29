@@ -7,3 +7,22 @@ data/runtime/
 test-results/
 playwright-report/
 .DS_Store
+
+# Local QA output and migration downloads are reproducible artifacts.
+docs/qa/
+docs/qa-*/
+docs/BROWSER_QA.json
+docs/BROWSER_QA.md
+docs/CONTENT_INVENTORY.md
+data/source/
+design-concept/
+vip-decor-*-kit.zip
+
+# Local caches, logs and environment overrides.
+.env.*
+!.env.example
+*.log
+__pycache__/
+*.py[cod]
+.cache/
+coverage/

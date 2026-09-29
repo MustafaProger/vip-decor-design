@@ -5,11 +5,9 @@ import { chromium, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
 const baseURL = process.env.QA_BASE_URL || "http://127.0.0.1:5180";
-const outputDirectory = resolve(process.env.QA_OUTPUT_DIR || "docs");
+const outputDirectory = resolve(process.env.QA_OUTPUT_DIR || "docs/qa");
 const data = JSON.parse(await readFile("src/data/site-content.json", "utf8"));
-const sourcePages = JSON.parse(
-  await readFile("data/source/page-inventory.json", "utf8"),
-);
+const sourcePages = data.pages;
 const mainRoutes = [
   "/",
   "/tkani",

@@ -9,9 +9,7 @@ const reportPath = `${output}/report.json`;
 const phase = process.env.QA_PHASE || "all";
 const widths = [320, 390, 768, 1024, 1440, 1920];
 const data = JSON.parse(await readFile("src/data/site-content.json", "utf8"));
-const inventory = JSON.parse(
-  await readFile("data/source/page-inventory.json", "utf8"),
-);
+const inventory = data.pages;
 const reviews = JSON.parse(
   await readFile("src/data/yandex-reviews.json", "utf8"),
 );

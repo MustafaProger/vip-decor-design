@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { chromium, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 const base = process.env.QA_BASE_URL || "http://127.0.0.1:5180";
+await mkdir("docs/qa-liquid-glass", { recursive: true });
 const d = JSON.parse(await readFile("src/data/site-content.json", "utf8"));
 const routes = [
   ...d.categories.filter((c) => !c.sourceHasCatalog).map((c) => c.path),

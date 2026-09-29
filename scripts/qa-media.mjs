@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import { chromium } from "@playwright/test";
+await fs.mkdir("docs/qa-liquid-glass", { recursive: true });
 const d = JSON.parse(await fs.readFile("src/data/site-content.json", "utf8"));
 const all = [
   ...new Set([

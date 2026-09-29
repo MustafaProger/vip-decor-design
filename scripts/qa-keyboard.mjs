@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import assert from "node:assert/strict";
 import { chromium, expect } from "@playwright/test";
+await fs.mkdir("docs/qa-liquid-glass", { recursive: true });
 const b = await chromium.launch({ channel: "chrome" });
 const c = await b.newContext({
   viewport: { width: 320, height: 800 },
