@@ -18,6 +18,7 @@ import {
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import { removeRetiredSocialLinks } from "./content-cleanup.mjs";
 import {
   CmsError,
   object,
@@ -209,8 +210,10 @@ export async function createCmsService(options = {}) {
     db.close();
     throw error;
   }
-  const chrome = JSON.parse(
-    db.prepare("SELECT value FROM meta WHERE key='content'").get().value,
+  const chrome = removeRetiredSocialLinks(
+    JSON.parse(
+      db.prepare("SELECT value FROM meta WHERE key='content'").get().value,
+    ),
   );
   const blogCategories = JSON.parse(
     db.prepare("SELECT value FROM meta WHERE key='blogCategories'").get().value,

@@ -64,6 +64,8 @@ def crawl_page(url):
   r=get(url);r.encoding='utf-8';html=r.text
   (RAW/'pages'/f'{key(path)}.html').write_text(html)
   soup=BeautifulSoup(html,'html.parser')
+  for el in soup.select('a[href]'):
+   if re.search(r'instagram|facebook',el['href'],re.I):el.decompose()
   for el in soup.select('script,style,noscript'):el.decompose()
   (RAW/'pages'/f'{key(path)}.txt').write_text(soup.get_text('\n',strip=True))
   main=soup.select_one('#allrecords') or soup.body or soup
@@ -155,7 +157,7 @@ gallery=[];seen=set()
 for p in pages:
  for im in p.pop('gallery',[]):
   if im['originalUrl'] not in seen:seen.add(im['originalUrl']);gallery.append({'src':im['src'],'alt':im['alt'] or 'Текстильное оформление VIP Decor Design','sourcePath':p['path'],'originalUrl':im['originalUrl']})
-contacts={'phones':['+7 495 969 31 89','+7 969 035 98 89','+7 903 969 31 89'],'email':'info@vip2d.ru','address':'Москва, Сокольническая площадь 4А, 2 этаж, пав. 226','socials':[{'title':'Telegram','url':'https://t.me/vipdecordesign'},{'title':'Instagram','url':'https://www.instagram.com/vip2d.ru/'},{'title':'Facebook','url':'https://www.facebook.com/vipdecordesign/?modal=admin_todo_tour'}]}
+contacts={'phones':['+7 495 969 31 89','+7 969 035 98 89','+7 903 969 31 89'],'email':'info@vip2d.ru','address':'Москва, Сокольническая площадь 4А, 2 этаж, пав. 226','socials':[{'title':'Telegram','url':'https://t.me/vipdecordesign'}]}
 content={'crawledAt':datetime.now(timezone.utc).isoformat(),'pages':pages,'products':products,'categories':categories,'contacts':contacts,'gallery':gallery,'sourceErrors':errors}
 savejson(ROOT/'src/data/site-content.json',content)
 print(f'DATA WRITTEN: {len(pages)} pages, {len(products)} products, {len(categories)} categories, {len(gallery)} gallery images',flush=True)
