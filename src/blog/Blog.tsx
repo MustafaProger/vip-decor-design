@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight, ChevronDown } from "lucide-react";
 import {
@@ -151,6 +152,96 @@ function Crumbs({
     </nav>
   );
 }
+function ArticleContents({ post }: { post: Article }) {
+  const [activeId, setActiveId] = useState(post.sections[0]?.id);
+  const toc = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1001px)");
+    const updateDisclosure = () => {
+      if (toc.current) toc.current.open = desktop.matches;
+    };
+    updateDisclosure();
+    desktop.addEventListener("change", updateDisclosure);
+
+    const sections = [...post.sections.map((section) => section.id), "sources"]
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => !!section);
+    let frame = 0;
+    const updateActiveSection = () => {
+      frame = 0;
+      // Match native anchor positioning, including the sticky header offset.
+      const padding =
+        parseFloat(
+          getComputedStyle(document.documentElement).scrollPaddingTop,
+        ) || 0;
+      const margin = sections[0]
+        ? parseFloat(getComputedStyle(sections[0]).scrollMarginTop) || 0
+        : 0;
+      let current = sections[0]?.id;
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= padding + margin + 2)
+          current = section.id;
+        else break;
+      }
+      setActiveId(current);
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = requestAnimationFrame(updateActiveSection);
+    };
+    const observer = new ResizeObserver(scheduleUpdate);
+    const prose = sections[0]?.parentElement;
+    const header = document.querySelector(".site-header");
+    if (prose) observer.observe(prose);
+    if (header) observer.observe(header);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("hashchange", scheduleUpdate);
+    scheduleUpdate();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      desktop.removeEventListener("change", updateDisclosure);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      window.removeEventListener("hashchange", scheduleUpdate);
+    };
+  }, [post]);
+
+  return (
+    <details className="blog-toc" ref={toc} open>
+      <summary>
+        Содержание статьи
+        <ChevronDown size={18} aria-hidden="true" />
+      </summary>
+      <nav aria-label="Оглавление статьи">
+        <ol>
+          {post.sections.map((section, index) => (
+            <li key={section.id}>
+              <a
+                href={`#${section.id}`}
+                aria-current={activeId === section.id ? "location" : undefined}
+              >
+                <span className="blog-toc-number" aria-hidden="true">
+                  {index + 1}.
+                </span>
+                <span>{section.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+        <a
+          className="blog-source-jump"
+          href="#sources"
+          aria-current={activeId === "sources" ? "location" : undefined}
+        >
+          Источники материала
+        </a>
+      </nav>
+    </details>
+  );
+}
+
 function ArticlePage({ post }: { post: Article }) {
   const { posts, categories } = useBlogData();
   const category = categories.find((c) => c.slug === post.category);
@@ -194,24 +285,7 @@ function ArticlePage({ post }: { post: Article }) {
           <figcaption>{post.image.caption}</figcaption>
         </figure>
         <div className="blog-reading-layout">
-          <details className="blog-toc">
-            <summary>
-              Содержание статьи
-              <ChevronDown size={18} aria-hidden="true" />
-            </summary>
-            <nav aria-label="Оглавление статьи">
-              <ol>
-                {post.sections.map((s) => (
-                  <li key={s.id}>
-                    <a href={`#${s.id}`}>{s.title}</a>
-                  </li>
-                ))}
-              </ol>
-              <a className="blog-source-jump" href="#sources">
-                Источники материала
-              </a>
-            </nav>
-          </details>
+          <ArticleContents key={post.slug} post={post} />
           <div className="blog-prose">
             {post.sections.map((s) => (
               <section id={s.id} key={s.id} aria-labelledby={`${s.id}-title`}>

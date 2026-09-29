@@ -136,12 +136,16 @@ try {
     "content",
     /index, follow/,
   );
-  await p.locator(".blog-toc summary").click();
+  await expect(p.locator(".blog-toc")).toHaveAttribute("open", "");
   await p
     .getByRole("navigation", { name: "Оглавление статьи" })
     .getByRole("link", { name: "Как подобрать размер картины над диваном" })
     .click();
   await expect(p).toHaveURL(/#size$/);
+  await expect(p.locator('.blog-toc a[href="#size"]')).toHaveAttribute(
+    "aria-current",
+    "location",
+  );
   let previousHeadingTop;
   await expect
     .poll(
@@ -190,6 +194,55 @@ try {
   assert.deepEqual(errors, []);
   report.scenarios.push(
     "Category → article → TOC → catalogue; metadata cleanup; home recommendations → blog; no browser errors",
+  );
+  for (const width of [1024, 1440]) {
+    await p.setViewportSize({ width, height: 950 });
+    for (const post of blog.posts) {
+      await p.goto(`${base}/blog/${post.slug}`);
+      const toc = p.locator(".blog-toc");
+      const prose = p.locator(".blog-prose");
+      await expect(toc).toHaveAttribute("open", "");
+      const tocBox = await toc.boundingBox();
+      const proseBox = await prose.boundingBox();
+      assert.ok(
+        tocBox.x + tocBox.width < proseBox.x,
+        "TOC is left of the article",
+      );
+      const ids = [...post.sections.map((section) => section.id), "sources"];
+      for (const id of [...ids, ...ids.slice(0, -1).reverse()]) {
+        await p
+          .locator(`[id="${id}"]`)
+          .evaluate((el) => el.scrollIntoView({ behavior: "instant" }));
+        await expect(toc.locator('a[aria-current="location"]')).toHaveCount(1);
+        await expect(toc.locator(`a[href="#${id}"]`)).toHaveAttribute(
+          "aria-current",
+          "location",
+        );
+      }
+      await p.screenshot({ path: `${out}/toc-${post.slug}-${width}.png` });
+      const stickyBox = await toc.boundingBox();
+      assert.ok(
+        stickyBox.y > 0 && stickyBox.y < 250,
+        "TOC stays visible while reading",
+      );
+    }
+  }
+  await p.setViewportSize({ width: 390, height: 844 });
+  await expect(p.locator(".blog-toc")).not.toHaveAttribute("open", "");
+  await p.locator(".blog-toc summary").click();
+  await expect(p.locator(".blog-toc nav")).toBeVisible();
+  await p.locator('.blog-toc a[href="#sources"]').click();
+  await expect(p.locator('.blog-toc a[href="#sources"]')).toHaveAttribute(
+    "aria-current",
+    "location",
+  );
+  await p.reload();
+  await expect(p.locator('.blog-toc a[href="#sources"]')).toHaveAttribute(
+    "aria-current",
+    "location",
+  );
+  report.scenarios.push(
+    "Left sticky TOC at 1024/1440; every section active on scroll in both directions; mobile disclosure, anchor navigation and deep-link reload",
   );
   // Every editorial link resolves to existing HTML, including company service pages.
   const links = new Set(
