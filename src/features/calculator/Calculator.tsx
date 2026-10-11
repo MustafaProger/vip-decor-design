@@ -3,7 +3,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { InquiryError, submitInquiry } from "../../lib/inquiry";
 import {
-  calculateCurtains,
+  calculateCurtainsRange,
   DEFAULT_INPUT,
   FABRICS,
   formatPrice,
@@ -16,7 +16,7 @@ import "./Calculator.css";
 type Contact = { name: string; email: string; phone: string; consent: boolean };
 type Errors = Partial<Record<keyof Contact, string>>;
 
-function ChoiceGroup({
+function ChoiceGroup<T extends string | number>({
   name,
   value,
   options,
@@ -24,9 +24,9 @@ function ChoiceGroup({
   className = "",
 }: {
   name: string;
-  value: number;
-  options: readonly { value: number; label: string }[];
-  onChange: (value: number) => void;
+  value: T;
+  options: readonly { value: T; label: string; price?: number; max?: number }[];
+  onChange: (value: T) => void;
   className?: string;
 }) {
   return (
@@ -46,7 +46,7 @@ function ChoiceGroup({
           <span className="calc-choice-mark" aria-hidden="true" />
           <span className="calc-choice-name">{option.label}</span>
           <span className="calc-choice-price">
-            {formatPrice(option.value)} ₽
+            {formatPrice(option.price ?? Number(option.value))}{option.max ? `–${formatPrice(option.max)}` : ""} ₽/м
           </span>
         </label>
       ))}
@@ -71,13 +71,15 @@ export default function Calculator({
   const [pending, setPending] = useState(false);
   const requestId = useRef(crypto.randomUUID());
   const sending = useRef(false);
-  const total = calculateCurtains(input);
+  const total = calculateCurtainsRange(input);
+  const totalText = total.min === total.max ? formatPrice(total.min) : `${formatPrice(total.min)}–${formatPrice(total.max)}`;
   const fabricName = FABRICS.find((item) => item.value === input.fabric)!.label;
   const sewingName = SEWING.find((item) => item.value === input.sewing)!.label;
-  const mountName = MOUNTS.find((item) => item.value === input.mount)!.label;
-  const context = `Калькулятор штор: ткань ${fabricName} (${input.fabric} ₽), подшив ${sewingName} (${input.sewing} ₽), крепление ${mountName} (${input.mount} ₽), ширина ${input.width} м. Предварительная стоимость ${total} ₽.`;
+  const mounting = MOUNTS.find((item) => item.value === input.mount)!;
+  const mountName = mounting.label;
+  const context = `Калькулятор штор: ткань ${fabricName} (${formatPrice(input.fabric)}${input.fabric === 9500 ? "–55 000" : ""} ₽/м), подшив ${sewingName} (${input.sewing} ₽), крепление ${mountName} (${mounting.price} ₽/м), ширина ${input.width} м. Предварительная стоимость ${totalText} ₽.`;
 
-  function updateInput(key: keyof CalculatorInput, value: number) {
+  function updateInput<K extends keyof CalculatorInput>(key: K, value: CalculatorInput[K]) {
     setInput((previous) => ({ ...previous, [key]: value }));
     requestId.current = crypto.randomUUID();
     setStatus("");
@@ -235,9 +237,9 @@ export default function Calculator({
                 ширину изделия.
               </p>
               <p>
-                ({formatPrice(input.fabric)} + {formatPrice(input.sewing)} +{" "}
-                {formatPrice(input.mount)}) × {input.width} ={" "}
-                {formatPrice(total)} ₽.
+                ({formatPrice(input.fabric)}{input.fabric === 9500 ? "–55 000" : ""} + {formatPrice(input.sewing)} +{" "}
+                {formatPrice(mounting.price)}) × {input.width} ={" "}
+                {totalText} ₽.
               </p>
               <p>
                 Окончательная стоимость зависит от согласованных параметров
@@ -275,7 +277,7 @@ export default function Calculator({
                 aria-live="polite"
                 aria-label="Предварительная стоимость штор"
               >
-                {formatPrice(total)} ₽
+                {totalText} ₽
               </output>
             </div>
             <p className="calc-disclaimer">

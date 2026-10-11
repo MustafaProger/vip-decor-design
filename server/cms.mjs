@@ -1,3 +1,4 @@
+import { applyCurrentPricing } from "./pricing-content.mjs";
 import { DatabaseSync } from "node:sqlite";
 import {
   randomBytes,
@@ -377,7 +378,7 @@ export async function createCmsService(options = {}) {
           product.categoryPaths?.includes(category.path),
       ).length,
     }));
-    return { ...structuredClone(chrome), categories, products };
+    return applyCurrentPricing({ ...structuredClone(chrome), categories, products });
   }
   function getPublicBlog() {
     const posts = entities("posts", true);

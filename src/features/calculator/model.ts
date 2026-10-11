@@ -1,35 +1,36 @@
-/** Verified against https://vip2d.ru/#rec221002251 on 2026-09-12. */
+/** Rates confirmed by the owner on 2026-10-11. */
 export const FABRICS = [
-  { value: 570, label: "Эконом" },
-  { value: 1950, label: "Средний" },
-  { value: 3750, label: "Премиум" },
+  { value: 950, label: "Эконом" },
+  { value: 2950, label: "Средний" },
+  { value: 9500, max: 55000, label: "Премиум" },
 ] as const;
 
 export const SEWING = [
-  { value: 150, label: "Портьера" },
-  { value: 120, label: "Тюль" },
+  { value: 250, label: "Портьера" },
+  { value: 220, label: "Тюль" },
 ] as const;
 
 export const MOUNTS = [
-  { value: 270, label: "Лента эконом" },
-  { value: 390, label: "Лента средняя" },
-  { value: 1080, label: "Люверс" },
-  { value: 600, label: "Петли" },
-  { value: 415, label: "Липучка" },
+  { value: "tape", price: 250, label: "Лента" },
+  { value: "narrow-tape", price: 150, label: "Узкая лента" },
+  { value: "eyelet-tape", price: 250, label: "Лента люверсная" },
+  { value: "eyelet", price: 1080, label: "Люверс" },
+  { value: "loops", price: 600, label: "Петли" },
+  { value: "velcro", price: 350, label: "Липучка" },
 ] as const;
 
 export interface CalculatorInput {
   fabric: number;
   sewing: number;
-  mount: number;
+  mount: string;
   width: number;
 }
 
 // The published range's invalid value="метр" resolves to 4 in the browser.
 export const DEFAULT_INPUT: CalculatorInput = {
-  fabric: 570,
-  sewing: 150,
-  mount: 270,
+  fabric: 950,
+  sewing: 250,
+  mount: "tape",
   width: 4,
 };
 
@@ -51,9 +52,16 @@ export function calculateCurtains({
       "Выберите опубликованные тарифы и ширину от 1 до 6 метров.",
     );
   }
-  // Tilda tcalc__calculate: Math.round(10 * result) / 10.
-  return Math.round((fabric + sewing + mount) * width * 10) / 10;
+  const mounting = MOUNTS.find((item) => item.value === mount)!;
+  return Math.round((fabric + sewing + mounting.price) * width * 10) / 10;
 }
 
 export const formatPrice = (amount: number) =>
   new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 1 }).format(amount);
+
+export function calculateCurtainsRange(input: CalculatorInput) {
+  const min = calculateCurtains(input);
+  const fabric = FABRICS.find((item) => item.value === input.fabric)!;
+  const max = "max" in fabric ? min + (fabric.max - fabric.value) * input.width : min;
+  return { min, max };
+}
