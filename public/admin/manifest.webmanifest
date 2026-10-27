@@ -1,0 +1,19 @@
+{
+  "id": "/admin",
+  "name": "VIP Decor — управление",
+  "short_name": "VIP Decor",
+  "start_url": "/admin",
+  "scope": "/admin",
+  "display": "standalone",
+  "background_color": "#f5f5ef",
+  "theme_color": "#2d4b3e",
+  "icons": [
+    { "src": "/admin/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    {
+      "src": "/admin/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

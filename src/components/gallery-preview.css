@@ -1,0 +1,74 @@
+.gallery-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+.gallery-preview-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.gallery-preview-photo > :is(img, svg, .missing-image) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-preview-detail .gallery-preview-photo > :is(img, svg) {
+  object-fit: contain;
+}
+.gallery-preview > .favorite-button {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+}
+.gallery-preview-track {
+  position: absolute;
+  z-index: 2;
+  bottom: 9px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  gap: 5px;
+  padding: 0 5px;
+  border-radius: 30px;
+  background: rgb(246 243 237 / 84%);
+  backdrop-filter: blur(12px);
+}
+.gallery-preview-track button {
+  border: 0;
+  background: transparent;
+  min-width: 0;
+  flex: 1;
+  height: 28px;
+  padding: 11px 0;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.gallery-preview-track span {
+  display: block;
+  height: 3px;
+  border-radius: 4px;
+  background: rgb(23 60 50 / 20%);
+  transition: background 160ms ease;
+}
+.gallery-preview-track button[aria-pressed="true"] span {
+  background: #173c32;
+}
+.gallery-preview-track button:focus-visible {
+  outline: 2px solid #173c32;
+  outline-offset: 2px;
+}
+.pd-main-image:has(.gallery-preview-track) :is(.pd-zoom, .pd-image-count) {
+  bottom: 50px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-preview-track span,
+  .product-photo .gallery-preview :is(img, svg) {
+    transition: none;
+  }
+  .product-photo:hover .gallery-preview :is(img, svg) {
+    transform: none;
+  }
+}

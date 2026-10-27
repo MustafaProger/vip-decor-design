@@ -535,7 +535,7 @@ test("all imported catalog and blog entries can be edited without corrupting met
     await readFile(new URL("../src/data/blog.json", import.meta.url), "utf8"),
   );
   assert.equal(content.products.length, 477);
-  assert.equal(blog.posts.length, 3);
+  assert.equal(blog.posts.length, 2);
   for (const source of content.products) {
     const input = { ...source, status: "published", version: 1 };
     assert.deepEqual(

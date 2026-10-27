@@ -46,7 +46,7 @@ function ChoiceGroup<T extends string | number>({
           <span className="calc-choice-mark" aria-hidden="true" />
           <span className="calc-choice-name">{option.label}</span>
           <span className="calc-choice-price">
-            {formatPrice(option.price ?? Number(option.value))}{option.max ? `–${formatPrice(option.max)}` : ""} ₽/м
+            {formatPrice(option.price ?? Number(option.value))}{option.max ? `–${formatPrice(option.max)}` : ""} ₽/{option.value === "eyelet" ? "шт" : "м"}
           </span>
         </label>
       ))}
@@ -77,7 +77,9 @@ export default function Calculator({
   const sewingName = SEWING.find((item) => item.value === input.sewing)!.label;
   const mounting = MOUNTS.find((item) => item.value === input.mount)!;
   const mountName = mounting.label;
-  const context = `Калькулятор штор: ткань ${fabricName} (${formatPrice(input.fabric)}${input.fabric === 9500 ? "–55 000" : ""} ₽/м), подшив ${sewingName} (${input.sewing} ₽), крепление ${mountName} (${mounting.price} ₽/м), ширина ${input.width} м. Предварительная стоимость ${totalText} ₽.`;
+  const mountQuantity = input.mount === "eyelet" ? input.eyeletCount : input.width;
+  const mountUnit = input.mount === "eyelet" ? "шт" : "м";
+  const context = `Калькулятор штор: ткань ${fabricName} (${formatPrice(input.fabric)}${input.fabric === 9500 ? "–55 000" : ""} ₽/м), подшив ${sewingName} (${input.sewing} ₽/м), длина строчки ${input.sewingLength} м, крепление ${mountName} (${mounting.price} ₽/${mountUnit}), количество крепления ${mountQuantity} ${mountUnit}, метраж ткани ${input.width} м. Предварительная стоимость ${totalText} ₽.`;
 
   function updateInput<K extends keyof CalculatorInput>(key: K, value: CalculatorInput[K]) {
     setInput((previous) => ({ ...previous, [key]: value }));
@@ -181,6 +183,14 @@ export default function Calculator({
                 onChange={(value) => updateInput("sewing", value)}
                 className="calc-choices-two"
               />
+              <label className="calc-hint" htmlFor="calc-sewing-length">Длина строчки, м</label>
+              <input className="calc-input" id="calc-sewing-length" type="number" min="0.01" step="0.01"
+                value={input.sewingLength}
+                onChange={(event) => {
+                  const value = event.target.valueAsNumber;
+                  if (Number.isFinite(value) && value > 0) updateInput("sewingLength", value);
+                }} />
+              <p className="calc-hint">Общая длина всех строчек. Укажите её отдельно от метража ткани.</p>
             </fieldset>
             <fieldset className="calc-fieldset" disabled={pending}>
               <legend>
@@ -197,10 +207,19 @@ export default function Calculator({
                 onChange={(value) => updateInput("mount", value)}
                 className="calc-choices-mount"
               />
+              {input.mount === "eyelet" && <>
+                <label className="calc-hint" htmlFor="calc-eyelet-count">Количество люверсов, шт</label>
+                <input className="calc-input" id="calc-eyelet-count" type="number" min="1" step="1"
+                  value={input.eyeletCount}
+                  onChange={(event) => {
+                    const value = event.target.valueAsNumber;
+                    if (Number.isSafeInteger(value) && value > 0) updateInput("eyeletCount", value);
+                  }} />
+              </>}
             </fieldset>
             <fieldset className="calc-fieldset" disabled={pending}>
               <legend>
-                <span className="calc-step">04</span>Ширина изделия
+                <span className="calc-step">04</span>Метраж ткани
               </legend>
               <div className="calc-width-heading">
                 <label className="calc-width-caption" htmlFor="calc-width">
@@ -233,12 +252,12 @@ export default function Calculator({
               <summary>Как рассчитывается стоимость</summary>
               <p>
                 Калькулятор использует опубликованные тарифы VIP DECOR DESIGN:
-                стоимость ткани, подшива и крепления суммируются и умножаются на
-                ширину изделия.
+                ткань и лента считаются по метражу ткани, пошив — по общей длине
+                строчек, люверсы с установкой — по количеству штук.
               </p>
               <p>
-                ({formatPrice(input.fabric)}{input.fabric === 9500 ? "–55 000" : ""} + {formatPrice(input.sewing)} +{" "}
-                {formatPrice(mounting.price)}) × {input.width} ={" "}
+                ({formatPrice(input.fabric)}{input.fabric === 9500 ? "–55 000" : ""} × {input.width}) + ({formatPrice(input.sewing)} × {input.sewingLength}) +{" "}
+                ({formatPrice(mounting.price)} × {mountQuantity}) ={" "}
                 {totalText} ₽.
               </p>
               <p>
@@ -254,18 +273,18 @@ export default function Calculator({
             <dl>
               <div className="calc-summary-row">
                 <dt>Ткань</dt>
-                <dd>{fabricName}</dd>
+                <dd>{fabricName} · {input.width} м × {formatPrice(input.fabric)} ₽</dd>
               </div>
               <div className="calc-summary-row">
                 <dt>Подшив</dt>
-                <dd>{sewingName}</dd>
+                <dd>{sewingName} · {input.sewingLength} м × {formatPrice(input.sewing)} ₽ = {formatPrice(input.sewingLength * input.sewing)} ₽</dd>
               </div>
               <div className="calc-summary-row">
                 <dt>Крепление</dt>
-                <dd>{mountName}</dd>
+                <dd>{mountName} · {mountQuantity} {mountUnit} × {formatPrice(mounting.price)} ₽</dd>
               </div>
               <div className="calc-summary-row">
-                <dt>Ширина изделия</dt>
+                <dt>Метраж ткани</dt>
                 <dd>{input.width} м</dd>
               </div>
             </dl>

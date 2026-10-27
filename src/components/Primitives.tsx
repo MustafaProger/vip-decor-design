@@ -4,7 +4,8 @@ import { useId, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Heart, ImageOff } from "lucide-react";
 import { useStore } from "../lib/store";
-import { parseSourcePrice } from "../lib/commerce";
+import { parseSourcePrice, productGallery } from "../lib/commerce";
+import GalleryPreview from "./GalleryPreview";
 import { money, productHref, type Product } from "../lib/content";
 export function Picture({
   src,
@@ -150,16 +151,22 @@ export function ProductCard({
   product: Product;
   index?: number;
 }) {
+  const [activePhoto, setActivePhoto] = useState(0);
   const oldPrice =
     parseSourcePrice(product.variants?.editions?.[0]?.priceold) ??
     parseSourcePrice(product.oldPrice);
   return (
     <RevealArticle className="product-card" delay={(index % 3) * 0.07}>
       <div className="product-photo">
-        <Link to={productHref(product)} tabIndex={-1} aria-hidden="true">
-          <Picture src={product.image} alt={product.title} />
-        </Link>
-        <FavoriteButton id={product.id} title={product.title} />
+        <GalleryPreview
+          images={productGallery(product)}
+          title={product.title}
+          active={activePhoto}
+          onChange={setActivePhoto}
+          href={productHref(product)}
+        >
+          <FavoriteButton id={product.id} title={product.title} />
+        </GalleryPreview>
       </div>
       <div className="product-card-info">
         <div>

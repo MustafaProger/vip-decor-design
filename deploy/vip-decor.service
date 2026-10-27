@@ -1,0 +1,23 @@
+[Unit]
+Description=VIP Decor website and CMS
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=simple
+User=vipdecor
+Group=vipdecor
+WorkingDirectory=/opt/vip-decor/current
+EnvironmentFile=/etc/vip-decor/site.env
+LoadCredential=push-vapid.json:/etc/vip-decor/push-vapid.json
+Environment=PUSH_VAPID_FILE=%d/push-vapid.json
+ExecStart=/usr/local/bin/node server/start.mjs
+Restart=always
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/vipdecor/runtime
+[Install]
+WantedBy=multi-user.target

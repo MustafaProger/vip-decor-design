@@ -14,9 +14,11 @@ import { StoreProvider } from "./lib/store";
 import { localHref, type SiteContent } from "./lib/content";
 import Blog from "./blog/Blog";
 import blogChrome from "./data/blog-chrome.json";
+import retirement from "./data/content-retirement.json";
 import { blogMetadata, blogSchema, type BlogData } from "./blog/content";
 import { BlogContext, readBlogBootstrap, useBlogData } from "./blog/runtime";
 import { pageMetadata } from "./lib/metadata";
+import { publicFetch } from "./lib/publicFetch";
 import { Header, Footer } from "./components/SiteChrome";
 import Modal from "./components/Modal";
 import Home from "./pages/Home";
@@ -95,7 +97,8 @@ function RouteContent({
     return () => cancelAnimationFrame(frame);
   }, [pathname, hash, navigate, data]);
   const path = pathname.replace(/\/$/, "") || "/";
-  const source = data.pages.find((p) => p.path === path);
+  const retired = retirement.paths.includes(path);
+  const source = retired ? undefined : data.pages.find((p) => p.path === path);
   const product = path.startsWith("/product/")
     ? data.products.find((p) => p.id === decodeURIComponent(path.slice(9)))
     : data.products.find((p) => localHref(p.url).split("?")[0] === path);
@@ -155,6 +158,7 @@ function RouteContent({
     }
     canonical.href = metadata.canonical;
   }, [path, source, product, blogData]);
+  if (retired) return <NotFound />;
   if (path === "/blog" || path.startsWith("/blog/"))
     return <Blog path={path} />;
   if (path === "/") return <Home />;
@@ -250,16 +254,9 @@ function PublicApp({ initialBlog }: { initialBlog?: BlogData }) {
     const ctrl = new AbortController();
     setError("");
     Promise.all([
-      fetch("/api/content", { signal: ctrl.signal }),
-      fetch("/api/blog", { signal: ctrl.signal }),
+      publicFetch("/api/content", ctrl.signal),
+      publicFetch("/api/blog", ctrl.signal),
     ])
-      .then(async ([contentResponse, blogResponse]) => {
-        if (!contentResponse.ok || !blogResponse.ok)
-          throw new Error(
-            "Не удалось загрузить данные сайта. Попробуйте ещё раз.",
-          );
-        return Promise.all([contentResponse.json(), blogResponse.json()]);
-      })
       .then(([d, blog]) => {
         if (
           !Array.isArray(d.pages) ||

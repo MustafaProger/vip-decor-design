@@ -158,9 +158,9 @@ export function Delivery({ page }: { page: SourcePage }) {
                 <Phone size={18} />
                 +7 969 035 98 89
               </a>
-              <a href="mailto:info@vip2d.ru">
+              <a href={"mailto:" + data.contacts.email}>
                 <Mail size={18} />
-                info@vip2d.ru
+                {data.contacts.email}
               </a>
               <Link className="text-link" to="/contacts">
                 Все контакты <ArrowUpRight size={18} />

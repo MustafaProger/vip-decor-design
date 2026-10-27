@@ -1,4 +1,5 @@
 import { readFile, readdir, access } from "node:fs/promises";
+import { cleanPublicBlog } from "../server/content-retirement.mjs";
 export async function readBlog() {
   const categories = JSON.parse(
     await readFile("content/blog/categories.json", "utf8"),
@@ -68,12 +69,12 @@ export async function readBlog() {
     for (const slug of p.related || [])
       if (slug === p.slug || !posts.some((a) => a.slug === slug))
         throw Error(`${p.slug}: invalid related article ${slug}`);
-  return {
+  return cleanPublicBlog({
     categories: categories.filter((c) =>
       posts.some((p) => p.category === c.slug),
     ),
     posts,
-  };
+  });
 }
 export const blogPaths = (blog) => [
   "/blog",

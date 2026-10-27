@@ -11,6 +11,15 @@ async function withSite(run) {
   const dist = join(directory, "dist");
   await mkdir(join(dist, "server"), { recursive: true });
   await mkdir(join(dist, "assets"));
+  await mkdir(join(dist, "admin"));
+  await writeFile(
+    join(dist, "admin/manifest.webmanifest"),
+    '{"start_url":"/admin"}',
+  );
+  await writeFile(
+    join(dist, "admin-sw.js"),
+    'self.addEventListener("push", () => {});',
+  );
   await mkdir(join(dist, "data"));
   await mkdir(join(dist, "blog/first"), { recursive: true });
   await writeFile(
@@ -99,7 +108,7 @@ async function withSite(run) {
       request.end();
     });
   try {
-    await run({ base, state, rendererCalls, rawGet });
+    await run({ base, state, rendererCalls, rawGet, dist });
   } finally {
     await new Promise((resolve) => server.close(resolve));
     await rm(directory, { recursive: true, force: true });
@@ -158,6 +167,26 @@ test("blog redirects only known trailing-slash URLs and supports HEAD without a 
     assert.ok(Number(head.headers.get("content-length")) > 0);
     assert.equal(await head.text(), "");
     assert.equal((await fetch(base + "/blog", { method: "POST" })).status, 405);
+  });
+});
+
+test("retired directions and articles return 410 for GET and HEAD including old URL variants", async () => {
+  await withSite(async ({ base }) => {
+    for (const path of ["/podyshki", "/pokrivala/", "/%70okrivala?source=old",
+      "/blog/kak-vybrat-razmer-pokryvala", "/blog/kak-sochetat-shtory-pokryvalo-i-podushki/"]) {
+      for (const method of ["GET", "HEAD"]) {
+        const response = await fetch(base + path, { method, redirect: "manual" });
+        assert.equal(response.status, 410, `${method} ${path}`);
+        assert.match(response.headers.get("x-robots-tag"), /noindex/);
+        assert.equal(response.headers.get("location"), null);
+        const body = await response.text();
+        if (method === "HEAD") assert.equal(body, "");
+        else assert.match(body, /href="\/catalog"/);
+      }
+    }
+    for (const path of ["/selection", "/kakpodobrat", "/price", "/dostavka", "/page13486315.html"]) {
+      assert.equal((await fetch(base + path)).status, 200);
+    }
   });
 });
 
@@ -285,5 +314,56 @@ test("static aliases cannot expose obsolete catalog, sitemap or prerendered blog
     );
     assert.match(html, /Первая статья/);
     assert.doesNotMatch(html, /stale-blog/);
+  });
+});
+
+test("admin install assets do not shadow the authenticated app route", async () => {
+  await withSite(async ({ base }) => {
+    for (const path of ["/admin", "/admin/", "/admin?inquiry=test-id"]) {
+      const response = await fetch(base + path);
+      assert.equal(response.status, 200);
+      assert.match(response.headers.get("x-robots-tag"), /noindex/);
+      assert.match(await response.text(), /manifest.webmanifest/);
+    }
+    const manifest = await fetch(base + "/admin/manifest.webmanifest");
+    assert.match(
+      manifest.headers.get("content-type"),
+      /application\/manifest\+json/,
+    );
+    const worker = await fetch(base + "/admin-sw.js");
+    assert.equal(worker.status, 200);
+    assert.equal(worker.headers.get("cache-control"), "no-cache");
+  });
+});
+
+
+test("images stay cached and revalidate without a body, while replacements invalidate validators", async () => {
+  await withSite(async ({ base, dist }) => {
+    await mkdir(join(dist, "media"));
+    const file = join(dist, "media/photo.webp");
+    await writeFile(file, "photo-v1");
+    const first = await fetch(base + "/media/photo.webp");
+    assert.equal(first.status, 200);
+    assert.equal(first.headers.get("cache-control"), "public, max-age=604800");
+    const etag = first.headers.get("etag");
+    const modified = first.headers.get("last-modified");
+    assert.ok(etag);
+    assert.ok(modified);
+    for (const headers of [{ "If-None-Match": etag }, { "If-Modified-Since": modified }]) {
+      const cached = await fetch(base + "/media/photo.webp", { headers });
+      assert.equal(cached.status, 304);
+      assert.equal(await cached.text(), "");
+    }
+    const head = await fetch(base + "/media/photo.webp", { method: "HEAD" });
+    assert.equal(head.headers.get("etag"), etag);
+    assert.equal(await head.text(), "");
+    await writeFile(file, "photo-v2-replaced");
+    const changed = await fetch(base + "/media/photo.webp", { headers: { "If-None-Match": etag, "If-Modified-Since": new Date(Date.now() + 86400000).toUTCString() } });
+    assert.equal(changed.status, 200);
+    assert.notEqual(changed.headers.get("etag"), etag);
+    assert.equal(await changed.text(), "photo-v2-replaced");
+    const missing = await fetch(base + "/media/missing.webp");
+    assert.equal(missing.status, 404);
+    assert.equal(missing.headers.get("cache-control"), "no-store");
   });
 });

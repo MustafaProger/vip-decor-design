@@ -62,8 +62,8 @@ export function Contacts() {
         <Reveal className="contact-visual">
           <figure className="contact-photo">
             <Picture
-              src={data.gallery[14]?.src}
-              alt="Шторы и покрывало в интерьере — работа VIP DECOR DESIGN"
+              src={data.gallery.find((photo) => photo.src.endsWith("74a4c8d1c28498b376.webp"))?.src}
+              alt="Шторы в интерьере — работа VIP DECOR DESIGN"
               eager
             />
             <figcaption className="glass-caption">
@@ -160,7 +160,7 @@ export function Contacts() {
   );
 }
 
-// Transcribed from /#rec214496134. Every amount, "от" and unit is retained.
+// Existing rates for the retained services; retired directions are excluded.
 export const priceGroups = [
   {
     id: "fabrics",
@@ -177,18 +177,18 @@ export const priceGroups = [
     items: [
       ["Строчка тюля", "220", "м", ""],
       ["Строчка портьеры", "250", "м", ""],
-      ["Люверс с установкой", "180", "шт", ""],
-      ["Пошив ламбрекена", "от 1 600", "м", ""],
-      ["Бандо с пошивом", "3 500", "м", ""],
-      ["Римская штора", "2 350", "метр", ""],
+      ["Люверс с установкой", "280", "шт", ""],
+      ["Пошив ламбрекена", "от 3 500", "м", ""],
+      ["Бандо с пошивом", "от 4 700", "м", ""],
+      ["Римская штора", "от 3 500", "метр", ""],
     ],
   },
   {
     id: "accessories",
     title: "Аксессуары",
     items: [
-      ["Подхват", "от 500", "шт", ""],
-      ["Пошив декоративной подушки", "950–2 500", "шт", ""],
+      ["Подхват", "950", "шт", ""],
+      ["Пошив декоративной подушки", "от 750", "шт", ""],
       ["Лента", "250", "м", ""],
       ["Узкая лента", "150", "м", ""],
       ["Лента люверсная", "250", "м", ""],
@@ -208,7 +208,7 @@ export function Price() {
             <p className="eyebrow">ПОШИВ ИНТЕРЬЕРНОГО ТЕКСТИЛЯ</p>
             <h1>Цены на пошив</h1>
             <p className="page-lead">
-              Шторы, покрывала и декоративный текстиль.
+              Пошив штор, тюля и подхватов.
             </p>
           </header>
           <div className="price-sheet surface" id="rec214496134">
@@ -263,35 +263,11 @@ export function Price() {
               ткани, размеров и деталей пошива.
             </p>
           </div>
-          <div className="price-related">
-            <Link to="/pokrivala" className="surface">
-              <Picture
-                src={
-                  data.categories.find((c) => c.path === "/pokrivala")?.image
-                }
-                alt="Покрывала"
-              />
-              <span>
-                <strong>Покрывала</strong>Посмотреть коллекцию
-              </span>
-              <ArrowUpRight size={22} />
-            </Link>
-            <Link to="/podyshki" className="surface">
-              <Picture
-                src={data.categories.find((c) => c.path === "/podyshki")?.image}
-                alt="Декоративные подушки"
-              />
-              <span>
-                <strong>Подушки</strong>Детали для вашего дома
-              </span>
-              <ArrowUpRight size={22} />
-            </Link>
-          </div>
         </div>
         <aside className="price-aside">
           <figure>
             <Picture
-              src={data.gallery[10]?.src}
+              src={data.gallery.find((photo) => photo.src.endsWith("21aef34c55a0761cef.webp"))?.src}
               alt="Лёгкий тюль и портьера из галереи VIP DECOR DESIGN"
               eager
             />
@@ -332,7 +308,7 @@ const rooms = [
     subtitle: "Мягкий свет. Спокойные оттенки. Комфортный сон.",
     tips: [
       ["Затемнение", "Жаккард, атлас и блэкаут помогают ограничить свет."],
-      ["Фактура", "Сочетайте шторы с покрывалом и подушками."],
+      ["Фактура", "Сочетайте фактуру штор с отделкой и мебелью."],
       ["Цвет", "Учитывайте оттенки стен и рисунок ткани."],
     ],
     links: ["/blekayt", "/zhakkard"],
@@ -711,19 +687,22 @@ export function FabricGuide() {
       </details>
       <section className="guide-subscribe surface" id="rec228130529">
         <div>
-          <h2>Идеи и новинки</h2>
-          <p>В Telegram VIP DECOR DESIGN.</p>
+          <h2>Поможем с выбором</h2>
+          <p>Напишите нам в WhatsApp, MAX или Telegram: +7 969 035 98 89.</p>
         </div>
-        <a
-          className="button secondary"
-          href="https://t.me/vipdecordesign"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Наш Telegram <ArrowUpRight size={18} />
-        </a>
-        <a className="text-link" href="mailto:info@vip2d.ru">
-          info@vip2d.ru <ArrowUpRight size={16} />
+        {data.contacts.socials.map((messenger) => (
+          <a
+            key={messenger.url}
+            className="button secondary"
+            href={messenger.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {messenger.title} <ArrowUpRight size={18} />
+          </a>
+        ))}
+        <a className="text-link" href={"mailto:" + data.contacts.email}>
+          {data.contacts.email} <ArrowUpRight size={16} />
         </a>
       </section>
     </div>

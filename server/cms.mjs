@@ -20,6 +20,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { removeRetiredSocialLinks } from "./content-cleanup.mjs";
+import { cleanPublicContent, cleanPublicBlog } from "./content-retirement.mjs";
 import {
   CmsError,
   object,
@@ -211,11 +212,11 @@ export async function createCmsService(options = {}) {
     db.close();
     throw error;
   }
-  const chrome = removeRetiredSocialLinks(
+  const chrome = cleanPublicContent(removeRetiredSocialLinks(
     JSON.parse(
       db.prepare("SELECT value FROM meta WHERE key='content'").get().value,
     ),
-  );
+  ));
   const blogCategories = JSON.parse(
     db.prepare("SELECT value FROM meta WHERE key='blogCategories'").get().value,
   );
@@ -378,18 +379,18 @@ export async function createCmsService(options = {}) {
           product.categoryPaths?.includes(category.path),
       ).length,
     }));
-    return applyCurrentPricing({ ...structuredClone(chrome), categories, products });
+    return applyCurrentPricing(cleanPublicContent({ ...structuredClone(chrome), categories, products }));
   }
   function getPublicBlog() {
     const posts = entities("posts", true);
-    return {
+    return cleanPublicBlog({
       posts,
       categories: structuredClone(
         blogCategories.filter((category) =>
           posts.some((post) => post.category === category.slug),
         ),
       ),
-    };
+    });
   }
   async function syncInquiries() {
     let source;
@@ -540,6 +541,38 @@ export async function createCmsService(options = {}) {
       }
       const mutation = !["GET", "HEAD"].includes(method);
       const session = requireSession(request, mutation);
+      if (route.startsWith("/api/cms/push/")) {
+        const push = options.pushService;
+        if (!push?.enabled) {
+          if (route === "/api/cms/push/config" && method === "GET")
+            reply(response, 200, { enabled: false, publicKey: null });
+          else
+            throw new CmsError(
+              503,
+              "Push-уведомления ещё не настроены на сервере.",
+            );
+          return true;
+        }
+        if (route === "/api/cms/push/config" && method === "GET") {
+          reply(response, 200, { enabled: true, publicKey: push.publicKey });
+          return true;
+        }
+        const input = await readJson(request);
+        if (route === "/api/cms/push/status" && method === "POST")
+          reply(response, 200, push.status(input.endpoint, session.username));
+        else if (route === "/api/cms/push/subscription" && method === "POST")
+          reply(response, 200, push.subscribe(input, session.username));
+        else if (route === "/api/cms/push/subscription" && method === "DELETE")
+          reply(
+            response,
+            200,
+            push.unsubscribe(input.endpoint, session.username),
+          );
+        else if (route === "/api/cms/push/test" && method === "POST")
+          reply(response, 202, push.test(input.endpoint, session.username));
+        else throw new CmsError(404, "Действие не найдено.");
+        return true;
+      }
       if (route === "/api/cms/logout" && method === "POST") {
         db.prepare("DELETE FROM sessions WHERE token_hash=?").run(
           session.token_hash,

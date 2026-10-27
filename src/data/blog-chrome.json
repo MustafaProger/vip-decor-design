@@ -1,7 +1,6 @@
 {
   "crawledAt": "2026-09-12T10:45:43.076879+00:00",
   "pages": [],
-  "products": [],
   "categories": [
     {
       "title": "Атлас",
@@ -180,22 +179,6 @@
       "sourceHasCatalog": true
     },
     {
-      "title": "Подушки",
-      "path": "/podyshki",
-      "image": "/source-media/1baf73bbbcf93cea7e.webp",
-      "description": "",
-      "count": 0,
-      "sourceHasCatalog": false
-    },
-    {
-      "title": "Покрывала",
-      "path": "/pokrivala",
-      "image": "/source-media/2ab70afca70c06f74e.webp",
-      "description": "",
-      "count": 0,
-      "sourceHasCatalog": false
-    },
-    {
       "title": "Потолочные карнизы",
       "path": "/potolochniekarnizi",
       "image": "/source-media/bfab1c6880ea08e635.webp",
@@ -298,12 +281,20 @@
       "+7 969 035 98 89",
       "+7 903 969 31 89"
     ],
-    "email": "info@vip2d.ru",
+    "email": "vipdecordesign@yandex.ru",
     "address": "Москва, Сокольническая площадь 4А, 2 этаж, пав. 226",
     "socials": [
       {
+        "title": "WhatsApp",
+        "url": "https://wa.me/79690359889"
+      },
+      {
+        "title": "MAX",
+        "url": "https://max.ru/u/f9LHodD0cOLS_9HD8DaxeKBlmga9y7L4vqw_yp7wzbBsQkWwhvTVF9if-ZM"
+      },
+      {
         "title": "Telegram",
-        "url": "https://t.me/vipdecordesign"
+        "url": "https://t.me/+79690359889"
       }
     ]
   },
@@ -334,5 +325,6 @@
     "rec208301757": "/catalog",
     "rec208194534": "/contacts",
     "rec221002251": "/calculator"
-  }
+  },
+  "products": []
 }

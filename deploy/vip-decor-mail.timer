@@ -1,0 +1,8 @@
+[Unit]
+Description=Check saved enquiries for email delivery every minute
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min
+Unit=vip-decor-mail.service
+[Install]
+WantedBy=timers.target

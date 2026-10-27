@@ -1,4 +1,4 @@
-import { blogMetadata } from "../blog/content";
+import { blogMetadata } from "../blog/content.ts";
 import type { Product, SourcePage } from "./content";
 
 const pages: Record<string, [string, string]> = {
@@ -28,7 +28,7 @@ const pages: Record<string, [string, string]> = {
   ],
   "/price": [
     "Цены на пошив штор и текстиля",
-    "Прайс VIP DECOR DESIGN: пошив штор, покрывал, подушек и декоративных изделий. Стоимость работ, единицы расчёта и калькулятор.",
+    "Прайс VIP DECOR DESIGN: пошив штор, тюля и подхватов. Стоимость работ, единицы расчёта и калькулятор.",
   ],
   "/contacts": [
     "Контакты и шоурум в Москве",
@@ -84,16 +84,29 @@ export function pageMetadata(
   if (path === "/blog" || path.startsWith("/blog/")) return blogMetadata(path);
   const canonicalPath = path === "/page13486315.html" ? "/dostavka" : path;
   const known = pages[canonicalPath];
-  const title =
-    product?.title || known?.[0] || source?.title || "Страница не найдена";
+  const title = product
+    ? `${product.title} · ${product.sku || product.id}`
+    : known?.[0] || source?.title || "Страница не найдена";
   const productText = product?.description
-    ? new DOMParser()
-        .parseFromString(product.description, "text/html")
-        .body.textContent?.replace(/\s+/g, " ")
+    ? product.description
+        .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
+        .replace(/<[^>]*>/g, " ")
+        .replace(
+          /&(?:nbsp|amp|quot|lt|gt);/g,
+          (entity) =>
+            ({
+              "&nbsp;": " ",
+              "&amp;": "&",
+              "&quot;": '"',
+              "&lt;": "<",
+              "&gt;": ">",
+            })[entity] || entity,
+        )
+        .replace(/\s+/g, " ")
         .trim()
     : "";
   const description = product
-    ? `${product.title}${product.sku ? `, артикул ${product.sku}` : ""}. ${productText || "Характеристики, фотографии и варианты товара в каталоге VIP DECOR DESIGN."}`.slice(
+    ? `${product.title}, ${product.sku ? `артикул ${product.sku}` : `код ${product.id}`}. ${productText || "Характеристики, фотографии и варианты товара в каталоге VIP DECOR DESIGN."}`.slice(
         0,
         170,
       )

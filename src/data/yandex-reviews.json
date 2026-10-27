@@ -1379,10 +1379,12 @@
     }
   ],
   "businessExperience": {
-    "years": 21,
-    "isMinimum": true,
+    "years": 23,
+    "isMinimum": false,
     "sourceUrl": "https://vip2d.ru/",
-    "checkedAt": "2026-09-15"
+    "checkedAt": "2026-10-10",
+    "sinceYear": 2003,
+    "source": "owner"
   },
   "photosCheckedAt": "2026-09-15",
   "photoCoverageNote": "79 фотографий работ, прикреплённых к 44 отзывам Яндекс Карт: 68 из массивов photos первой страницы и 11 из DOM отдельных отзывов второй страницы. У отзывов без вложений массив photos пуст. Фотографии профилей и общая галерея организации не используются.",

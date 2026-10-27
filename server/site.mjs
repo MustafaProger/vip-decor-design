@@ -1,6 +1,8 @@
 import { readFile, realpath, stat } from "node:fs/promises";
 import { dirname, extname, resolve, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { isRetiredPath, cleanPublicBlog } from "./content-retirement.mjs";
+import { publicPageHead } from "./page-head.mjs";
 
 const projectDirectory = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DEFAULT_ORIGIN = "https://vip2d.ru";
@@ -8,6 +10,7 @@ const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
+  ".webmanifest": "application/manifest+json; charset=utf-8",
   ".json": "application/json; charset=utf-8",
   ".xml": "application/xml; charset=utf-8",
   ".txt": "text/plain; charset=utf-8",
@@ -56,6 +59,7 @@ function requestPath(url) {
 }
 
 function publishedBlog(snapshot) {
+  snapshot = cleanPublicBlog(snapshot);
   const posts = (snapshot.posts || []).filter(
     (post) => !post.status || post.status === "published",
   );
@@ -87,6 +91,7 @@ export function renderSitemap(content, blog, origin = DEFAULT_ORIGIN) {
   const siteOrigin = new URL(origin).origin;
   const add = (value) => {
     if (typeof value !== "string" || !value) return;
+    if (isRetiredPath(value)) return;
     try {
       const url = new URL(value, siteOrigin);
       if (url.origin !== siteOrigin || url.username || url.password) return;
@@ -177,6 +182,12 @@ export async function createSiteHandler(options = {}) {
     }
 
     try {
+      if (isRetiredPath(path)) {
+        reply(request, response, 410,
+          '<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><title>Страница удалена — VIP DECOR DESIGN</title></head><body style="margin:0;background:#f6f4ef;color:#203c32;font:18px/1.6 system-ui"><main style="max-width:640px;margin:15vh auto;padding:24px"><p>VIP DECOR DESIGN</p><h1>Эта страница больше не доступна</h1><p>Посмотрите актуальные ткани, шторы и карнизы в нашем каталоге.</p><p><a href="/catalog">Перейти в каталог</a> · <a href="/">На главную</a></p></main></body></html>',
+          { "Content-Type": MIME_TYPES[".html"], "X-Robots-Tag": "noindex, follow" });
+        return true;
+      }
       if (path === "/data/site-content.json") {
         const content = await cmsService.getPublicContent();
         reply(request, response, 200, JSON.stringify(content), {
@@ -184,7 +195,14 @@ export async function createSiteHandler(options = {}) {
         });
         return true;
       }
-      if (path === "/sitemap.xml") {
+      const aliases = { "/fabrics": "/tkani", "/furnitura": "/fyrnityra", "/privacy": "/popd", "/studio": "/company", "/shop": "/catalog", "/curtains": "/", "/projects/quiet-living-room": "/projects" };
+      if (aliases[path]) {
+        const query = (request.url || "").includes("?") ? request.url.slice(request.url.indexOf("?")) : "";
+        reply(request, response, 301, "", { Location: aliases[path] + query });
+        return true;
+      }
+      // The old Tilda sitemap is still known to crawlers. Keep it valid too.
+      if (path === "/sitemap.xml" || path === "/sitemap-store.xml") {
         const [content, blog] = await Promise.all([
           cmsService.getPublicContent(),
           cmsService.getPublicBlog(),
@@ -234,6 +252,26 @@ export async function createSiteHandler(options = {}) {
         if (!["ENOENT", "ENOTDIR"].includes(error.code)) throw error;
       }
       if (info?.isFile()) {
+        const image = /^image\//.test(MIME_TYPES[extname(file).toLowerCase()] || "");
+        const imageHeaders = image ? {
+          "ETag": `W/"${info.size.toString(16)}-${info.mtimeMs.toString(16)}"`,
+          "Last-Modified": info.mtime.toUTCString(),
+          "Cache-Control": path.startsWith("/assets/")
+            ? "public, max-age=31536000, immutable"
+            : "public, max-age=604800",
+        } : {};
+        if (image) {
+          const tags = request.headers["if-none-match"];
+          const modifiedSince = request.headers["if-modified-since"];
+          const unchanged = tags !== undefined
+            ? tags.split(",").some((tag) => tag.trim() === "*" || tag.trim().replace(/^W\//, "") === imageHeaders.ETag.replace(/^W\//, ""))
+            : modifiedSince && Math.floor(info.mtimeMs / 1000) <= Math.floor(Date.parse(modifiedSince) / 1000);
+          if (unchanged) {
+            response.writeHead(304, imageHeaders);
+            response.end();
+            return true;
+          }
+        }
         const bytes = await readFile(file);
         reply(request, response, 200, bytes, {
           "Content-Type":
@@ -242,6 +280,7 @@ export async function createSiteHandler(options = {}) {
           "Cache-Control": path.startsWith("/assets/")
             ? "public, max-age=31536000, immutable"
             : "no-cache",
+          ...imageHeaders,
           ...(admin ? { "X-Robots-Tag": "noindex, nofollow" } : {}),
         });
         return true;
@@ -254,21 +293,22 @@ export async function createSiteHandler(options = {}) {
         );
       }
       if (
-        (info?.isDirectory() && path !== "/") ||
+        (info?.isDirectory() && path !== "/" && !admin) ||
         (extname(path) && !knownHtmlPage)
       ) {
         reply(request, response, 404, "Файл не найден.");
         return true;
       }
+      const page = admin ? null : publicPageHead(path, template, await cmsService.getPublicContent());
       const html = admin
         ? template
             .replace(/<meta\s+[^>]*name=["']robots["'][^>]*>/gi, "")
             .replace(
               "</head>",
-              '<meta name="robots" content="noindex, nofollow">\n</head>',
+              '<meta name="robots" content="noindex, nofollow"><link rel="manifest" href="/admin/manifest.webmanifest"><link rel="apple-touch-icon" href="/admin/icon-192.png"><meta name="theme-color" content="#2d4b3e">\n</head>',
             )
-        : template;
-      reply(request, response, 200, html, {
+        : page.html;
+      reply(request, response, page?.status || 200, html, {
         "Content-Type": MIME_TYPES[".html"],
         ...(admin ? { "X-Robots-Tag": "noindex, nofollow" } : {}),
       });

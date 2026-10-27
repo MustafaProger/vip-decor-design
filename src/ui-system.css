@@ -213,14 +213,44 @@ body .desktop-nav a:active {
   transform: scale(0.97);
   transition-duration: 80ms;
 }
-/* Flat, opaque navigation panel. */
+/* Mobile navigation uses the same paper, forest and rounded controls as the header. */
 body .menu-dialog {
-  background: #faf9f6;
+  width: min(440px, calc(100% - 24px));
+  max-height: calc(100dvh - 24px);
+  margin: auto;
+  padding: 20px;
+  overflow: hidden;
+  background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
+}
+body .menu-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+body .menu-heading {
+  flex-shrink: 0;
+  padding: 0 52px 16px 4px;
+}
+body .menu-heading .eyebrow {
+  margin: 0 0 6px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+}
+body .menu-heading h2 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.1;
+}
+body .menu-content {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px;
+  scroll-padding-block: 4px;
 }
 body .menu-dialog::backdrop {
   background: rgb(16 32 27 / 46%);
@@ -228,16 +258,72 @@ body .menu-dialog::backdrop {
   backdrop-filter: none;
 }
 body .menu-dialog nav a {
-  padding-inline: 14px;
-  border-radius: 0;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  font-size: 17px;
   background: transparent;
   box-shadow: none;
+  transition: background-color 180ms var(--ease);
 }
 body .menu-dialog nav a:hover,
 body .menu-dialog nav a.active {
   color: var(--forest);
   background: #e4eae4;
   box-shadow: none;
+}
+body .menu-discuss {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 16px;
+}
+body .menu-contacts {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+body .menu-contact-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+body .menu-contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 15px;
+}
+body .menu-messengers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+body .menu-messengers a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 180ms var(--ease);
+}
+body .menu-messengers a:hover {
+  background: #e4eae4;
+}
+body .menu-messengers a:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 @media (prefers-reduced-motion: reduce) {
   body .desktop-nav a {

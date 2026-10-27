@@ -1,4 +1,4 @@
-/** Rates confirmed by the owner on 2026-10-11. */
+/** Rates confirmed by the owner on 2026-10-12. */
 export const FABRICS = [
   { value: 950, label: "Эконом" },
   { value: 2950, label: "Средний" },
@@ -14,7 +14,7 @@ export const MOUNTS = [
   { value: "tape", price: 250, label: "Лента" },
   { value: "narrow-tape", price: 150, label: "Узкая лента" },
   { value: "eyelet-tape", price: 250, label: "Лента люверсная" },
-  { value: "eyelet", price: 1080, label: "Люверс" },
+  { value: "eyelet", price: 280, label: "Люверс с установкой" },
   { value: "loops", price: 600, label: "Петли" },
   { value: "velcro", price: 350, label: "Липучка" },
 ] as const;
@@ -24,14 +24,18 @@ export interface CalculatorInput {
   sewing: number;
   mount: string;
   width: number;
+  sewingLength: number;
+  eyeletCount: number;
 }
 
-// The published range's invalid value="метр" resolves to 4 in the browser.
+// Owner example: 6 × 950 + 6 × 150 + 15 × 220 = 9 900 ₽.
 export const DEFAULT_INPUT: CalculatorInput = {
   fabric: 950,
-  sewing: 250,
-  mount: "tape",
-  width: 4,
+  sewing: 220,
+  mount: "narrow-tape",
+  width: 6,
+  sewingLength: 15,
+  eyeletCount: 1,
 };
 
 export function calculateCurtains({
@@ -39,6 +43,8 @@ export function calculateCurtains({
   sewing,
   mount,
   width,
+  sewingLength,
+  eyeletCount,
 }: CalculatorInput): number {
   if (
     !FABRICS.some((item) => item.value === fabric) ||
@@ -46,18 +52,21 @@ export function calculateCurtains({
     !MOUNTS.some((item) => item.value === mount) ||
     !Number.isInteger(width) ||
     width < 1 ||
-    width > 6
+    width > 6 ||
+    !Number.isFinite(sewingLength) || sewingLength <= 0 ||
+    !Number.isSafeInteger(eyeletCount) || eyeletCount < 1
   ) {
     throw new RangeError(
-      "Выберите опубликованные тарифы и ширину от 1 до 6 метров.",
+      "Выберите тарифы, метраж ткани от 1 до 6 м, положительную длину строчки и целое количество люверсов.",
     );
   }
   const mounting = MOUNTS.find((item) => item.value === mount)!;
-  return Math.round((fabric + sewing + mounting.price) * width * 10) / 10;
+  const mountQuantity = mount === "eyelet" ? eyeletCount : width;
+  return Math.round((fabric * width + sewing * sewingLength + mounting.price * mountQuantity) * 100) / 100;
 }
 
 export const formatPrice = (amount: number) =>
-  new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 1 }).format(amount);
+  new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 2 }).format(amount);
 
 export function calculateCurtainsRange(input: CalculatorInput) {
   const min = calculateCurtains(input);

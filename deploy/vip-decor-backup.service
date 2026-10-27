@@ -1,0 +1,6 @@
+[Unit]
+Description=VIP Decor consistent runtime backup
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/vip-decor-backup
+UMask=0077

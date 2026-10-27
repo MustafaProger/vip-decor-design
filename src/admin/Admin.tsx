@@ -27,6 +27,7 @@ import {
   X,
 } from "lucide-react";
 import Auth from "./Auth";
+import { PushSettings } from "./PushSettings";
 import { CMSApiError, cmsRequest } from "./api";
 import { Badge } from "./Fields";
 import { InquiryDetail } from "./InquiryDetail";
@@ -103,6 +104,17 @@ export default function Admin() {
   const [category, setCategory] = useState("all");
   const [page, setPage] = useState(1);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [inquiryLink, setInquiryLink] = useState(() =>
+    new URLSearchParams(window.location.search).get("inquiry"),
+  );
+  useEffect(() => {
+    if (document.querySelector('link[rel="manifest"]')) return;
+    const manifest = document.createElement("link");
+    manifest.rel = "manifest";
+    manifest.href = "/admin/manifest.webmanifest";
+    document.head.append(manifest);
+    return () => manifest.remove();
+  }, []);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const actionLock = useRef(false);
   const dirty =
@@ -178,6 +190,19 @@ export default function Admin() {
   useEffect(() => {
     if (session?.authenticated) void loadData();
   }, [session?.authenticated, loadData]);
+
+  useEffect(() => {
+    if (!inquiryLink || !content || loading || !session?.authenticated) return;
+    const found = inquiries.find((item) => item.id === inquiryLink);
+    setTab("inquiries");
+    if (found) {
+      const item = copy(found);
+      setEditor({ kind: "inquiries", item });
+      setBaseline(JSON.stringify(item));
+    } else
+      setError("Заявка из уведомления не найдена. Обновите список заявок.");
+    setInquiryLink(null);
+  }, [inquiryLink, content, inquiries, loading, session?.authenticated]);
 
   function canLeave() {
     return (
@@ -464,7 +489,7 @@ export default function Admin() {
   const newInquiries = inquiries.filter((item) => item.status === "new");
   const activeTab = tabs.find((entry) => entry.id === tab)!;
   const titles: Record<Tab, string> = {
-    overview: "Всё важное — под рукой",
+    overview: "Обзор",
     posts: "Статьи",
     products: "Каталог товаров",
     inquiries: "Заявки клиентов",
@@ -515,7 +540,10 @@ export default function Admin() {
   return (
     <div className="cms-root">
       <div className="cms-layout" inert={reauth || undefined}>
-        <aside className={`cms-sidebar ${menuOpen ? "is-open" : ""}`}>
+        <aside
+          id="cms-navigation"
+          className={`cms-sidebar ${menuOpen ? "is-open" : ""}`}
+        >
           <a href="/" target="_blank" rel="noreferrer" className="cms-brand">
             <span className="cms-brand-monogram">V.</span>
             <div>
@@ -533,6 +561,7 @@ export default function Admin() {
               <button
                 key={id}
                 className={`cms-nav-item ${tab === id ? "is-active" : ""}`}
+                title={label}
                 aria-label={label}
                 aria-current={tab === id ? "page" : undefined}
                 onClick={() => switchTab(id)}
@@ -583,6 +612,7 @@ export default function Admin() {
                 ref={menuButtonRef}
                 aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
                 aria-expanded={menuOpen}
+                aria-controls="cms-navigation"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
                 {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -592,10 +622,13 @@ export default function Admin() {
                 <strong>{activeTab.label}</strong>
               </span>
             </div>
-            <span className="cms-topbar-site">
-              <i />
-              vip2d.ru
-            </span>
+            <div className="cms-inline">
+              <PushSettings token={session.csrfToken} />
+              <span className="cms-topbar-site">
+                <i />
+                vip2d.ru
+              </span>
+            </div>
           </header>
           <main className="cms-main">
             <div className="cms-page-heading">
@@ -668,7 +701,7 @@ export default function Admin() {
                 ) : (
                   <>
                     <button
-                      className="cms-icon-button cms-refresh"
+                      className="cms-button cms-secondary cms-refresh"
                       aria-label="Обновить данные"
                       disabled={loading}
                       onClick={() => void loadData()}
@@ -677,6 +710,7 @@ export default function Admin() {
                         className={loading ? "cms-spin" : ""}
                         size={18}
                       />
+                      <span>Обновить</span>
                     </button>
                     {(tab === "posts" || tab === "products") && (
                       <button
@@ -998,8 +1032,8 @@ export default function Admin() {
                             </h2>
                             <p>
                               Проверяйте раздел «Заявки», чтобы не пропустить
-                              новый проект. Почтовые уведомления подключим
-                              позже.
+                              новый проект. Отмечайте статус и сохраняйте итоги
+                              общения с клиентом.
                             </p>
                             <MessageSquare size={48} strokeWidth={1} />
                           </section>
@@ -1007,111 +1041,203 @@ export default function Admin() {
                       </div>
                     </>
                   ) : (
-                    <section className="cms-card cms-list-card">
-                      <div className="cms-toolbar">
-                        <label className="cms-search">
-                          <Search size={18} />
-                          <input
-                            aria-label="Поиск"
-                            type="search"
-                            value={search}
-                            placeholder={
-                              tab === "inquiries"
-                                ? "Имя, телефон или текст заявки…"
-                                : tab === "products"
-                                  ? "Название или артикул…"
-                                  : "Найти статью…"
-                            }
-                            onChange={(event) => {
-                              setSearch(event.target.value);
-                              setPage(1);
-                            }}
-                          />
-                        </label>
-                        <select
-                          aria-label="Фильтр по статусу"
-                          value={status}
-                          onChange={(event) => {
-                            setStatus(event.target.value);
-                            setPage(1);
-                          }}
+                    <>
+                      {tab === "inquiries" && (
+                        <div
+                          className="cms-status-tabs"
+                          role="group"
+                          aria-label="Статус заявок"
                         >
-                          <option value="all">Все статусы</option>
-                          {Object.entries(
-                            tab === "inquiries"
-                              ? inquiryLabels
-                              : publicationLabels,
-                          ).map(([value, label]) => (
-                            <option key={value} value={value}>
+                          {Object.entries({
+                            all: "Все заявки",
+                            ...inquiryLabels,
+                          }).map(([value, label]) => (
+                            <button
+                              key={value}
+                              aria-pressed={status === value}
+                              onClick={() => {
+                                setStatus(value);
+                                setPage(1);
+                              }}
+                            >
                               {label}
-                            </option>
+                            </button>
                           ))}
-                        </select>
-                        {tab !== "inquiries" && (
-                          <select
-                            aria-label="Фильтр по категории"
-                            value={category}
-                            onChange={(event) => {
-                              setCategory(event.target.value);
-                              setPage(1);
-                            }}
-                          >
-                            <option value="all">
+                        </div>
+                      )}
+                      <section className="cms-card cms-list-card">
+                        <div className="cms-toolbar">
+                          <label className="cms-search">
+                            <Search size={18} />
+                            <input
+                              aria-label="Поиск"
+                              type="search"
+                              value={search}
+                              placeholder={
+                                tab === "inquiries"
+                                  ? "Имя, телефон или текст заявки…"
+                                  : tab === "products"
+                                    ? "Название или артикул…"
+                                    : "Найти статью…"
+                              }
+                              onChange={(event) => {
+                                setSearch(event.target.value);
+                                setPage(1);
+                              }}
+                            />
+                          </label>
+                          {tab !== "inquiries" && (
+                            <select
+                              aria-label="Фильтр по статусу"
+                              value={status}
+                              onChange={(event) => {
+                                setStatus(event.target.value);
+                                setPage(1);
+                              }}
+                            >
+                              <option value="all">Все статусы</option>
+                              {Object.entries(publicationLabels).map(
+                                ([value, label]) => (
+                                  <option key={value} value={value}>
+                                    {label}
+                                  </option>
+                                ),
+                              )}
+                            </select>
+                          )}
+                          {tab !== "inquiries" && (
+                            <select
+                              aria-label="Фильтр по категории"
+                              value={category}
+                              onChange={(event) => {
+                                setCategory(event.target.value);
+                                setPage(1);
+                              }}
+                            >
+                              <option value="all">
+                                {tab === "posts"
+                                  ? "Все рубрики"
+                                  : "Все категории"}
+                              </option>
                               {tab === "posts"
-                                ? "Все рубрики"
-                                : "Все категории"}
-                            </option>
-                            {tab === "posts"
-                              ? content.blogCategories.map((item) => (
-                                  <option key={item.slug} value={item.slug}>
-                                    {item.title}
-                                  </option>
-                                ))
-                              : content.categories.map((item) => (
-                                  <option key={item.path} value={item.path}>
-                                    {item.title}
-                                  </option>
-                                ))}
-                          </select>
-                        )}
-                      </div>
-                      <div className="cms-results-count">
-                        Найдено: {filtered.length}
-                      </div>
-                      {pageItems.length ? (
-                        <div className="cms-table-scroll">
-                          <table className="cms-table">
-                            <thead>
-                              <tr>
-                                <th>
-                                  {tab === "inquiries"
-                                    ? "Клиент"
-                                    : tab === "posts"
-                                      ? "Статья"
-                                      : "Товар"}
-                                </th>
-                                <th>
-                                  {tab === "inquiries"
-                                    ? "Интерес"
-                                    : "Категория"}
-                                </th>
-                                <th>
-                                  {tab === "products"
-                                    ? "Цена"
-                                    : tab === "posts"
-                                      ? "Публикация"
-                                      : "Получена"}
-                                </th>
-                                <th>Статус</th>
-                                <th>
-                                  <span className="cms-sr-only">Действия</span>
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {pageItems.map((entry) => {
-                                if (tab === "inquiries") {
-                                  const item = entry as CMSInquiry;
+                                ? content.blogCategories.map((item) => (
+                                    <option key={item.slug} value={item.slug}>
+                                      {item.title}
+                                    </option>
+                                  ))
+                                : content.categories.map((item) => (
+                                    <option key={item.path} value={item.path}>
+                                      {item.title}
+                                    </option>
+                                  ))}
+                            </select>
+                          )}
+                        </div>
+                        <div className="cms-results-count">
+                          Найдено: {filtered.length}
+                        </div>
+                        {pageItems.length ? (
+                          <div className="cms-table-scroll">
+                            <table className="cms-table">
+                              <thead>
+                                <tr>
+                                  <th>
+                                    {tab === "inquiries"
+                                      ? "Клиент"
+                                      : tab === "posts"
+                                        ? "Статья"
+                                        : "Товар"}
+                                  </th>
+                                  <th>
+                                    {tab === "inquiries"
+                                      ? "Интерес"
+                                      : "Категория"}
+                                  </th>
+                                  <th>
+                                    {tab === "products"
+                                      ? "Цена"
+                                      : tab === "posts"
+                                        ? "Публикация"
+                                        : "Получена"}
+                                  </th>
+                                  <th>Статус</th>
+                                  <th>
+                                    <span className="cms-sr-only">
+                                      Действия
+                                    </span>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {pageItems.map((entry) => {
+                                  if (tab === "inquiries") {
+                                    const item = entry as CMSInquiry;
+                                    return (
+                                      <tr key={item.id}>
+                                        <td>
+                                          <button
+                                            className="cms-table-title"
+                                            onClick={() =>
+                                              openEditor({
+                                                kind: "inquiries",
+                                                item,
+                                              })
+                                            }
+                                          >
+                                            <span className="cms-avatar">
+                                              {item.name
+                                                ?.slice(0, 1)
+                                                .toUpperCase() || "К"}
+                                            </span>
+                                            <span>
+                                              <strong>
+                                                {item.name || "Без имени"}
+                                              </strong>
+                                              <small>{item.phone}</small>
+                                            </span>
+                                          </button>
+                                        </td>
+                                        <td className="cms-table-context">
+                                          {item.context || "Обращение с сайта"}
+                                        </td>
+                                        <td className="cms-table-date">
+                                          {formatDate(
+                                            item.createdAt || item.receivedAt,
+                                          )}
+                                        </td>
+                                        <td>
+                                          <Badge status={item.status}>
+                                            {inquiryLabels[item.status]}
+                                          </Badge>
+                                        </td>
+                                        <td>
+                                          <button
+                                            className="cms-icon-button"
+                                            aria-label={`Открыть заявку ${item.name || item.id}`}
+                                            onClick={() =>
+                                              openEditor({
+                                                kind: "inquiries",
+                                                item,
+                                              })
+                                            }
+                                          >
+                                            <ChevronRight size={18} />
+                                          </button>
+                                        </td>
+                                      </tr>
+                                    );
+                                  }
+                                  const item = entry as CMSPost | CMSProduct;
+                                  const isPost = tab === "posts";
+                                  const src = isPost
+                                    ? (item as CMSPost).image.src
+                                    : (item as CMSProduct).image;
+                                  const categoryLabel = isPost
+                                    ? content.blogCategories.find(
+                                        (category) =>
+                                          category.slug === item.category,
+                                      )?.title || item.category
+                                    : item.category;
                                   return (
                                     <tr key={item.id}>
                                       <td>
@@ -1119,46 +1245,60 @@ export default function Admin() {
                                           className="cms-table-title"
                                           onClick={() =>
                                             openEditor({
-                                              kind: "inquiries",
+                                              kind: tab,
                                               item,
-                                            })
+                                            } as Editor)
                                           }
                                         >
-                                          <span className="cms-avatar">
-                                            {item.name
-                                              ?.slice(0, 1)
-                                              .toUpperCase() || "К"}
-                                          </span>
+                                          {src ? (
+                                            <img
+                                              src={src}
+                                              alt=""
+                                              loading="lazy"
+                                            />
+                                          ) : (
+                                            <span className="cms-table-image-empty">
+                                              {isPost ? (
+                                                <FileText size={20} />
+                                              ) : (
+                                                <Package size={20} />
+                                              )}
+                                            </span>
+                                          )}
                                           <span>
-                                            <strong>
-                                              {item.name || "Без имени"}
-                                            </strong>
-                                            <small>{item.phone}</small>
+                                            <strong>{item.title}</strong>
+                                            <small>
+                                              {isPost
+                                                ? `/blog/${(item as CMSPost).slug}`
+                                                : `Арт. ${(item as CMSProduct).sku || "—"}`}
+                                            </small>
                                           </span>
                                         </button>
                                       </td>
-                                      <td className="cms-table-context">
-                                        {item.context || "Обращение с сайта"}
-                                      </td>
-                                      <td className="cms-table-date">
-                                        {formatDate(
-                                          item.createdAt || item.receivedAt,
-                                        )}
+                                      <td>{categoryLabel}</td>
+                                      <td>
+                                        {isPost
+                                          ? formatDate(
+                                              (item as CMSPost).datePublished,
+                                            )
+                                          : formatMoney(
+                                              (item as CMSProduct).price,
+                                            )}
                                       </td>
                                       <td>
                                         <Badge status={item.status}>
-                                          {inquiryLabels[item.status]}
+                                          {publicationLabels[item.status]}
                                         </Badge>
                                       </td>
                                       <td>
                                         <button
                                           className="cms-icon-button"
-                                          aria-label={`Открыть заявку ${item.name || item.id}`}
+                                          aria-label={`Редактировать ${item.title}`}
                                           onClick={() =>
                                             openEditor({
-                                              kind: "inquiries",
+                                              kind: tab,
                                               item,
-                                            })
+                                            } as Editor)
                                           }
                                         >
                                           <ChevronRight size={18} />
@@ -1166,153 +1306,74 @@ export default function Admin() {
                                       </td>
                                     </tr>
                                   );
-                                }
-                                const item = entry as CMSPost | CMSProduct;
-                                const isPost = tab === "posts";
-                                const src = isPost
-                                  ? (item as CMSPost).image.src
-                                  : (item as CMSProduct).image;
-                                const categoryLabel = isPost
-                                  ? content.blogCategories.find(
-                                      (category) =>
-                                        category.slug === item.category,
-                                    )?.title || item.category
-                                  : item.category;
-                                return (
-                                  <tr key={item.id}>
-                                    <td>
-                                      <button
-                                        className="cms-table-title"
-                                        onClick={() =>
-                                          openEditor({
-                                            kind: tab,
-                                            item,
-                                          } as Editor)
-                                        }
-                                      >
-                                        {src ? (
-                                          <img
-                                            src={src}
-                                            alt=""
-                                            loading="lazy"
-                                          />
-                                        ) : (
-                                          <span className="cms-table-image-empty">
-                                            {isPost ? (
-                                              <FileText size={20} />
-                                            ) : (
-                                              <Package size={20} />
-                                            )}
-                                          </span>
-                                        )}
-                                        <span>
-                                          <strong>{item.title}</strong>
-                                          <small>
-                                            {isPost
-                                              ? `/blog/${(item as CMSPost).slug}`
-                                              : `Арт. ${(item as CMSProduct).sku || "—"}`}
-                                          </small>
-                                        </span>
-                                      </button>
-                                    </td>
-                                    <td>{categoryLabel}</td>
-                                    <td>
-                                      {isPost
-                                        ? formatDate(
-                                            (item as CMSPost).datePublished,
-                                          )
-                                        : formatMoney(
-                                            (item as CMSProduct).price,
-                                          )}
-                                    </td>
-                                    <td>
-                                      <Badge status={item.status}>
-                                        {publicationLabels[item.status]}
-                                      </Badge>
-                                    </td>
-                                    <td>
-                                      <button
-                                        className="cms-icon-button"
-                                        aria-label={`Редактировать ${item.title}`}
-                                        onClick={() =>
-                                          openEditor({
-                                            kind: tab,
-                                            item,
-                                          } as Editor)
-                                        }
-                                      >
-                                        <ChevronRight size={18} />
-                                      </button>
-                                    </td>
-                                  </tr>
-                                );
-                              })}
-                            </tbody>
-                          </table>
-                        </div>
-                      ) : (
-                        <div className="cms-empty">
-                          <Search size={30} />
-                          <h3>
-                            {search || status !== "all" || category !== "all"
-                              ? "Ничего не найдено"
-                              : tab === "inquiries"
-                                ? "Пока нет заявок"
-                                : "Здесь пока пусто"}
-                          </h3>
-                          <p>
-                            {search || status !== "all" || category !== "all"
-                              ? "Измените поисковый запрос или сбросьте фильтры."
-                              : tab === "inquiries"
-                                ? "Обращения с сайта появятся здесь."
-                                : "Добавьте первую запись, чтобы начать."}
-                          </p>
-                          {(search ||
-                            status !== "all" ||
-                            category !== "all") && (
-                            <button
-                              className="cms-button cms-secondary"
-                              onClick={() => {
-                                setSearch("");
-                                setStatus("all");
-                                setCategory("all");
-                                setPage(1);
-                              }}
-                            >
-                              Сбросить фильтры
-                            </button>
-                          )}
-                        </div>
-                      )}
-                      <div className="cms-pagination">
-                        <span>
-                          {filtered.length
-                            ? `${(currentPage - 1) * PAGE_SIZE + 1}–${Math.min(currentPage * PAGE_SIZE, filtered.length)} из ${filtered.length}`
-                            : "0 записей"}
-                        </span>
-                        <div className="cms-inline">
-                          <button
-                            className="cms-icon-button"
-                            aria-label="Предыдущая страница"
-                            disabled={currentPage === 1}
-                            onClick={() => setPage(currentPage - 1)}
-                          >
-                            <ChevronLeft size={18} />
-                          </button>
+                                })}
+                              </tbody>
+                            </table>
+                          </div>
+                        ) : (
+                          <div className="cms-empty">
+                            <Search size={30} />
+                            <h3>
+                              {search || status !== "all" || category !== "all"
+                                ? "Ничего не найдено"
+                                : tab === "inquiries"
+                                  ? "Пока нет заявок"
+                                  : "Здесь пока пусто"}
+                            </h3>
+                            <p>
+                              {search || status !== "all" || category !== "all"
+                                ? "Измените поисковый запрос или сбросьте фильтры."
+                                : tab === "inquiries"
+                                  ? "Обращения с сайта появятся здесь."
+                                  : "Добавьте первую запись, чтобы начать."}
+                            </p>
+                            {(search ||
+                              status !== "all" ||
+                              category !== "all") && (
+                              <button
+                                className="cms-button cms-secondary"
+                                onClick={() => {
+                                  setSearch("");
+                                  setStatus("all");
+                                  setCategory("all");
+                                  setPage(1);
+                                }}
+                              >
+                                Сбросить фильтры
+                              </button>
+                            )}
+                          </div>
+                        )}
+                        <div className="cms-pagination">
                           <span>
-                            {currentPage} / {totalPages}
+                            {filtered.length
+                              ? `${(currentPage - 1) * PAGE_SIZE + 1}–${Math.min(currentPage * PAGE_SIZE, filtered.length)} из ${filtered.length}`
+                              : "0 записей"}
                           </span>
-                          <button
-                            className="cms-icon-button"
-                            aria-label="Следующая страница"
-                            disabled={currentPage === totalPages}
-                            onClick={() => setPage(currentPage + 1)}
-                          >
-                            <ChevronRight size={18} />
-                          </button>
+                          <div className="cms-inline">
+                            <button
+                              className="cms-icon-button"
+                              aria-label="Предыдущая страница"
+                              disabled={currentPage === 1}
+                              onClick={() => setPage(currentPage - 1)}
+                            >
+                              <ChevronLeft size={18} />
+                            </button>
+                            <span>
+                              {currentPage} / {totalPages}
+                            </span>
+                            <button
+                              className="cms-icon-button"
+                              aria-label="Следующая страница"
+                              disabled={currentPage === totalPages}
+                              onClick={() => setPage(currentPage + 1)}
+                            >
+                              <ChevronRight size={18} />
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    </section>
+                      </section>
+                    </>
                   )}
                 </>
               )

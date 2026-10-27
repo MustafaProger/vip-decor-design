@@ -22,6 +22,7 @@ import {
   ProductCard,
 } from "../components/Primitives";
 import Modal from "../components/Modal";
+import GalleryPreview from "../components/GalleryPreview";
 import { money, type Product as ProductData } from "../lib/content";
 import {
   getDefaultSelection,
@@ -179,32 +180,33 @@ function ProductDetails({ product }: { product: ProductData }) {
           aria-label={`Фотографии ${product.title}`}
         >
           <div className="pd-main-image">
-            <Picture
-              key={gallery[activeImage] || "missing"}
-              src={gallery[activeImage]}
-              alt={`${product.title} — фотография ${activeImage + 1}`}
-              eager
-            />
-            <FavoriteButton
-              id={product.id}
+            <GalleryPreview
+              images={gallery}
               title={product.title}
-              className="pd-favorite"
-            />
-            {gallery.length > 0 && (
-              <button
-                className="pd-zoom"
-                type="button"
-                onClick={() => setZoomOpen(true)}
-                aria-label={`Увеличить фотографию ${product.title}`}
-              >
-                <Expand size={19} />
-              </button>
-            )}
-            {gallery.length > 1 && (
-              <span className="pd-image-count">
-                {activeImage + 1} / {gallery.length}
-              </span>
-            )}
+              active={activeImage}
+              onChange={setActiveImage}
+            >
+              <FavoriteButton
+                id={product.id}
+                title={product.title}
+                className="pd-favorite"
+              />
+              {gallery.length > 0 && (
+                <button
+                  className="pd-zoom"
+                  type="button"
+                  onClick={() => setZoomOpen(true)}
+                  aria-label={`Увеличить фотографию ${product.title}`}
+                >
+                  <Expand size={19} />
+                </button>
+              )}
+              {gallery.length > 1 && (
+                <span className="pd-image-count">
+                  {activeImage + 1} / {gallery.length}
+                </span>
+              )}
+            </GalleryPreview>
           </div>
           {gallery.length > 1 && (
             <div className="pd-thumbnails" aria-label="Выбрать фотографию">

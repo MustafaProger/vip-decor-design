@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import reviewSeed from "../data/yandex-reviews.json";
+import beddingPolicy from "../data/bedding-content.json";
+const beddingReview = new RegExp(beddingPolicy.reviewPattern, "i");
+const relevantReview = (review: { excerpt: string; fullText?: string }) => !beddingReview.test([review.excerpt, review.fullText].filter(Boolean).join(" "));
 
 export type ReviewPhoto = {
   src: string;
@@ -127,7 +130,7 @@ export function parseReviewData(value: unknown): ReviewData | null {
   )
     return null;
   const validReviews = reviews as Review[];
-  if (validReviews.length !== value.reviewCount) return null;
+  if (validReviews.length !== (value.publishedReviewCount ?? value.reviewCount)) return null;
   if (
     new Set(validReviews.map((review) => review.id)).size !==
     validReviews.length
@@ -139,11 +142,12 @@ export function parseReviewData(value: unknown): ReviewData | null {
     rating: value.rating,
     ratingCount: value.ratingCount,
     reviewCount: value.reviewCount,
-    reviews: validReviews,
+    reviews: validReviews.filter(relevantReview),
+    // Owner-confirmed experience must not be replaced by an older reviews cache.
     businessExperience: {
-      years: experience.years,
-      isMinimum: experience.isMinimum,
-      sourceUrl: experience.sourceUrl,
+      years: reviewSeed.businessExperience.years,
+      isMinimum: reviewSeed.businessExperience.isMinimum,
+      sourceUrl: reviewSeed.businessExperience.sourceUrl,
     },
   };
 }
@@ -159,7 +163,7 @@ export function sortReviewsPhotosFirst(reviews: Review[]): Review[] {
     .map(({ review }) => review);
 }
 
-let cachedData: ReviewData = reviewSeed;
+let cachedData: ReviewData = { ...reviewSeed, reviews: reviewSeed.reviews.filter(relevantReview) };
 
 export function useReviewsData(): ReviewData {
   const [data, setData] = useState<ReviewData>(() => cachedData);

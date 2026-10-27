@@ -116,13 +116,7 @@ export default function Information({ page }: { page: SourcePage }) {
   );
   const category = data.categories.find((c) => c.path === page.path);
   if (category && !category.sourceHasCatalog) {
-    const relatedPaths = ["/podyshki", "/pokrivala"].includes(page.path)
-      ? [
-          "/tkani",
-          "/kisti",
-          page.path === "/podyshki" ? "/pokrivala" : "/podyshki",
-        ]
-      : ["/fyrnityra", "/shnypki"].includes(page.path)
+    const relatedPaths = ["/fyrnityra", "/shnypki"].includes(page.path)
         ? ["/karnizi", "/kisti", "/tyl"]
         : ["/tkani", "/tyl", "/karnizi"];
     return (
@@ -229,10 +223,10 @@ export function Company() {
   const { data, discuss } = useStore();
   // Business figures supplied by the owner, independent of the online inventory.
   const facts = [
-    { value: "20 120", label: "Довольных клиентов", Icon: UsersRound },
+    { value: "5 000", suffix: "+", label: "Довольных клиентов", Icon: UsersRound },
     { value: "10 000", label: "Тканей в наличии", Icon: Layers3 },
     { value: "120", label: "Лучших мировых брендов", Icon: Sparkles },
-    { value: "21", label: "Год успешной работы", Icon: Award },
+    { value: "23", label: "Года опыта", Icon: Award },
   ];
   const services = [
     {
@@ -246,14 +240,12 @@ export function Company() {
       action: "Выбрать оформление",
     },
     {
-      title: "Домашний текстиль",
-      text: "Покрывала, мебельные чехлы, подушки и декоративные валики. Детали, которые собирают интерьер воедино.",
-      image: data.gallery.find((photo) =>
-        photo.src.endsWith("bdf7eaa4894d2a9641.webp"),
-      )?.src,
-      alt: "Бирюзовое покрывало и подушки — работа VIP Decor Design",
-      to: "/projects",
-      action: "Отзывы клиентов",
+      title: "Подбор тканей",
+      text: "Подберём цвет, фактуру и плотность ткани для вашей комнаты. Поможем сочетать портьеры и тюль.",
+      image: data.categories.find((category) => category.path === "/tkani")?.image,
+      alt: "Ткани для штор VIP Decor Design",
+      to: "/tkani",
+      action: "Посмотреть ткани",
     },
     {
       title: "Оформление окна",
@@ -273,8 +265,8 @@ export function Company() {
           <p className="eyebrow">КОМПАНИЯ VIP DECOR DESIGN</p>
           <h1>О компании</h1>
           <p>
-            Шьём шторы и домашний текстиль в Москве. Подбираем ткани,
-            изготавливаем и устанавливаем изделия.
+            Работаем с 2003 года. Шьём шторы и домашний текстиль в Москве. Подбираем
+            ткани, изготавливаем и устанавливаем изделия. Более 5000 довольных клиентов.
           </p>
           <div className="company-intro-actions">
             <button
@@ -310,11 +302,11 @@ export function Company() {
           <h2 id="company-numbers-title">Компания в цифрах</h2>
         </Reveal>
         <div className="company-numbers-grid">
-          {facts.map(({ value, label, Icon }, index) => (
+          {facts.map(({ value, suffix, label, Icon }, index) => (
             <Reveal className="company-number" key={label} delay={index * 0.06}>
               <Icon size={23} strokeWidth={1.5} aria-hidden="true" />
               <strong>
-                <CountUp value={Number(value.replace(/\s/g, ""))} />
+                <CountUp value={Number(value.replace(/\s/g, ""))} suffix={suffix} />
               </strong>
               <span>{label}</span>
             </Reveal>

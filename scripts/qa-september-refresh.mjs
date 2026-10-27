@@ -588,7 +588,7 @@ async function runScenarios() {
     await open(page, "/company");
     await revealAndDecode(page);
     await expect(page.locator(".company-number")).toHaveCount(4);
-    for (const fact of ["20 120", "10 000", "120", "21"])
+    for (const fact of ["5 000+", "10 000", "120", "23"])
       await expect(page.locator(".company-numbers")).toContainText(fact);
     await open(page, "/");
     await revealAndDecode(page);
@@ -597,7 +597,7 @@ async function runScenarios() {
       /Обсудить мой заказ/,
     );
     return {
-      facts: ["20 120", "10 000", "120", "21"],
+      facts: ["5 000+", "10 000", "120", "23"],
       primaryAction: "Обсудить мой заказ",
       secondaryAction: "Цены на пошив",
     };

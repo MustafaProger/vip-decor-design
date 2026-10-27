@@ -1,0 +1,7 @@
+[Unit]
+Description=Finish VIP Decor TLS when DNS reaches the VPS
+After=network-online.target nginx.service
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/sbin/vip-decor-finish-tls
+TimeoutStartSec=240

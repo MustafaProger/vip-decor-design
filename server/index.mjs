@@ -1,3 +1,4 @@
+import { cleanBeddingReviews } from "./bedding-content.mjs";
 import { createServer } from "node:http";
 import { appendFile, mkdir, readFile } from "node:fs/promises";
 import { createHash, randomUUID } from "node:crypto";
@@ -5,6 +6,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { createReviewService } from "./reviews.mjs";
 import { createCmsService } from "./cms.mjs";
+import { createPushService } from "./push.mjs";
 
 const serverDirectory = dirname(fileURLToPath(import.meta.url));
 const MAX_BODY_BYTES = 16 * 1024;
@@ -189,11 +191,15 @@ export async function createInquiryServer(options = {}) {
   const allowedOrigins = new Set(
     originValues.map((origin) => origin.trim()).filter(Boolean),
   );
+  const pushService =
+    options.pushService ||
+    (await createPushService({ dataDirectory, ...options.pushOptions }));
   const cmsService =
     options.cmsService ||
     (await createCmsService({
       dataDirectory,
       allowedOrigins: [...allowedOrigins],
+      pushService,
       ...options.cmsOptions,
     }));
   const records = new Map();
@@ -238,7 +244,7 @@ export async function createInquiryServer(options = {}) {
         return;
       }
       try {
-        reply(response, 200, await reviewService.getSnapshot());
+        reply(response, 200, cleanBeddingReviews(await reviewService.getSnapshot()));
       } catch {
         failure(response, 503, "Отзывы временно недоступны.");
       }
@@ -366,6 +372,9 @@ export async function createInquiryServer(options = {}) {
           message: LOCAL_MESSAGE,
         };
         records.set(checked.requestId, { fingerprint, result });
+        void pushService
+          .scan()
+          .catch(() => console.error("Push queue scan failed"));
         return result;
       });
       queue = saved.catch(() => {});
@@ -387,6 +396,9 @@ export async function createInquiryServer(options = {}) {
   server.headersTimeout = 10000;
   server.reviewService = reviewService;
   server.cmsService = cmsService;
+  server.pushService = pushService;
+  void pushService.scan().catch(() => console.error("Push queue scan failed"));
+  server.on("close", () => pushService.close());
   server.on("close", () => cmsService.close());
   return server;
 }

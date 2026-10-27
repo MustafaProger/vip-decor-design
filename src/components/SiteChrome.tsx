@@ -8,6 +8,7 @@ import {
   Phone,
   MapPin,
   Mail,
+  MessageCircle,
 } from "lucide-react";
 import { useStore } from "../lib/store";
 import Modal from "./Modal";
@@ -128,33 +129,74 @@ export function Header() {
         title="Меню"
         className="menu-dialog"
       >
-        <p className="eyebrow">VIP DECOR DESIGN</p>
-        <h2>Меню</h2>
-        <nav aria-label="Мобильная навигация">
-          {[
-            ...nav,
-            ["/price", "Цены на пошив"],
-            ["/kakpodobrat", "Гид по тканям"],
-            ["/selection", "Подбор штор"],
-            ["/calculator", "Калькулятор"],
-            ["/contacts", "Контакты"],
-            ["/cart", "Корзина"],
-          ].map(([to, label]) => (
+        <div className="menu-heading">
+          <p className="eyebrow">VIP DECOR DESIGN</p>
+          <h2>Меню</h2>
+        </div>
+        <div className="menu-content">
+          <nav aria-label="Мобильная навигация">
+            {nav.map(([to, label]) => (
+              <Link
+                key={to}
+                to={to}
+                className={isCurrentLink(to) ? "active" : undefined}
+                aria-current={isCurrentLink(to) ? "page" : undefined}
+                onClick={() => setMenu(false)}
+              >
+                {label}
+                <ArrowUpRight size={22} />
+              </Link>
+            ))}
+          </nav>
+          <Button
+            className="menu-discuss"
+            onClick={() => {
+              setMenu(false);
+              discuss();
+            }}
+          >
+            Обсудить проект <ArrowUpRight size={18} />
+          </Button>
+          <section className="menu-contacts" aria-label="Контакты для связи">
             <Link
-              key={to}
-              to={to}
-              className={isCurrentLink(to) ? "active" : undefined}
-              aria-current={isCurrentLink(to) ? "page" : undefined}
+              className="menu-contact-heading"
+              to="/contacts"
               onClick={() => setMenu(false)}
             >
-              {label}
-              <ArrowUpRight size={22} />
+              Контакты <ArrowUpRight size={16} />
             </Link>
-          ))}
-        </nav>
-        <a className="menu-phone" href="tel:+74959693189">
-          +7 495 969 31 89
-        </a>
+            <div className="menu-contact-links">
+              {data.contacts.phones.map((phone) => (
+                <a key={phone} href={"tel:" + phone.replace(/[^+\d]/g, "")}>
+                  <Phone size={16} />
+                  {phone}
+                </a>
+              ))}
+              <a href={"mailto:" + data.contacts.email}>
+                <Mail size={16} />
+                {data.contacts.email}
+              </a>
+            </div>
+            <div className="menu-messengers">
+              {data.contacts.socials
+                .filter(({ title }) =>
+                  ["WhatsApp", "MAX", "Telegram"].includes(title),
+                )
+                .map((messenger) => (
+                  <a
+                    key={messenger.url}
+                    href={messenger.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle size={18} />
+                    {messenger.title}
+                    <ArrowUpRight size={15} />
+                  </a>
+                ))}
+            </div>
+          </section>
+        </div>
       </Modal>
     </>
   );

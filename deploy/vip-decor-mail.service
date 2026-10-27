@@ -1,0 +1,16 @@
+[Unit]
+Description=VIP Decor enquiry email notifications
+After=network-online.target vip-decor.service
+[Service]
+Type=oneshot
+User=vipdecor
+Group=vipdecor
+EnvironmentFile=/etc/vip-decor/site.env
+LoadCredential=smtp-password:/etc/vip-decor/smtp-password
+ExecStart=/usr/bin/python3 /opt/vip-decor/current/scripts/inquiry-mailer.py
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/vipdecor/runtime

@@ -17,6 +17,8 @@ docs/CONTENT_INVENTORY.md
 data/source/
 design-concept/
 vip-decor-*-kit.zip
+outputs/
+*доступы*.xlsx
 
 # Local caches, logs and environment overrides.
 .env.*
