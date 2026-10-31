@@ -386,6 +386,7 @@ export function Sitemap() {
           ["/calculator", "Калькулятор"],
           ["/company", "О компании"],
           ["/projects", "Отзывы клиентов"],
+          ["/referral", "Возврат 15% за рекомендацию"],
           ["/contacts", "Контакты"],
           ["/price", "Прайс на пошив"],
           ...data.pages.map((p) => [p.path, p.title]),

@@ -24,6 +24,7 @@ import Modal from "./components/Modal";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 const Projects = lazy(() => import("./pages/Projects"));
+const Referral = lazy(() => import("./pages/Referral"));
 import Information, { Company, Sitemap, NotFound } from "./pages/Information";
 import Cart from "./pages/Cart";
 const Contacts = lazy(() =>
@@ -178,6 +179,7 @@ function RouteContent({
   if (path === "/projects/quiet-living-room")
     return <Navigate to="/projects" replace />;
   if (path === "/projects") return <Projects />;
+  if (path === "/referral") return <Referral />;
   if (path === "/studio")
     return <Navigate to={"/company" + search + hash} replace />;
   if (path === "/company") return <Company />;

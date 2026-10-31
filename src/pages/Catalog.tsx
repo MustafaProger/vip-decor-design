@@ -32,6 +32,7 @@ import {
   productCategoryPaths,
 } from "../lib/catalog";
 import "./catalog.css";
+import ReferralPromo from "../components/ReferralPromo";
 const productColors = (p: Product) =>
   (p.properties || [])
     .filter((x) => x.name.trim().toLowerCase() === "цвет")
@@ -403,6 +404,7 @@ export default function Catalog({
           <ChevronRight size={18} />
         </button>
       </nav>
+      {!favoritesOnly && <ReferralPromo compact />}
       <div className="catalog-layout" ref={catalogLayout}>
         <aside className="filters-sidebar">
           <h2>Фильтры</h2>

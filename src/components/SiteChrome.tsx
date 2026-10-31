@@ -266,6 +266,7 @@ export function Footer() {
               <Link to="/company">О нас</Link>
               <Link to="/projects">Отзывы клиентов</Link>
               <Link to="/price">Прайс на пошив</Link>
+              <Link to="/referral">Возврат 15% за рекомендацию</Link>
               <Link to="/contacts">Контакты</Link>
             </div>
             <div>

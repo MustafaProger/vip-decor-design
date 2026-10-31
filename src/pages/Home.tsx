@@ -9,6 +9,7 @@ import { ArrowLink, Picture } from "../components/Primitives";
 import { useStore } from "../lib/store";
 import { productCategoryPaths } from "../lib/catalog";
 import "./home.css";
+import ReferralPromo from "../components/ReferralPromo";
 
 const Reviews = lazy(() => import("../components/Reviews"));
 
@@ -163,6 +164,8 @@ export default function Home() {
           <Reviews variant="preview" />
         </Suspense>
       </div>
+
+      <ReferralPromo />
 
       <RecommendedArticles />
 

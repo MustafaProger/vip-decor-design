@@ -11,6 +11,7 @@ import {
   type InquiryErrors,
 } from "../lib/inquiry";
 import { Breadcrumbs, Picture, EmptyState } from "../components/Primitives";
+import { ReferralNote } from "../components/ReferralPromo";
 export default function Cart() {
   const { cart, data, setQuantity, removeFromCart } = useStore();
   const [checkout, setCheckout] = useState(false);
@@ -380,6 +381,7 @@ export default function Cart() {
             <Link className="fine-print" to="/page13486315.html">
               Доставка и оплата
             </Link>
+            <ReferralNote />
           </aside>
         </div>
       )}

@@ -34,6 +34,7 @@ import {
 import { useStore } from "../lib/store";
 import { productDescription } from "../lib/productDescription";
 import "./product.css";
+import { ReferralNote } from "../components/ReferralPromo";
 
 export default function Product({ product }: { product: ProductData }) {
   return <ProductDetails key={product.id} product={product} />;
@@ -428,6 +429,7 @@ function ProductDetails({ product }: { product: ProductData }) {
               Рассчитать пошив <ArrowUpRight size={15} />
             </Link>
           </div>
+          <ReferralNote />
         </Reveal>
       </div>
       {(description.summary ||

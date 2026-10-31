@@ -129,6 +129,7 @@ export function renderSitemap(content, blog, origin = DEFAULT_ORIGIN) {
     "/",
     "/selection",
     "/projects",
+    "/referral",
     "/company",
     "/contacts",
     "/calculator",
