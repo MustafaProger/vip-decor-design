@@ -138,7 +138,7 @@ function ProductDetails({ product }: { product: ProductData }) {
     const edition = editions[index];
     if (edition?.uid != null) nextParams.set("editionuid", String(edition.uid));
     else nextParams.delete("editionuid");
-    setSearchParams(nextParams, { replace: true });
+    setSearchParams(nextParams, { replace: true, state: location.state });
     setQuantity((current) =>
       Math.max(
         1,

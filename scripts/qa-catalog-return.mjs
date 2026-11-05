@@ -89,6 +89,24 @@ for (const width of [1440, 390]) {
     after: filteredReturn,
     cards: await page.locator(".product-card").count(),
   });
+  await page.goto(base + "/catalog?q=" + encodeURIComponent("Cresha"));
+  const variantProduct = page.locator('.product-more[href^="/product/360082752021"]');
+  await variantProduct.waitFor();
+  await variantProduct.scrollIntoViewIfNeeded();
+  const searchUrl = page.url();
+  const searchY = await page.evaluate(() => scrollY);
+  await variantProduct.click();
+  await page.locator(".pd-layout").waitFor();
+  await page.locator(".pd-configuration select").first().selectOption("1");
+  await page.waitForURL(/editionuid=/);
+  await page.reload();
+  await page.getByRole("link", { name: "← Вернуться к каталогу", exact: true }).click();
+  await variantProduct.waitFor();
+  await page.waitForTimeout(600);
+  assert.equal(page.url(), searchUrl);
+  const searchReturn = await page.evaluate(() => scrollY);
+  assert(Math.abs(searchReturn - searchY) < 5, `variant return ${width}`);
+  results.push({ width, scenario: "search return after variant selection and reload", before: searchY, after: searchReturn });
   await page.close();
 }
 await browser.close();
