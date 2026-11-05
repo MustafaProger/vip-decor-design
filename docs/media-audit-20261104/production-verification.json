@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-05",
+  "baseUrl": "https://vip2d.ru",
+  "release": "20261105-media-scroll-variant",
+  "codeCommits": [
+    "1a73ef6",
+    "93b5db5"
+  ],
+  "publicImages": {
+    "checkedPublicImages": 495,
+    "publicHashSamples": 4,
+    "errors": []
+  },
+  "serverImages": {
+    "generatedVerified": 495,
+    "retiredAbsent": 623,
+    "buildDirectories": 2,
+    "liveReferences": 1141,
+    "retiredReferences": 0
+  },
+  "unchangedReviewMedia": 81,
+  "runtimePreservationPassed": true,
+  "browserImages": [
+    {
+      "width": 1440,
+      "id": "777748729811",
+      "images": 1,
+      "loaded": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1440,
+      "id": "225629449601",
+      "images": 6,
+      "loaded": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "id": "777748729811",
+      "images": 1,
+      "loaded": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "id": "225629449601",
+      "images": 6,
+      "loaded": true,
+      "noOverflow": true
+    },
+    {
+      "reviewPhoto": "cached",
+      "thumbnail": true,
+      "expanded": true,
+      "hideCameraHud": true
+    }
+  ],
+  "scroll": [
+    {
+      "width": 1440,
+      "before": 10661,
+      "after": 10661,
+      "explicit": 10661,
+      "cards": 72
+    },
+    {
+      "width": 1440,
+      "scenario": "filtered catalog after product reload",
+      "before": 6464,
+      "after": 6464,
+      "cards": 48
+    },
+    {
+      "width": 1440,
+      "scenario": "search return after variant selection and reload",
+      "before": 614,
+      "after": 614
+    },
+    {
+      "width": 390,
+      "before": 10891,
+      "after": 10891,
+      "explicit": 10891,
+      "cards": 72
+    },
+    {
+      "width": 390,
+      "scenario": "filtered catalog after product reload",
+      "before": 6898,
+      "after": 6898,
+      "cards": 48
+    },
+    {
+      "width": 390,
+      "scenario": "search return after variant selection and reload",
+      "before": 787,
+      "after": 787
+    }
+  ]
+}

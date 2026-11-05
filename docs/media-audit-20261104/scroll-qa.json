@@ -14,6 +14,12 @@
     "cards": 48
   },
   {
+    "width": 1440,
+    "scenario": "search return after variant selection and reload",
+    "before": 614,
+    "after": 614
+  },
+  {
     "width": 390,
     "before": 10891,
     "after": 10891,
@@ -26,5 +32,11 @@
     "before": 6898,
     "after": 6898,
     "cards": 48
+  },
+  {
+    "width": 390,
+    "scenario": "search return after variant selection and reload",
+    "before": 787,
+    "after": 787
   }
 ]
