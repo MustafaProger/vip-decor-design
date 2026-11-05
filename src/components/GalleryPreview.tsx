@@ -10,6 +10,7 @@ export default function GalleryPreview({
   active,
   onChange,
   href,
+  navigationState,
   children,
 }: {
   images: string[];
@@ -17,6 +18,7 @@ export default function GalleryPreview({
   active: number;
   onChange: (index: number) => void;
   href?: string;
+  navigationState?: unknown;
   children?: ReactNode;
 }) {
   const target = images[active] || images[0];
@@ -101,6 +103,7 @@ export default function GalleryPreview({
       {href ? (
         <Link
           to={href}
+          state={navigationState}
           className="gallery-preview-photo"
           tabIndex={-1}
           aria-hidden="true"

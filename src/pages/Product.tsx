@@ -5,7 +5,7 @@ import {
   productCategoryPaths,
 } from "../lib/catalog";
 import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -43,6 +43,14 @@ export default function Product({ product }: { product: ProductData }) {
 function ProductDetails({ product }: { product: ProductData }) {
   const { data, addToCart, cart, discuss } = useStore();
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+  const origin = location.state?.catalogOrigin;
+  const returnTo =
+    typeof origin?.url === "string" &&
+    origin.url.startsWith("/") &&
+    !origin.url.startsWith("//")
+      ? origin.url
+      : "/catalog";
   const editionUid = searchParams.get("editionuid");
   const urlEditionIndex = getDefaultSelection(product, editionUid).editionIndex;
   const [selection, setSelection] = useState(() =>
@@ -168,6 +176,13 @@ function ProductDetails({ product }: { product: ProductData }) {
 
   return (
     <div className="product-detail-page container">
+      <Link
+        className="text-link pd-back"
+        to={returnTo}
+        state={{ restoreVisit: origin?.key }}
+      >
+        ← Вернуться к каталогу
+      </Link>
       <Breadcrumbs
         items={[
           { label: "Каталог", to: "/catalog" },

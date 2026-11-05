@@ -1,5 +1,11 @@
 import { Reveal } from "../components/Motion";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import {
+  readVisit,
+  saveVisit,
+  restoredVisitKey,
+  visitKey,
+} from "../lib/navigationMemory";
 import {
   Link,
   useLocation,
@@ -50,7 +56,8 @@ export default function Catalog({
   all?: boolean;
 }) {
   const { data, favorites } = useStore();
-  const { pathname, key: locationKey } = useLocation();
+  const location = useLocation();
+  const { pathname, key: locationKey } = location;
   const navigationType = useNavigationType();
   const [params, setParams] = useSearchParams();
   // Input feedback is immediate; router transitions can commit a frame later.
@@ -80,7 +87,16 @@ export default function Catalog({
       setParams(next, { replace: true });
   }, [params, setParams]);
   const [filterOpen, setFilterOpen] = useState(false);
-  const [shown, setShown] = useState(24);
+  const [shown, setShown] = useState(() => {
+    const key = restoredVisitKey(location, navigationType);
+    const saved = key ? readVisit(key).shown : undefined;
+    return typeof saved === "number" && Number.isFinite(saved)
+      ? Math.max(24, saved)
+      : 24;
+  });
+  useLayoutEffect(() => {
+    saveVisit(visitKey(location), { shown });
+  }, [locationKey, shown]);
   const categoryCounts = useMemo(
     () => getCategoryCounts(data.products),
     [data.products],

@@ -1,0 +1,30 @@
+[
+  {
+    "width": 1440,
+    "before": 10661,
+    "after": 10661,
+    "explicit": 10661,
+    "cards": 72
+  },
+  {
+    "width": 1440,
+    "scenario": "filtered catalog after product reload",
+    "before": 6464,
+    "after": 6464,
+    "cards": 48
+  },
+  {
+    "width": 390,
+    "before": 10891,
+    "after": 10891,
+    "explicit": 10891,
+    "cards": 72
+  },
+  {
+    "width": 390,
+    "scenario": "filtered catalog after product reload",
+    "before": 6898,
+    "after": 6898,
+    "cards": 48
+  }
+]

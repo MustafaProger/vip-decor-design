@@ -1,12 +1,13 @@
 import { RevealArticle } from "./Motion";
 import { photoCrops } from "../data/gallery-presentation";
 import { useId, useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, Heart, ImageOff } from "lucide-react";
 import { useStore } from "../lib/store";
 import { parseSourcePrice, productGallery } from "../lib/commerce";
 import GalleryPreview from "./GalleryPreview";
 import { money, productHref, type Product } from "../lib/content";
+import { visitKey } from "../lib/navigationMemory";
 export function Picture({
   src,
   alt,
@@ -152,6 +153,24 @@ export function ProductCard({
   index?: number;
 }) {
   const [activePhoto, setActivePhoto] = useState(0);
+  const location = useLocation();
+  const { data } = useStore();
+  const fromCatalog =
+    ["/catalog", "/favorites", "/derzhateli-dlya-shtor"].includes(
+      location.pathname,
+    ) ||
+    data.categories.some(
+      (c) => c.path === location.pathname && c.sourceHasCatalog === true,
+    );
+  const origin = location.pathname.startsWith("/product/")
+    ? location.state?.catalogOrigin
+    : fromCatalog
+      ? {
+          url: location.pathname + location.search,
+          key: visitKey(location),
+        }
+      : undefined;
+  const navigationState = { catalogOrigin: origin };
   const oldPrice =
     parseSourcePrice(product.variants?.editions?.[0]?.priceold) ??
     parseSourcePrice(product.oldPrice);
@@ -164,6 +183,7 @@ export function ProductCard({
           active={activePhoto}
           onChange={setActivePhoto}
           href={productHref(product)}
+          navigationState={navigationState}
         >
           <FavoriteButton id={product.id} title={product.title} />
         </GalleryPreview>
@@ -172,7 +192,9 @@ export function ProductCard({
         <div>
           <p className="product-category">{product.category}</p>
           <h3>
-            <Link to={productHref(product)}>{product.title}</Link>
+            <Link to={productHref(product)} state={navigationState}>
+              {product.title}
+            </Link>
           </h3>
         </div>
         <span className="product-price">
@@ -182,7 +204,11 @@ export function ProductCard({
           {product.price !== null ? money(product.price) : "По запросу"}
         </span>
       </div>
-      <Link to={productHref(product)} className="product-more">
+      <Link
+        to={productHref(product)}
+        state={navigationState}
+        className="product-more"
+      >
         Подробнее <ArrowUpRight size={15} />
       </Link>
     </RevealArticle>

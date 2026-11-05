@@ -19,6 +19,7 @@ import { blogMetadata, blogSchema, type BlogData } from "./blog/content";
 import { BlogContext, readBlogBootstrap, useBlogData } from "./blog/runtime";
 import { pageMetadata } from "./lib/metadata";
 import { publicFetch } from "./lib/publicFetch";
+import { useScrollMemory } from "./lib/navigationMemory";
 import { Header, Footer } from "./components/SiteChrome";
 import Modal from "./components/Modal";
 import Home from "./pages/Home";
@@ -72,6 +73,7 @@ function RouteContent({
   const { pathname, hash, search } = useLocation();
   const navigate = useNavigate();
   const blogData = useBlogData();
+  useScrollMemory();
   useLayoutEffect(() => {
     if (pathname === "/" && hash) {
       const target =
@@ -87,7 +89,6 @@ function RouteContent({
       }
     }
     if (!hash) {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       return;
     }
     const frame = requestAnimationFrame(() => {

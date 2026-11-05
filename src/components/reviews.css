@@ -128,7 +128,7 @@
   background: #e8eae2;
   isolation: isolate;
 }
-.review-work-photo img {
+.review-work-photo :is(img, svg) {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -343,7 +343,7 @@ body .dialog.review-dialog h2 {
 .review-photo-expanded {
   margin: 0;
 }
-.review-photo-expanded > img {
+.review-photo-expanded > :is(img, svg) {
   display: block;
   width: 100%;
   height: auto;
@@ -434,7 +434,7 @@ body .review-gallery-navigation .icon-button {
     border-color: #bacab5;
     box-shadow: 0 8px 22px #173c3206;
   }
-  .review-work-photo:hover img {
+  .review-work-photo:hover :is(img, svg) {
     transform: scale(1.045);
   }
   .review-read:hover svg {
@@ -580,7 +580,7 @@ body .review-gallery-navigation .icon-button {
     padding: 12px;
     border-radius: 24px;
   }
-  .review-photo-expanded > img {
+  .review-photo-expanded > :is(img, svg) {
     max-height: 54dvh;
     border-radius: 16px;
   }
@@ -611,12 +611,12 @@ body .review-gallery-navigation .icon-button {
 }
 @media (prefers-reduced-motion: reduce) {
   .review-card,
-  .review-work-photo img,
+  .review-work-photo :is(img, svg),
   .review-read svg,
   .reviews-load-more {
     transition: none;
   }
-  .review-work-photo:hover img,
+  .review-work-photo:hover :is(img, svg),
   .review-read:hover svg {
     transform: none;
   }

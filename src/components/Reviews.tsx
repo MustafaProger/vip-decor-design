@@ -18,6 +18,42 @@ import {
 } from "../lib/reviews";
 import "./reviews.css";
 
+// Hide the camera HUD in this customer photo without changing its pixels.
+const cameraHudPhotos = [
+  "work-11022524_2a0000018e105e9c6168bf8f314db900fa75.webp",
+  "0adf278e3fd6bb3b15bff4d21c449f23f593e878f91fb423694c4b6a532520e2.webp",
+];
+function ReviewPhoto(props: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  loading?: "lazy";
+  decoding?: "async";
+  onError: () => void;
+}) {
+  if (!cameraHudPhotos.some((name) => props.src.endsWith(name)))
+    return <img {...props} />;
+  const top = (props.height * 60) / 1024;
+  return (
+    <svg
+      role="img"
+      aria-label={props.alt}
+      width={props.width}
+      height={props.height - top}
+      viewBox={`0 ${top} ${props.width} ${props.height - top}`}
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <image
+        href={props.src}
+        width={props.width}
+        height={props.height}
+        onError={props.onError}
+      />
+    </svg>
+  );
+}
+
 type OpenedReview = {
   review: Review;
   kind: "text" | "photo";
@@ -218,11 +254,15 @@ export default function Reviews({
           </div>
           <div>
             <dt>Оценок клиентов</dt>
-            <dd><CountUp value={reviewData.ratingCount} /></dd>
+            <dd>
+              <CountUp value={reviewData.ratingCount} />
+            </dd>
           </div>
           <div>
             <dt>Отзывов</dt>
-            <dd><CountUp value={reviewData.reviewCount} /></dd>
+            <dd>
+              <CountUp value={reviewData.reviewCount} />
+            </dd>
           </div>
           <div>
             <dt>
@@ -284,7 +324,7 @@ export default function Reviews({
                       }
                       aria-label={`Открыть фото ${photo.photoIndex + 1} из отзыва: ${review.author}`}
                     >
-                      <img
+                      <ReviewPhoto
                         src={photo.src}
                         alt={`Фото работы из отзыва ${review.author}`}
                         width={photo.width || 600}
@@ -391,7 +431,7 @@ export default function Reviews({
         {opened?.kind === "photo" && activePhoto ? (
           <figure className="review-photo-expanded">
             {!failedPhotos.has(activePhoto.src) ? (
-              <img
+              <ReviewPhoto
                 src={activePhoto.src}
                 alt={`Фото ${opened.photoIndex + 1} из отзыва ${opened.review.author}`}
                 width={activePhoto.width || 900}
