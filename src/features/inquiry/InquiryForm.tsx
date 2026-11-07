@@ -9,8 +9,10 @@ import {
   type SelectionAnswers,
 } from "../../lib/inquiry";
 import "./inquiry.css";
+import type { LeadGoal } from "../../lib/metrika";
 
 type InquiryFormProps = {
+  goal: LeadGoal;
   context?: string;
   onSuccess?: () => void;
   onPendingChange?: (pending: boolean) => void;
@@ -21,6 +23,7 @@ type InquiryFormProps = {
 };
 
 export function InquiryForm({
+  goal,
   context,
   onSuccess,
   onPendingChange,
@@ -91,10 +94,13 @@ export function InquiryForm({
       lastAttempt.current = { snapshot, requestId: crypto.randomUUID() };
     }
     try {
-      const saved = await submitInquiry({
-        ...input,
-        requestId: lastAttempt.current.requestId,
-      });
+      const saved = await submitInquiry(
+        {
+          ...input,
+          requestId: lastAttempt.current.requestId,
+        },
+        goal,
+      );
       setResult(saved);
       onSuccess?.();
     } catch (error) {

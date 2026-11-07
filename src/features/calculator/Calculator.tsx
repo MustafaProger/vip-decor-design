@@ -122,15 +122,18 @@ export default function Calculator({
     setPending(true);
     setStatus("");
     try {
-      const result = await submitInquiry({
-        name: contact.name.trim(),
-        email: contact.email.trim(),
-        phone: contact.phone.trim(),
-        comment: "",
-        consent: true,
-        context,
-        requestId: requestId.current,
-      });
+      const result = await submitInquiry(
+        {
+          name: contact.name.trim(),
+          email: contact.email.trim(),
+          phone: contact.phone.trim(),
+          comment: "",
+          consent: true,
+          context,
+          requestId: requestId.current,
+        },
+        "lead_calculator",
+      );
       setStatus(result.message);
     } catch (error) {
       if (error instanceof InquiryError && error.fields)

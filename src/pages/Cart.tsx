@@ -15,19 +15,13 @@ import { ReferralNote } from "../components/ReferralPromo";
 export default function Cart() {
   const { cart, data, setQuantity, removeFromCart } = useStore();
   const [checkout, setCheckout] = useState(false);
-  const [delivery, setDelivery] = useState("Самовывоз");
-  const [payment, setPayment] = useState("Наличными при получении");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
   const [values, setValues] = useState<InquiryValues>({
     name: "",
     phone: "",
     comment: "",
     consent: false,
   });
-  const [errors, setErrors] = useState<
-    InquiryErrors & { email?: string; address?: string }
-  >({});
+  const [errors, setErrors] = useState<InquiryErrors>({});
   const [pending, setPending] = useState(false);
   const [result, setResult] = useState<InquiryResult | null>(null);
   const [error, setError] = useState("");
@@ -49,10 +43,6 @@ export default function Cart() {
     e.preventDefault();
     if (lock.current) return;
     const issues: typeof errors = validateInquiry(values);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      issues.email = "Укажите корректный email.";
-    if (delivery === "Курьер" && address.trim().length < 5)
-      issues.address = "Укажите адрес доставки.";
     setErrors(issues);
     if (Object.keys(issues).length) {
       requestAnimationFrame(() =>
@@ -78,22 +68,22 @@ export default function Cart() {
               ? "по запросу"
               : money(item.unitPrice * item.quantity)),
         ),
-        "Доставка: " + delivery + (address ? ", " + address : ""),
-        "Оплата: " + payment,
       ]
         .filter(Boolean)
         .join("\n");
-      const snapshot = JSON.stringify({ ...values, email, context });
+      const snapshot = JSON.stringify({ ...values, context });
       if (lastSnapshot.current !== snapshot) {
         requestId.current = crypto.randomUUID();
         lastSnapshot.current = snapshot;
       }
-      const saved = await submitInquiry({
-        ...values,
-        email,
-        context,
-        requestId: requestId.current,
-      });
+      const saved = await submitInquiry(
+        {
+          ...values,
+          context,
+          requestId: requestId.current,
+        },
+        "lead_cart",
+      );
       setResult(saved);
     } catch (err) {
       setError(
@@ -235,85 +225,24 @@ export default function Cart() {
                           )}
                         </label>
                       ))}
-                      <label>
-                        Email
-                        <input
-                          type="email"
-                          value={email}
-                          autoComplete="email"
-                          onChange={(e) => setEmail(e.target.value)}
-                          aria-invalid={!!errors.email}
-                          aria-describedby={
-                            errors.email ? "cart-email-error" : undefined
-                          }
-                        />
-                        {errors.email && (
-                          <span id="cart-email-error" className="field-error">
-                            {errors.email}
-                          </span>
-                        )}
-                      </label>
                     </div>
-                    <fieldset className="checkout-options">
-                      <legend>Способ получения</legend>
-                      {["Самовывоз", "Курьер", "Согласовать с менеджером"].map(
-                        (x) => (
-                          <label key={x}>
-                            <input
-                              type="radio"
-                              name="delivery"
-                              value={x}
-                              checked={delivery === x}
-                              onChange={() => setDelivery(x)}
-                            />
-                            {x}
-                          </label>
-                        ),
-                      )}
-                    </fieldset>
-                    {delivery === "Курьер" && (
-                      <label>
-                        Адрес доставки
-                        <input
-                          autoComplete="street-address"
-                          value={address}
-                          onChange={(e) => setAddress(e.target.value)}
-                          aria-invalid={!!errors.address}
-                        />
-                        {errors.address && (
-                          <span className="field-error">{errors.address}</span>
-                        )}
-                        <span className="fine-print">
-                          Доставка по Москве — 1 000 ₽. Стоимость доставки не
-                          включена в сумму товаров. Доставка за пределы Москвы
-                          согласовывается с нашей командой.
-                        </span>
-                      </label>
-                    )}
-                    <fieldset className="checkout-options">
-                      <legend>Предпочтительный способ оплаты</legend>
-                      {["Наличными при получении", "Безналичная оплата"].map(
-                        (x) => (
-                          <label key={x}>
-                            <input
-                              type="radio"
-                              name="payment"
-                              checked={payment === x}
-                              onChange={() => setPayment(x)}
-                            />
-                            {x}
-                          </label>
-                        ),
-                      )}
-                    </fieldset>
                     <label>
                       Комментарий
                       <textarea
                         value={values.comment}
+                        aria-invalid={!!errors.comment}
+                        aria-describedby={
+                          errors.comment ? "cart-comment-error" : undefined
+                        }
                         onChange={(e) =>
                           setValues({ ...values, comment: e.target.value })
                         }
                       />
+                      {errors.comment && (
+                        <span id="cart-comment-error" className="field-error">
+                          {errors.comment}
+                        </span>
+                      )}
                     </label>
                     <label className="consent-label">
                       <input

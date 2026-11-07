@@ -392,6 +392,7 @@ export default function Selection({
               </p>
             )}
             <InquiryForm
+              goal="lead_selection"
               context={context}
               selection={answers}
               onSuccess={() => setComplete(true)}

@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+import { trackAcceptedInquiry, type LeadGoal } from "./metrika";
 
 export type SelectionAnswers = {
   room: string;
@@ -63,6 +64,7 @@ export class InquiryError extends Error {
 
 export async function submitInquiry(
   payload: InquiryPayload,
+  goal: LeadGoal,
 ): Promise<InquiryResult> {
   const endpoint = import.meta.env.VITE_INQUIRY_ENDPOINT || "/api/inquiries";
   const controller = new AbortController();
@@ -86,12 +88,14 @@ export async function submitInquiry(
     if (
       !body ||
       typeof body.id !== "string" ||
+      !body.id.trim() ||
       !["saved_locally", "sent"].includes(body.status)
     ) {
       throw new InquiryError(
         "Сервер не подтвердил сохранение заявки. Данные остались в форме.",
       );
     }
+    trackAcceptedInquiry(goal, body.id);
     return {
       id: body.id,
       status: body.status,

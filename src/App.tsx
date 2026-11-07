@@ -20,6 +20,7 @@ import { BlogContext, readBlogBootstrap, useBlogData } from "./blog/runtime";
 import { pageMetadata } from "./lib/metadata";
 import { publicFetch } from "./lib/publicFetch";
 import { useScrollMemory } from "./lib/navigationMemory";
+import { initializeMetrika, installContactTracking } from "./lib/metrika";
 import { Header, Footer } from "./components/SiteChrome";
 import Modal from "./components/Modal";
 import Home from "./pages/Home";
@@ -238,6 +239,10 @@ export default function App({ initialBlog }: { initialBlog?: BlogData }) {
 }
 
 function PublicApp({ initialBlog }: { initialBlog?: BlogData }) {
+  useEffect(() => {
+    initializeMetrika();
+    return installContactTracking();
+  }, []);
   const location = useLocation();
   const [blogData, setBlogData] = useState<BlogData | null>(
     () => initialBlog || readBlogBootstrap() || null,
@@ -336,7 +341,7 @@ function PublicApp({ initialBlog }: { initialBlog?: BlogData }) {
             >
               <p className="eyebrow">НАЧНЁМ ЗНАКОМСТВО</p>
               <h2>Расскажите о вашем проекте</h2>
-              <InquiryForm context={inquiry.context} />
+              <InquiryForm goal="lead_project" context={inquiry.context} />
             </Modal>
           </StoreProvider>
         </MotionConfig>
