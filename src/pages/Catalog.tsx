@@ -396,6 +396,13 @@ export default function Catalog({
           ref={categoryRail}
           onScroll={readRailEdges}
         >
+          <Link
+            to="/catalog"
+            className={all && !categoryPath ? "active" : ""}
+            aria-current={all && !categoryPath ? "page" : undefined}
+          >
+            Все товары
+          </Link>
           {featuredCategories.map(({ path, title }) => (
             <Link
               key={path}
@@ -406,13 +413,6 @@ export default function Catalog({
               {title}
             </Link>
           ))}
-          <Link
-            to="/catalog"
-            className={all && !categoryPath ? "active" : ""}
-            aria-current={all && !categoryPath ? "page" : undefined}
-          >
-            Все товары
-          </Link>
           {categories.map((category) => (
             <Link
               to={categoryHref(category.path)}
@@ -434,7 +434,7 @@ export default function Catalog({
           <ChevronRight size={18} />
         </button>
       </nav>
-      {!favoritesOnly && !featured && <ReferralPromo compact />}
+      {!favoritesOnly && <ReferralPromo compact />}
       {featured && !source.length ? (
         <EmptyState
           to={categoryPath === "/hits" ? "/sale" : "/catalog"}

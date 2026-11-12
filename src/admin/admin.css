@@ -1201,6 +1201,10 @@
   gap: 10px;
   margin-bottom: 20px;
 }
+.cms-gallery-upload {
+  display: grid;
+  gap: 9px;
+}
 .cms-button.cms-gallery-action {
   max-width: 100%;
   white-space: normal;
@@ -1296,6 +1300,22 @@
 }
 .cms-notice p {
   margin-top: 6px;
+}
+.cms-price-notice {
+  align-items: flex-start;
+  margin-top: 16px;
+}
+.cms-price-notice svg {
+  flex: none;
+  margin-top: 2px;
+}
+.cms-price-notice a {
+  color: var(--cms-green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cms-product-editions {
+  scroll-margin-top: 90px;
 }
 .cms-editor-aside > .cms-notice {
   margin-top: 0;

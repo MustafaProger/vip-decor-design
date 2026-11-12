@@ -1,5 +1,5 @@
 import { useId, useState } from "react";
-import { Plus, Trash2, Upload } from "lucide-react";
+import { Info, Plus, Trash2, Upload } from "lucide-react";
 import { Field, ImageField, JsonField } from "./Fields";
 import type { CMSContent, CMSProduct, MediaResult } from "./types";
 
@@ -23,6 +23,7 @@ export function ProductEditor({
   const [galleryUploading, setGalleryUploading] = useState(false);
   const [galleryErrors, setGalleryErrors] = useState<string[]>([]);
   const galleryImages = [...new Set(item.images.filter(Boolean))];
+  const additionalPhotos = galleryImages.filter((src) => src !== item.image);
   const galleryLimit =
     50 - new Set([...galleryImages, item.image].filter(Boolean)).size;
   const handleGalleryFiles = async (files: File[]) => {
@@ -143,7 +144,10 @@ export function ProductEditor({
                 }
               />
             </Field>
-            <Field label="Старая цена, ₽">
+            <Field
+              label="Старая цена, ₽"
+              hint="Показывается зачёркнутой, если выше текущей."
+            >
               <input
                 type="number"
                 min={0}
@@ -156,11 +160,13 @@ export function ProductEditor({
             </Field>
           </div>
           {editions.length > 0 && (
-            <p className="cms-notice">
-              У товара есть варианты. Цена в карточке и цены вариантов
-              редактируются отдельно. Проверьте таблицу вариантов перед
-              публикацией.
-            </p>
+            <div className="cms-notice cms-price-notice">
+              <Info size={17} aria-hidden="true" />
+              <span>
+                Цены для каждого варианта меняются отдельно в блоке{" "}
+                <a href="#cms-product-editions">«Варианты товара»</a>.
+              </span>
+            </div>
           )}
         </section>
         <section className="cms-card cms-form-card">
@@ -184,10 +190,9 @@ export function ProductEditor({
               })
             }
           />
-          <div className="cms-gallery">
-            {galleryImages
-              .filter((src) => src !== item.image)
-              .map((src, index) => (
+          {additionalPhotos.length > 0 && (
+            <div className="cms-gallery">
+              {additionalPhotos.map((src, index) => (
                 <div className="cms-gallery-item" key={`${src}-${index}`}>
                   <img src={src} alt={`Дополнительное фото ${index + 1}`} />
                   <button
@@ -205,44 +210,50 @@ export function ProductEditor({
                   </button>
                 </div>
               ))}
-          </div>
-          <div className="cms-inline">
-            <label
-              htmlFor={galleryInputId}
-              className={`cms-button cms-secondary cms-upload cms-gallery-action${galleryUploading ? " is-disabled" : ""}`}
-            >
-              <Upload size={16} />
-              {galleryUploading
-                ? "Загружаем фото…"
-                : "Загрузить фото в галерею"}
-            </label>
-            <input
-              id={galleryInputId}
-              className="cms-file-input"
-              aria-label="Загрузить фото в галерею"
-              type="file"
-              accept="image/jpeg,image/png,image/webp"
-              multiple
-              disabled={galleryUploading}
-              onChange={(event) => {
-                const files = Array.from(event.target.files || []);
-                event.target.value = "";
-                void handleGalleryFiles(files);
-              }}
-            />
-          </div>
-          <p className="cms-muted">
-            Можно выбрать несколько файлов сразу. JPEG, PNG или WebP, до 10 МБ
-            каждый. Если главного фото ещё нет, им станет первое загруженное.
-            После загрузки сохраните товар.
-          </p>
-          {galleryErrors.length > 0 && (
-            <ul className="cms-error cms-gallery-errors" role="alert">
-              {galleryErrors.map((error, index) => (
-                <li key={index}>{error}</li>
-              ))}
-            </ul>
+            </div>
           )}
+          <div className="cms-gallery-upload">
+            <div className="cms-inline">
+              <label
+                htmlFor={galleryInputId}
+                className={`cms-button cms-secondary cms-upload cms-gallery-action${galleryUploading ? " is-disabled" : ""}`}
+              >
+                <Upload size={16} />
+                {galleryUploading
+                  ? "Загружаем фото…"
+                  : "Загрузить фото в галерею"}
+              </label>
+              <input
+                id={galleryInputId}
+                className="cms-file-input"
+                aria-label="Загрузить фото в галерею"
+                aria-describedby={`${galleryInputId}-hint`}
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+                disabled={galleryUploading}
+                onChange={(event) => {
+                  const files = Array.from(event.target.files || []);
+                  event.target.value = "";
+                  void handleGalleryFiles(files);
+                }}
+              />
+            </div>
+            <p className="cms-muted" id={`${galleryInputId}-hint`}>
+              Выберите одно или несколько фото. JPEG, PNG или WebP, до 10 МБ на
+              файл.
+              {item.image
+                ? " После загрузки нажмите «Сохранить»."
+                : " Первое загруженное фото станет главным."}
+            </p>
+            {galleryErrors.length > 0 && (
+              <ul className="cms-error cms-gallery-errors" role="alert">
+                {galleryErrors.map((error, index) => (
+                  <li key={index}>{error}</li>
+                ))}
+              </ul>
+            )}
+          </div>
           <details className="cms-details">
             <summary>Адреса фотографий</summary>
             <Field label="Добавить фото по адресу">
@@ -349,7 +360,10 @@ export function ProductEditor({
             Добавить характеристику
           </button>
         </section>
-        <section className="cms-card cms-form-card">
+        <section
+          className="cms-card cms-form-card cms-product-editions"
+          id="cms-product-editions"
+        >
           <div className="cms-section-heading">
             <div>
               <h2>Варианты товара</h2>

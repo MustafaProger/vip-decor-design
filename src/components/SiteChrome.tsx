@@ -13,7 +13,7 @@ import {
 import { useStore } from "../lib/store";
 import Modal from "./Modal";
 import { Button } from "./Button";
-import { featuredCategories, isFeaturedCategory } from "../lib/catalog";
+import { isFeaturedCategory } from "../lib/catalog";
 export function Brand() {
   return (
     <Link to="/" className="brand" aria-label="VIP Decor Design — главная">
@@ -28,8 +28,8 @@ export function Header() {
   const header = useRef<HTMLElement>(null);
   const inCatalog =
     ["/catalog", "/shop", "/tkani"].includes(pathname) ||
-    (data.categories.some((category) => category.path === pathname) &&
-      !isFeaturedCategory(pathname));
+    isFeaturedCategory(pathname) ||
+    data.categories.some((category) => category.path === pathname);
   useLayoutEffect(() => {
     const element = header.current;
     if (!element) return;
@@ -51,7 +51,6 @@ export function Header() {
   }, []);
   const [menu, setMenu] = useState(false);
   const nav = [
-    ...featuredCategories.map(({ path, title }) => [path, title]),
     ["/", "Главная"],
     ["/company", "О компании"],
     ["/catalog", "Каталог"],
