@@ -1,0 +1,32 @@
+[
+  {
+    "id": "barhat-s-zolotistoy-vyshivkoy",
+    "title": "Бархат с золотистой вышивкой",
+    "description": "Бархат с мягким блеском и золотистой вышивкой. Геометрический узор подчёркивает фактуру ткани и красиво смотрится в складках.",
+    "price": 1950,
+    "oldPrice": "2750",
+    "category": "Бархат",
+    "categoryPath": "/barxat",
+    "photos": ["velvet-beige", "velvet-blue"]
+  },
+  {
+    "id": "tyul-s-serebristoy-vyshivkoy",
+    "title": "Тюль с серебристой вышивкой",
+    "description": "Воздушный тюль с серебристой вышивкой. Тонкий орнамент мягко блестит на свету, а прозрачная основа пропускает дневной свет.",
+    "price": 1550,
+    "oldPrice": "2350",
+    "category": "Тюль",
+    "categoryPath": "/tyl",
+    "photos": ["tulle-ornament", "tulle-detail"]
+  },
+  {
+    "id": "tyul-setka-fakturnaya",
+    "title": "Тюль-сетка",
+    "description": "Лёгкая прозрачная сетка с выразительной фактурой. Доступный метраж ограничен.",
+    "price": 550,
+    "oldPrice": "1250",
+    "category": "Тюль-сетка",
+    "categoryPath": "/tulsetka",
+    "photos": ["mesh-texture", "mesh-fold", "mesh-drape", "mesh-detail"]
+  }
+]

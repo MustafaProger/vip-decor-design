@@ -1,4 +1,9 @@
 import type { Category, Product } from "./content";
+import featuredCategories from "../data/featured-categories.json" with { type: "json" };
+
+export { featuredCategories };
+export const isFeaturedCategory = (path: string) =>
+  featuredCategories.some((category) => category.path === path);
 
 const families = [
   {
@@ -88,23 +93,25 @@ export function productCategoryPaths(product: Product) {
 }
 
 export function catalogCategories(categories: Category[]): Category[] {
-  return [
-    ...categories.map((category) =>
-      category.path === "/kisti"
-        ? { ...category, title: "Кисти для штор" }
-        : category,
-    ),
-    {
+  const available = categories.map((category) =>
+    category.path === "/kisti"
+      ? { ...category, title: "Кисти для штор" }
+      : category,
+  );
+  if (!available.some(({ path }) => path === "/derzhateli-dlya-shtor"))
+    available.push({
       path: "/derzhateli-dlya-shtor",
       title: "Держатели для штор",
       description: "Держатели, подхваты, магниты, крючки и розетки для штор.",
       image: "",
-    },
-  ];
+    });
+  return available;
 }
 
 export function primaryProductCategory(product: Product) {
-  const paths = [...productCategoryPaths(product)];
+  const paths = [...productCategoryPaths(product)].filter(
+    (path) => !isFeaturedCategory(path),
+  );
   return (
     paths.find(
       (path) => !["/tkani", "/tyl", "/shop", "/decor"].includes(path),
@@ -139,6 +146,7 @@ export function catalogFamilies(
   return orderedCategories(categories).filter(
     (category) =>
       category.path !== "/decor" &&
+      !isFeaturedCategory(category.path) &&
       categoryFamily(category.path) === category.path &&
       (counts.get(category.path) || 0) > 0,
   );

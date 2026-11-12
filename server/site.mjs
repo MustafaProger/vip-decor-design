@@ -135,6 +135,7 @@ export function renderSitemap(content, blog, origin = DEFAULT_ORIGIN) {
     "/calculator",
     "/price",
     "/catalog",
+    "/sale",
     "/derzhateli-dlya-shtor",
     ...blogPaths(publishedBlog(blog)),
   ])

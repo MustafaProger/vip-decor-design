@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Plus, Trash2 } from "lucide-react";
+import { useId, useState } from "react";
+import { Plus, Trash2, Upload } from "lucide-react";
 import { Field, ImageField, JsonField } from "./Fields";
 import type { CMSContent, CMSProduct, MediaResult } from "./types";
 
@@ -8,15 +8,51 @@ export function ProductEditor({
   onChange,
   content,
   upload,
+  uploadGallery,
   onInvalid,
 }: {
   item: CMSProduct;
   onChange: (item: CMSProduct) => void;
   content: CMSContent;
   upload: (file: File) => Promise<MediaResult>;
+  uploadGallery: (files: File[]) => Promise<string[]>;
   onInvalid: (key: string, invalid: boolean) => void;
 }) {
   const [galleryDraft, setGalleryDraft] = useState("");
+  const galleryInputId = useId();
+  const [galleryUploading, setGalleryUploading] = useState(false);
+  const [galleryErrors, setGalleryErrors] = useState<string[]>([]);
+  const galleryImages = [...new Set(item.images.filter(Boolean))];
+  const galleryLimit =
+    50 - new Set([...galleryImages, item.image].filter(Boolean)).size;
+  const handleGalleryFiles = async (files: File[]) => {
+    if (!files.length) return;
+    if (files.length > galleryLimit) {
+      setGalleryErrors([
+        "В карточке может быть до 50 фото вместе с главным. Выберите меньше файлов.",
+      ]);
+      return;
+    }
+    const valid: File[] = [];
+    const errors: string[] = [];
+    for (const file of files) {
+      if (!["image/jpeg", "image/png", "image/webp"].includes(file.type))
+        errors.push(`${file.name}: выберите JPEG, PNG или WebP.`);
+      else if (file.size > 10 * 1024 * 1024)
+        errors.push(`${file.name}: размер превышает 10 МБ.`);
+      else valid.push(file);
+    }
+    setGalleryUploading(true);
+    setGalleryErrors([]);
+    try {
+      setGalleryErrors([
+        ...errors,
+        ...(valid.length ? await uploadGallery(valid) : []),
+      ]);
+    } finally {
+      setGalleryUploading(false);
+    }
+  };
   const addGalleryImage = (image: string) => {
     if (image.trim()) {
       onChange({
@@ -149,7 +185,7 @@ export function ProductEditor({
             }
           />
           <div className="cms-gallery">
-            {item.images
+            {galleryImages
               .filter((src) => src !== item.image)
               .map((src, index) => (
                 <div className="cms-gallery-item" key={`${src}-${index}`}>
@@ -170,27 +206,61 @@ export function ProductEditor({
                 </div>
               ))}
           </div>
-          <ImageField
-            label="Добавить в галерею"
-            value={galleryDraft}
-            upload={upload}
-            onChange={(image, result) => {
-              if (result) addGalleryImage(image);
-              else setGalleryDraft(image);
-            }}
-          />
-          {galleryDraft && (
+          <div className="cms-inline">
+            <label
+              htmlFor={galleryInputId}
+              className={`cms-button cms-secondary cms-upload cms-gallery-action${galleryUploading ? " is-disabled" : ""}`}
+            >
+              <Upload size={16} />
+              {galleryUploading
+                ? "Загружаем фото…"
+                : "Загрузить фото в галерею"}
+            </label>
+            <input
+              id={galleryInputId}
+              className="cms-file-input"
+              aria-label="Загрузить фото в галерею"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              multiple
+              disabled={galleryUploading}
+              onChange={(event) => {
+                const files = Array.from(event.target.files || []);
+                event.target.value = "";
+                void handleGalleryFiles(files);
+              }}
+            />
+          </div>
+          <p className="cms-muted">
+            Можно выбрать несколько файлов сразу. JPEG, PNG или WebP, до 10 МБ
+            каждый. Если главного фото ещё нет, им станет первое загруженное.
+            После загрузки сохраните товар.
+          </p>
+          {galleryErrors.length > 0 && (
+            <ul className="cms-error cms-gallery-errors" role="alert">
+              {galleryErrors.map((error, index) => (
+                <li key={index}>{error}</li>
+              ))}
+            </ul>
+          )}
+          <details className="cms-details">
+            <summary>Адреса фотографий</summary>
+            <Field label="Добавить фото по адресу">
+              <input
+                value={galleryDraft}
+                placeholder="/images/… или https://…"
+                onChange={(event) => setGalleryDraft(event.target.value)}
+              />
+            </Field>
             <button
               type="button"
-              className="cms-button cms-secondary"
+              className="cms-button cms-secondary cms-gallery-action"
+              disabled={!galleryDraft.trim() || galleryLimit <= 0}
               onClick={() => addGalleryImage(galleryDraft)}
             >
               <Plus size={16} />
               Добавить фото по адресу
             </button>
-          )}
-          <details className="cms-details">
-            <summary>Адреса фотографий</summary>
             <Field label="Галерея" hint="Один адрес на строку.">
               <textarea
                 rows={4}

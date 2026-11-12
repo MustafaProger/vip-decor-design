@@ -33,6 +33,7 @@ import { Badge } from "./Fields";
 import { InquiryDetail } from "./InquiryDetail";
 import { PostEditor } from "./PostEditor";
 import { ProductEditor } from "./ProductEditor";
+import { isFeaturedCategory } from "../lib/catalog";
 import {
   formatDate,
   inquiryLabels,
@@ -268,7 +269,10 @@ export default function Admin() {
           related: [],
         },
       });
-    else
+    else {
+      const defaultCategory = content.categories.find(
+        ({ path }) => !isFeaturedCategory(path),
+      );
       openEditor({
         kind,
         item: {
@@ -284,19 +288,19 @@ export default function Admin() {
           images: [],
           url: `/product/${id}`,
           categoryOverride: true,
-          category: content.categories[0]?.title || "",
-          categoryPath: content.categories[0]?.path,
-          categoryPaths: content.categories[0]
-            ? [content.categories[0].path]
-            : [],
+          category: defaultCategory?.title || "",
+          categoryPath: defaultCategory?.path,
+          categoryPaths: defaultCategory ? [defaultCategory.path] : [],
           properties: [],
         },
       });
+    }
   }
   async function save(event: FormEvent) {
     event.preventDefault();
     if (
       !editor ||
+      mediaPending ||
       actionLock.current ||
       Object.values(invalidFields).some(Boolean)
     )
@@ -416,17 +420,52 @@ export default function Admin() {
       setNotice("Запись была удалена в другой вкладке.");
     }
   }
+  const uploadMedia = (file: File) =>
+    cmsRequest<MediaResult>("/media", {
+      method: "POST",
+      file,
+      token: session?.csrfToken,
+    });
   async function upload(file: File) {
     setMediaPending(true);
     try {
-      return await cmsRequest<MediaResult>("/media", {
-        method: "POST",
-        file,
-        token: session?.csrfToken,
-      });
+      return await uploadMedia(file);
     } catch (error) {
       handleError(error);
       throw error;
+    } finally {
+      setMediaPending(false);
+    }
+  }
+  async function uploadGallery(files: File[]) {
+    const id = editor?.kind === "products" ? editor.item.id : undefined;
+    if (!id) return [];
+    setMediaPending(true);
+    try {
+      const images: string[] = [];
+      const errors: string[] = [];
+      for (const file of files) {
+        try {
+          images.push((await uploadMedia(file)).url);
+        } catch (error) {
+          errors.push(
+            `${file.name}: ${error instanceof Error ? error.message : "не удалось загрузить."}`,
+          );
+        }
+      }
+      setEditor((current) =>
+        current?.kind === "products" && current.item.id === id
+          ? {
+              ...current,
+              item: {
+                ...current.item,
+                image: current.item.image || images[0] || "",
+                images: [...new Set([...current.item.images, ...images])],
+              },
+            }
+          : current,
+      );
+      return errors;
     } finally {
       setMediaPending(false);
     }
@@ -821,6 +860,7 @@ export default function Admin() {
                             }
                             content={content}
                             upload={upload}
+                            uploadGallery={uploadGallery}
                             onInvalid={(key, invalid) =>
                               setInvalidFields((current) => ({
                                 ...current,

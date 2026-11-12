@@ -25,6 +25,7 @@ import { Header, Footer } from "./components/SiteChrome";
 import Modal from "./components/Modal";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
+import { isFeaturedCategory } from "./lib/catalog";
 const Projects = lazy(() => import("./pages/Projects"));
 const Referral = lazy(() => import("./pages/Referral"));
 import Information, { Company, Sitemap, NotFound } from "./pages/Information";
@@ -195,7 +196,8 @@ function RouteContent({
     return <Delivery page={source} />;
   if (path === "/sitemap") return <Sitemap />;
   if (path === "/catalog") return <Catalog all />;
-  if (path === "/derzhateli-dlya-shtor") return <Catalog />;
+  if (path === "/derzhateli-dlya-shtor" || isFeaturedCategory(path))
+    return <Catalog />;
   if (path === "/shop")
     return <Navigate to={"/catalog" + search + hash} replace />;
   if (path === "/favorites") return <Catalog favoritesOnly />;

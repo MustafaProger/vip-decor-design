@@ -1,5 +1,6 @@
 import { blogMetadata } from "../blog/content.ts";
 import type { Product, SourcePage } from "./content";
+import featuredCategories from "../data/featured-categories.json" with { type: "json" };
 
 const pages: Record<string, [string, string]> = {
   "/referral": [
@@ -88,9 +89,12 @@ export function pageMetadata(
   if (path === "/blog" || path.startsWith("/blog/")) return blogMetadata(path);
   const canonicalPath = path === "/page13486315.html" ? "/dostavka" : path;
   const known = pages[canonicalPath];
+  const featured = featuredCategories.find(
+    ({ path }) => path === canonicalPath,
+  );
   const title = product
     ? `${product.title} · ${product.sku || product.id}`
-    : known?.[0] || source?.title || "Страница не найдена";
+    : featured?.title || known?.[0] || source?.title || "Страница не найдена";
   const productText = product?.description
     ? product.description
         .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
@@ -114,14 +118,16 @@ export function pageMetadata(
         0,
         170,
       )
-    : known?.[1] ||
+    : featured?.description ||
+      known?.[1] ||
       `${title} в VIP DECOR DESIGN. Описание, фотографии и подбор для вашего интерьера. Посмотрите каталог или обсудите заказ с дизайнером.`;
   return {
     title: `${title} — VIP DECOR DESIGN`,
     description,
     canonical: product?.url || `https://vip2d.ru${canonicalPath}`,
     robots:
-      ["/cart", "/favorites"].includes(path) || (!known && !source && !product)
+      ["/cart", "/favorites"].includes(path) ||
+      (!known && !source && !product && !featured)
         ? "noindex, follow"
         : "index, follow",
   };

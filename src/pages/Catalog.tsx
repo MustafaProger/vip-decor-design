@@ -31,6 +31,7 @@ import {
   catalogCategories,
   getCategoryCounts,
   catalogFamilies,
+  featuredCategories,
   catalogFilterGroups,
   categoryFamily,
   compareCatalogProducts,
@@ -118,7 +119,9 @@ export default function Catalog({
       ? ""
       : pathname;
   const activeFamily = categoryFamily(categoryPath);
-  const cat = availableCategories.find((c) => c.path === categoryPath);
+  const featured = featuredCategories.find((c) => c.path === categoryPath);
+  const cat =
+    availableCategories.find((c) => c.path === categoryPath) || featured;
   const family = availableCategories.find((c) => c.path === activeFamily);
   const categoryPage = data.pages.find((p) => p.path === categoryPath);
   const hasDescription = categoryPage?.paragraphs.some(
@@ -361,11 +364,12 @@ export default function Catalog({
         <div>
           <h1>{title}</h1>
           <p>
-            {favoritesOnly
-              ? "Сохранённые товары для вашего проекта."
-              : all
-                ? "Ткани для штор, тюль, карнизы и декор для вашего интерьера."
-                : "Выберите материал, цвет и подходящую цену."}
+            {featured?.description ||
+              (favoritesOnly
+                ? "Сохранённые товары для вашего проекта."
+                : all
+                  ? "Ткани для штор, тюль, карнизы и декор для вашего интерьера."
+                  : "Выберите материал, цвет и подходящую цену.")}
           </p>
         </div>
         <Link className="text-link" to="/selection">
@@ -392,6 +396,16 @@ export default function Catalog({
           ref={categoryRail}
           onScroll={readRailEdges}
         >
+          {featuredCategories.map(({ path, title }) => (
+            <Link
+              key={path}
+              to={path}
+              className={activeFamily === path ? "active" : ""}
+              aria-current={activeFamily === path ? "page" : undefined}
+            >
+              {title}
+            </Link>
+          ))}
           <Link
             to="/catalog"
             className={all && !categoryPath ? "active" : ""}
@@ -420,135 +434,150 @@ export default function Catalog({
           <ChevronRight size={18} />
         </button>
       </nav>
-      {!favoritesOnly && <ReferralPromo compact />}
-      <div className="catalog-layout" ref={catalogLayout}>
-        <aside className="filters-sidebar">
-          <h2>Фильтры</h2>
-          {filterControls}
-        </aside>
-        <div className="catalog-results">
-          <h2 className="sr-only">Товары</h2>
-          {cat && activeFamily !== categoryPath && family && (
-            <div className="catalog-collection-context">
-              <span>
-                Коллекция: <strong>{categoryLabel(cat)}</strong>
-              </span>
-              <Link to={categoryHref(activeFamily)}>
-                Весь раздел «{categoryLabel(family)}»
-                <ArrowUpRight size={16} />
-              </Link>
-            </div>
-          )}
-          <div className="catalog-toolbar">
-            <label className="search-field">
-              <Search size={20} />
-              <span className="sr-only">Поиск по названию или артикулу</span>
-              <input
-                type="search"
-                value={q}
-                onChange={(e) => update("q", e.target.value)}
-                placeholder="Поиск по названию или артикулу"
-              />
-            </label>
-            <button
-              className="filter-toggle button secondary"
-              onClick={() => setFilterOpen(true)}
-            >
-              <SlidersHorizontal size={18} />
-              Фильтры
-            </button>
-            <label className="sort-field">
-              <span className="sr-only">Сортировка</span>
-              <select
-                aria-label="Сортировка"
-                value={sort}
-                onChange={(e) => update("sort", e.target.value)}
+      {!favoritesOnly && !featured && <ReferralPromo compact />}
+      {featured && !source.length ? (
+        <EmptyState
+          to={categoryPath === "/hits" ? "/sale" : "/catalog"}
+          link={
+            categoryPath === "/hits" ? "Посмотреть акции" : "Посмотреть каталог"
+          }
+          title={
+            categoryPath === "/hits"
+              ? "В разделе пока нет хитов"
+              : "Сейчас нет активных акций"
+          }
+          text="Загляните в другие разделы каталога."
+        />
+      ) : (
+        <div className="catalog-layout" ref={catalogLayout}>
+          <aside className="filters-sidebar">
+            <h2>Фильтры</h2>
+            {filterControls}
+          </aside>
+          <div className="catalog-results">
+            <h2 className="sr-only">Товары</h2>
+            {cat && activeFamily !== categoryPath && family && (
+              <div className="catalog-collection-context">
+                <span>
+                  Коллекция: <strong>{categoryLabel(cat)}</strong>
+                </span>
+                <Link to={categoryHref(activeFamily)}>
+                  Весь раздел «{categoryLabel(family)}»
+                  <ArrowUpRight size={16} />
+                </Link>
+              </div>
+            )}
+            <div className="catalog-toolbar">
+              <label className="search-field">
+                <Search size={20} />
+                <span className="sr-only">Поиск по названию или артикулу</span>
+                <input
+                  type="search"
+                  value={q}
+                  onChange={(e) => update("q", e.target.value)}
+                  placeholder="Поиск по названию или артикулу"
+                />
+              </label>
+              <button
+                className="filter-toggle button secondary"
+                onClick={() => setFilterOpen(true)}
               >
-                <option value="default">По умолчанию</option>
-                <option value="name">По названию</option>
-                <option value="price-asc">Сначала дешевле</option>
-                <option value="price-desc">Сначала дороже</option>
-              </select>
-            </label>
-          </div>
-          <div className="results-meta">
-            <span role="status" aria-live="polite">
-              Найдено: {products.length}
-            </span>
-            <div className="filter-chips">
-              {minPrice && (
-                <button onClick={() => update("minPrice", "")}>
-                  От {minPrice} ₽<X size={14} />
-                </button>
-              )}
-              {maxPrice && (
-                <button onClick={() => update("maxPrice", "")}>
-                  До {maxPrice} ₽<X size={14} />
-                </button>
-              )}
-              {selectedTypes.map((t) => (
-                <button
-                  key={t}
-                  onClick={() => update("type", t, true)}
-                  aria-label={`Убрать фильтр: ${availableCategories.find((c) => c.path === t)?.title || t}`}
+                <SlidersHorizontal size={18} />
+                Фильтры
+              </button>
+              <label className="sort-field">
+                <span className="sr-only">Сортировка</span>
+                <select
+                  aria-label="Сортировка"
+                  value={sort}
+                  onChange={(e) => update("sort", e.target.value)}
                 >
-                  {availableCategories.find((c) => c.path === t)?.title || t}
-                  <X size={14} />
-                </button>
-              ))}
-              {selectedColors.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => update("color", c, true)}
-                  aria-label={`Убрать цвет: ${c}`}
-                >
-                  {c}
-                  <X size={14} />
-                </button>
-              ))}
+                  <option value="default">По умолчанию</option>
+                  <option value="name">По названию</option>
+                  <option value="price-asc">Сначала дешевле</option>
+                  <option value="price-desc">Сначала дороже</option>
+                </select>
+              </label>
             </div>
-          </div>
-          {products.length > 0 ? (
-            <>
-              <div className="product-grid">
-                {products.slice(0, shown).map((p, index) => (
-                  <ProductCard key={p.id} product={p} index={index} />
+            <div className="results-meta">
+              <span role="status" aria-live="polite">
+                Найдено: {products.length}
+              </span>
+              <div className="filter-chips">
+                {minPrice && (
+                  <button onClick={() => update("minPrice", "")}>
+                    От {minPrice} ₽<X size={14} />
+                  </button>
+                )}
+                {maxPrice && (
+                  <button onClick={() => update("maxPrice", "")}>
+                    До {maxPrice} ₽<X size={14} />
+                  </button>
+                )}
+                {selectedTypes.map((t) => (
+                  <button
+                    key={t}
+                    onClick={() => update("type", t, true)}
+                    aria-label={`Убрать фильтр: ${availableCategories.find((c) => c.path === t)?.title || t}`}
+                  >
+                    {availableCategories.find((c) => c.path === t)?.title || t}
+                    <X size={14} />
+                  </button>
+                ))}
+                {selectedColors.map((c) => (
+                  <button
+                    key={c}
+                    onClick={() => update("color", c, true)}
+                    aria-label={`Убрать цвет: ${c}`}
+                  >
+                    {c}
+                    <X size={14} />
+                  </button>
                 ))}
               </div>
-              {shown < products.length && (
-                <div className="load-more">
-                  <button
-                    className="button secondary"
-                    onClick={() => setShown((n) => n + 24)}
-                  >
-                    Показать ещё {Math.min(24, products.length - shown)}
-                  </button>
-                  <span>
-                    {Math.min(shown, products.length)} из {products.length}
-                  </span>
+            </div>
+            {products.length > 0 ? (
+              <>
+                <div className="product-grid">
+                  {products.slice(0, shown).map((p, index) => (
+                    <ProductCard key={p.id} product={p} index={index} />
+                  ))}
                 </div>
-              )}
-            </>
-          ) : (
-            <EmptyState
-              to="/catalog"
-              link="Посмотреть каталог"
-              title={
-                favoritesOnly && !favorites.length
-                  ? "В избранном пока нет товаров"
-                  : "Пока ничего не найдено."
-              }
-              text={
-                favoritesOnly
-                  ? "Нажмите на сердечко у понравившегося товара — он появится здесь."
-                  : source.length
-                    ? "Попробуйте другое название или сбросьте выбранные фильтры."
-                    : "В этой категории исходный каталог пока не содержит товаров. Поможем подобрать решение в нашей компании."
-              }
-            />
-          )}
+                {shown < products.length && (
+                  <div className="load-more">
+                    <button
+                      className="button secondary"
+                      onClick={() => setShown((n) => n + 24)}
+                    >
+                      Показать ещё {Math.min(24, products.length - shown)}
+                    </button>
+                    <span>
+                      {Math.min(shown, products.length)} из {products.length}
+                    </span>
+                  </div>
+                )}
+              </>
+            ) : (
+              <EmptyState
+                to="/catalog"
+                link="Посмотреть каталог"
+                title={
+                  favoritesOnly && !favorites.length
+                    ? "В избранном пока нет товаров"
+                    : "Пока ничего не найдено."
+                }
+                text={
+                  favoritesOnly
+                    ? "Нажмите на сердечко у понравившегося товара — он появится здесь."
+                    : source.length
+                      ? "Попробуйте другое название или сбросьте выбранные фильтры."
+                      : "В этой категории исходный каталог пока не содержит товаров. Поможем подобрать решение в нашей компании."
+                }
+              />
+            )}
+          </div>
         </div>
-      </div>
+      )}
       {categoryPage && hasDescription && (
         <section className="catalog-description collection-note">
           <h2>О категории «{cat?.title}»</h2>

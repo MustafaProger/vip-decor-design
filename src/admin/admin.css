@@ -1201,6 +1201,18 @@
   gap: 10px;
   margin-bottom: 20px;
 }
+.cms-button.cms-gallery-action {
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+.cms-gallery-action svg {
+  flex: none;
+}
+.cms-gallery-errors {
+  list-style-position: inside;
+  overflow-wrap: anywhere;
+}
 .cms-gallery-item {
   position: relative;
   height: 90px;

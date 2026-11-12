@@ -88,7 +88,7 @@ try {
     .fill("Local-only-QA-password-2026");
   await page.getByRole("button", { name: "Создать администратора" }).click();
   await expect(
-    page.getByRole("heading", { name: "Всё важное — под рукой" }),
+    page.getByRole("heading", { name: "Обзор", level: 1 }),
   ).toBeVisible();
   assert.equal(new URL(page.url()).hash, "");
   check(
@@ -166,18 +166,23 @@ try {
     .getByLabel("Название товара *", { exact: true })
     .fill("CMS QA изменённый товар");
   await page.getByLabel("Цена, ₽", { exact: false }).first().fill("15000");
-  const imageBytes = await sharp({
-    create: { width: 120, height: 80, channels: 3, background: "#355447" },
-  })
-    .png()
-    .toBuffer();
-  await page
-    .getByLabel("Загрузить: Добавить в галерею", { exact: true })
-    .setInputFiles({
-      name: "cms-qa.png",
+  const galleryFiles = await Promise.all(
+    ["#355447", "#c99857"].map(async (background, index) => ({
+      name: `cms-qa-${index}.png`,
       mimeType: "image/png",
-      buffer: imageBytes,
-    });
+      buffer: await sharp({
+        create: { width: 120, height: 80, channels: 3, background },
+      }).png().toBuffer(),
+    })),
+  );
+  await page
+    .getByLabel("Загрузить фото в галерею", { exact: true })
+    .setInputFiles([
+      galleryFiles[0],
+      { name: "invalid.png", mimeType: "image/png", buffer: Buffer.from("invalid") },
+      galleryFiles[1],
+    ]);
+  await expect(page.getByRole("alert").filter({ hasText: "invalid.png" })).toBeVisible();
   await expect(
     page.getByRole("button", { name: "Сохранить", exact: true }),
   ).toBeEnabled();
@@ -190,13 +195,13 @@ try {
         )?.title,
     )
     .toBe("CMS QA изменённый товар");
-  assert.ok(
-    (await call("/api/cms/content")).products
-      .find((p) => p.id === product.id)
-      .images.some((url) => url.startsWith("/api/cms-media/")),
-  );
+  const uploaded = (await call("/api/cms/content")).products
+    .find((p) => p.id === product.id)
+    .images.filter((url) => url.startsWith("/api/cms-media/"));
+  assert.equal(new Set(uploaded).size, 2);
+  for (const url of uploaded) assert.ok((await fetch(base + url)).ok);
   check(
-    "Product editor saves title, price and uploaded photo through real API",
+    "Product editor saves title, price and two photos from one selection even when another photo fails",
   );
   await page.screenshot({
     path: join(out, "product-editor-desktop.png"),

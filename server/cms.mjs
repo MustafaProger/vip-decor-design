@@ -21,6 +21,7 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { removeRetiredSocialLinks } from "./content-cleanup.mjs";
 import { cleanPublicContent, cleanPublicBlog } from "./content-retirement.mjs";
+import featuredCategories from "../src/data/featured-categories.json" with { type: "json" };
 import {
   CmsError,
   object,
@@ -220,7 +221,12 @@ export async function createCmsService(options = {}) {
   const blogCategories = JSON.parse(
     db.prepare("SELECT value FROM meta WHERE key='blogCategories'").get().value,
   );
-  const catalogCategories = [...chrome.categories];
+  const catalogCategories = [
+    ...featuredCategories,
+    ...chrome.categories.filter(
+      (category) => !featuredCategories.some(({ path }) => path === category.path),
+    ),
+  ];
   if (
     !catalogCategories.some(
       (category) => category.path === "/derzhateli-dlya-shtor",
@@ -371,7 +377,7 @@ export async function createCmsService(options = {}) {
   }
   function getPublicContent() {
     const products = entities("products", true);
-    const categories = chrome.categories.map((category) => ({
+    const categories = catalogCategories.map((category) => ({
       ...category,
       count: products.filter(
         (product) =>
